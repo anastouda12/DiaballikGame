@@ -657,7 +657,7 @@
 											"top": 199,
 											"width": 351.55224609375,
 											"height": 13,
-											"text": "-getSupportWhoHasTheBall(color: Team)",
+											"text": "-getSupportWhoHasTheBall(team: Team)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -725,7 +725,7 @@
 											"top": 259,
 											"width": 351.55224609375,
 											"height": 13,
-											"text": "+validThrow(color: Team, start: Position, end: Position)",
+											"text": "+validThrow(team: Team, start: Position, end: Position)",
 											"horizontalAlignment": 0
 										}
 									],
@@ -1007,7 +1007,7 @@
 											"top": 225,
 											"width": 159,
 											"height": 13,
-											"text": "+getColor()",
+											"text": "+getTeam()",
 											"horizontalAlignment": 0
 										}
 									],
@@ -1341,24 +1341,7 @@
 											"top": 887,
 											"width": 201.0048828125,
 											"height": 13,
-											"text": "+resetMoves()",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLOperationView",
-											"_id": "AAAAAAFwIIStalQXqGc=",
-											"_parent": {
-												"$ref": "AAAAAAFwG5HpGhzvFZ0="
-											},
-											"model": {
-												"$ref": "AAAAAAFwIIStNVQUJgo="
-											},
-											"font": "Arial;13;0",
-											"left": 341,
-											"top": 902,
-											"width": 201.0048828125,
-											"height": 13,
-											"text": "+setThrowAvailable(value: Integer)",
+											"text": "+resetActions()",
 											"horizontalAlignment": 0
 										}
 									],
@@ -1366,7 +1349,7 @@
 									"left": 336,
 									"top": 822,
 									"width": 211.0048828125,
-									"height": 98
+									"height": 83
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -3653,7 +3636,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFwHCjzMmUPeCs="
 									},
-									"name": "color",
+									"name": "team",
 									"type": {
 										"$ref": "AAAAAAFwG5fckSWovmY="
 									}
@@ -3747,7 +3730,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFwHDJkb2/Zvws="
 									},
-									"name": "color",
+									"name": "team",
 									"type": {
 										"$ref": "AAAAAAFwG5fckSWovmY="
 									}
@@ -3871,7 +3854,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFwG5FO8Ry0TRg="
 							},
-							"name": "getColor"
+							"name": "getTeam"
 						}
 					]
 				},
@@ -3965,26 +3948,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFwG5HpGhzmNts="
 							},
-							"name": "resetMoves"
-						},
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAFwIIStNVQUJgo=",
-							"_parent": {
-								"$ref": "AAAAAAFwG5HpGhzmNts="
-							},
-							"name": "setThrowAvailable",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFwIIWwvlWU9Uk=",
-									"_parent": {
-										"$ref": "AAAAAAFwIIStNVQUJgo="
-									},
-									"name": "value",
-									"type": "Integer"
-								}
-							]
+							"name": "resetActions"
 						}
 					]
 				},
