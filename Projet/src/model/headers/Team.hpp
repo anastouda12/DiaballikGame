@@ -43,7 +43,7 @@ std::string to_string(const Team & team);
 * @param team The Team to inject.
 * @return The same output stream.
 */
-std::ostream operator<<(std::ostream & out, const Team & team);
+std::ostream & operator<<(std::ostream & out, const Team & team);
 
 
 }
