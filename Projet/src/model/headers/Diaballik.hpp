@@ -1,8 +1,8 @@
 #ifndef _DIABILIK_H
 #define _DIABILIK_H
 
-#include "Board.h"
-#include "Team.h"
+#include "Board.hpp"
+#include "Team.hpp"
 
 namespace dblk
 {
@@ -18,32 +18,32 @@ class Diaballik
      * @brief board
      * The main container of the Board of the Game.
      */
-    Board board;
+    Board board_;
 
     /**
      * @brief currentPlayer
      * The player who must move or pass.
      */
-    Team currentPlayer;
+    Team currentPlayer_;
 
     /**
      * @brief selected
      * The selected Piece to move or pass.
      */
-    Position selected;
+    Position selected_;
 
     /**
      * @brief moveCount
      * The remaining moves in the current round.
      */
-    unsigned moveCount;
+    unsigned moveCount_;
 
     /**
      * @brief canPass
      * Indicates if it's allowed to pass the ball in
      * the current round.
      */
-    bool canThrowBall;
+    bool canThrowBall_;
 
   public:
     /**

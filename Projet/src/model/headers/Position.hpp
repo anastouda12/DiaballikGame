@@ -19,13 +19,13 @@ class Position
      * @brief row
      * The row, so the index for the first vector in the Board.
      */
-    const unsigned row;
+    const int row_;
 
     /**
      * @brief column
      * The column, so the index for the second vector in the Board.
      */
-    const unsigned column;
+    const int column_;
 
   public:
     /**
@@ -35,7 +35,7 @@ class Position
      * @param row The row coordinate.
      * @param column The column coordinate.
      */
-    Position(unsigned row, unsigned column);
+    Position(int row, int column);
 
     /**
      * @brief getRow
@@ -43,7 +43,7 @@ class Position
      *
      * @return The row of the position.
      */
-    unsigned getRow() const;
+    int getRow() const;
 
     /**
      * @brief getColumn
@@ -51,7 +51,7 @@ class Position
      *
      * @return The row of the position.
      */
-    unsigned getColumn() const;
+    int getColumn() const;
 
     /**
      * @brief to_string
@@ -60,7 +60,7 @@ class Position
      *
      * @return A string describing the position.
      */
-    std::string to_string();
+    std::string to_string() const;
 
     /**
      * @brief operator -
@@ -90,7 +90,7 @@ class Position
 * @param pos The Position to inject.
 * @return The same output stream.
 */
-std::ostream operator<<(std::ostream & out, const Position & pos);
+std::ostream & operator<<(std::ostream & out, const Position & pos);
 
 }
 

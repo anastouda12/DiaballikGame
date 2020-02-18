@@ -1,9 +1,9 @@
 #ifndef _BOARD_H
 #define _BOARD_H
 
-#include "Piece.h"
-#include "Position.h"
-#include "Team.h"
+#include "Piece.hpp"
+#include "Position.hpp"
+#include "Team.hpp"
 #include <vector>
 #include <optional>
 
@@ -23,13 +23,13 @@ class Board
      * @brief pieces
      * The main container for the Pieces in the board.
      */
-    std::vector<std::vector<std::optional<Piece>>> pieces;
+    std::vector<std::vector<std::optional<Piece>>> pieces_;
 
     /**
      * @brief size
      * The size of the board.
      */
-    const unsigned size;
+    const unsigned size_;
 
 
 
@@ -71,6 +71,15 @@ class Board
      * @return True if there is a piece.
      */
     bool isFree(Position pos) const;
+
+    /**
+     * @brief isFree
+     * Verifies if the position is inside of the board.
+     *
+     * @param pos The position to verify.
+     * @return True if is inside of the board.
+     */
+    bool isInside(Position pos) const;
 
     /**
      * @brief movePiece
@@ -149,5 +158,7 @@ class Board
 
 };
 
-};
+dblk::Position getMouvement(dblk::Position result);
+
+}
 #endif //_BOARD_H

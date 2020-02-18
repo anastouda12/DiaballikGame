@@ -4,6 +4,9 @@
 #include <string>
 #include <ostream>
 
+namespace dblk
+{
+
 /**
  * @brief The Team enum
  * Allows to distinguish the two players of the game.
@@ -43,7 +46,7 @@ std::string to_string(const Team & team);
 std::ostream operator<<(std::ostream & out, const Team & team);
 
 
-
+}
 
 
 #endif //_TEAM_H

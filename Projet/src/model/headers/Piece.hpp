@@ -1,7 +1,7 @@
 #ifndef _PIECE_H
 #define _PIECE_H
 
-#include "Team.h"
+#include "Team.hpp"
 
 namespace dblk
 {
@@ -16,20 +16,20 @@ class Piece
      * @brief team
      * The team owner of the piece.
      */
-    const Team team;
+    const Team team_;
 
     /**
      * @brief haveBall
      * Indicates if this piece has the ball.
      */
-    bool haveBall;
+    bool haveBall_;
 
     /**
      * @brief objectiveRow
      * Indicates the objective row to win.
      * Usefull in the variant mode rule.
      */
-    const unsigned objectiveRow;
+    const unsigned objectiveRow_;
 
   public:
 
