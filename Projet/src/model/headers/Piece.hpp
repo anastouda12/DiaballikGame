@@ -39,7 +39,7 @@ class Piece
      *
      * @param team The team owner of the Piece.
      */
-    Piece(const Team & team);
+    Piece(const Team & team, const unsigned objectiveRow);
 
     /**
      * @brief hasTheBall
@@ -96,7 +96,7 @@ class Piece
  * @param piece The piece to inject.
  * @return The same output stream.
  */
-std::ostream operator<<(std::ostream & out,
+std::ostream & operator<<(std::ostream & out,
                         const Piece & piece);
 }
 

@@ -6,8 +6,12 @@ using namespace std;
 
 int main()
 {
-    dblk::Position p(1, 2);
-    dblk::Position p2(3, 4);
-    cout << p - p2 << endl;
+
+    const dblk::Team tt = dblk::Team::NORTH;
+    dblk::Piece mp(tt,20);
+    dblk::Piece xp(tt,20);
+    xp.givesTheBall();
+    cout << mp << endl;
+    cout << xp << endl;
     return 0;
 }

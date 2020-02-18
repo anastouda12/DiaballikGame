@@ -6,7 +6,9 @@ CONFIG += c++17
 
 SOURCES += \
         main.cpp \
-        src/model/Position.cpp
+        src/model/Piece.cpp \
+        src/model/Position.cpp \
+        src/model/Team.cpp
 
 QMAKE_CXXFLAGS += -pedantic-errors -std=c++17
 
