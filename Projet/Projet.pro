@@ -6,8 +6,14 @@ CONFIG += c++17
 
 SOURCES += \
         main.cpp \
+<<<<<<< HEAD
         src/model/Board.cpp \
         src/model/Position.cpp
+=======
+        src/model/Piece.cpp \
+        src/model/Position.cpp \
+        src/model/Team.cpp
+>>>>>>> anasModel
 
 QMAKE_CXXFLAGS += -pedantic-errors -std=c++17
 

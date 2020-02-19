@@ -96,7 +96,7 @@ class Piece
  * @param piece The piece to inject.
  * @return The same output stream.
  */
-std::ostream operator<<(std::ostream & out,
+std::ostream & operator<<(std::ostream & out,
                         const Piece & piece);
 }
 
