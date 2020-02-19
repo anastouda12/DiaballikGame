@@ -39,7 +39,7 @@ class Piece
      *
      * @param team The team owner of the Piece.
      */
-    Piece(const Team & team);
+    Piece(const Team & team, const unsigned objectiveRow);
 
     /**
      * @brief hasTheBall
@@ -55,7 +55,7 @@ class Piece
      *
      * @return The objective row of the Piece.
      */
-    unsigned getObjectiveRow();
+    unsigned getObjectiveRow() const;
 
     /**
      * @brief givesTheBall

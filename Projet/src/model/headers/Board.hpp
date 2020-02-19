@@ -19,11 +19,6 @@ class Board
 {
 
   private:
-    /**
-     * @brief pieces
-     * The main container for the Pieces in the board.
-     */
-    std::vector<std::vector<std::optional<Piece>>> pieces_;
 
     /**
      * @brief size
@@ -31,7 +26,11 @@ class Board
      */
     const unsigned size_;
 
-
+    /**
+     * @brief pieces
+     * The main container for the Pieces in the board.
+     */
+    std::vector<std::vector<std::optional<Piece>>> pieces_;
 
   public:
 
