@@ -61,7 +61,7 @@ class Diaballik
      *
      * @return The winner of the game or nullptr if the game isn't over.
      */
-    const Team * getWinner() const;
+    const Team & getWinner() const;
 
     /**
      * @brief getCurrentPlayer
@@ -69,7 +69,7 @@ class Diaballik
      *
      * @return The current player.
      */
-    const Team * getCurrentPlayer() const;
+    const Team & getCurrentPlayer() const;
 
     /**
      * @brief getMoveCount

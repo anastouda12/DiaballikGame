@@ -16,7 +16,7 @@ class Piece
      * @brief team
      * The team owner of the piece.
      */
-    const Team team_;
+    Team team_;
 
     /**
      * @brief haveBall
@@ -29,7 +29,7 @@ class Piece
      * Indicates the objective row to win.
      * Usefull in the variant mode rule.
      */
-    const unsigned objectiveRow_;
+    int objectiveRow_;
 
   public:
 
@@ -39,7 +39,7 @@ class Piece
      *
      * @param team The team owner of the Piece.
      */
-    Piece(const Team & team, const unsigned objectiveRow);
+    Piece(const Team & team, int objectiveRow);
 
     /**
      * @brief hasTheBall
@@ -55,7 +55,7 @@ class Piece
      *
      * @return The objective row of the Piece.
      */
-    unsigned getObjectiveRow();
+    int getObjectiveRow() const;
 
     /**
      * @brief givesTheBall
@@ -75,7 +75,7 @@ class Piece
      *
      * @return The team owner of the Piece.
      */
-    const Team * getTeam() const;
+    const Team & getTeam() const;
 
     /**
      * @brief to_string
@@ -96,8 +96,7 @@ class Piece
  * @param piece The piece to inject.
  * @return The same output stream.
  */
-std::ostream & operator<<(std::ostream & out,
-                        const Piece & piece);
+std::ostream & operator<<(std::ostream & out,const Piece & piece);
 }
 
 #endif //_PIECE_HF

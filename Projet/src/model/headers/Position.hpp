@@ -19,13 +19,13 @@ class Position
      * @brief row
      * The row, so the index for the first vector in the Board.
      */
-    const int row_;
+    int row_;
 
     /**
      * @brief column
      * The column, so the index for the second vector in the Board.
      */
-    const int column_;
+    int column_;
 
   public:
     /**
@@ -69,7 +69,7 @@ class Position
      * @param otherPos The right operand.
      * @return The difference between the 2 Positons.
      */
-    Position operator-(const Position & otherPos);
+    Position operator-(const Position & otherPos) const;
 
     /**
      * @brief operator +
@@ -78,7 +78,16 @@ class Position
      * @param otherPos The right operand.
      * @return The sum between the 2 Positons.
      */
-    Position operator+(const Position & otherPos);
+    Position operator+(const Position & otherPos) const;
+
+    /**
+     * @brief operator !=
+     * Verify if two positions have the same column and row.
+     *
+     * @param otherPos The right position of the operator.
+     * @return True if they have the same row and column.
+     */
+    bool operator!=(const Position & otherPos) const;
 
 };
 

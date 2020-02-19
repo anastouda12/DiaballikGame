@@ -12,6 +12,7 @@ namespace dblk
 
 /**
  * @brief The Board class
+ *
  * This class represents the Board where the game will be played.
  * It will contain a vector of vectors containing the Pieces of the players.
  */
@@ -19,11 +20,6 @@ class Board
 {
 
   private:
-    /**
-     * @brief pieces
-     * The main container for the Pieces in the board.
-     */
-    std::vector<std::vector<std::optional<Piece>>> pieces_;
 
     /**
      * @brief size
@@ -31,7 +27,11 @@ class Board
      */
     const unsigned size_;
 
-
+    /**
+     * @brief pieces
+     * The main container for the Pieces in the board.
+     */
+    std::vector<std::vector<std::optional<Piece>>> pieces_;
 
   public:
 
@@ -55,19 +55,28 @@ class Board
     void init(bool variant);
 
     /**
+     * @brief getSize
+     * Retrieves the size of the board.
+     *
+     * @return The size of the board.
+     */
+    unsigned getSize() const;
+
+    /**
      * @brief getPieceAt
      * Retrieves the Piece at the given Position.
      *
      * @param position The position to retrieve the piece.
-     * @return The piece at the given position, or nullptr if no piece.
+     * @return The piece at the given position, or an empty optional.
      */
-    const Piece * getPieceAt(Position position) const;
+    const std::optional<Piece> & getPieceAt(Position position) const;
 
     /**
      * @brief isFree
      * Verifies if the position has a piece.
      *
      * @param pos The position to verify.
+     * @exception If the position is out bounds.
      * @return True if there is a piece.
      */
     bool isFree(Position pos) const;
@@ -89,7 +98,7 @@ class Board
      *
      * @param startPos The start Position of the Piece.
      * @param endPos The end Position of the Piece.
-     * @return 1 if the Piece was moved or -1 in case of error.
+     * @return 1 if the Piece was moved or a negative flag in case of error.
      */
     int movePiece(Position startPos, Position endPos);
 
@@ -107,9 +116,10 @@ class Board
      * @brief checksGameIsFinsh
      * Verifies if the game is over.
      *
+     * @param team The current player to verify the anti game status.
      * @return True if the game is over.
      */
-    bool checksGameIsFinsh() const;
+    bool checksGameIsFinsh(Team team) const;
 
     /**
      * @brief passBall
@@ -120,17 +130,18 @@ class Board
      *
      * @param startPos The start position.
      * @param endPos The end position.
-     * @return 1 if the ball has been passed or -1 if not.
+     * @return 1 if the ball has been passed or a negative flag if not.
      */
-    int passBall(Position startPos, Position endPos);
+    int passBall(Team team, Position startPos, Position endPos);
 
     /**
      * @brief getWinner
      * Retrieves the winner of the game.
      *
-     * @return The winner of the game, nullptr if the game isn't over.
+     * @exception If the game isn't over.
+     * @return The winner of the game.
      */
-    const Team * getWinner() const;
+    const Team & getWinner() const;
 
   private:
 
@@ -154,11 +165,9 @@ class Board
      * @param endPos The end position.
      * @return True if it's allowed.
      */
-    bool checkThrow(Team color, Position startPos, Position endPos) const;
+    int checkThrow(Team color, Position startPos, Position endPos) const;
 
 };
-
-dblk::Position getMouvement(dblk::Position result);
 
 }
 #endif //_BOARD_H

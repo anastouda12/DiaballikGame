@@ -1,0 +1,2 @@
+-Ajout de methode non membre achievedObjective dans board.cpp
+-Les retours en cas d'erreur seront utilisées par un array avec des msgs d'erreur. Le flag dans l'action indique le msg d'erreur.
