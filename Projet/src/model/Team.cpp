@@ -1,6 +1,7 @@
 #include "src/model/headers/Team.hpp"
 
-namespace dblk {
+namespace dblk
+{
 
 // ************************* //
 // **Team Implementation*** //
@@ -8,16 +9,35 @@ namespace dblk {
 
 // No member methods.
 
-Team operator!(const Team & team){
-    if(team == Team::NORTH){return Team::SOUTH;}else{return Team::NORTH;}
+Team operator!(const Team & team)
+{
+    if (team == NORTH)
+    {
+        return SOUTH;
+    }
+    else
+    {
+        return NORTH;
+    }
 }
 
-std::string to_string(const Team & team){
-   if(team == Team::NORTH){return "N";}else{return "S";}
+
+std::string to_string(const Team & team)
+{
+    if (team == NORTH)
+    {
+        return "N";
+    }
+    else
+    {
+        return "S";
+    }
 
 }
 
-std::ostream & operator<<(std::ostream & out, const Team & team){
+
+std::ostream & operator<<(std::ostream & out, const Team & team)
+{
     out << to_string(team);
     return out;
 }

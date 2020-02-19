@@ -32,17 +32,22 @@ std::string Position::to_string() const
 }
 
 
-Position Position::operator-(const Position & otherPos)
+Position Position::operator-(const Position & otherPos) const
 {
     return Position(this->row_ - otherPos.getRow(),
                     this->column_ - otherPos.column_);
 }
 
 
-Position Position::operator+(const Position & otherPos)
+Position Position::operator+(const Position & otherPos) const
 {
     return Position(this->row_ + otherPos.getRow(),
                     this->column_ + otherPos.column_);
+}
+
+bool Position::operator!=(const Position & otherPos) const
+{
+    return this->row_ == otherPos.row_ && this->column_ == otherPos.column_;
 }
 
 // Nom member methods.
