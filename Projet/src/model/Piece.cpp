@@ -43,12 +43,12 @@ std::string Piece::to_string() const
 {
 
     using std::string, std::to_string;
-    if (haveBall_)
-    {
-        return string("(*" + dblk::to_string(this->team_) + "*)");
-    }
-
-    return string("( " + dblk::to_string(this->team_) + " )");
+    string str;
+    str.append("(");
+    str.push_back(dblk::to_string(this->team_)[0]);
+    if (haveBall_){str.append("*");}
+    str.append(")");
+    return str;
 }
 
 // Non member methods.

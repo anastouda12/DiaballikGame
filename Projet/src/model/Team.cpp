@@ -26,11 +26,11 @@ std::string to_string(const Team & team)
 {
     if (team == NORTH)
     {
-        return "N";
+        return "NORTH";
     }
     else
     {
-        return "S";
+        return "SOUTH";
     }
 
 }

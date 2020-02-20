@@ -30,7 +30,7 @@ class Diaballik
      * @brief selected
      * The selected Piece to move or pass.
      */
-    Position selected_;
+    std::optional<Position> selected_;
 
     /**
      * @brief moveCount
@@ -44,6 +44,18 @@ class Diaballik
      * the current round.
      */
     bool canThrowBall_;
+
+    /**
+     * @brief gameIsOver_
+     * Indicates if the game ended by regular gameplay
+     */
+    bool gameIsOver_;
+
+    /**
+     * @brief antiGame_
+     * Indicates if the game ended by an Anti-Game
+     */
+    bool antiGame_;
 
   public:
     /**
@@ -121,7 +133,7 @@ class Diaballik
      *
      * @return True if the game is over, false if not.
      */
-    bool isOver() const;
+    bool isOver();
 
     /**
      * @brief checksAntiGame
@@ -129,7 +141,7 @@ class Diaballik
      *
      * @return True if the current player faces a situation of anti-game.
      */
-    bool checksAntiGame() const;
+    bool checksAntiGame();
 
     /**
      * @brief select

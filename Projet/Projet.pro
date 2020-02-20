@@ -7,6 +7,7 @@ CONFIG += c++17
 SOURCES += \
         main.cpp \
         src/model/Board.cpp \
+        src/model/Diaballik.cpp \
         src/model/Position.cpp \
         src/model/Piece.cpp \
         src/model/Team.cpp
