@@ -1,2 +1,29 @@
 -Ajout de methode non membre achievedObjective dans board.cpp
 -Les retours en cas d'erreur seront utilisées par un array avec des msgs d'erreur. Le flag dans l'action indique le msg d'erreur.
+-Supression attributs isGameOver_ antiGame_
+-Type en entiers (vu que direction doit avoir des négatifs)
+
+
+Move Flags
+-1 No Pos selected (console)
+-2 Not enought steps
+-3 Out bounds (console)
+-4 Occuped
+-5 Obstacle
+
+Throw Flags
+-1 No Pos selected (console)
+-2 Cant pass
+-3 no ball
+-4 Out bounds
+-5 Pas de piece
+-6 Opponent piece
+-7 Not aligned
+-8 Obstacle
+
+Select flags
+-1 Pas de piece
+-2 Out bounds
+-3 Not from current
+
+

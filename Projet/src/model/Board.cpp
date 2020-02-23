@@ -44,7 +44,6 @@ const std::optional<Piece> & Board::getPieceAt(Position position) const
 
 bool Board::isFree(Position position) const
 {
-    if (!this->isInside(position)) throw std::exception();
     return !this->getPieceAt(position).has_value();
 }
 
@@ -70,15 +69,14 @@ int Board::movePiece(Position startPos, Position endPos)
 
 bool Board::checksAntiGame(Team team) const
 {
-    bool verifyLineAntiGame(const Board * board, Position currentPos, unsigned blockCount, Team team);
     bool haveAntiGame = false;
-    for (int i = 0; i < this->size_; i++)
+    for (unsigned i = 0; i < this->size_; i++)
     {
         Position pos(i, 0);
         if (!this->isFree(pos))
             if (this->getPieceAt(pos)->getTeam() != team)
             {
-                haveAntiGame = haveAntiGame || verifyLineAntiGame(this, pos, 0, team);
+                haveAntiGame = haveAntiGame || verifyLineAntiGame(pos, 0, team);
             }
     }
     return haveAntiGame;
@@ -133,15 +131,15 @@ const Team & Board::getWinner() const
 bool Board::checkMove(Position startPos, Position endPos) const
 {
     //The rules conditions for the startPos are verified when selecting the piece.
-    if (!this->isInside(endPos)) return -1;        //Out bounds
-    if (!this->isFree(endPos)) return -2;        //Occuped
+    if (!this->isInside(endPos)) return -3;        //Out bounds(console)
+    if (!this->isFree(endPos)) return -4;        //Occuped(console)
 
     Position getDirection(Position result);
     Position direction = getDirection(startPos - endPos), currentPos(startPos + direction);
     while (currentPos != endPos)
     {
         if (!this->isFree(currentPos))
-            return -3;      //Obstacle
+            return -5;      //Obstacle
         currentPos = currentPos + direction;
     }
     return 1;       //Is ok
@@ -152,52 +150,121 @@ int Board::checkThrow(Team team, Position startPos,
                       Position endPos) const
 {
     //The rules conditions for the startPos are verified when selecting the piece.
-    if (!this->isInside(endPos)) return -1;         //Out board bounds
-    if (this->isFree(endPos)) return -2;        //No piece at end position.
-    if (this->getPieceAt(endPos).value().getTeam() != team) return -3;      //Is opponent piece.
+    if (!this->isInside(endPos)) return -4;         //Out board bounds
+    if (this->isFree(endPos)) return -5;        //No piece at end position.
+    if (this->getPieceAt(endPos).value().getTeam() != team) return -6;      //Is opponent piece.
 
     Position getDirection(Position result);
     Position direction = getDirection(startPos - endPos), currentPos(startPos + direction);
-    if (direction.getRow() == 0 && direction.getColumn() == 0) return -4;       //Not aligned
+    if (direction.getRow() == 0 && direction.getColumn() == 0) return -7;       //Not aligned
     while (currentPos != endPos)
     {
         if (!this->isFree(startPos))
             if (this->getPieceAt(startPos)->getTeam() != team)
-                return -5;      //Obstacle
+                return -8;      //Obstacle
         currentPos = currentPos + direction;
     }
     return 1; //Is ok
 }
 
+/**
+ * @brief verifyLineAntiGame
+ * @param board
+ * @param currentPos
+ * @param blockCount
+ * @param team
+ * @return
+ */
+bool Board::verifyLineAntiGame(Position currentPos, unsigned blockCount, Team team) const
+{
+    if (!this->isInside(currentPos) || this->isFree(currentPos))
+    {
+        return false;
+    }
+    else if (this->getPieceAt(currentPos)->getTeam() == team)
+    {
+        return false;
+    }
+    else if (checkLineBreak(currentPos, team))
+    {
+        return false;
+    }
+    else
+    {
+        countBlockedOpponents(blockCount, currentPos, team);
+        if (currentPos.getColumn() == static_cast<int>(this->getSize() - 1))
+        {
+            return blockCount >= 3;
+        }
+        else
+        {
+            return verifyLineAntiGame(Position(currentPos.getRow() - 1, currentPos.getColumn() + 1),
+                                      blockCount, team) ||
+                   verifyLineAntiGame(Position(currentPos.getRow(), currentPos.getColumn() + 1),
+                                      blockCount, team) ||
+                   verifyLineAntiGame(Position(currentPos.getRow() + 1, currentPos.getColumn() + 1),
+                                      blockCount, team);
+        }
+    }
+}
 
-//**********************************//
-//* End Board Class Implementation *//
-//**********************************//
-
-
-//Utility Methods
 
 /**
- * @brief achievedObjective
- * Verifies if the given position inside the board, contains a piece
- * who reached the objective with the ball.
+ * @brief countBlockedOpponents
+ * Count the number of opponent pieces blocked by one piece. Used by verifyLineAntiGame.
  *
- * @param board The board of the game.
- * @param position The given position.
- * @return True if the board contains a piece who reached the objective.
+ * @param board The game board.
+ * @param blockCount A reference to the number of opponent pieces blocked.
+ * @param curentPos The current position.
+ * @param team The victim of anti-game line.
  */
-bool achievedObjective(const Board * board, const Position & position)
+void Board::countBlockedOpponents(unsigned & blockCount, Position currentPos,
+                                  Team team) const
 {
-    if (!board->isFree(position))
+    Position top(currentPos.getRow() - 1, currentPos.getColumn()),
+             bottom(currentPos.getRow() + 1, currentPos.getColumn());
+    if (this->isInside(top) && !this->isFree(top) &&
+            this->getPieceAt(top)->getTeam() == team &&
+            this->getPieceAt(top)->getObjectiveRow() == static_cast<int>(this->getSize() - 1))
     {
-        if (board->getPieceAt(position)->getObjectiveRow() == position.getRow() &&
-                board->getPieceAt(position)->hasTheBall())
+        blockCount++;
+    }
+    if (this->isInside(bottom) && !this->isFree(bottom) &&
+            this->getPieceAt(bottom)->getTeam() == team &&
+            this->getPieceAt(bottom)->getObjectiveRow() == 0)
+    {
+        blockCount++;
+    }
+}
+
+bool Board::checkLineBreak(Position curentPos, Team team) const
+{
+    Position up(1, 0), down(-1, 0);
+    Position top{curentPos + up}, bottom{curentPos + down};
+    while (this->isInside(top))
+    {
+        if (!this->isFree(top) && this->getPieceAt(top)->getTeam() == team
+                &&  this->getPieceAt(top)->getObjectiveRow() == 0)
         {
             return true;
         }
+        top = top + up;
+    }
+
+    while (this->isInside(bottom))
+    {
+        if (!this->isFree(bottom) && this->getPieceAt(bottom)->getTeam() == team
+                &&  this->getPieceAt(bottom)->getObjectiveRow() == this->getSize() - 1)
+        {
+            return true;
+        }
+        bottom = top + down;
     }
     return false;
 }
+
+
+//Utility Methods
 
 
 /**
@@ -231,80 +298,31 @@ Position getDirection(Position result)
         else if (result.getRow() > 0 && result.getColumn() < 0) return Position(-1, 1);
     }
     //Not aligned.
-    else
-    {
-        return Position(0, 0);
-    }
-}
-
-/**
- * @brief verifyLineAntiGame
- * @param board
- * @param currentPos
- * @param blockCount
- * @param team
- * @return
- */
-bool verifyLineAntiGame(const Board * board, Position currentPos, unsigned blockCount, Team team)
-{
-
-    void countBlockedOpponents(const Board * board, unsigned & blockCount, Position curentPos,
-                               Team team);
-
-    if (!board->isInside(currentPos) || board->isFree(currentPos))
-    {
-        return false;
-    }
-    else if (board->getPieceAt(currentPos)->getTeam() == team)
-    {
-        return false;
-    }
-    else
-    {
-        countBlockedOpponents(board, blockCount, currentPos, team);
-        if ((unsigned)currentPos.getColumn() == board->getSize() - 1)
-        {
-            return blockCount >= 3;
-        }
-        else
-        {
-            return verifyLineAntiGame(board, Position(currentPos.getRow() - 1, currentPos.getColumn() + 1),
-                                      blockCount, team) ||
-                   verifyLineAntiGame(board, Position(currentPos.getRow(), currentPos.getColumn() + 1),
-                                      blockCount, team) ||
-                   verifyLineAntiGame(board, Position(currentPos.getRow() + 1, currentPos.getColumn() + 1),
-                                      blockCount, team);
-        }
-    }
+    return Position(0, 0);
 }
 
 
 /**
- * @brief countBlockedOpponents
- * Count the number of opponent pieces blocked by one piece. Used by verifyLineAntiGame.
+ * @brief achievedObjective
+ * Verifies if the given position inside the board, contains a piece
+ * who reached the objective with the ball.
  *
- * @param board The game board.
- * @param blockCount A reference to the number of opponent pieces blocked.
- * @param curentPos The current position.
- * @param team The victim of anti-game line.
+ * @param board The board of the game.
+ * @param position The given position.
+ * @return True if the board contains a piece who reached the objective.
  */
-void countBlockedOpponents(const Board * board, unsigned & blockCount, Position curentPos,
-                           Team team)
+bool achievedObjective(const Board * board, const Position & position)
 {
-    Position top(curentPos.getRow() - 1, curentPos.getColumn()),
-             bottom(curentPos.getRow() + 1, curentPos.getColumn());
-    if (board->isInside(top) && !board->isFree(top) &&
-            board->getPieceAt(top)->getTeam() == team &&
-            board->getPieceAt(top)->getObjectiveRow() == board->getSize() - 1)
+    if (!board->isFree(position))
     {
-        blockCount++;
+        if (board->getPieceAt(position)->getObjectiveRow() == position.getRow() &&
+                board->getPieceAt(position)->hasTheBall())
+        {
+            return true;
+        }
     }
-    if (board->isInside(bottom) && !board->isFree(bottom) &&
-            board->getPieceAt(bottom)->getTeam() == team &&
-            board->getPieceAt(bottom)->getObjectiveRow() == 0)
-    {
-        blockCount++;
-    }
+    return false;
 }
+
 
 } // End namespace dblk

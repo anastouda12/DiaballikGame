@@ -10,8 +10,8 @@ using namespace std;
 int main()
 {
 
-    dblk::Diaballik game{dblk::MEDIUM_SIZE,false};
-    cout << game.select({0,3}) << endl;
-    cout << game.throwBall({0,2}) << endl;
+    dblk::Diaballik game{dblk::MEDIUM_SIZE, false};
+    vector v1 = {1, 2, 3, 4, 5};
+    cout << v1[20];
     return 0;
 }

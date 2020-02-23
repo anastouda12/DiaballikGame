@@ -12,23 +12,31 @@ namespace dblk
 
 Diaballik::Diaballik(unsigned size, bool variant):
     board_{size}, currentPlayer_{Team::NORTH}, selected_{}, moveCount_{DEFAULT_MOVES},
-    canThrowBall_{true}, gameIsOver_{false}, antiGame_{false}
-{board_.init(variant);}
+    canThrowBall_{true}
+{
+    board_.init(variant);
+}
 
 
-const Team & Diaballik::getWinner() const{
+const Team & Diaballik::getWinner() const
+{
     return this->board_.getWinner();
 }
 
-const Team & Diaballik::getCurrentPlayer() const{
+
+const Team & Diaballik::getCurrentPlayer() const
+{
     return this->currentPlayer_;
 }
 
-unsigned Diaballik::getMoveCount() const{
+unsigned Diaballik::getMoveCount() const
+{
     return this->moveCount_;
 }
 
-void Diaballik::passTurn(){
+
+void Diaballik::passTurn()
+{
     // Reset data game of currentPlayer
     this->currentPlayer_ = !this->currentPlayer_;
     this->selected_.reset();
@@ -36,56 +44,69 @@ void Diaballik::passTurn(){
     this->canThrowBall_ = true;
 }
 
-bool Diaballik::canPass() const{
+
+bool Diaballik::canPass() const
+{
     return this->canThrowBall_;
 }
 
-int Diaballik::movePiece(Position pos){
-    if(!this->selected_.has_value()) return -1; // select pos needed
+
+int Diaballik::movePiece(Position pos)
+{
+    if (!this->selected_.has_value()) return -1; // select pos needed
+
     Position diff = pos - this->selected_.value();
-    int steps = abs(diff.getRow()) + abs(diff.getColumn()); // The number of moves done to achieve the final position
-    if(static_cast<unsigned>(steps) > this->moveCount_) return -1;
-    if(this->board_.movePiece(this->selected_.value(), pos)){
-        this->moveCount_ -= static_cast<unsigned>(steps);
+    unsigned steps = abs(diff.getRow()) + abs(
+                         diff.getColumn());  // The number of moves done to achieve the final position
+    if (steps > this->moveCount_) return -2;
+
+    int flag = this->board_.movePiece(this->selected_.value(), pos);
+    if (flag > 0)
+    {
+        this->moveCount_ -= steps;
         this->selected_.reset();
         return steps;
     }
-    return -1;
-}
-
-int Diaballik::throwBall(Position pos){
-    if(!this->selected_.has_value()) return -1; // select pos needed
-    if(this->canThrowBall_ && this->board_.getPieceAt(this->selected_.value())->hasTheBall()){
-        if(this->board_.passBall(this->currentPlayer_, this->selected_.value(), pos)){
-            this->canThrowBall_ = false;
-            this->selected_.reset();
-            return 1;
-        }
-    }
-    return -1;
-}
-
-bool Diaballik::isOver(){
-    this->gameIsOver_ = this->board_.checksGameIsFinsh(this->currentPlayer_);
-    return this->gameIsOver_;
+    return flag;
 }
 
 
-bool Diaballik::checksAntiGame(){
-    this->antiGame_ = this->board_.checksAntiGame(this->currentPlayer_);
-    return this->antiGame_;
-}
+int Diaballik::throwBall(Position pos)
+{
+    if (!this->selected_.has_value()) return -1; // select pos needed
+    else if (!this->canThrowBall_) return -2; //Cant pass
+    else if (!this->board_.getPieceAt(this->selected_.value())->hasTheBall()) return -3; //No ball
 
-int Diaballik::select(Position pos){
-    if(this->board_.isFree(pos) || this->gameIsOver_|| this->antiGame_) return -1;
-    if(this->board_.getPieceAt(pos)->getTeam() == this->currentPlayer_){
-        this->selected_ = pos;
+    int flag = this->board_.passBall(this->currentPlayer_, this->selected_.value(), pos);
+    if (flag > 0)
+    {
+        this->canThrowBall_ = false;
+        this->selected_.reset();
         return 1;
     }
-    return -1;
+    return flag;
+}
+
+bool Diaballik::isOver()
+{
+    return this->board_.checksGameIsFinsh(this->currentPlayer_);
 }
 
 
+bool Diaballik::checksAntiGame()
+{
+    return this->board_.checksAntiGame(this->currentPlayer_);
+}
+
+int Diaballik::select(Position pos)
+{
+    if (this->board_.isFree(pos)) return -1; //No Piece
+    if (!this->board_.isInside(pos)) return -2; //Out bounds
+    if (this->board_.getPieceAt(pos)->getTeam() != this->currentPlayer_) return -3; //Opponent Piece
+
+    this->selected_ = pos;
+    return 1;
+}
 
 
 } // End namespace dblk

@@ -45,18 +45,6 @@ class Diaballik
      */
     bool canThrowBall_;
 
-    /**
-     * @brief gameIsOver_
-     * Indicates if the game ended by regular gameplay
-     */
-    bool gameIsOver_;
-
-    /**
-     * @brief antiGame_
-     * Indicates if the game ended by an Anti-Game
-     */
-    bool antiGame_;
-
   public:
     /**
      * @brief Diabilik

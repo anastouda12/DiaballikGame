@@ -167,6 +167,12 @@ class Board
      */
     int checkThrow(Team color, Position startPos, Position endPos) const;
 
+    bool verifyLineAntiGame(Position currentPos, unsigned blockCount, Team team) const;
+    void countBlockedOpponents(unsigned & blockCount, Position curentPos,
+                               Team team) const;
+    bool checkLineBreak(Position curentPos, Team team) const;
+
+
 };
 
 }
