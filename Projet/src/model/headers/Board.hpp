@@ -119,7 +119,7 @@ class Board
      * @param team The current player to verify the anti game status.
      * @return True if the game is over.
      */
-    bool checksGameIsFinsh(Team team) const;
+    bool checksGameIsFinsh(Team * team) const;
 
     /**
      * @brief passBall
@@ -134,15 +134,6 @@ class Board
      */
     int passBall(Team team, Position startPos, Position endPos);
 
-    /**
-     * @brief getWinner
-     * Retrieves the winner of the game.
-     *
-     * @exception If the game isn't over.
-     * @return The winner of the game.
-     */
-    const Team & getWinner() const;
-
   private:
 
     /**
@@ -154,7 +145,7 @@ class Board
      * @param endPos The end position.
      * @return True if it's allowed.
      */
-    bool checkMove(Position startPos, Position endPos) const;
+    int checkMove(Position startPos, Position endPos) const;
 
     /**
      * @brief checkThrow

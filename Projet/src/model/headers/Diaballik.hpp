@@ -26,6 +26,9 @@ class Diaballik
      */
     Team currentPlayer_;
 
+
+    Team * winner_;
+
     /**
      * @brief selected
      * The selected Piece to move or pass.
@@ -56,20 +59,16 @@ class Diaballik
     Diaballik(unsigned size, bool variant);
 
     /**
-     * @brief getWinner
-     * Retrieves the winner of the game.
-     *
-     * @return The winner of the game or nullptr if the game isn't over.
-     */
-    const Team & getWinner() const;
-
-    /**
      * @brief getCurrentPlayer
      * Retrieves the current player.
      *
      * @return The current player.
      */
     const Team & getCurrentPlayer() const;
+
+    const std::optional<Position> & getSelected() const;
+
+    const std::optional<Piece> & getPieceAt(Position position) const;
 
     /**
      * @brief getMoveCount

@@ -10,8 +10,31 @@ using namespace std;
 int main()
 {
 
-    dblk::Diaballik game{dblk::MEDIUM_SIZE, false};
-    vector v1 = {1, 2, 3, 4, 5};
-    cout << v1[20];
+    dblk::Diaballik game{dblk::BIG_SIZE, true};
+    cout << "\033[31m";
+    for (int i = 0; i < 9; i++)
+    {
+        for (int j = 0; j < 9; j++)
+        {
+            optional<dblk::Piece> pc;
+            try
+            {
+                pc = game.getPieceAt(dblk::Position(i, j));
+                if (pc.has_value())
+                {
+                    cout << pc.value();
+                }
+                else
+                {
+                    cout << "( )";
+                }
+            }
+            catch (std::invalid_argument & ex)
+            {
+                cout << ex.what() << endl;
+            }
+        }
+        cout << endl;
+    }
     return 0;
 }

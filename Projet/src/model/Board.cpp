@@ -21,6 +21,8 @@ void Board::init(bool variant)
         this->pieces_[0][j] = Piece(NORTH, this->size_ - 1);
         this->pieces_[this->size_ - 1][j] = Piece(SOUTH, 0);
     }
+    this->pieces_[0][size_ / 2]->givesTheBall();
+    this->pieces_[size_ - 1][size_ / 2]->givesTheBall();
     if (variant)
     {
         this->pieces_[0][1] = Piece(SOUTH, this->size_ - 1);
@@ -67,34 +69,41 @@ int Board::movePiece(Position startPos, Position endPos)
 }
 
 
-bool Board::checksAntiGame(Team team) const
+//Verify if current player is victim of anti game.
+bool Board::checksAntiGame(Team currentPlayer) const
 {
     bool haveAntiGame = false;
     for (unsigned i = 0; i < this->size_; i++)
     {
         Position pos(i, 0);
         if (!this->isFree(pos))
-            if (this->getPieceAt(pos)->getTeam() != team)
+            if (this->getPieceAt(pos)->getTeam() != currentPlayer)
             {
-                haveAntiGame = haveAntiGame || verifyLineAntiGame(pos, 0, team);
+                haveAntiGame = haveAntiGame || verifyLineAntiGame(pos, 0, currentPlayer);
             }
     }
     return haveAntiGame;
 }
 
 
-bool Board::checksGameIsFinsh(Team team) const
+bool Board::checksGameIsFinsh(Team * winner) const
 {
     bool achievedObjective(const Board *, const Position &);
     for (unsigned i = 0; i < this->size_; i++)
     {
         Position top(0, i), bottom(this->size_ - 1, i);
         if (achievedObjective(this, bottom))
+        {
+            *winner = this->getPieceAt(bottom)->getTeam();
             return true;
+        }
         else if (achievedObjective(this, top))
-            return false;
+        {
+            *winner = this->getPieceAt(top)->getTeam();
+            return true;
+        }
     }
-    return checksAntiGame(team);
+    return false;
 }
 
 
@@ -109,26 +118,10 @@ int Board::passBall(Team team, Position startPos, Position endPos)
     return flag;
 }
 
-const Team & Board::getWinner() const
-{
-    bool achievedObjective(const Board *, const Position &);
-
-    for (unsigned i = 0; i < this->size_; i++)
-    {
-        Position top(0, i), bottom(this->size_ - 1, i);
-        if (achievedObjective(this, bottom))
-            return this->getPieceAt(bottom)->getTeam();
-        else if (achievedObjective(this, top))
-            return this->getPieceAt(top)->getTeam();
-    }
-    throw std::exception();
-}
-
-
 
 //PRIVATE METHODS
 
-bool Board::checkMove(Position startPos, Position endPos) const
+int Board::checkMove(Position startPos, Position endPos) const
 {
     //The rules conditions for the startPos are verified when selecting the piece.
     if (!this->isInside(endPos)) return -3;        //Out bounds(console)

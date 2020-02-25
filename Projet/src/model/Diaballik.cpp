@@ -11,18 +11,11 @@ namespace dblk
 
 
 Diaballik::Diaballik(unsigned size, bool variant):
-    board_{size}, currentPlayer_{Team::NORTH}, selected_{}, moveCount_{DEFAULT_MOVES},
+    board_{size}, currentPlayer_{Team::NORTH}, winner_{nullptr}, selected_{}, moveCount_{DEFAULT_MOVES},
     canThrowBall_{true}
 {
     board_.init(variant);
 }
-
-
-const Team & Diaballik::getWinner() const
-{
-    return this->board_.getWinner();
-}
-
 
 const Team & Diaballik::getCurrentPlayer() const
 {
@@ -32,6 +25,17 @@ const Team & Diaballik::getCurrentPlayer() const
 unsigned Diaballik::getMoveCount() const
 {
     return this->moveCount_;
+}
+
+const std::optional<Position> & Diaballik::getSelected() const
+{
+    return this->selected_;
+}
+
+const std::optional<Piece> & Diaballik::getPieceAt(Position position) const
+{
+    if (!this->board_.isInside(position)) throw std::invalid_argument("Out bounds!");
+    else return this->board_.getPieceAt(position);
 }
 
 
@@ -89,7 +93,7 @@ int Diaballik::throwBall(Position pos)
 
 bool Diaballik::isOver()
 {
-    return this->board_.checksGameIsFinsh(this->currentPlayer_);
+    return this->board_.checksGameIsFinsh(this->winner_);
 }
 
 
