@@ -32,7 +32,7 @@ const std::optional<Position> & Diaballik::getSelected() const
     return this->selected_;
 }
 
-const std::optional<Piece> & Diaballik::getPieceAt(Position position) const
+const std::optional<Piece> & Diaballik::getPieceAt(const Position & position) const
 {
     if (!this->board_.isInside(position)) throw std::invalid_argument("Out bounds!");
     else return this->board_.getPieceAt(position);
@@ -55,7 +55,7 @@ bool Diaballik::canPass() const
 }
 
 
-int Diaballik::movePiece(Position pos)
+int Diaballik::movePiece(const Position & pos)
 {
     if (!this->selected_.has_value()) return -1; // select pos needed
 
@@ -75,7 +75,7 @@ int Diaballik::movePiece(Position pos)
 }
 
 
-int Diaballik::throwBall(Position pos)
+int Diaballik::throwBall(const Position & pos)
 {
     if (!this->selected_.has_value()) return -1; // select pos needed
     else if (!this->canThrowBall_) return -2; //Cant pass
@@ -102,7 +102,7 @@ bool Diaballik::checksAntiGame()
     return this->board_.checksAntiGame(this->currentPlayer_);
 }
 
-int Diaballik::select(Position pos)
+int Diaballik::select(const Position & pos)
 {
     if (this->board_.isFree(pos)) return -1; //No Piece
     if (!this->board_.isInside(pos)) return -2; //Out bounds

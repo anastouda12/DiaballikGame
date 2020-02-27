@@ -68,7 +68,7 @@ class Diaballik
 
     const std::optional<Position> & getSelected() const;
 
-    const std::optional<Piece> & getPieceAt(Position position) const;
+    const std::optional<Piece> & getPieceAt(const Position & position) const;
 
     /**
      * @brief getMoveCount
@@ -103,7 +103,8 @@ class Diaballik
      * @return The number of steps to achieve the position, or -1 if the piece
      * has not been moved.
      */
-    int movePiece(Position pos);
+    int movePiece(const Position & pos);
+
 
     /**
      * @brief throwBall
@@ -112,7 +113,7 @@ class Diaballik
      * @param pos The position to pass the ball.
      * @return 1 if the ball has been passed, if not -1.
      */
-    int throwBall(Position pos);
+    int throwBall(const Position & pos);
 
     /**
      * @brief isOver
@@ -138,7 +139,7 @@ class Diaballik
      * @param pos The position to select the Piece.
      * @return 1 if a piece has been selected, -1 if not.
      */
-    int select(Position pos);
+    int select(const Position & pos);
 };
 
 }

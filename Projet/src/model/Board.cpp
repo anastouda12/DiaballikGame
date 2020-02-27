@@ -16,54 +16,54 @@ Board::Board(unsigned size) : size_{size},
 
 void Board::init(bool variant)
 {
-    for (unsigned j = 0; j < this->size_; j++)
+    for (unsigned j = 0; j < size_; j++)
     {
-        this->pieces_[0][j] = Piece(NORTH, this->size_ - 1);
-        this->pieces_[this->size_ - 1][j] = Piece(SOUTH, 0);
+        pieces_[0][j] = Piece(NORTH, size_ - 1);
+        pieces_[size_ - 1][j] = Piece(SOUTH, 0);
     }
-    this->pieces_[0][size_ / 2]->givesTheBall();
-    this->pieces_[size_ - 1][size_ / 2]->givesTheBall();
+    pieces_[0][size_ / 2]->givesTheBall();
+    pieces_[size_ - 1][size_ / 2]->givesTheBall();
     if (variant)
     {
-        this->pieces_[0][1] = Piece(SOUTH, this->size_ - 1);
-        this->pieces_[0][this->size_ - 2] = Piece(SOUTH, this->size_ - 1);
-        this->pieces_[this->size_ - 1][1] = Piece(NORTH, 0);
-        this->pieces_[this->size_ - 1][this->size_ - 2] = Piece(NORTH, 0);
+        pieces_[0][1] = Piece(SOUTH, size_ - 1);
+        pieces_[0][size_ - 2] = Piece(SOUTH, size_ - 1);
+        pieces_[size_ - 1][1] = Piece(NORTH, 0);
+        pieces_[size_ - 1][size_ - 2] = Piece(NORTH, 0);
     }
 }
 
 unsigned Board::getSize() const
 {
-    return this->size_;
+    return size_;
 }
 
 
-const std::optional<Piece> & Board::getPieceAt(Position position) const
+const std::optional<Piece> & Board::getPieceAt(const Position & position) const
 {
-    return this->pieces_[position.getRow()][position.getColumn()];
+    return pieces_[position.getRow()][position.getColumn()];
 }
 
 
-bool Board::isFree(Position position) const
+bool Board::isFree(const Position & position) const
 {
-    return !this->getPieceAt(position).has_value();
+    return !getPieceAt(position).has_value();
 }
 
 
-bool Board::isInside(Position position) const
+bool Board::isInside(const Position & position) const
 {
-    return position.getRow() >= 0 && position.getRow() < (int)this->size_ &&
-           position.getColumn() >= 0 && position.getRow() < (int)this->size_;
+    return position.getRow() >= 0 && position.getRow() < (int)size_ &&
+           position.getColumn() >= 0 && position.getRow() < (int)size_;
 }
 
 
-int Board::movePiece(Position startPos, Position endPos)
+int Board::movePiece(const Position & startPos, const Position & endPos)
 {
-    int flag = this->checkMove(startPos, endPos);
+    int flag = checkMove(startPos, endPos);
     if (flag > 0)
     {
-        this->pieces_[startPos.getRow()][endPos.getColumn()].swap(
-            this->pieces_[endPos.getRow()][endPos.getColumn()]);
+        pieces_[startPos.getRow()][endPos.getColumn()].swap(
+            pieces_[endPos.getRow()][endPos.getColumn()]);
     }
     return flag;
 }
@@ -73,11 +73,11 @@ int Board::movePiece(Position startPos, Position endPos)
 bool Board::checksAntiGame(Team currentPlayer) const
 {
     bool haveAntiGame = false;
-    for (unsigned i = 0; i < this->size_; i++)
+    for (unsigned i = 0; i < size_; i++)
     {
         Position pos(i, 0);
-        if (!this->isFree(pos))
-            if (this->getPieceAt(pos)->getTeam() != currentPlayer)
+        if (!isFree(pos))
+            if (getPieceAt(pos)->getTeam() != currentPlayer)
             {
                 haveAntiGame = haveAntiGame || verifyLineAntiGame(pos, 0, currentPlayer);
             }
@@ -89,17 +89,17 @@ bool Board::checksAntiGame(Team currentPlayer) const
 bool Board::checksGameIsFinsh(Team * winner) const
 {
     bool achievedObjective(const Board *, const Position &);
-    for (unsigned i = 0; i < this->size_; i++)
+    for (unsigned i = 0; i < size_; i++)
     {
-        Position top(0, i), bottom(this->size_ - 1, i);
+        Position top(0, i), bottom(size_ - 1, i);
         if (achievedObjective(this, bottom))
         {
-            *winner = this->getPieceAt(bottom)->getTeam();
+            *winner = getPieceAt(bottom)->getTeam();
             return true;
         }
         else if (achievedObjective(this, top))
         {
-            *winner = this->getPieceAt(top)->getTeam();
+            *winner = getPieceAt(top)->getTeam();
             return true;
         }
     }
@@ -107,13 +107,13 @@ bool Board::checksGameIsFinsh(Team * winner) const
 }
 
 
-int Board::passBall(Team team, Position startPos, Position endPos)
+int Board::passBall(Team team, const Position & startPos, const Position & endPos)
 {
     int flag = checkThrow(team, startPos, endPos);
     if (flag > 0)
     {
-        this->pieces_[startPos.getRow()][startPos.getColumn()]->removesTheBall();
-        this->pieces_[endPos.getRow()][endPos.getColumn()]->givesTheBall();
+        pieces_[startPos.getRow()][startPos.getColumn()]->removesTheBall();
+        pieces_[endPos.getRow()][endPos.getColumn()]->givesTheBall();
     }
     return flag;
 }
@@ -121,17 +121,17 @@ int Board::passBall(Team team, Position startPos, Position endPos)
 
 //PRIVATE METHODS
 
-int Board::checkMove(Position startPos, Position endPos) const
+int Board::checkMove(const Position & startPos, const Position & endPos) const
 {
     //The rules conditions for the startPos are verified when selecting the piece.
-    if (!this->isInside(endPos)) return -3;        //Out bounds(console)
-    if (!this->isFree(endPos)) return -4;        //Occuped(console)
+    if (!isInside(endPos)) return -3;        //Out bounds(console)
+    if (!isFree(endPos)) return -4;        //Occuped(console)
 
     Position getDirection(Position result);
     Position direction = getDirection(startPos - endPos), currentPos(startPos + direction);
     while (currentPos != endPos)
     {
-        if (!this->isFree(currentPos))
+        if (!isFree(currentPos))
             return -5;      //Obstacle
         currentPos = currentPos + direction;
     }
@@ -139,21 +139,21 @@ int Board::checkMove(Position startPos, Position endPos) const
 }
 
 
-int Board::checkThrow(Team team, Position startPos,
-                      Position endPos) const
+int Board::checkThrow(Team team, const Position & startPos,
+                      const Position & endPos) const
 {
     //The rules conditions for the startPos are verified when selecting the piece.
-    if (!this->isInside(endPos)) return -4;         //Out board bounds
-    if (this->isFree(endPos)) return -5;        //No piece at end position.
-    if (this->getPieceAt(endPos).value().getTeam() != team) return -6;      //Is opponent piece.
+    if (!isInside(endPos)) return -4;         //Out board bounds
+    if (isFree(endPos)) return -5;        //No piece at end position.
+    if (getPieceAt(endPos).value().getTeam() != team) return -6;      //Is opponent piece.
 
     Position getDirection(Position result);
     Position direction = getDirection(startPos - endPos), currentPos(startPos + direction);
     if (direction.getRow() == 0 && direction.getColumn() == 0) return -7;       //Not aligned
     while (currentPos != endPos)
     {
-        if (!this->isFree(startPos))
-            if (this->getPieceAt(startPos)->getTeam() != team)
+        if (!isFree(startPos))
+            if (getPieceAt(startPos)->getTeam() != team)
                 return -8;      //Obstacle
         currentPos = currentPos + direction;
     }
@@ -168,13 +168,13 @@ int Board::checkThrow(Team team, Position startPos,
  * @param team
  * @return
  */
-bool Board::verifyLineAntiGame(Position currentPos, unsigned blockCount, Team team) const
+bool Board::verifyLineAntiGame(const Position & currentPos, unsigned blockCount, Team team) const
 {
-    if (!this->isInside(currentPos) || this->isFree(currentPos))
+    if (!isInside(currentPos) || isFree(currentPos))
     {
         return false;
     }
-    else if (this->getPieceAt(currentPos)->getTeam() == team)
+    else if (getPieceAt(currentPos)->getTeam() == team)
     {
         return false;
     }
@@ -185,7 +185,7 @@ bool Board::verifyLineAntiGame(Position currentPos, unsigned blockCount, Team te
     else
     {
         countBlockedOpponents(blockCount, currentPos, team);
-        if (currentPos.getColumn() == static_cast<int>(this->getSize() - 1))
+        if (currentPos.getColumn() == static_cast<int>(getSize() - 1))
         {
             return blockCount >= 3;
         }
@@ -211,43 +211,43 @@ bool Board::verifyLineAntiGame(Position currentPos, unsigned blockCount, Team te
  * @param curentPos The current position.
  * @param team The victim of anti-game line.
  */
-void Board::countBlockedOpponents(unsigned & blockCount, Position currentPos,
+void Board::countBlockedOpponents(unsigned & blockCount, const Position & currentPos,
                                   Team team) const
 {
     Position top(currentPos.getRow() - 1, currentPos.getColumn()),
              bottom(currentPos.getRow() + 1, currentPos.getColumn());
-    if (this->isInside(top) && !this->isFree(top) &&
-            this->getPieceAt(top)->getTeam() == team &&
-            this->getPieceAt(top)->getObjectiveRow() == static_cast<int>(this->getSize() - 1))
+    if (isInside(top) && !isFree(top) &&
+            getPieceAt(top)->getTeam() == team &&
+            getPieceAt(top)->getObjectiveRow() == static_cast<int>(getSize() - 1))
     {
         blockCount++;
     }
-    if (this->isInside(bottom) && !this->isFree(bottom) &&
-            this->getPieceAt(bottom)->getTeam() == team &&
-            this->getPieceAt(bottom)->getObjectiveRow() == 0)
+    if (isInside(bottom) && !isFree(bottom) &&
+            getPieceAt(bottom)->getTeam() == team &&
+            getPieceAt(bottom)->getObjectiveRow() == 0)
     {
         blockCount++;
     }
 }
 
-bool Board::checkLineBreak(Position curentPos, Team team) const
+bool Board::checkLineBreak(const Position & curentPos, Team team) const
 {
     Position up(1, 0), down(-1, 0);
     Position top{curentPos + up}, bottom{curentPos + down};
-    while (this->isInside(top))
+    while (isInside(top))
     {
-        if (!this->isFree(top) && this->getPieceAt(top)->getTeam() == team
-                &&  this->getPieceAt(top)->getObjectiveRow() == 0)
+        if (!isFree(top) && getPieceAt(top)->getTeam() == team
+                &&  getPieceAt(top)->getObjectiveRow() == 0)
         {
             return true;
         }
         top = top + up;
     }
 
-    while (this->isInside(bottom))
+    while (isInside(bottom))
     {
-        if (!this->isFree(bottom) && this->getPieceAt(bottom)->getTeam() == team
-                &&  this->getPieceAt(bottom)->getObjectiveRow() == this->getSize() - 1)
+        if (!isFree(bottom) && getPieceAt(bottom)->getTeam() == team
+                &&  getPieceAt(bottom)->getObjectiveRow() == getSize() - 1)
         {
             return true;
         }

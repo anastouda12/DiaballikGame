@@ -1,0 +1,4 @@
+#ifndef SELECTEVENT_H
+#define SELECTEVENT_H
+
+#endif // SELECTEVENT_H

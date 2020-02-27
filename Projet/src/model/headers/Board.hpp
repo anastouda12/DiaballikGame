@@ -69,7 +69,7 @@ class Board
      * @param position The position to retrieve the piece.
      * @return The piece at the given position, or an empty optional.
      */
-    const std::optional<Piece> & getPieceAt(Position position) const;
+    const std::optional<Piece> & getPieceAt(const Position & position) const;
 
     /**
      * @brief isFree
@@ -79,7 +79,7 @@ class Board
      * @exception If the position is out bounds.
      * @return True if there is a piece.
      */
-    bool isFree(Position pos) const;
+    bool isFree(const Position & pos) const;
 
     /**
      * @brief isFree
@@ -88,7 +88,7 @@ class Board
      * @param pos The position to verify.
      * @return True if is inside of the board.
      */
-    bool isInside(Position pos) const;
+    bool isInside(const Position & pos) const;
 
     /**
      * @brief movePiece
@@ -100,7 +100,7 @@ class Board
      * @param endPos The end Position of the Piece.
      * @return 1 if the Piece was moved or a negative flag in case of error.
      */
-    int movePiece(Position startPos, Position endPos);
+    int movePiece(const Position & startPos, const Position & endPos);
 
 
     /**
@@ -119,7 +119,7 @@ class Board
      * @param team The current player to verify the anti game status.
      * @return True if the game is over.
      */
-    bool checksGameIsFinsh(Team * team) const;
+    bool checksGameIsFinsh(Team * winner) const;
 
     /**
      * @brief passBall
@@ -132,7 +132,7 @@ class Board
      * @param endPos The end position.
      * @return 1 if the ball has been passed or a negative flag if not.
      */
-    int passBall(Team team, Position startPos, Position endPos);
+    int passBall(Team team, const Position & startPos, const Position & endPos);
 
   private:
 
@@ -145,7 +145,7 @@ class Board
      * @param endPos The end position.
      * @return True if it's allowed.
      */
-    int checkMove(Position startPos, Position endPos) const;
+    int checkMove(const Position & startPos, const Position & endPos) const;
 
     /**
      * @brief checkThrow
@@ -156,12 +156,13 @@ class Board
      * @param endPos The end position.
      * @return True if it's allowed.
      */
-    int checkThrow(Team color, Position startPos, Position endPos) const;
+    int checkThrow(Team color, const Position & startPos, const Position & endPos) const;
 
-    bool verifyLineAntiGame(Position currentPos, unsigned blockCount, Team team) const;
-    void countBlockedOpponents(unsigned & blockCount, Position curentPos,
-                               Team team) const;
-    bool checkLineBreak(Position curentPos, Team team) const;
+    bool verifyLineAntiGame(const Position & currentPos, unsigned blockCount, Team team) const;
+
+    void countBlockedOpponents(unsigned & blockCount, const Position & curentPos, Team team) const;
+
+    bool checkLineBreak(const Position & curentPos, Team team) const;
 
 
 };
