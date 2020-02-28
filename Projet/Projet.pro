@@ -10,12 +10,15 @@ SOURCES += \
         src/model/Diaballik.cpp \
         src/model/Position.cpp \
         src/model/Piece.cpp \
-        src/model/Team.cpp
+        src/model/Team.cpp \
+        src/view/console/View.cpp
 
 QMAKE_CXXFLAGS += -pedantic-errors -std=c++17
 
 
 HEADERS += \
+    src/View/Console/View.hpp \
+    src/View/Console/headers/View.hpp \
     src/model/headers/Board.hpp \
     src/model/headers/Configs.hpp \
     src/model/headers/Diaballik.hpp \

@@ -139,6 +139,20 @@ class Diaballik
      * @return 1 if a piece has been selected, -1 if not.
      */
     int select(Position pos);
+
+    /**
+     * @brief getSizeBoard
+     * Gives the size of the board of the game Diaballik
+     * @return the size of the board
+     */
+    unsigned getSizeBoard() const;
+
+    /**
+     * @brief getWinner
+     * Gives the winner of the game diaballik
+     * @return the winner Diaballik
+     */
+    Team * getWinner() const;
 };
 
 }
