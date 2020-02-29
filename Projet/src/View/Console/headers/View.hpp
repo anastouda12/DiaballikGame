@@ -62,9 +62,10 @@ public:
 
     /**
      * @brief displayError
-     * Displays an error
+     * Display an error message
+     * @param errorMsg error message to display
      */
-    void displayError();
+    void displayError(std::string errorMsg);
 
 
     /**
@@ -73,9 +74,6 @@ public:
      * @return the command executed by the user
      */
     std::string askCommand();
-
-
-
 
 
 };

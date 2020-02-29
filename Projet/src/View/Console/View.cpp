@@ -80,9 +80,9 @@ void View::displayWinner()
     }
 }
 
-void View::displayError()
+void View::displayError(std::string errorMsg)
 {
-    // TODO
+    std::cout << "> Erreur : " << errorMsg << std::endl;
 }
 
 
@@ -94,6 +94,6 @@ std::string View::askCommand()
     return cmd;
 }
 
-}// End dblk
+}// End namespace dblk
 
 
