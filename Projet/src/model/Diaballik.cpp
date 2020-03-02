@@ -10,7 +10,7 @@ namespace dblk
 //**********************************//
 
 
-Diaballik::Diaballik(unsigned size, bool variant):
+Diaballik::Diaballik(size_t size, bool variant):
     board_{size}, currentPlayer_{Team::NORTH}, winner_{nullptr}, selected_{}, moveCount_{DEFAULT_MOVES},
     canThrowBall_{true}
 {
@@ -81,7 +81,7 @@ int Diaballik::throwBall(const Position & pos)
     else if (!this->canThrowBall_) return -2; //Cant pass
     else if (!this->board_.getPieceAt(this->selected_.value())->hasTheBall()) return -3; //No ball
 
-    int flag = this->board_.passBall(this->currentPlayer_, this->selected_.value(), pos);
+    int flag{this->board_.passBall(this->currentPlayer_, this->selected_.value(), pos)};
     if (flag > 0)
     {
         this->canThrowBall_ = false;

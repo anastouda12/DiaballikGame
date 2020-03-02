@@ -56,7 +56,7 @@ class Diaballik
      * @param size The size of the Board.
      * @param variant Indicates if the variant rule is applied.
      */
-    Diaballik(unsigned size, bool variant);
+    Diaballik(size_t size, bool variant);
 
     /**
      * @brief getCurrentPlayer

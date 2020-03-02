@@ -29,7 +29,7 @@ class Piece
      * Indicates the objective row to win.
      * Usefull in the variant mode rule.
      */
-    int objectiveRow_;
+    size_t objectiveRow_;
 
   public:
 
@@ -39,7 +39,7 @@ class Piece
      *
      * @param team The team owner of the Piece.
      */
-    Piece(const Team & team, int objectiveRow);
+    Piece(const Team & team, size_t objectiveRow);
 
     /**
      * @brief hasTheBall
@@ -55,7 +55,7 @@ class Piece
      *
      * @return The objective row of the Piece.
      */
-    int getObjectiveRow() const;
+    size_t getObjectiveRow() const;
 
     /**
      * @brief givesTheBall
@@ -96,7 +96,7 @@ class Piece
  * @param piece The piece to inject.
  * @return The same output stream.
  */
-std::ostream & operator<<(std::ostream & out,const Piece & piece);
+std::ostream & operator<<(std::ostream & out, const Piece & piece);
 }
 
 #endif //_PIECE_HF
