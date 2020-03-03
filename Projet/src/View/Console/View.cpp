@@ -85,7 +85,7 @@ void View::displayError(int typeError, int flagError)
     if(typeError == dblk::ERROR_MOVE) std::cout << dblk::errorMessagesMove.at(messagePos) << std::endl;
     else if(typeError == dblk::ERROR_SELECT) std::cout << dblk::errorMessageSelect.at(messagePos) << std::endl;
     else if(typeError == dblk::ERROR_THROW) std::cout << dblk::errorMessageThrow.at(messagePos) << std::endl;
-    else std::cout << "type d'erreur inconnue";
+    else std::cout << "type d'erreur inconnue" << std::endl;
 }
 
 
