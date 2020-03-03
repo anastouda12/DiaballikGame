@@ -2,6 +2,7 @@
 #include "src/model/headers/Position.hpp"
 #include "src/model/headers/Board.hpp"
 #include "src/model/headers/Diaballik.hpp"
+#include "src/view/console/headers/View.hpp"
 #include "src/model/headers/Configs.hpp"
 #include "src/controller/headers/MoveEvent.hpp"
 #include "src/controller/headers/PassEvent.hpp"
@@ -19,26 +20,20 @@ void displayBoard(const Diaballik & game)
         for (int j = 0; j < 9; j++)
         {
             optional<dblk::Piece> pc;
-            try
+            pc = game.getPieceAt(dblk::Position(i, j));
+            if (pc.has_value())
             {
-                pc = game.getPieceAt(dblk::Position(i, j));
-                if (pc.has_value())
-                {
-                    cout << pc.value();
-                }
-                else
-                {
-                    cout << "( )";
-                }
+                cout << pc.value();
             }
-            catch (std::invalid_argument & ex)
+            else
             {
-                cout << ex.what() << endl;
+                cout << "( )";
             }
         }
         cout << endl;
     }
 }
+
 
 vector<string> split(string s, string del)
 {
@@ -91,5 +86,14 @@ int main()
     }
 
     cout << "\033[31m";
+
+    dblk::Diaballik dblke(7, false);
+    dblk::View vd(&dblke);
+    vd.displayWelcomeMessage();
+    vd.displayBoard();
+    vd.displayCurrentPlayer();
+    vd.displayCounters();
+    vd.displayWinner();
+    vd.displayHelp();
     return 0;
 }

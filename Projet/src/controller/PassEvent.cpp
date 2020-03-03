@@ -10,11 +10,7 @@ PassEvent::PassEvent(Diaballik & model, const Position endPos) : model_{model}, 
 
 void PassEvent::execute()
 {
-    int flag = model_.throwBall(endPos_);
-    if (flag < 0)
-    {
-        //Error;
-    }
+    model_.throwBall(endPos_);
 }
 
 } //End namespace dblk

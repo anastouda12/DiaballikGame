@@ -112,5 +112,14 @@ int Diaballik::select(const Position & pos)
     return 1;
 }
 
+unsigned Diaballik::getSizeBoard() const
+{
+    return this->board_.getSize();
+}
+
+Team * Diaballik::getWinner() const
+{
+    return this->winner_;
+}
 
 } // End namespace dblk

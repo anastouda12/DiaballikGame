@@ -6,6 +6,7 @@ CONFIG += c++17
 
 SOURCES += \
         main.cpp \
+        src/View/Observer.cpp \
         src/controller/MoveEvent.cpp \
         src/controller/PassEvent.cpp \
         src/controller/SelectEvent.cpp \
@@ -13,16 +14,20 @@ SOURCES += \
         src/model/Diaballik.cpp \
         src/model/Position.cpp \
         src/model/Piece.cpp \
-        src/model/Team.cpp
+        src/model/Team.cpp \
+        src/view/console/View.cpp
 
 QMAKE_CXXFLAGS += -pedantic-errors -std=c++17
 
 
 HEADERS += \
+    src/View/headers/Observer.hpp \
     src/controller/headers/DiaballikEvent.hpp \
     src/controller/headers/MoveEvent.hpp \
     src/controller/headers/PassEvent.hpp \
     src/controller/headers/SelectEvent.hpp \
+    src/View/Console/View.hpp \
+    src/View/Console/headers/View.hpp \
     src/model/headers/Board.hpp \
     src/model/headers/Configs.hpp \
     src/model/headers/Diaballik.hpp \

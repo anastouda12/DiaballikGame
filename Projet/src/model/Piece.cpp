@@ -50,6 +50,10 @@ std::string Piece::to_string() const
     {
         str.append("*");
     }
+    else
+    {
+        str.append(" ");
+    }
     str.append(")");
     return str;
 }

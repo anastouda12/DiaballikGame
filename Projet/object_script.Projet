@@ -1,0 +1,11 @@
+main.o
+Observer.o
+MoveEvent.o
+PassEvent.o
+SelectEvent.o
+Board.o
+Diaballik.o
+Position.o
+Piece.o
+Team.o
+View.o
