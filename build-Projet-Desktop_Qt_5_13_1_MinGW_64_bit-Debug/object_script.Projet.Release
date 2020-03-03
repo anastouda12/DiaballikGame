@@ -1,0 +1,11 @@
+release/main.o
+release/MoveEvent.o
+release/PassEvent.o
+release/SelectEvent.o
+release/Board.o
+release/Diaballik.o
+release/Observable.o
+release/Position.o
+release/Piece.o
+release/Team.o
+release/View.o

@@ -25,7 +25,7 @@ class Board
      * @brief size
      * The size of the board.
      */
-    const unsigned size_;
+    const size_t size_;
 
     /**
      * @brief pieces
@@ -42,7 +42,7 @@ class Board
     *
     * @param size The size of the board.
     */
-    Board(const unsigned size);
+    Board(const size_t size);
 
     /**
      * @brief init
@@ -60,7 +60,7 @@ class Board
      *
      * @return The size of the board.
      */
-    unsigned getSize() const;
+    size_t getSize() const;
 
     /**
      * @brief getPieceAt
@@ -69,7 +69,7 @@ class Board
      * @param position The position to retrieve the piece.
      * @return The piece at the given position, or an empty optional.
      */
-    const std::optional<Piece> & getPieceAt(Position position) const;
+    const std::optional<Piece> & getPieceAt(const Position & position) const;
 
     /**
      * @brief isFree
@@ -79,7 +79,7 @@ class Board
      * @exception If the position is out bounds.
      * @return True if there is a piece.
      */
-    bool isFree(Position pos) const;
+    bool isFree(const Position & pos) const;
 
     /**
      * @brief isFree
@@ -88,7 +88,7 @@ class Board
      * @param pos The position to verify.
      * @return True if is inside of the board.
      */
-    bool isInside(Position pos) const;
+    bool isInside(const Position & pos) const;
 
     /**
      * @brief movePiece
@@ -100,7 +100,7 @@ class Board
      * @param endPos The end Position of the Piece.
      * @return 1 if the Piece was moved or a negative flag in case of error.
      */
-    int movePiece(Position startPos, Position endPos);
+    int movePiece(const Position & startPos, const Position & endPos);
 
 
     /**
@@ -110,7 +110,7 @@ class Board
      * @param team The player to verify.
      * @return True in case of anti game situation.
      */
-    bool checksAntiGame(Team team) const;
+    bool checksAntiGame(Team antiGameVictim) const;
 
     /**
      * @brief checksGameIsFinsh
@@ -119,7 +119,7 @@ class Board
      * @param team The current player to verify the anti game status.
      * @return True if the game is over.
      */
-    bool checksGameIsFinsh(Team * team) const;
+    bool checksGameIsFinsh(Team * winner) const;
 
     /**
      * @brief passBall
@@ -132,9 +132,11 @@ class Board
      * @param endPos The end position.
      * @return 1 if the ball has been passed or a negative flag if not.
      */
-    int passBall(Team team, Position startPos, Position endPos);
+    int passBall(Team team, const Position & startPos, const Position & endPos);
 
   private:
+
+    void createPieces();
 
     /**
      * @brief checkMove
@@ -145,7 +147,7 @@ class Board
      * @param endPos The end position.
      * @return True if it's allowed.
      */
-    int checkMove(Position startPos, Position endPos) const;
+    int checkMove(const Position & startPos, const Position & endPos) const;
 
     /**
      * @brief checkThrow
@@ -156,12 +158,30 @@ class Board
      * @param endPos The end position.
      * @return True if it's allowed.
      */
-    int checkThrow(Team color, Position startPos, Position endPos) const;
+    int checkThrow(Team team, const Position & startPos, const Position & endPos) const;
 
-    bool verifyLineAntiGame(Position currentPos, unsigned blockCount, Team team) const;
-    void countBlockedOpponents(unsigned & blockCount, Position curentPos,
-                               Team team) const;
-    bool checkLineBreak(Position curentPos, Team team) const;
+    bool verifyLineAntiGame(const Position & currentColumn, unsigned blockCount,
+                            Team antiGameVictim) const;
+
+    void countBlockedOpponents(unsigned & blockCount, const Position & curentColumn,
+                               Team antiGameVictim) const;
+
+    bool isBlockedByLine(const Position & position, Team antiGameVictim) const;
+
+    bool checkLineBreak(const Position & curentColumn, Team antiGameVictim) const;
+
+    bool hasDepassedLine(Position & currentLine, const Position & dir, Team antiGameVictim) const;
+
+    /**
+     * @brief achievedObjective
+     * Verifies if the given position inside the board, contains a piece
+     * who reached the objective with the ball.
+     *
+     * @param board The board of the game.
+     * @param position The given position.
+     * @return True if the board contains a piece who reached the objective.
+     */
+    bool achievedObjective(const Position & position) const;
 
 
 };

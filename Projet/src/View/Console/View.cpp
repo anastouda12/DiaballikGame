@@ -89,8 +89,12 @@ std::string View::askCommand()
 {
     std::string cmd;
     std::cout << "> Entrez une commande : " << std::endl;
-    std::cin >> cmd;
+    getline(std::cin, cmd);
     return cmd;
+}
+
+void View::update(const Observable *obj) {
+    //TODO
 }
 
 }// End namespace dblk

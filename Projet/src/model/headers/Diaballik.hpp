@@ -3,6 +3,7 @@
 
 #include "Board.hpp"
 #include "Team.hpp"
+#include "Observable.hpp"
 
 namespace dblk
 {
@@ -10,7 +11,7 @@ namespace dblk
 /**
  * @brief The Diabilik class
  */
-class Diaballik
+class Diaballik : public Observable
 {
 
   private:
@@ -56,7 +57,7 @@ class Diaballik
      * @param size The size of the Board.
      * @param variant Indicates if the variant rule is applied.
      */
-    Diaballik(unsigned size, bool variant);
+    Diaballik(size_t size, bool variant);
 
     /**
      * @brief getCurrentPlayer
@@ -68,7 +69,7 @@ class Diaballik
 
     const std::optional<Position> & getSelected() const;
 
-    const std::optional<Piece> & getPieceAt(Position position) const;
+    const std::optional<Piece> & getPieceAt(const Position & position) const;
 
     /**
      * @brief getMoveCount
@@ -103,7 +104,8 @@ class Diaballik
      * @return The number of steps to achieve the position, or -1 if the piece
      * has not been moved.
      */
-    int movePiece(Position pos);
+    int movePiece(const Position & pos);
+
 
     /**
      * @brief throwBall
@@ -112,7 +114,7 @@ class Diaballik
      * @param pos The position to pass the ball.
      * @return 1 if the ball has been passed, if not -1.
      */
-    int throwBall(Position pos);
+    int throwBall(const Position & pos);
 
     /**
      * @brief isOver
@@ -138,7 +140,7 @@ class Diaballik
      * @param pos The position to select the Piece.
      * @return 1 if a piece has been selected, -1 if not.
      */
-    int select(Position pos);
+    int select(const Position & pos);
 
     /**
      * @brief getSizeBoard
@@ -153,8 +155,10 @@ class Diaballik
      * @return the winner Diaballik
      */
     Team * getWinner() const;
-};
 
-}
+
+}; //End diaballik class
+
+} //End namespace dblk
 
 #endif //_DIABILIK_H

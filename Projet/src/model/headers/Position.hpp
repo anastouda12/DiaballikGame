@@ -101,6 +101,17 @@ class Position
 */
 std::ostream & operator<<(std::ostream & out, const Position & pos);
 
+
+/**
+ * @brief getDirection
+ * Returns a position representing the direction needed to achieve a piece
+ * if they're aligned. If they re not aligned it returns the (0, 0) Position.
+ *
+ * @param result The difference of the start position and the end position.
+ * @return The direction needed, or (0, 0) if they're not aligned.
+ */
+Position getDirection(Position result);
+
 }
 
 #endif //_POSITION_H

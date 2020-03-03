@@ -7,7 +7,7 @@ namespace dblk
 // **Piece Implementation*** //
 // ************************* //
 
-Piece::Piece(const Team & team, int objectiveRow): team_{team},
+Piece::Piece(const Team & team, size_t objectiveRow): team_{team},
     haveBall_{false}, objectiveRow_{objectiveRow}  {}
 
 
@@ -16,7 +16,7 @@ bool Piece::hasTheBall() const
     return this->haveBall_;
 }
 
-int Piece::getObjectiveRow() const
+size_t Piece::getObjectiveRow() const
 {
     return this->objectiveRow_;
 }
@@ -46,9 +46,12 @@ std::string Piece::to_string() const
     string str;
     str.append("(");
     str.push_back(dblk::to_string(this->team_)[0]);
-    if (haveBall_){
+    if (haveBall_)
+    {
         str.append("*");
-    }else{
+    }
+    else
+    {
         str.append(" ");
     }
     str.append(")");
