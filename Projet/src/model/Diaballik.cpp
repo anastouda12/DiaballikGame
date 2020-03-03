@@ -46,6 +46,7 @@ void Diaballik::passTurn()
     this->selected_.reset();
     this->moveCount_ = DEFAULT_MOVES;
     this->canThrowBall_ = true;
+    this->notifyObservers();
 }
 
 
@@ -60,7 +61,7 @@ int Diaballik::movePiece(const Position & pos)
     if (!this->selected_.has_value()) return -1; // select pos needed
 
     Position diff = pos - this->selected_.value();
-    unsigned steps = abs(diff.getRow()) + abs(
+    int steps = abs(diff.getRow()) + abs(
                          diff.getColumn());  // The number of moves done to achieve the final position
     if (steps > this->moveCount_) return -2;
 
@@ -69,6 +70,7 @@ int Diaballik::movePiece(const Position & pos)
     {
         this->moveCount_ -= steps;
         this->selected_.reset();
+        this->notifyObservers();
         return steps;
     }
     return flag;
@@ -86,6 +88,7 @@ int Diaballik::throwBall(const Position & pos)
     {
         this->canThrowBall_ = false;
         this->selected_.reset();
+        this->notifyObservers();
         return 1;
     }
     return flag;
@@ -109,6 +112,7 @@ int Diaballik::select(const Position & pos)
     if (this->board_.getPieceAt(pos)->getTeam() != this->currentPlayer_) return -3; //Opponent Piece
 
     this->selected_ = pos;
+    this->notifyObservers();
     return 1;
 }
 

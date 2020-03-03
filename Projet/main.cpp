@@ -85,8 +85,6 @@ int main()
         }
     }
 
-    cout << "\033[31m";
-
     dblk::Diaballik dblke(7, false);
     dblk::View vd(&dblke);
     vd.displayWelcomeMessage();

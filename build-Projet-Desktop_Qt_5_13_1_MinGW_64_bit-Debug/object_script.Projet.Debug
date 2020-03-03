@@ -1,0 +1,11 @@
+debug/main.o
+debug/MoveEvent.o
+debug/PassEvent.o
+debug/SelectEvent.o
+debug/Board.o
+debug/Diaballik.o
+debug/Observable.o
+debug/Position.o
+debug/Piece.o
+debug/Team.o
+debug/View.o

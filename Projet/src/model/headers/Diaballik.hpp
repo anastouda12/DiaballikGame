@@ -3,6 +3,7 @@
 
 #include "Board.hpp"
 #include "Team.hpp"
+#include "Observable.hpp"
 
 namespace dblk
 {
@@ -10,7 +11,7 @@ namespace dblk
 /**
  * @brief The Diabilik class
  */
-class Diaballik
+class Diaballik : public Observable
 {
 
   private:

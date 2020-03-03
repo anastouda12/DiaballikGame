@@ -3,11 +3,12 @@
 
 #include <iostream>
 #include "src/model/headers/Diaballik.hpp"
+#include "../../headers/Observer.hpp"
 
 namespace dblk
 {
 
-class View{
+class View : public Observer {
 
 private:
 
@@ -75,7 +76,7 @@ public:
      */
     std::string askCommand();
 
-
+    void update(const Observable *obj) override;
 };
 
 } // End namespace dblk

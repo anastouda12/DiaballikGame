@@ -6,7 +6,6 @@
 namespace dblk
 {
 
-
 class MoveEvent : public DiaballikEvent
 {
   private:
