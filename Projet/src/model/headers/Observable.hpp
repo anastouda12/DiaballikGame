@@ -1,7 +1,7 @@
 #ifndef OBSERVABLE_H
 #define OBSERVABLE_H
 #include <set>
-#include "../../View/headers/Observer.hpp"
+#include "../../view/headers/Observer.hpp"
 
 namespace dblk {
 

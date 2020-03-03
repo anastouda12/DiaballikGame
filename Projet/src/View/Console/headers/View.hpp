@@ -4,6 +4,7 @@
 #include <iostream>
 #include "src/model/headers/Diaballik.hpp"
 #include "../../headers/Observer.hpp"
+#include "../../headers/ErrorMessages.hpp"
 
 namespace dblk
 {
@@ -56,9 +57,10 @@ public:
     /**
      * @brief displayError
      * Display an error message
-     * @param errorMsg error message to display
+     * @param flagError flag of the error
+     * @param typeError integer that represent the type error occured (select(1), move(2), pass(3))
      */
-    void displayError(std::string errorMsg);
+    void displayError(int typeError,int flagError);
 
 
     /**

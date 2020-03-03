@@ -21,6 +21,7 @@ QMAKE_CXXFLAGS += -pedantic-errors -std=c++17
 
 
 HEADERS += \
+    src/View/headers/ErrorMessages.hpp \
     src/View/headers/Observer.hpp \
     src/controller/headers/DiaballikEvent.hpp \
     src/controller/headers/MoveEvent.hpp \

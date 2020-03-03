@@ -1,6 +1,5 @@
 #include "headers/View.hpp"
 
-
 namespace dblk
 {
 
@@ -79,9 +78,13 @@ void View::displayWinner(const Team * winner)
     }
 }
 
-void View::displayError(std::string errorMsg)
+void View::displayError(int typeError, int flagError)
 {
-    std::cout << "> Erreur : " << errorMsg << std::endl;
+    unsigned messagePos = static_cast<unsigned>(abs(flagError));
+    std::cout << "Erreur : ";
+    if(typeError == dblk::ERROR_MOVE) std::cout << dblk::errorMessagesMove.at(messagePos) << std::endl;
+    if(typeError == dblk::ERROR_SELECT) std::cout << dblk::errorMessageSelect.at(messagePos) << std::endl;
+    if(typeError == dblk::ERROR_THROW) std::cout << dblk::errorMessageThrow.at(messagePos) << std::endl;
 }
 
 
@@ -94,7 +97,10 @@ std::string View::askCommand()
 }
 
 void View::update(const Observable *obj) {
-    //TODO
+    const Diaballik & diaballik = static_cast<const Diaballik&>(*obj);
+    displayBoard(diaballik);
+    displayCurrentPlayer(diaballik.getCurrentPlayer());
+    displayCounters(diaballik.getMoveCount(), diaballik.canPass());
 }
 
 }// End namespace dblk
