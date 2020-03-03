@@ -9,17 +9,9 @@ namespace dblk
 
 class View{
 
-private:
-
-    /**
-     * @brief diaballik
-     * The game diaballik
-     */
-    const Diaballik * diaballik_;
-
 public:
 
-    explicit View(const Diaballik * diaballik);
+    explicit View();
 
     /**
      * @brief displayWelcomeMessage
@@ -31,7 +23,7 @@ public:
      * @brief displayBoard
      * Displays the boards of the Diaballik game
      */
-    void displayBoard();
+    void displayBoard(const Diaballik & game);
 
     /**
      * @brief displayHelp
@@ -43,7 +35,7 @@ public:
      * @brief displayCurrentPlayer
      * Displays the current player of a game of Diaballik
      */
-    void displayCurrentPlayer();
+    void displayCurrentPlayer(const Team & team);
 
     /**
      * @brief displayCounters
@@ -51,14 +43,14 @@ public:
      * Counter of movements available
      * And possibility to pass the ball
      */
-    void displayCounters();
+    void displayCounters(unsigned moveCounter, bool canPass);
 
 
     /**
      * @brief displayWinner
      * Displays the winner of the game Diaballik
      */
-    void displayWinner();
+    void displayWinner(const Team * team);
 
     /**
      * @brief displayError

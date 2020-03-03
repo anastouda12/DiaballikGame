@@ -12,12 +12,13 @@ int main()
 {
 
    dblk::Diaballik dblke(7,false);
-   dblk::View vd(&dblke);
+   dblk::View vd;
    vd.displayWelcomeMessage();
-   vd.displayBoard();
-   vd.displayCurrentPlayer();
-   vd.displayCounters();
-   vd.displayWinner();
+
+   vd.displayBoard(dblke);
+   vd.displayCurrentPlayer(dblke.getCurrentPlayer());
+   vd.displayCounters(dblke.getMoveCount(), dblke.canPass());
+   vd.displayWinner(dblke.getWinner());
    vd.displayHelp();
     return 0;
 }
