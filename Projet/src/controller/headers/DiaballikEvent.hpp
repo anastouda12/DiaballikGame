@@ -1,7 +1,5 @@
 #ifndef DIABALLIKEVENT_H
 #define DIABALLIKEVENT_H
-#include <iostream>
-
 
 namespace dblk
 {

@@ -28,7 +28,7 @@ class Diaballik : public Observable
     Team currentPlayer_;
 
 
-    Team * winner_;
+    std::optional<Team> winner_;
 
     /**
      * @brief selected
@@ -68,8 +68,6 @@ class Diaballik : public Observable
     const Team & getCurrentPlayer() const;
 
     const std::optional<Position> & getSelected() const;
-
-    const std::optional<Piece> & getPieceAt(const Position & position) const;
 
     /**
      * @brief getMoveCount
@@ -143,18 +141,18 @@ class Diaballik : public Observable
     int select(const Position & pos);
 
     /**
-     * @brief getSizeBoard
+     * @brief getBoard
      * Gives the size of the board of the game Diaballik
      * @return the size of the board
      */
-    unsigned getSizeBoard() const;
+    const Board & getBoard() const;
 
     /**
      * @brief getWinner
      * Gives the winner of the game diaballik
      * @return the winner Diaballik
      */
-    Team * getWinner() const;
+    std::optional<Team> getWinner() const;
 
 
 }; //End diaballik class

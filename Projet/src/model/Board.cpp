@@ -34,7 +34,8 @@ size_t Board::getSize() const
 
 const std::optional<Piece> & Board::getPieceAt(const Position & position) const
 {
-    return this->pieces_[position.getRow()][position.getColumn()];
+    if (!this->isInside(position)) throw std::invalid_argument("Position hors du plateau!");
+    else return this->pieces_[position.getRow()][position.getColumn()];
 }
 
 
@@ -56,7 +57,7 @@ int Board::movePiece(const Position & startPos, const Position & endPos)
     int flag{this->checkMove(startPos, endPos)};
     if (flag > 0)
     {
-        pieces_[startPos.getRow()][endPos.getColumn()].swap(pieces_[endPos.getRow()][endPos.getColumn()]);
+        pieces_[startPos.getRow()][startPos.getColumn()].swap(pieces_[endPos.getRow()][endPos.getColumn()]);
     }
     return flag;
 }
@@ -77,19 +78,19 @@ bool Board::checksAntiGame(Team antiGameVictim) const
 }
 
 
-bool Board::checksGameIsFinsh(Team * winner) const
+bool Board::checksGameIsFinsh(std::optional<Team> & winner) const
 {
     for (unsigned i{0}; i < size_; i++)
     {
         Position top(0, i), bottom(size_ - 1, i);
         if (this->achievedObjective(bottom))
         {
-            *winner = this->getPieceAt(bottom)->getTeam();
+            winner = this->getPieceAt(bottom)->getTeam();
             return true;
         }
         else if (this->achievedObjective(top))
         {
-            *winner = this->getPieceAt(top)->getTeam();
+            winner = this->getPieceAt(top)->getTeam();
             return true;
         }
     }

@@ -1,42 +1,44 @@
-#ifndef VIEW_HPP
-#define VIEW_HPP
+#ifndef VIEWCONSOLE_HPP
+#define VIEWCONSOLE_HPP
 
 #include <iostream>
 #include "src/model/headers/Diaballik.hpp"
-#include "../../headers/Observer.hpp"
+#include "src/View/headers/View.hpp"
+
 
 namespace dblk
 {
 
-class View : public Observer {
+class ViewConsole : public View
+{
 
-public:
+  public:
 
-    explicit View();
+    ViewConsole() = default;
 
     /**
      * @brief displayWelcomeMessage
      * Displays a welcome message to the players
      */
-    void displayWelcomeMessage();
+    virtual void displayWelcomeMessage() override;
 
     /**
      * @brief displayBoard
      * Displays the boards of the Diaballik game
      */
-    void displayBoard(const Diaballik & game);
+    virtual void displayBoard(const Board & board, const std::optional<Position> selected) override;
 
     /**
      * @brief displayHelp
      * Displays the Help
      */
-    void displayHelp();
+    virtual void displayHelp() override;
 
     /**
      * @brief displayCurrentPlayer
      * Displays the current player of a game of Diaballik
      */
-    void displayCurrentPlayer(const Team & team);
+    virtual void displayCurrentPlayer(const Team & team) override;
 
     /**
      * @brief displayCounters
@@ -44,21 +46,23 @@ public:
      * Counter of movements available
      * And possibility to pass the ball
      */
-    void displayCounters(unsigned moveCounter, bool canPass);
+    virtual void displayCounters(unsigned moveCounter, bool canPass) override;
 
 
     /**
      * @brief displayWinner
      * Displays the winner of the game Diaballik
      */
-    void displayWinner(const Team * team);
+    virtual void displayWinner(const Team * team) override;
 
     /**
      * @brief displayError
      * Display an error message
      * @param errorMsg error message to display
      */
-    void displayError(std::string errorMsg);
+    virtual void displayError(std::string errorMsg) override;
+
+    virtual void displayGoodByeMessage() override;
 
 
     /**
@@ -68,9 +72,10 @@ public:
      */
     std::string askCommand();
 
-    void update(const Observable *obj) override;
+    virtual void update(const Observable * obj) override;
+
 };
 
 } // End namespace dblk
 
-#endif // VIEW_HPP
+#endif // VIEWCONSOLE_HPP

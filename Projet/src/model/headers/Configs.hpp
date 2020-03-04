@@ -1,5 +1,6 @@
 #ifndef _CONFIGS_H
 #define _CONFIGS_H
+
 #include <stddef.h>
 
 namespace dblk
