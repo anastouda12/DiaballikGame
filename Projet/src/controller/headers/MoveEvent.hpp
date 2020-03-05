@@ -1,7 +1,8 @@
 #ifndef MOVEEVENT_HPP
 #define MOVEEVENT_HPP
+
 #include "DiaballikEvent.hpp"
-#include "../../model/headers/Diaballik.hpp"
+#include "src/model/headers/Diaballik.hpp"
 
 namespace dblk
 {

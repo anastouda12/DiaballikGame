@@ -89,6 +89,8 @@ class Position
      */
     bool operator!=(const Position & otherPos) const;
 
+    bool operator==(const Position & otherPos) const;
+
 };
 
 /**

@@ -50,6 +50,11 @@ bool Position::operator!=(const Position & otherPos) const
     return this->row_ != otherPos.row_ || this->column_ != otherPos.column_;
 }
 
+bool Position::operator==(const Position & otherPos) const
+{
+    return this->row_ == otherPos.row_ && this->column_ == otherPos.column_;
+}
+
 
 
 // Nom member methods.

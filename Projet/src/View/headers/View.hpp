@@ -3,41 +3,40 @@
 
 #include <iostream>
 #include "src/model/headers/Diaballik.hpp"
-#include "../../headers/Observer.hpp"
-#include "../../headers/ErrorMessages.hpp"
+#include "src/View/headers/ErrorMessages.hpp"
+#include "src/View/headers/Observer.hpp"
 
 namespace dblk
 {
 
-class View : public Observer {
+class View: public Observer
+{
 
-public:
-
-    explicit View();
+  public:
 
     /**
      * @brief displayWelcomeMessage
      * Displays a welcome message to the players
      */
-    void displayWelcomeMessage();
+    virtual void displayWelcomeMessage() = 0;
 
     /**
      * @brief displayBoard
      * Displays the boards of the Diaballik game
      */
-    void displayBoard(const Diaballik & game);
+    virtual void displayBoard(const Board & board, const std::optional<Position>) = 0;
 
     /**
      * @brief displayHelp
      * Displays the Help
      */
-    void displayHelp();
+    virtual void displayHelp() = 0;
 
     /**
      * @brief displayCurrentPlayer
      * Displays the current player of a game of Diaballik
      */
-    void displayCurrentPlayer(const Team & team);
+    virtual void displayCurrentPlayer(const Team & team) = 0;
 
     /**
      * @brief displayCounters
@@ -45,14 +44,14 @@ public:
      * Counter of movements available
      * And possibility to pass the ball
      */
-    void displayCounters(unsigned moveCounter, bool canPass);
+    virtual void displayCounters(unsigned moveCounter, bool canPass) = 0;
 
 
     /**
      * @brief displayWinner
      * Displays the winner of the game Diaballik
      */
-    void displayWinner(const Team * team);
+    virtual void displayWinner(const Team * team) = 0;
 
     /**
      * @brief displayError
@@ -60,19 +59,13 @@ public:
      * @param flagError flag of the error
      * @param typeError integer that represent the type error occured (select(1), move(2), pass(3))
      */
-    void displayError(int typeError,int flagError);
+    virtual void displayError(int typeError,int flagError) = 0;
 
+    virtual void displayGoodByeMessage() = 0;
 
-    /**
-     * @brief askCommand
-     * Keyboard reading
-     * @return the command executed by the user
-     */
-    std::string askCommand();
-
-    void update(const Observable *obj) override;
-};
+}; //End class View
 
 } // End namespace dblk
+
 
 #endif // VIEW_HPP

@@ -11,7 +11,7 @@ namespace dblk
 
 
 Diaballik::Diaballik(size_t size, bool variant):
-    board_{size}, currentPlayer_{Team::NORTH}, winner_{nullptr}, selected_{}, moveCount_{DEFAULT_MOVES},
+    board_{size}, currentPlayer_{Team::NORTH}, winner_{}, selected_{}, moveCount_{DEFAULT_MOVES},
     canThrowBall_{true}
 {
     board_.init(variant);
@@ -32,10 +32,9 @@ const std::optional<Position> & Diaballik::getSelected() const
     return this->selected_;
 }
 
-const std::optional<Piece> & Diaballik::getPieceAt(const Position & position) const
+const Board & Diaballik::getBoard() const
 {
-    if (!this->board_.isInside(position)) throw std::invalid_argument("Out bounds!");
-    else return this->board_.getPieceAt(position);
+    return this->board_;
 }
 
 
@@ -62,7 +61,7 @@ int Diaballik::movePiece(const Position & pos)
 
     Position diff = pos - this->selected_.value();
     int steps = abs(diff.getRow()) + abs(
-                         diff.getColumn());  // The number of moves done to achieve the final position
+                    diff.getColumn());  // The number of moves done to achieve the final position
     if (steps > this->moveCount_) return -2;
 
     int flag = this->board_.movePiece(this->selected_.value(), pos);
@@ -116,12 +115,8 @@ int Diaballik::select(const Position & pos)
     return 1;
 }
 
-unsigned Diaballik::getSizeBoard() const
-{
-    return this->board_.getSize();
-}
 
-Team * Diaballik::getWinner() const
+std::optional<Team> Diaballik::getWinner() const
 {
     return this->winner_;
 }

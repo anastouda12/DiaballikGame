@@ -1,7 +1,8 @@
 #ifndef SELECTEVENT_HPP
 #define SELECTEVENT_HPP
+
 #include "DiaballikEvent.hpp"
-#include "../../model/headers/Diaballik.hpp"
+#include "src/model/headers/Diaballik.hpp"
 
 namespace dblk
 {

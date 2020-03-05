@@ -119,7 +119,7 @@ class Board
      * @param team The current player to verify the anti game status.
      * @return True if the game is over.
      */
-    bool checksGameIsFinsh(Team * winner) const;
+    bool checksGameIsFinsh(std::optional<Team> & winner) const;
 
     /**
      * @brief passBall
