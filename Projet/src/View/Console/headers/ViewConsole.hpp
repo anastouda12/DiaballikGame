@@ -61,7 +61,18 @@ class ViewConsole : public View
      */
     virtual void displayError(int typeError,int flagError) override;
 
+    /**
+     * @brief displayGoodByeMessage
+     * Display farewell message
+     */
     virtual void displayGoodByeMessage() override;
+
+    /**
+     * @brief displaySelected
+     * Display if there is a Piece inside the position selected
+     * @param piece The optional piece selected
+     */
+    virtual void displaySelected(const std::optional<Piece> piece) override;
 
 
     /**

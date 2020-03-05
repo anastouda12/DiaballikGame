@@ -61,7 +61,18 @@ class View: public Observer
      */
     virtual void displayError(int typeError,int flagError) = 0;
 
+    /**
+     * @brief displayGoodByeMessage
+     * Display farewell message
+     */
     virtual void displayGoodByeMessage() = 0;
+
+    /**
+     * @brief displaySelected
+     * Display if there is a Piece inside the position selected
+     * @param piece The optional piece selected
+     */
+    virtual void displaySelected(const std::optional<Piece> piece) = 0;
 
 }; //End class View
 

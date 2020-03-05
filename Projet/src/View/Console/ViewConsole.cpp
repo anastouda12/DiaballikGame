@@ -119,6 +119,16 @@ void ViewConsole::displayGoodByeMessage()
     std::cout << "Bye, on espére te revoir bientôt !" << std::endl;
 }
 
+void ViewConsole::displaySelected(const std::optional<Piece> piece)
+{
+    if(piece.has_value()){
+        std::string ball = (piece.value().hasTheBall()) ? "*" : " ";
+        std::cout << "Piéce sélectionnée : " << "("<< dblk::to_string(piece.value().getTeam())[0] << ball <<")" << std::endl;
+    }else{
+        std::cout << "Aucune piéce sélectionnée" << std::endl;
+    }
+}
+
 void ViewConsole::update(const Observable * obj)
 {
     const Diaballik & diaballik = static_cast<const Diaballik&>(*obj);

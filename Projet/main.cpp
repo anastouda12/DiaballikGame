@@ -18,22 +18,24 @@ using namespace dblk;
 int main()
 {
     Diaballik game(9, true);
-    ViewConsole view;
-    DiaballikEventFactory evnFactory{game, view};
-    while (true)
-        try
-        {
-            DiaballikEvent * evn{ evnFactory.generateEvent(view.askCommand())};
-            evn->execute();
-            delete evn;
-        }
-        catch (invalid_argument ex)
-        {
-            cout << endl << ex.what() << endl;
-        }
-        catch (runtime_error ex)
-        {
-            cout << ex.what() << endl;
-        }
+        ViewConsole view;
+        game.registerObserver(static_cast<Observer *>(&view));
+        DiaballikEventFactory evnFactory{game, view};
+        while (true)
+            try
+            {
+                DiaballikEvent * evn{ evnFactory.generateEvent(view.askCommand())};
+                evn->execute();
+                delete evn;
+            }
+            catch (invalid_argument ex)
+            {
+                cout << endl << ex.what() << endl;
+            }
+            catch (runtime_error ex)
+            {
+                cout << ex.what() << endl;
+            }
+
 }
 
