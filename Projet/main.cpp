@@ -19,6 +19,8 @@ int main()
 {
     Diaballik game(9, true);
         ViewConsole view;
+        view.displayWelcomeMessage();
+        view.update(&game);
         game.registerObserver(static_cast<Observer *>(&view));
         DiaballikEventFactory evnFactory{game, view};
         while (true)

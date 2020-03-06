@@ -133,9 +133,12 @@ void ViewConsole::update(const Observable * obj)
 {
     const Diaballik & diaballik = static_cast<const Diaballik&>(*obj);
     const std::optional<Position> select = diaballik.getSelected();
+    std::optional<Piece> pieceSelect;
+    if(select.has_value()) pieceSelect = diaballik.getBoard().getPieceAt(select.value());
     displayBoard(diaballik.getBoard(),select);
     displayCurrentPlayer(diaballik.getCurrentPlayer());
     displayCounters(diaballik.getMoveCount(), diaballik.canPass());
+    displaySelected(pieceSelect);
 }
 
 }// End namespace dblk
