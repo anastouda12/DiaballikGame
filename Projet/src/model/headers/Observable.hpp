@@ -1,24 +1,27 @@
 #ifndef OBSERVABLE_H
 #define OBSERVABLE_H
+
 #include <set>
-#include "../../View/headers/Observer.hpp"
+#include "src/View/headers/Observer.hpp"
 
-namespace dblk {
+namespace dblk
+{
 
 
-class Observable {
+class Observable
+{
 
-private:
+  private:
     std::set<Observer *> observers_;
 
-public:
-   Observable();
+  public:
+    Observable();
 
-   void registerObserver(Observer * observer);
+    void registerObserver(Observer * observer);
 
-   void deleteObserver(Observer * observer);
+    void deleteObserver(Observer * observer);
 
-   void notifyObservers();
+    void notifyObservers();
 };
 
 }

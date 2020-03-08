@@ -8,6 +8,8 @@ class DiaballikEvent
 {
   public:
     virtual void execute() = 0;
+
+    virtual ~DiaballikEvent() = default;
 };
 
 }

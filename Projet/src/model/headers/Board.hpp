@@ -1,11 +1,12 @@
 #ifndef _BOARD_H
 #define _BOARD_H
 
+#include <vector>
+#include <optional>
+
 #include "Piece.hpp"
 #include "Position.hpp"
 #include "Team.hpp"
-#include <vector>
-#include <optional>
 
 namespace dblk
 {
