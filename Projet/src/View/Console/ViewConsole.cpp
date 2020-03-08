@@ -98,9 +98,11 @@ void ViewConsole::displayError(int typeError, int flagError)
 {
     unsigned messagePos = static_cast<unsigned>(abs(flagError));
     std::cout << "Erreur : ";
-    if(typeError == dblk::ERROR_MOVE) std::cout << dblk::errorMessagesMove.at(messagePos) << std::endl;
-    else if(typeError == dblk::ERROR_SELECT) std::cout << dblk::errorMessageSelect.at(messagePos) << std::endl;
-    else if(typeError == dblk::ERROR_THROW) std::cout << dblk::errorMessageThrow.at(messagePos) << std::endl;
+    if (typeError == dblk::ERROR_MOVE) std::cout << dblk::errorMessagesMove.at(messagePos) << std::endl;
+    else if (typeError == dblk::ERROR_SELECT) std::cout << dblk::errorMessageSelect.at(
+                    messagePos) << std::endl;
+    else if (typeError == dblk::ERROR_THROW) std::cout << dblk::errorMessageThrow.at(
+                    messagePos) << std::endl;
     else std::cout << "type d'erreur inconnue" << std::endl;
 
 }
@@ -116,26 +118,30 @@ std::string ViewConsole::askCommand()
 
 void ViewConsole::displayGoodByeMessage()
 {
-    std::cout << "Bye, on espére te revoir bientôt !" << std::endl;
+    std::cout << "Bye, on espére te revoir bientot !" << std::endl;
 }
 
 void ViewConsole::displaySelected(const std::optional<Piece> piece)
 {
-    if(piece.has_value()){
+    if (piece.has_value())
+    {
         std::string ball = (piece.value().hasTheBall()) ? "*" : " ";
-        std::cout << "Piéce sélectionnée : " << "("<< dblk::to_string(piece.value().getTeam())[0] << ball <<")" << std::endl;
-    }else{
-        std::cout << "Aucune piéce sélectionnée" << std::endl;
+        std::cout << "Piéce selectionnee : " << "(" << dblk::to_string(piece.value().getTeam())[0] <<
+                  ball << ")" << std::endl;
+    }
+    else
+    {
+        std::cout << "Aucune piece selectionnee" << std::endl;
     }
 }
 
 void ViewConsole::update(const Observable * obj)
 {
-    const Diaballik & diaballik = static_cast<const Diaballik&>(*obj);
+    const Diaballik & diaballik = static_cast<const Diaballik &>(*obj);
     const std::optional<Position> select = diaballik.getSelected();
     std::optional<Piece> pieceSelect;
-    if(select.has_value()) pieceSelect = diaballik.getBoard().getPieceAt(select.value());
-    displayBoard(diaballik.getBoard(),select);
+    if (select.has_value()) pieceSelect = diaballik.getBoard().getPieceAt(select.value());
+    displayBoard(diaballik.getBoard(), select);
     displayCurrentPlayer(diaballik.getCurrentPlayer());
     displayCounters(diaballik.getMoveCount(), diaballik.canPass());
     displaySelected(pieceSelect);

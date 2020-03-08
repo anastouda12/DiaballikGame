@@ -1,14 +1,15 @@
 #ifndef OBSERVER_HPP
 #define OBSERVER_HPP
 
-namespace dblk {
+namespace dblk
+{
 
 class Observable;
 
 
 class Observer
 {
-public:
+  public:
 
     Observer(const Observer &) = default;
 
@@ -22,10 +23,10 @@ public:
 
     virtual ~Observer() = default;
 
-protected:
-        Observer() = default;
+  protected:
+    Observer() = default;
 };
 
-}
+} // End namespace dblk
 
 #endif // OBSERVER_HPP

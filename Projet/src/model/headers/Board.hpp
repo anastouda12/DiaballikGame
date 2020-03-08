@@ -166,11 +166,12 @@ class Board
     void countBlockedOpponents(unsigned & blockCount, const Position & curentColumn,
                                Team antiGameVictim) const;
 
-    bool isBlockedByLine(const Position & position, Team antiGameVictim) const;
+    bool isBlockedByLine(const Position & position, Team antiGameVictim, int objectiveRow) const;
 
     bool checkLineBreak(const Position & curentColumn, Team antiGameVictim) const;
 
-    bool hasDepassedLine(Position & currentLine, const Position & dir, Team antiGameVictim) const;
+    bool hasDepassedLine(Position & currentLine, const Position & dir, Team antiGameVictim,
+                         int objectiveRow) const;
 
     /**
      * @brief achievedObjective

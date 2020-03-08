@@ -117,10 +117,10 @@ void Board::createPieces()
 {
     for (unsigned j{0}; j < size_; j++)
     {
-        this->pieces_[0][j] = Piece(NORTH, size_ - 1);
+        this->pieces_[5][j] = Piece(NORTH, size_ - 1);
         this->pieces_[size_ - 1][j] = Piece(SOUTH, 0);
     }
-    this->pieces_[0][size_ / 2]->givesTheBall();
+    this->pieces_[5][size_ / 2]->givesTheBall();
     this->pieces_[size_ - 1][size_ / 2]->givesTheBall();
 }
 
@@ -232,29 +232,29 @@ void Board::countBlockedOpponents(unsigned & blockCount, const Position & curren
 {
     Position top{currentColumn.getRow() - 1, currentColumn.getColumn()},
              bottom{currentColumn.getRow() + 1, currentColumn.getColumn()};
-    if (isBlockedByLine(top, team))
+    if (isBlockedByLine(top, team, size_ - 1))
     {
         blockCount++;
     }
-    if (isBlockedByLine(bottom, team))
+    if (isBlockedByLine(bottom, team, 0))
     {
         blockCount++;
     }
 }
 
-bool Board::isBlockedByLine(const Position & position, Team antiGameVictim) const
+bool Board::isBlockedByLine(const Position & position, Team antiGameVictim, int objectiveRow) const
 {
     return isInside(position) && !isFree(position)
            && getPieceAt(position)->getTeam() == antiGameVictim
-           && getPieceAt(position)->getObjectiveRow() == getSize() - 1;
+           && getPieceAt(position)->getObjectiveRow() == objectiveRow;
 }
 
 bool Board::checkLineBreak(const Position & curentColumn, Team antiGameVitim) const
 {
     Position up{1, 0}, down{-1, 0};
     Position top{curentColumn + up}, bottom{curentColumn + down};
-    if (this->hasDepassedLine(top, up, antiGameVitim)
-            || this->hasDepassedLine(bottom, down, antiGameVitim))
+    if (this->hasDepassedLine(top, up, antiGameVitim, 0)
+            || this->hasDepassedLine(bottom, down, antiGameVitim, size_ - 1))
     {
         return true;
     }
@@ -262,12 +262,12 @@ bool Board::checkLineBreak(const Position & curentColumn, Team antiGameVitim) co
 }
 
 bool Board::hasDepassedLine(Position & currentLine, const Position & dir,
-                            Team antiGameVictim) const
+                            Team antiGameVictim, int objectiveRow) const
 {
     while (isInside(currentLine))
     {
         if (!isFree(currentLine) && getPieceAt(currentLine)->getTeam() == antiGameVictim
-                &&  getPieceAt(currentLine)->getObjectiveRow() == getSize() - 1)
+                &&  getPieceAt(currentLine)->getObjectiveRow() == objectiveRow)
         {
             return true;
         }

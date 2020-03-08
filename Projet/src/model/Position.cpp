@@ -81,7 +81,7 @@ Position getDirection(Position result)
         else return Position(1, 0);
     }
     //Diagonal alignement
-    else if (result.getRow() == result.getColumn())
+    else if (std::abs(result.getRow()) == std::abs(result.getColumn()))
     {
         if (result.getRow() < 0 && result.getColumn() < 0) return Position(1, 1);
         else if (result.getRow() < 0 && result.getColumn() > 0) return Position(1, -1);
