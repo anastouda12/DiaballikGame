@@ -27,29 +27,37 @@ void ViewConsole::displayBoard(const Board & board, const std::optional<Position
     std::cout << std::endl;
 
     // Display the board
-    for (int i = 0; i < static_cast<int>(board.getSize()); i++)
+    for (int i = 0; i < board.getSize(); i++)
     {
         std::cout << " " << i << "  ";
-        for (int j = 0; j < static_cast<int>(board.getSize()); j++)
+        for (int j = 0; j < board.getSize(); j++)
         {
             Position currentPos{i, j};
-            if (board.getPieceAt(currentPos).has_value())
+            try
             {
-                if (selected.has_value() && selected.value() == currentPos)
+                if (board.getPieceAt(currentPos).has_value())
                 {
-                    std::string selectString = board.getPieceAt(currentPos)->to_string();
-                    selectString.at(0) = '|';
-                    selectString.at(selectString.size() - 1) = '|';
-                    std::cout << selectString;
+                    if (selected.has_value() && selected.value() == currentPos)
+                    {
+                        std::string selectString = board.getPieceAt(currentPos)->to_string();
+                        selectString.at(0) = '|';
+                        selectString.at(selectString.size() - 1) = '|';
+                        std::cout << selectString;
+                    }
+                    else
+                    {
+                        std::cout << board.getPieceAt(currentPos).value();
+                    }
                 }
                 else
                 {
-                    std::cout << board.getPieceAt(currentPos).value();
+                    std::cout << "(  )";
                 }
+
             }
-            else
+            catch (std::invalid_argument ex)
             {
-                std::cout << "(  )";
+                std::cout << "error: " << ex.what() << std::endl;
             }
         }
         std::cout << std::endl;
@@ -82,15 +90,15 @@ void ViewConsole::displayCounters(unsigned moveCounter, bool canPass)
     std::cout << " and " << canPass << " throw" << std::endl;
 }
 
-void ViewConsole::displayWinner(const Team * winner)
+void ViewConsole::displayWinner(const std::optional<Team> & winner)
 {
-    if (winner == nullptr)
+    if (!winner.has_value())
     {
         std::cout << "No winner yet !" << std::endl;
     }
     else
     {
-        std::cout << "The winner is the team : " << winner << std::endl;
+        std::cout << "The winner is the team : " << *winner << std::endl;
     }
 }
 

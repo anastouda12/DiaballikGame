@@ -48,7 +48,7 @@ bool Board::isFree(const Position & position) const
 bool Board::isInside(const Position & position) const
 {
     return position.getRow() >= 0 && position.getRow() < static_cast<int>(size_) &&
-           position.getColumn() >= 0 && position.getRow() < static_cast<int>(size_);
+           position.getColumn() >= 0 && position.getColumn() < static_cast<int>(size_);
 }
 
 
@@ -117,10 +117,10 @@ void Board::createPieces()
 {
     for (unsigned j{0}; j < size_; j++)
     {
-        this->pieces_[5][j] = Piece(NORTH, size_ - 1);
+        this->pieces_[0][j] = Piece(NORTH, size_ - 1);
         this->pieces_[size_ - 1][j] = Piece(SOUTH, 0);
     }
-    this->pieces_[5][size_ / 2]->givesTheBall();
+    this->pieces_[0][size_ / 2]->givesTheBall();
     this->pieces_[size_ - 1][size_ / 2]->givesTheBall();
 }
 

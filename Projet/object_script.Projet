@@ -1,4 +1,5 @@
 main.o
+Controller.o
 EventFactory.o
 ExitEvent.o
 HelpEvent.o

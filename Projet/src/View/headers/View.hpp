@@ -51,7 +51,7 @@ class View: public Observer
      * @brief displayWinner
      * Displays the winner of the game Diaballik
      */
-    virtual void displayWinner(const Team * team) = 0;
+    virtual void displayWinner(const std::optional<Team> & team) = 0;
 
     /**
      * @brief displayError
@@ -59,7 +59,7 @@ class View: public Observer
      * @param flagError flag of the error
      * @param typeError integer that represent the type error occured (select(1), move(2), pass(3))
      */
-    virtual void displayError(int typeError,int flagError) = 0;
+    virtual void displayError(int typeError, int flagError) = 0;
 
     /**
      * @brief displayGoodByeMessage
@@ -73,6 +73,13 @@ class View: public Observer
      * @param piece The optional piece selected
      */
     virtual void displaySelected(const std::optional<Piece> piece) = 0;
+
+    /**
+     * @brief askCommand
+     * Keyboard reading
+     * @return the command executed by the user
+     */
+    virtual std::string askCommand() = 0;
 
 }; //End class View
 
