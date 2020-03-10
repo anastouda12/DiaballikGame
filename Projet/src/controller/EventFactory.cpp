@@ -13,6 +13,8 @@ namespace dblk
 
 std::vector<std::string> split(std::string s, std::string del);
 void toLowerCase(std::string & s);
+int parseInt(std::string nb);
+
 
 //DiaballikEventFactory Implementation
 
@@ -24,27 +26,27 @@ DiaballikEvent * DiaballikEventFactory::generateEvent(std::string input)
     std::vector<std::string> parser{split(input, std::string(" "))};
     if (parser.empty())
     {
-        throw std::runtime_error("Pas de commande!");
+        throw std::runtime_error("No command was given");
     }
     else
     {
         if (parser[0] == "move" || parser[0] == "play")
         {
-            if (parser.size() < 3) throw std::invalid_argument("Pas assez d'arguments");
-            else return new MoveEvent(model_, Position(stoi(parser[1]), stoi(parser[2])));
+            if (parser.size() < 3) throw std::invalid_argument("Not enought arguments for play command");
+            else return new MoveEvent(model_, view_, Position(parseInt(parser[1]), parseInt(parser[2])));
         }
         else if (parser[0] == "select")
         {
-            if (parser.size() < 3) throw std::invalid_argument("Pas assez d'arguments");
-            else return new SelectEvent(model_, Position(stoi(parser[1]), stoi(parser[2])));
+            if (parser.size() < 3) throw std::invalid_argument("Not enought arguments for select command");
+            else return new SelectEvent(model_, view_, Position(parseInt(parser[1]), parseInt(parser[2])));
         }
         else if (parser[0] == "pass")
         {
             if (parser.size() == 2 && parser[1] == "turn") return new PassTurnEvent(model_);
             else
             {
-                if (parser.size() < 3) throw std::invalid_argument("Pas assez d'arguments");
-                else return new PassEvent(model_, Position(stoi(parser[1]), stoi(parser[2])));
+                if (parser.size() < 3) throw std::invalid_argument("Not enought arguments for pass command");
+                else return new PassEvent(model_, view_, Position(parseInt(parser[1]), parseInt(parser[2])));
             }
         }
         else if (parser[0] == "passturn")
@@ -65,8 +67,16 @@ DiaballikEvent * DiaballikEventFactory::generateEvent(std::string input)
         }
         else
         {
-            throw std::runtime_error("Commande invalide!");
+            throw std::runtime_error("Unknown Command");
         }
+    }
+}
+
+int parseInt(std::string nb) {
+    try {
+        return stoi(nb);
+    } catch (...) {
+        throw std::invalid_argument("The argument is not a number");
     }
 }
 
@@ -91,17 +101,6 @@ std::vector<std::string> split(std::string s, std::string del)
     }
     result.push_back(s);
     return result;
-}
-
-bool operator==(std::string & left, const char * right)
-{
-    unsigned i{0};
-    while (i < left.size() && right[i] != '\0')
-    {
-        if (left.at(i) != right[i]) return false;
-        i++;
-    }
-    return i == left.size();
 }
 
 

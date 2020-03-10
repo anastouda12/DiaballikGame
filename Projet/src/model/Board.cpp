@@ -242,7 +242,7 @@ void Board::countBlockedOpponents(unsigned & blockCount, const Position & curren
     }
 }
 
-bool Board::isBlockedByLine(const Position & position, Team antiGameVictim, int objectiveRow) const
+bool Board::isBlockedByLine(const Position & position, Team antiGameVictim, size_t objectiveRow) const
 {
     return isInside(position) && !isFree(position)
            && getPieceAt(position)->getTeam() == antiGameVictim

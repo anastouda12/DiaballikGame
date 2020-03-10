@@ -2,6 +2,7 @@
 #define PASSEVENT_H
 
 #include "DiaballikEvent.hpp"
+#include "src/View/headers/View.hpp"
 #include "src/model/headers/Diaballik.hpp"
 
 namespace dblk
@@ -13,10 +14,11 @@ class PassEvent : public DiaballikEvent
   private:
 
     Diaballik & model_;
+    View & view_;
     const Position endPos_;
 
   public:
-    PassEvent(Diaballik & model, const Position endPos);
+    PassEvent(Diaballik & model, View & view, const Position endPos);
     virtual void execute() override;
 
 };

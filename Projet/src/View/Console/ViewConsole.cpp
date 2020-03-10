@@ -102,16 +102,9 @@ void ViewConsole::displayWinner(const std::optional<Team> & winner)
     }
 }
 
-void ViewConsole::displayError(int typeError, int flagError)
+void ViewConsole::displayError(std::string errorMsg)
 {
-    unsigned messagePos = static_cast<unsigned>(abs(flagError));
-    std::cout << "Error : ";
-    if (typeError == dblk::ERROR_MOVE) std::cout << dblk::errorMessagesMove.at(messagePos) << std::endl;
-    else if (typeError == dblk::ERROR_SELECT) std::cout << dblk::errorMessageSelect.at(
-                    messagePos) << std::endl;
-    else if (typeError == dblk::ERROR_THROW) std::cout << dblk::errorMessageThrow.at(
-                    messagePos) << std::endl;
-    else std::cout << "unknow error type" << std::endl;
+    std::cout << "[ERROR]: " << errorMsg << "!" << std::endl;
 
 }
 

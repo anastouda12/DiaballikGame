@@ -1,4 +1,5 @@
 debug/main.o
+debug/Controller.o
 debug/EventFactory.o
 debug/ExitEvent.o
 debug/HelpEvent.o

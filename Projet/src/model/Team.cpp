@@ -11,28 +11,13 @@ namespace dblk
 
 Team operator!(const Team & team)
 {
-    if (team == NORTH)
-    {
-        return SOUTH;
-    }
-    else
-    {
-        return NORTH;
-    }
+    return (team == NORTH) ? SOUTH : NORTH;
 }
 
 
 std::string to_string(const Team & team)
-{
-    if (team == NORTH)
-    {
-        return "NORTH";
-    }
-    else
-    {
-        return "SOUTH";
-    }
-
+{  
+    return (team == NORTH) ? "NORTH" : "SOUTH";
 }
 
 

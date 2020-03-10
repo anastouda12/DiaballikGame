@@ -1,13 +1,16 @@
 #include "headers/MoveEvent.hpp"
+#include "src/View/headers/ErrorMessages.hpp"
 
 namespace dblk
 {
 
-MoveEvent::MoveEvent(Diaballik & model, const Position endPos) : model_{model}, endPos_{endPos} {}
+MoveEvent::MoveEvent(Diaballik & model, View & view, const Position endPos) :
+    model_{model}, view_{view}, endPos_{endPos} {}
 
 void MoveEvent::execute()
 {
-    model_.movePiece(endPos_);
+    int flag = model_.movePiece(endPos_);
+    if (flag < 0) this->view_.displayError(errorMessagesMove[static_cast<size_t>(abs(flag) - 1)]);
 }
 
 } //End namespace dblk

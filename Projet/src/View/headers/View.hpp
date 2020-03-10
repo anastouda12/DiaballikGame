@@ -59,7 +59,7 @@ class View: public Observer
      * @param flagError flag of the error
      * @param typeError integer that represent the type error occured (select(1), move(2), pass(3))
      */
-    virtual void displayError(int typeError, int flagError) = 0;
+    virtual void displayError(std::string errorMsg) = 0;
 
     /**
      * @brief displayGoodByeMessage

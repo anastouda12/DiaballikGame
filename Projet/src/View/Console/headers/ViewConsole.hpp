@@ -59,7 +59,7 @@ class ViewConsole : public View
      * @brief displayError
      * Display an error message
      */
-    virtual void displayError(int typeError, int flagError) override;
+    virtual void displayError(std::string errorMsg) override;
 
     /**
      * @brief displayGoodByeMessage

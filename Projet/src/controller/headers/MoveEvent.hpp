@@ -3,6 +3,7 @@
 
 #include "DiaballikEvent.hpp"
 #include "src/model/headers/Diaballik.hpp"
+#include "src/View/headers/View.hpp"
 
 namespace dblk
 {
@@ -11,9 +12,10 @@ class MoveEvent : public DiaballikEvent
 {
   private:
     Diaballik & model_;
+    View & view_;
     const Position endPos_;
   public:
-    MoveEvent(Diaballik & model, const Position endPos);
+    MoveEvent(Diaballik & model, View & view, const Position endPos);
     virtual void execute() override;
 };
 

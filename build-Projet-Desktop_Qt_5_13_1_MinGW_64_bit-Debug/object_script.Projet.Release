@@ -1,4 +1,5 @@
 release/main.o
+release/Controller.o
 release/EventFactory.o
 release/ExitEvent.o
 release/HelpEvent.o

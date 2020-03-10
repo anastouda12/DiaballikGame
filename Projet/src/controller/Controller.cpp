@@ -18,10 +18,16 @@ void Controller::playGame()
     this->view_.displayBoard(this->model_.getBoard(), this->model_.getSelected());
     while (!this->model_.isOver())
     {
-        DiaballikEvent * evn = this->evntFactory_.generateEvent(this->view_.askCommand());
-        evn->execute();
-        delete evn;
-        evn = nullptr;
+        try {
+            DiaballikEvent * evn = this->evntFactory_.generateEvent(this->view_.askCommand());
+            evn->execute();
+            delete evn;
+            evn = nullptr;
+        } catch (std::runtime_error ex ) {
+            this->view_.displayError(ex.what());
+        } catch (std::invalid_argument ex ) {
+            this->view_.displayError(ex.what());
+        }
     }
     this->view_.displayWinner(this->model_.getWinner());
     this->view_.displayGoodByeMessage();

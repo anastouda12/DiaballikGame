@@ -166,7 +166,7 @@ class Board
     void countBlockedOpponents(unsigned & blockCount, const Position & curentColumn,
                                Team antiGameVictim) const;
 
-    bool isBlockedByLine(const Position & position, Team antiGameVictim, int objectiveRow) const;
+    bool isBlockedByLine(const Position & position, Team antiGameVictim, size_t objectiveRow) const;
 
     bool checkLineBreak(const Position & curentColumn, Team antiGameVictim) const;
 

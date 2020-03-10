@@ -7,10 +7,6 @@
 namespace dblk
 {
 
-constexpr unsigned ERROR_MOVE = 2;
-constexpr unsigned ERROR_SELECT = 1;
-constexpr unsigned ERROR_THROW = 3;
-
 static std::vector<std::string> errorMessagesMove =
 {
     "No position selected",

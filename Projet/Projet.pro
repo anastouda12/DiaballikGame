@@ -23,7 +23,7 @@ SOURCES += \
         src/model/Team.cpp \
         src/view/console/ViewConsole.cpp
 
-QMAKE_CXXFLAGS += -pedantic-errors -std=c++17
+QMAKE_CXXFLAGS += -pedantic-errors -std=c++17 -Wall
 
 
 HEADERS += \

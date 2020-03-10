@@ -43,7 +43,7 @@ std::string Piece::to_string() const
 {
 
     using std::string, std::to_string;
-    string str;
+    string str{""};
     str.append("(");
     str.push_back(dblk::to_string(this->team_)[0]);
     if (haveBall_)

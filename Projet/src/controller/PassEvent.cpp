@@ -1,4 +1,5 @@
 #include "headers/PassEvent.hpp"
+#include "src/View/headers/ErrorMessages.hpp"
 
 
 namespace dblk
@@ -6,11 +7,12 @@ namespace dblk
 
 /* PassEvent Class Implementation */
 
-PassEvent::PassEvent(Diaballik & model, const Position endPos) : model_{model}, endPos_{endPos} {}
+PassEvent::PassEvent(Diaballik & model,View & view, const Position endPos) : model_{model}, view_{view}, endPos_{endPos} {}
 
 void PassEvent::execute()
 {
-    model_.throwBall(endPos_);
+    int flag = model_.throwBall(endPos_);
+    if(flag < 0) this->view_.displayError(errorMessageThrow[abs(flag) - 1]);
 }
 
 } //End namespace dblk
