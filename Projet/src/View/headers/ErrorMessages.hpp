@@ -13,30 +13,31 @@ constexpr unsigned ERROR_THROW = 3;
 
 static std::vector<std::string> errorMessagesMove =
 {
-    "Aucune position sélectionnée",
-    "Pas assez de mouvement disponible",
-    "Hors limite du plateau de jeu",
-    "Position déjà occupé",
-    "Obstacle rencontré"
+    "No position selected",
+    "Not enough move available",
+    "Out bound of the board",
+    "Position already occupied",
+    "Obstacle met",
+    "Impossible to move the piece who has the ball"
 };
 
 static std::vector<std::string> errorMessageThrow =
 {
-    "Aucune position sélectionnée",
-    "Impossible de passer la balle",
-    "Aucune balle",
-    "Hors limite du plateau de jeu",
-    "Pas de piéce",
-    "Piéce de la team adverse",
-    "Non-alignées",
-    "Obstacle rencontré"
+    "No position selected",
+    "Not possible to throw the ball",
+    "No ball",
+    "Out bound of the board",
+    "No piece",
+    "Piece of the opponent team",
+    "Non aligned",
+    "Obstacle met"
 };
 
 static std::vector<std::string> errorMessageSelect =
 {
-    "Pas de piéce",
-    "Hors limite du plateau de jeu",
-    "Piéce de la team adverse"
+    "No piece",
+    "Out bound of the board",
+    "Piece of the opponent team"
 };
 
 

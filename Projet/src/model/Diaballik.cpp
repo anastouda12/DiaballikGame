@@ -63,6 +63,7 @@ int Diaballik::movePiece(const Position & pos)
     int steps = abs(diff.getRow()) + abs(
                     diff.getColumn());  // The number of moves done to achieve the final position
     if (steps > this->moveCount_) return -2;
+    if(this->board_.getPieceAt(this->selected_.value()).value().hasTheBall()) return -6;
 
     int flag = this->board_.movePiece(this->selected_.value(), pos);
     if (flag > 0)

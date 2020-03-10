@@ -12,7 +12,7 @@ namespace dblk
 
 void ViewConsole::displayWelcomeMessage()
 {
-    std::cout << "Bienvenue sur le jeu Diaballik !" << std::endl;
+    std::cout << "Welcome to the Diaballik game !" << std::endl;
 }
 
 void ViewConsole::displayBoard(const Board & board, const std::optional<Position> selected)
@@ -61,9 +61,9 @@ void ViewConsole::displayHelp()
 {
     std::cout << std::endl;
     std::cout << "===========HELP===========" << std::endl;
-    std:: cout << "> SELECT ligne colonne" << std::endl;
-    std:: cout << "> PASS ligne colonne" << std::endl;
-    std:: cout << "> MOVE ligne colonne" << std::endl;
+    std:: cout << "> SELECT line column" << std::endl;
+    std:: cout << "> PASS line column" << std::endl;
+    std:: cout << "> MOVE line column" << std::endl;
     std:: cout << "> PASSTURN" << std::endl;
     std:: cout << "> HELP" << std::endl;
     std:: cout << "> EXIT" << std::endl;
@@ -73,37 +73,37 @@ void ViewConsole::displayHelp()
 
 void ViewConsole::displayCurrentPlayer(const Team & team)
 {
-    std::cout << "C'est le tour de jeu de la team " << team << std::endl;
+    std::cout << "It's the turn of the team " << team << std::endl;
 }
 
 void ViewConsole::displayCounters(unsigned moveCounter, bool canPass)
 {
-    std::cout << "Mouvements restants : " << moveCounter;
-    std::cout << " et " << canPass << " passe" << std::endl;
+    std::cout << "Moves available : " << moveCounter;
+    std::cout << " and " << canPass << " throw" << std::endl;
 }
 
 void ViewConsole::displayWinner(const Team * winner)
 {
     if (winner == nullptr)
     {
-        std::cout << "Pas de vainqueur pour le moment !" << std::endl;
+        std::cout << "No winner yet !" << std::endl;
     }
     else
     {
-        std::cout << "Le vainqueur est la team : " << winner << std::endl;
+        std::cout << "The winner is the team : " << winner << std::endl;
     }
 }
 
 void ViewConsole::displayError(int typeError, int flagError)
 {
     unsigned messagePos = static_cast<unsigned>(abs(flagError));
-    std::cout << "Erreur : ";
+    std::cout << "Error : ";
     if (typeError == dblk::ERROR_MOVE) std::cout << dblk::errorMessagesMove.at(messagePos) << std::endl;
     else if (typeError == dblk::ERROR_SELECT) std::cout << dblk::errorMessageSelect.at(
                     messagePos) << std::endl;
     else if (typeError == dblk::ERROR_THROW) std::cout << dblk::errorMessageThrow.at(
                     messagePos) << std::endl;
-    else std::cout << "type d'erreur inconnue" << std::endl;
+    else std::cout << "unknow error type" << std::endl;
 
 }
 
@@ -111,14 +111,14 @@ void ViewConsole::displayError(int typeError, int flagError)
 std::string ViewConsole::askCommand()
 {
     std::string cmd;
-    std::cout << "> Entrez une commande : " << std::endl;
+    std::cout << "> Enter a command : " << std::endl;
     getline(std::cin, cmd);
     return cmd;
 }
 
 void ViewConsole::displayGoodByeMessage()
 {
-    std::cout << "Bye, on espére te revoir bientot !" << std::endl;
+    std::cout << "Bye, we hope see you soon !" << std::endl;
 }
 
 void ViewConsole::displaySelected(const std::optional<Piece> piece)
@@ -126,12 +126,12 @@ void ViewConsole::displaySelected(const std::optional<Piece> piece)
     if (piece.has_value())
     {
         std::string ball = (piece.value().hasTheBall()) ? "*" : " ";
-        std::cout << "Piéce selectionnee : " << "(" << dblk::to_string(piece.value().getTeam())[0] <<
+        std::cout << "Piece selected : " << "(" << dblk::to_string(piece.value().getTeam())[0] <<
                   ball << ")" << std::endl;
     }
     else
     {
-        std::cout << "Aucune piece selectionnee" << std::endl;
+        std::cout << "No piece selected" << std::endl;
     }
 }
 
