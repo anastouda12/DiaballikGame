@@ -6,6 +6,7 @@ CONFIG += c++17
 
 SOURCES += \
         main.cpp \
+        src/controller/Controller.cpp \
         src/controller/EventFactory.cpp \
         src/controller/ExitEvent.cpp \
         src/controller/HelpEvent.cpp \
@@ -30,6 +31,7 @@ HEADERS += \
     src/View/Console/headers/ViewConsole.hpp \
     src/View/headers/Observer.hpp \
     src/View/headers/View.hpp \
+    src/controller/headers/Controller.hpp \
     src/controller/headers/DiaballikEvent.hpp \
     src/controller/headers/EventFactory.hpp \
     src/controller/headers/ExitEvent.hpp \

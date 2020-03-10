@@ -53,13 +53,13 @@ class ViewConsole : public View
      * @brief displayWinner
      * Displays the winner of the game Diaballik
      */
-    virtual void displayWinner(const Team * team) override;
+    virtual void displayWinner(const std::optional<Team> & team) override;
 
     /**
      * @brief displayError
      * Display an error message
      */
-    virtual void displayError(int typeError,int flagError) override;
+    virtual void displayError(int typeError, int flagError) override;
 
     /**
      * @brief displayGoodByeMessage
@@ -80,7 +80,7 @@ class ViewConsole : public View
      * Keyboard reading
      * @return the command executed by the user
      */
-    std::string askCommand();
+    virtual std::string askCommand() override;
 
     virtual void update(const Observable * obj) override;
 
