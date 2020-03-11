@@ -16,7 +16,13 @@ Board::Board(size_t size) : size_{size},
 
 void Board::init(bool variant)
 {
-    this->createPieces();
+    for (unsigned j{0}; j < size_; j++)
+    {
+        this->pieces_[0][j] = Piece(NORTH, size_ - 1);
+        this->pieces_[size_ - 1][j] = Piece(SOUTH, 0);
+    }
+    this->pieces_[0][size_ / 2]->givesTheBall();
+    this->pieces_[size_ - 1][size_ / 2]->givesTheBall();
     if (variant)
     {
         this->pieces_[0][1] = Piece{SOUTH, size_ - 1};
@@ -34,7 +40,10 @@ size_t Board::getSize() const
 
 const std::optional<Piece> & Board::getPieceAt(const Position & position) const
 {
-    if (!this->isInside(position)) throw std::invalid_argument("Position hors du plateau!");
+    if (!this->isInside(position))
+    {
+        throw std::invalid_argument("Position out of the board!");
+    }
     else return this->pieces_[position.getRow()][position.getColumn()];
 }
 
@@ -54,27 +63,29 @@ bool Board::isInside(const Position & position) const
 
 int Board::movePiece(const Position & startPos, const Position & endPos)
 {
-    int flag{this->checkMove(startPos, endPos)};
+    const int flag{this->checkMove(startPos, endPos)};
     if (flag > 0)
     {
-        pieces_[startPos.getRow()][startPos.getColumn()].swap(pieces_[endPos.getRow()][endPos.getColumn()]);
+        pieces_[startPos.getRow()][startPos.getColumn()].swap(
+            pieces_[endPos.getRow()][endPos.getColumn()]);
     }
     return flag;
 }
 
-
-//currentPlayer = player to verify if is victim of anti game.
 bool Board::checksAntiGame(Team antiGameVictim) const
 {
-    bool haveAntiGame{false};
     for (unsigned i{0}; i < size_; i++)
     {
         Position currentLine(i, 0);
         if (!this->isFree(currentLine) && this->getPieceAt(currentLine)->getTeam() != antiGameVictim)
+        {
             if (this->verifyLineAntiGame(currentLine, 0, antiGameVictim))
+            {
                 return true;
+            }
+        }
     }
-    return haveAntiGame;
+    return false;
 }
 
 
@@ -113,16 +124,6 @@ int Board::passBall(Team team, const Position & startPos, const Position & endPo
 
 //PRIVATE METHODS
 
-void Board::createPieces()
-{
-    for (unsigned j{0}; j < size_; j++)
-    {
-        this->pieces_[0][j] = Piece(NORTH, size_ - 1);
-        this->pieces_[size_ - 1][j] = Piece(SOUTH, 0);
-    }
-    this->pieces_[0][size_ / 2]->givesTheBall();
-    this->pieces_[size_ - 1][size_ / 2]->givesTheBall();
-}
 
 
 int Board::checkMove(const Position & startPos, const Position & endPos) const
@@ -242,10 +243,10 @@ void Board::countBlockedOpponents(unsigned & blockCount, const Position & curren
     }
 }
 
-bool Board::isBlockedByLine(const Position & position, Team antiGameVictim, size_t objectiveRow) const
+bool Board::isBlockedByLine(const Position & position, Team antiGameVictim,
+                            size_t objectiveRow) const
 {
-    return isInside(position) && !isFree(position)
-           && getPieceAt(position)->getTeam() == antiGameVictim
+    return this->belongsTo(position, antiGameVictim)
            && getPieceAt(position)->getObjectiveRow() == objectiveRow;
 }
 
@@ -266,7 +267,7 @@ bool Board::hasDepassedLine(Position & currentLine, const Position & dir,
 {
     while (isInside(currentLine))
     {
-        if (!isFree(currentLine) && getPieceAt(currentLine)->getTeam() == antiGameVictim
+        if (this->belongsTo(currentLine, antiGameVictim)
                 &&  getPieceAt(currentLine)->getObjectiveRow() == objectiveRow)
         {
             return true;
@@ -276,17 +277,18 @@ bool Board::hasDepassedLine(Position & currentLine, const Position & dir,
     return false;
 }
 
+
 bool Board::achievedObjective(const Position & currentPosition) const
 {
-    if (!isFree(currentPosition))
-        if (getPieceAt(currentPosition)->getObjectiveRow() == currentPosition.getRow()
-                && getPieceAt(currentPosition)->hasTheBall())
-        {
-            return true;
-        }
-    return false;
+    return !isFree(currentPosition)
+           && getPieceAt(currentPosition)->getObjectiveRow() == currentPosition.getRow()
+           && getPieceAt(currentPosition)->hasTheBall();
 }
 
 
-
+bool Board::belongsTo(const Position & position, Team player) const
+{
+    return isInside(position) && !isFree(position)
+           && getPieceAt(position)->getTeam() == player;
+}
 } // End namespace dblk

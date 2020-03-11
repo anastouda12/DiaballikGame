@@ -1,11 +1,11 @@
 #ifndef _BOARD_H
 #define _BOARD_H
 
+#include <vector>
+#include <optional>
 #include "Piece.hpp"
 #include "Position.hpp"
 #include "Team.hpp"
-#include <vector>
-#include <optional>
 
 namespace dblk
 {
@@ -136,7 +136,6 @@ class Board
 
   private:
 
-    void createPieces();
 
     /**
      * @brief checkMove
@@ -183,6 +182,9 @@ class Board
      * @return True if the board contains a piece who reached the objective.
      */
     bool achievedObjective(const Position & position) const;
+
+    bool belongsTo(const Position & position, Team player) const;
+
 
 
 };
