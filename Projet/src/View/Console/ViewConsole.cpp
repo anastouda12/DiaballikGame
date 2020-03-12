@@ -61,7 +61,7 @@ void ViewConsole::displayBoard(const Diaballik & diaballik)
 
                         if (diaballik.getBoard().checkMove(diaballik.getSelected().value(),
                                                            Position(i, j)) > 0 &&
-                                diaballik.checksPositionAchievable(Position(i, j)) > 0)
+                                diaballik.checksEnoughMovesAvailable(Position(i, j)) > 0)
                         {
                             std::cout << "(..)";
                         }

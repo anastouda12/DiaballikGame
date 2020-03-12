@@ -59,7 +59,7 @@ int Diaballik::movePiece(const Position & pos)
 {
     if (!this->selected_.has_value()) return -1; // select pos needed
 
-    int steps = checksPositionAchievable(pos);
+    int steps = checksEnoughMovesAvailable(pos);
     if (steps < 0) return -2;
 
     int flag = this->board_.movePiece(this->selected_.value(), pos);
@@ -119,7 +119,7 @@ std::optional<Team> Diaballik::getWinner() const
     return this->winner_.has_value() ? this->winner_ : this->currentPlayer_;
 }
 
-int Diaballik::checksPositionAchievable(const Position &pos) const
+int Diaballik::checksEnoughMovesAvailable(const Position &pos) const
 {
     Position diff = pos - this->selected_.value();
     int steps = abs(diff.getRow()) + abs(
