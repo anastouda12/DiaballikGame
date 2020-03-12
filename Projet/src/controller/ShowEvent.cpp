@@ -7,7 +7,7 @@ ShowEvent::ShowEvent(View & view, const Diaballik & model): view_{view}, model_{
 
 void ShowEvent::execute()
 {
-    view_.displayBoard(model_.getBoard(), model_.getSelected());
+    view_.displayBoard(model_);
 }
 
 }

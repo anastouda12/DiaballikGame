@@ -15,7 +15,7 @@ void Controller::init()
 
 void Controller::playGame()
 {
-    this->view_.displayBoard(this->model_.getBoard(), this->model_.getSelected());
+    this->view_.displayBoard(this->model_);
     while (!this->model_.isOver())
     {
         try {

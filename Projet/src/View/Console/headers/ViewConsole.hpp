@@ -26,7 +26,7 @@ class ViewConsole : public View
      * @brief displayBoard
      * Displays the boards of the Diaballik game
      */
-    virtual void displayBoard(const Board & board, const std::optional<Position> selected) override;
+    virtual void displayBoard(const Diaballik & diaballik) override;
 
     /**
      * @brief displayHelp

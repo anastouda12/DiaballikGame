@@ -59,11 +59,8 @@ int Diaballik::movePiece(const Position & pos)
 {
     if (!this->selected_.has_value()) return -1; // select pos needed
 
-    Position diff = pos - this->selected_.value();
-    int steps = abs(diff.getRow()) + abs(
-                    diff.getColumn());  // The number of moves done to achieve the final position
-    if (steps > this->moveCount_) return -2;
-    if (this->board_.getPieceAt(this->selected_.value()).value().hasTheBall()) return -6;
+    int steps = checksPositionAchievable(pos);
+    if (steps < 0) return -2;
 
     int flag = this->board_.movePiece(this->selected_.value(), pos);
     if (flag > 0)
@@ -120,6 +117,16 @@ int Diaballik::select(const Position & pos)
 std::optional<Team> Diaballik::getWinner() const
 {
     return this->winner_.has_value() ? this->winner_ : this->currentPlayer_;
+}
+
+int Diaballik::checksPositionAchievable(const Position &pos) const
+{
+    Position diff = pos - this->selected_.value();
+    int steps = abs(diff.getRow()) + abs(
+                    diff.getColumn());  // The number of moves done to achieve the final position
+    if (steps > this->moveCount_) return -1;
+    else return steps;
+
 }
 
 } // End namespace dblk

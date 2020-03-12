@@ -134,9 +134,6 @@ class Board
      */
     int passBall(Team team, const Position & startPos, const Position & endPos);
 
-  private:
-
-
     /**
      * @brief checkMove
      * Verifies if it's possible to move a Piece with
@@ -147,6 +144,8 @@ class Board
      * @return True if it's allowed.
      */
     int checkMove(const Position & startPos, const Position & endPos) const;
+
+  private:
 
     /**
      * @brief checkThrow

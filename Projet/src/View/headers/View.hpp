@@ -24,7 +24,7 @@ class View: public Observer
      * @brief displayBoard
      * Displays the boards of the Diaballik game
      */
-    virtual void displayBoard(const Board & board, const std::optional<Position>) = 0;
+    virtual void displayBoard(const Diaballik & diaballik) = 0;
 
     /**
      * @brief displayHelp

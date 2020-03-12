@@ -154,6 +154,13 @@ class Diaballik : public Observable
      */
     std::optional<Team> getWinner() const;
 
+    /**
+     * @brief checkMovePosition
+     * Checks if a move to a position given is achievable by the number of moves available.
+     * @return the number of steps if the move is possible
+     */
+    int checksPositionAchievable(const Position & pos) const;
+
 
 }; //End diaballik class
 

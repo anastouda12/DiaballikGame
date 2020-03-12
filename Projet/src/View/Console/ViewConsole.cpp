@@ -15,43 +15,66 @@ void ViewConsole::displayWelcomeMessage()
     std::cout << "Welcome to the Diaballik game !" << std::endl;
 }
 
-void ViewConsole::displayBoard(const Board & board, const std::optional<Position> selected)
+void ViewConsole::displayBoard(const Diaballik & diaballik)
 {
     // Display number of column on top of board
     std::cout << std::endl;
     std::cout << "    ";
-    for (int x = 0; x < static_cast<int>(board.getSize()); x++)
+    for (int x = 0; x < static_cast<int>(diaballik.getBoard().getSize());
+            x++)
     {
         std::cout << " " << x << "  ";
     }
     std::cout << std::endl;
 
     // Display the board
-    for (int i = 0; i < board.getSize(); i++)
+    for (int i = 0; i < static_cast<int>(diaballik.getBoard().getSize());
+            i++)
     {
         std::cout << " " << i << "  ";
-        for (int j = 0; j < board.getSize(); j++)
+        for (int j = 0; j < static_cast<int>(diaballik.getBoard().getSize());
+                j++)
         {
             Position currentPos{i, j};
             try
             {
-                if (board.getPieceAt(currentPos).has_value())
+                if (diaballik.getBoard().getPieceAt(currentPos).has_value())
                 {
-                    if (selected.has_value() && selected.value() == currentPos)
+                    if (diaballik.getSelected().has_value() &&
+                            diaballik.getSelected().value() == currentPos)
                     {
-                        std::string selectString = board.getPieceAt(currentPos)->to_string();
+                        std::string selectString = diaballik.getBoard().getPieceAt(
+                                                       currentPos)->to_string();
                         selectString.at(0) = '|';
                         selectString.at(selectString.size() - 1) = '|';
                         std::cout << selectString;
                     }
                     else
                     {
-                        std::cout << board.getPieceAt(currentPos).value();
+                        std::cout << diaballik.getBoard().getPieceAt(currentPos).value();
                     }
                 }
                 else
                 {
-                    std::cout << "(  )";
+                    if (diaballik.getSelected().has_value())
+                    {
+
+                        if (diaballik.getBoard().checkMove(diaballik.getSelected().value(),
+                                                           Position(i, j)) > 0 &&
+                                diaballik.checksPositionAchievable(Position(i, j)) > 0)
+                        {
+                            std::cout << "(..)";
+                        }
+                        else
+                        {
+                            std::cout << "(  )";
+                        }
+                    }
+                    else
+                    {
+                        std::cout << "(  )";
+                    }
+
                 }
 
             }
@@ -127,7 +150,8 @@ void ViewConsole::displaySelected(const std::optional<Piece> piece)
     if (piece.has_value())
     {
         std::string ball = (piece.value().hasTheBall()) ? "*" : " ";
-        std::cout << "Piece selected : " << "(" << dblk::to_string(piece.value().getTeam())[0] <<
+        std::cout << "Piece selected : " << "(" << dblk::to_string(
+                      piece.value().getTeam())[0] <<
                   ball << ")" << std::endl;
     }
     else
@@ -141,8 +165,9 @@ void ViewConsole::update(const Observable * obj)
     const Diaballik & diaballik = static_cast<const Diaballik &>(*obj);
     const std::optional<Position> select = diaballik.getSelected();
     std::optional<Piece> pieceSelect;
-    if (select.has_value()) pieceSelect = diaballik.getBoard().getPieceAt(select.value());
-    displayBoard(diaballik.getBoard(), select);
+    if (select.has_value()) pieceSelect = diaballik.getBoard().getPieceAt(
+                select.value());
+    displayBoard(diaballik);
     displayCurrentPlayer(diaballik.getCurrentPlayer());
     displayCounters(diaballik.getMoveCount(), diaballik.canPass());
     displaySelected(pieceSelect);

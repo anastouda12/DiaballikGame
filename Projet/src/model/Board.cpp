@@ -131,6 +131,7 @@ int Board::checkMove(const Position & startPos, const Position & endPos) const
     //The rules conditions for the startPos are verified when selecting the piece.
     if (!isInside(endPos)) return -3;        //Out bounds(console)
     if (!isFree(endPos)) return -4;        //Occuped(console)
+    if(getPieceAt(startPos).value().hasTheBall()) return -6; //Has the ball, no move possible
 
     Position direction{getDirection(startPos - endPos)};
     if (direction.getRow() != direction.getColumn())
@@ -148,7 +149,7 @@ int Board::checkMove(const Position & startPos, const Position & endPos) const
         if (!this->isFree(Position(startPos.getRow(), startPos.getColumn() + direction.getColumn()))
                 && !this->isFree(Position(startPos.getRow() + direction.getRow(), startPos.getColumn())))
         {
-            return 5; //Obstacle
+            return -5; //Obstacle
         }
     }
     return 1;       //Is ok
