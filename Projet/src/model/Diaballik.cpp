@@ -65,7 +65,7 @@ int Diaballik::movePiece(const Position & pos)
     int flag = this->board_.movePiece(this->selected_.value(), pos);
     if (flag > 0)
     {
-        this->moveCount_ -= steps;
+        this->moveCount_ -= static_cast<unsigned>(steps);
         this->selected_.reset();
         this->notifyObservers();
         return steps;
@@ -124,7 +124,7 @@ int Diaballik::checksEnoughMovesAvailable(const Position &pos) const
     Position diff = pos - this->selected_.value();
     int steps = abs(diff.getRow()) + abs(
                     diff.getColumn());  // The number of moves done to achieve the final position
-    if (steps > this->moveCount_) return -1;
+    if (static_cast<unsigned>(steps) > this->moveCount_) return -1;
     else return steps;
 
 }

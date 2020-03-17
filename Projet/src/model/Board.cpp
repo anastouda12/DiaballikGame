@@ -42,9 +42,9 @@ const std::optional<Piece> & Board::getPieceAt(const Position & position) const
 {
     if (!this->isInside(position))
     {
-        throw std::invalid_argument("Position out of the board!");
+        throw std::invalid_argument("Position out of the board");
     }
-    else return this->pieces_[position.getRow()][position.getColumn()];
+    else return this->pieces_[static_cast<unsigned>(position.getRow())][static_cast<unsigned>(position.getColumn())];
 }
 
 
@@ -66,8 +66,8 @@ int Board::movePiece(const Position & startPos, const Position & endPos)
     const int flag{this->checkMove(startPos, endPos)};
     if (flag > 0)
     {
-        pieces_[startPos.getRow()][startPos.getColumn()].swap(
-            pieces_[endPos.getRow()][endPos.getColumn()]);
+        pieces_[static_cast<unsigned>(startPos.getRow())][static_cast<unsigned>(startPos.getColumn())].swap(
+            pieces_[static_cast<unsigned>(endPos.getRow())][static_cast<unsigned>(endPos.getColumn())]);
     }
     return flag;
 }
@@ -76,7 +76,7 @@ bool Board::checksAntiGame(Team antiGameVictim) const
 {
     for (unsigned i{0}; i < size_; i++)
     {
-        Position currentLine(i, 0);
+        Position currentLine(static_cast<int>(i), 0);
         if (!this->isFree(currentLine) && this->getPieceAt(currentLine)->getTeam() != antiGameVictim)
         {
             if (this->verifyLineAntiGame(currentLine, 0, antiGameVictim))
@@ -93,7 +93,7 @@ bool Board::checksGameIsFinsh(std::optional<Team> & winner) const
 {
     for (unsigned i{0}; i < size_; i++)
     {
-        Position top(0, i), bottom(size_ - 1, i);
+        Position top(0, static_cast<int>(i)), bottom(static_cast<int>(size_) - 1, static_cast<int>(i));
         if (this->achievedObjective(bottom))
         {
             winner = this->getPieceAt(bottom)->getTeam();
@@ -114,8 +114,8 @@ int Board::passBall(Team team, const Position & startPos, const Position & endPo
     int flag{checkThrow(team, startPos, endPos)};
     if (flag > 0)
     {
-        this->pieces_[startPos.getRow()][startPos.getColumn()]->removesTheBall();
-        this->pieces_[endPos.getRow()][endPos.getColumn()]->givesTheBall();
+        this->pieces_[static_cast<unsigned>(startPos.getRow())][static_cast<unsigned>(startPos.getColumn())]->removesTheBall();
+        this->pieces_[static_cast<unsigned>(endPos.getRow())][static_cast<unsigned>(endPos.getColumn())]->givesTheBall();
     }
     return flag;
 }
@@ -256,7 +256,7 @@ bool Board::checkLineBreak(const Position & curentColumn, Team antiGameVitim) co
     Position up{1, 0}, down{-1, 0};
     Position top{curentColumn + up}, bottom{curentColumn + down};
     if (this->hasDepassedLine(top, up, antiGameVitim, 0)
-            || this->hasDepassedLine(bottom, down, antiGameVitim, size_ - 1))
+            || this->hasDepassedLine(bottom, down, antiGameVitim, static_cast<int>(size_) - 1))
     {
         return true;
     }
@@ -269,7 +269,7 @@ bool Board::hasDepassedLine(Position & currentLine, const Position & dir,
     while (isInside(currentLine))
     {
         if (this->belongsTo(currentLine, antiGameVictim)
-                &&  getPieceAt(currentLine)->getObjectiveRow() == objectiveRow)
+                &&  static_cast<int>(getPieceAt(currentLine)->getObjectiveRow()) == objectiveRow)
         {
             return true;
         }
@@ -282,7 +282,7 @@ bool Board::hasDepassedLine(Position & currentLine, const Position & dir,
 bool Board::achievedObjective(const Position & currentPosition) const
 {
     return !isFree(currentPosition)
-           && getPieceAt(currentPosition)->getObjectiveRow() == currentPosition.getRow()
+           && static_cast<int>(getPieceAt(currentPosition)->getObjectiveRow()) == currentPosition.getRow()
            && getPieceAt(currentPosition)->hasTheBall();
 }
 
