@@ -66,4 +66,4 @@ std::ostream & operator<<(std::ostream & out, const Piece & piece)
     return out;
 }
 
-}
+} // End namespace dblk

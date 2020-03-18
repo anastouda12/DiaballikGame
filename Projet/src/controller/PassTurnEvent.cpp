@@ -10,4 +10,4 @@ void PassTurnEvent::execute()
     model_.passTurn();
 }
 
-}
+} // End namespace dblk

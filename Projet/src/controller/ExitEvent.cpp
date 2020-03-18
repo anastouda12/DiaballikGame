@@ -3,6 +3,7 @@
 namespace dblk
 {
 
+
 ExitEvent::ExitEvent(View & view): view_{view} {}
 
 void ExitEvent::execute()
@@ -11,4 +12,5 @@ void ExitEvent::execute()
     exit(2);
 }
 
-}
+
+} // End namespace dblk

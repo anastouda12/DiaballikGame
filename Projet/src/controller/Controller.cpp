@@ -4,8 +4,8 @@ namespace dblk
 {
 
 
-
 Controller::Controller(Diaballik & model, View & view): model_{model}, view_{view}, evntFactory_{model, view} {}
+
 
 void Controller::init()
 {
@@ -18,14 +18,19 @@ void Controller::playGame()
     this->view_.displayBoard(this->model_);
     while (!this->model_.isOver())
     {
-        try {
+        try
+        {
             DiaballikEvent * evn = this->evntFactory_.generateEvent(this->view_.askCommand());
             evn->execute();
             delete evn;
             evn = nullptr;
-        } catch (std::runtime_error ex ) {
+        }
+        catch (std::runtime_error & ex )
+        {
             this->view_.displayError(ex.what());
-        } catch (std::invalid_argument ex ) {
+        }
+        catch (std::invalid_argument & ex )
+        {
             this->view_.displayError(ex.what());
         }
     }

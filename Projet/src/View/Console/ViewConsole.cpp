@@ -88,7 +88,7 @@ void ViewConsole::displayBoard(const Diaballik & diaballik)
                 }
 
             }
-            catch (std::invalid_argument ex)
+            catch (std::invalid_argument & ex)
             {
                 std::cout << "error: " << ex.what() << std::endl;
             }
@@ -201,6 +201,7 @@ size_t getSize()
         std::cout << "Invalid size, must be " << SMALL_SIZE << ", " << MEDIUM_SIZE  << " or " << BIG_SIZE
                   << " : " << std::endl;
     }
+    return num;
 }
 
 bool getVariant()
@@ -213,6 +214,7 @@ bool getVariant()
         else if (input[0] == 'n' || input[0] == 'N') return false;
         std::cout << "Invalid answer, (yes/no): " << std::endl;
     }
+    return false;
 }
 
 }// End namespace dblk

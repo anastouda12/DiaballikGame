@@ -42,7 +42,7 @@ class Board
     *
     * @param size The size of the board.
     */
-    Board(const size_t size);
+    explicit Board(const size_t size);
 
     /**
      * @brief init

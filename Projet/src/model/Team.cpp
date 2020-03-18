@@ -16,7 +16,7 @@ Team operator!(const Team & team)
 
 
 std::string to_string(const Team & team)
-{  
+{
     return (team == NORTH) ? "NORTH" : "SOUTH";
 }
 
@@ -28,4 +28,4 @@ std::ostream & operator<<(std::ostream & out, const Team & team)
 }
 
 
-}
+} //End namespace dblk

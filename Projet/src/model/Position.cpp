@@ -93,4 +93,4 @@ Position getDirection(Position result)
 }
 
 
-}
+} // End namespace dblk

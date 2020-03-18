@@ -1,0 +1,251 @@
+\hypertarget{classdblk_1_1_board}{}\doxysection{dblk\+::Board Class Reference}
+\label{classdblk_1_1_board}\index{dblk::Board@{dblk::Board}}
+
+
+The \mbox{\hyperlink{classdblk_1_1_board}{Board}} class.  
+
+
+
+
+{\ttfamily \#include $<$Board.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdblk_1_1_board_a5970fc39fca62d502f1f46154e32e3cb}{Board}} (const size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classdblk_1_1_board}{Board}} Creates a new board with the given size. No piece will be inside of the board. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdblk_1_1_board_a6c9112508a1ca4acee6095612699e6e0}{init}} (bool variant)
+\begin{DoxyCompactList}\small\item\em init Puts the Pieces inside of the \mbox{\hyperlink{classdblk_1_1_board}{Board}} according the \mbox{\hyperlink{classdblk_1_1_diaballik}{Diaballik}} rules. The position of the initial pieces will change according the variant rule. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classdblk_1_1_board_a8fa6072833dbf66c37ea0b940b056df4}{get\+Size}} () const
+\begin{DoxyCompactList}\small\item\em get\+Size Retrieves the size of the board. \end{DoxyCompactList}\item 
+const std\+::optional$<$ \mbox{\hyperlink{classdblk_1_1_piece}{Piece}} $>$ \& \mbox{\hyperlink{classdblk_1_1_board_ab31982a8ff58be5a33fef32bdd4a035f}{get\+Piece\+At}} (const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&position) const
+\begin{DoxyCompactList}\small\item\em get\+Piece\+At Retrieves the \mbox{\hyperlink{classdblk_1_1_piece}{Piece}} at the given \mbox{\hyperlink{classdblk_1_1_position}{Position}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdblk_1_1_board_aef2168bd85d1db2cb559af47c89c830a}{is\+Free}} (const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&pos) const
+\begin{DoxyCompactList}\small\item\em is\+Free Verifies if the position has a piece. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdblk_1_1_board_a834bf3b31983e670c9dbed44b4e1131d}{is\+Inside}} (const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&pos) const
+\begin{DoxyCompactList}\small\item\em is\+Free Verifies if the position is inside of the board. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classdblk_1_1_board_a53c3d372e21cc83625de24625b810ac1}{move\+Piece}} (const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&start\+Pos, const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&end\+Pos)
+\begin{DoxyCompactList}\small\item\em move\+Piece Moves the \mbox{\hyperlink{classdblk_1_1_piece}{Piece}} of the start \mbox{\hyperlink{classdblk_1_1_position}{Position}} to the end \mbox{\hyperlink{classdblk_1_1_position}{Position}}. It is considered invalid to move to a already occuped position, or out the bonds of the board. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdblk_1_1_board_aa265eaa4b782df71bb954e42a3cee275}{checks\+Anti\+Game}} (Team anti\+Game\+Victim) const
+\begin{DoxyCompactList}\small\item\em checks\+Anti\+Game Verifies if the given Player faces a situation of anti game. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdblk_1_1_board_a50f6447349b2f412eda883545a2d0e2f}{checks\+Game\+Is\+Finsh}} (std\+::optional$<$ Team $>$ \&winner) const
+\begin{DoxyCompactList}\small\item\em checks\+Game\+Is\+Finsh Verifies if the game is over. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classdblk_1_1_board_ad7e0049b98a96f724fff4321d6698971}{pass\+Ball}} (Team team, const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&start\+Pos, const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&end\+Pos)
+\begin{DoxyCompactList}\small\item\em pass\+Ball Passes the ball between two pieces. To pass the ball the end position must have a \mbox{\hyperlink{classdblk_1_1_piece}{Piece}} from the same color of the piece in the start \mbox{\hyperlink{classdblk_1_1_position}{Position}}, and must be aligned without any opponent piece blocking the path. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classdblk_1_1_board_a5514d80d1e85b9ba14d72c501808f965}{check\+Move}} (const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&start\+Pos, const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&end\+Pos) const
+\begin{DoxyCompactList}\small\item\em check\+Move Verifies if it\textquotesingle{}s possible to move a \mbox{\hyperlink{classdblk_1_1_piece}{Piece}} with the given positions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classdblk_1_1_board}{Board}} class. 
+
+This class represents the \mbox{\hyperlink{classdblk_1_1_board}{Board}} where the game will be played. It will contain a vector of vectors containing the Pieces of the players. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdblk_1_1_board_a5970fc39fca62d502f1f46154e32e3cb}\label{classdblk_1_1_board_a5970fc39fca62d502f1f46154e32e3cb}} 
+\index{dblk::Board@{dblk::Board}!Board@{Board}}
+\index{Board@{Board}!dblk::Board@{dblk::Board}}
+\doxysubsubsection{\texorpdfstring{Board()}{Board()}}
+{\footnotesize\ttfamily dblk\+::\+Board\+::\+Board (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classdblk_1_1_board}{Board}} Creates a new board with the given size. No piece will be inside of the board. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & The size of the board. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdblk_1_1_board_a5514d80d1e85b9ba14d72c501808f965}\label{classdblk_1_1_board_a5514d80d1e85b9ba14d72c501808f965}} 
+\index{dblk::Board@{dblk::Board}!checkMove@{checkMove}}
+\index{checkMove@{checkMove}!dblk::Board@{dblk::Board}}
+\doxysubsubsection{\texorpdfstring{checkMove()}{checkMove()}}
+{\footnotesize\ttfamily int dblk\+::\+Board\+::check\+Move (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&}]{start\+Pos,  }\item[{const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&}]{end\+Pos }\end{DoxyParamCaption}) const}
+
+
+
+check\+Move Verifies if it\textquotesingle{}s possible to move a \mbox{\hyperlink{classdblk_1_1_piece}{Piece}} with the given positions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Pos} & The start position. \\
+\hline
+{\em end\+Pos} & The end position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if it\textquotesingle{}s allowed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdblk_1_1_board_aa265eaa4b782df71bb954e42a3cee275}\label{classdblk_1_1_board_aa265eaa4b782df71bb954e42a3cee275}} 
+\index{dblk::Board@{dblk::Board}!checksAntiGame@{checksAntiGame}}
+\index{checksAntiGame@{checksAntiGame}!dblk::Board@{dblk::Board}}
+\doxysubsubsection{\texorpdfstring{checksAntiGame()}{checksAntiGame()}}
+{\footnotesize\ttfamily bool dblk\+::\+Board\+::checks\+Anti\+Game (\begin{DoxyParamCaption}\item[{Team}]{anti\+Game\+Victim }\end{DoxyParamCaption}) const}
+
+
+
+checks\+Anti\+Game Verifies if the given Player faces a situation of anti game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em team} & The player to verify. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True in case of anti game situation. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdblk_1_1_board_a50f6447349b2f412eda883545a2d0e2f}\label{classdblk_1_1_board_a50f6447349b2f412eda883545a2d0e2f}} 
+\index{dblk::Board@{dblk::Board}!checksGameIsFinsh@{checksGameIsFinsh}}
+\index{checksGameIsFinsh@{checksGameIsFinsh}!dblk::Board@{dblk::Board}}
+\doxysubsubsection{\texorpdfstring{checksGameIsFinsh()}{checksGameIsFinsh()}}
+{\footnotesize\ttfamily bool dblk\+::\+Board\+::checks\+Game\+Is\+Finsh (\begin{DoxyParamCaption}\item[{std\+::optional$<$ Team $>$ \&}]{winner }\end{DoxyParamCaption}) const}
+
+
+
+checks\+Game\+Is\+Finsh Verifies if the game is over. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em team} & The current player to verify the anti game status. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the game is over. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdblk_1_1_board_ab31982a8ff58be5a33fef32bdd4a035f}\label{classdblk_1_1_board_ab31982a8ff58be5a33fef32bdd4a035f}} 
+\index{dblk::Board@{dblk::Board}!getPieceAt@{getPieceAt}}
+\index{getPieceAt@{getPieceAt}!dblk::Board@{dblk::Board}}
+\doxysubsubsection{\texorpdfstring{getPieceAt()}{getPieceAt()}}
+{\footnotesize\ttfamily const std\+::optional$<$ \mbox{\hyperlink{classdblk_1_1_piece}{Piece}} $>$ \& dblk\+::\+Board\+::get\+Piece\+At (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&}]{position }\end{DoxyParamCaption}) const}
+
+
+
+get\+Piece\+At Retrieves the \mbox{\hyperlink{classdblk_1_1_piece}{Piece}} at the given \mbox{\hyperlink{classdblk_1_1_position}{Position}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position to retrieve the piece. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The piece at the given position, or an empty optional. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdblk_1_1_board_a8fa6072833dbf66c37ea0b940b056df4}\label{classdblk_1_1_board_a8fa6072833dbf66c37ea0b940b056df4}} 
+\index{dblk::Board@{dblk::Board}!getSize@{getSize}}
+\index{getSize@{getSize}!dblk::Board@{dblk::Board}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily size\+\_\+t dblk\+::\+Board\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Size Retrieves the size of the board. 
+
+\begin{DoxyReturn}{Returns}
+The size of the board. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdblk_1_1_board_a6c9112508a1ca4acee6095612699e6e0}\label{classdblk_1_1_board_a6c9112508a1ca4acee6095612699e6e0}} 
+\index{dblk::Board@{dblk::Board}!init@{init}}
+\index{init@{init}!dblk::Board@{dblk::Board}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void dblk\+::\+Board\+::init (\begin{DoxyParamCaption}\item[{bool}]{variant }\end{DoxyParamCaption})}
+
+
+
+init Puts the Pieces inside of the \mbox{\hyperlink{classdblk_1_1_board}{Board}} according the \mbox{\hyperlink{classdblk_1_1_diaballik}{Diaballik}} rules. The position of the initial pieces will change according the variant rule. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em variant} & Is the variant rule applied or not. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdblk_1_1_board_aef2168bd85d1db2cb559af47c89c830a}\label{classdblk_1_1_board_aef2168bd85d1db2cb559af47c89c830a}} 
+\index{dblk::Board@{dblk::Board}!isFree@{isFree}}
+\index{isFree@{isFree}!dblk::Board@{dblk::Board}}
+\doxysubsubsection{\texorpdfstring{isFree()}{isFree()}}
+{\footnotesize\ttfamily bool dblk\+::\+Board\+::is\+Free (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&}]{pos }\end{DoxyParamCaption}) const}
+
+
+
+is\+Free Verifies if the position has a piece. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The position to verify. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em If} & the position is out bounds. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+True if there is a piece. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdblk_1_1_board_a834bf3b31983e670c9dbed44b4e1131d}\label{classdblk_1_1_board_a834bf3b31983e670c9dbed44b4e1131d}} 
+\index{dblk::Board@{dblk::Board}!isInside@{isInside}}
+\index{isInside@{isInside}!dblk::Board@{dblk::Board}}
+\doxysubsubsection{\texorpdfstring{isInside()}{isInside()}}
+{\footnotesize\ttfamily bool dblk\+::\+Board\+::is\+Inside (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&}]{pos }\end{DoxyParamCaption}) const}
+
+
+
+is\+Free Verifies if the position is inside of the board. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The position to verify. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if is inside of the board. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdblk_1_1_board_a53c3d372e21cc83625de24625b810ac1}\label{classdblk_1_1_board_a53c3d372e21cc83625de24625b810ac1}} 
+\index{dblk::Board@{dblk::Board}!movePiece@{movePiece}}
+\index{movePiece@{movePiece}!dblk::Board@{dblk::Board}}
+\doxysubsubsection{\texorpdfstring{movePiece()}{movePiece()}}
+{\footnotesize\ttfamily int dblk\+::\+Board\+::move\+Piece (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&}]{start\+Pos,  }\item[{const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&}]{end\+Pos }\end{DoxyParamCaption})}
+
+
+
+move\+Piece Moves the \mbox{\hyperlink{classdblk_1_1_piece}{Piece}} of the start \mbox{\hyperlink{classdblk_1_1_position}{Position}} to the end \mbox{\hyperlink{classdblk_1_1_position}{Position}}. It is considered invalid to move to a already occuped position, or out the bonds of the board. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Pos} & The start \mbox{\hyperlink{classdblk_1_1_position}{Position}} of the \mbox{\hyperlink{classdblk_1_1_piece}{Piece}}. \\
+\hline
+{\em end\+Pos} & The end \mbox{\hyperlink{classdblk_1_1_position}{Position}} of the \mbox{\hyperlink{classdblk_1_1_piece}{Piece}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the \mbox{\hyperlink{classdblk_1_1_piece}{Piece}} was moved or a negative flag in case of error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdblk_1_1_board_ad7e0049b98a96f724fff4321d6698971}\label{classdblk_1_1_board_ad7e0049b98a96f724fff4321d6698971}} 
+\index{dblk::Board@{dblk::Board}!passBall@{passBall}}
+\index{passBall@{passBall}!dblk::Board@{dblk::Board}}
+\doxysubsubsection{\texorpdfstring{passBall()}{passBall()}}
+{\footnotesize\ttfamily int dblk\+::\+Board\+::pass\+Ball (\begin{DoxyParamCaption}\item[{Team}]{team,  }\item[{const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&}]{start\+Pos,  }\item[{const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&}]{end\+Pos }\end{DoxyParamCaption})}
+
+
+
+pass\+Ball Passes the ball between two pieces. To pass the ball the end position must have a \mbox{\hyperlink{classdblk_1_1_piece}{Piece}} from the same color of the piece in the start \mbox{\hyperlink{classdblk_1_1_position}{Position}}, and must be aligned without any opponent piece blocking the path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Pos} & The start position. \\
+\hline
+{\em end\+Pos} & The end position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the ball has been passed or a negative flag if not. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/model/headers/Board.\+hpp\item 
+src/model/Board.\+cpp\end{DoxyCompactItemize}

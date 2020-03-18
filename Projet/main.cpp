@@ -12,6 +12,5 @@ int main()
 
     controller.init();
     controller.playGame();
-
 }
 

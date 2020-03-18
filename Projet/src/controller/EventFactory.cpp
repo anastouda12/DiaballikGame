@@ -11,8 +11,32 @@
 namespace dblk
 {
 
+/**
+ * @brief split
+ * Cuts the given string s, into a vector of substrings when the delimetator del is found.
+ *
+ * @param s The string to be splited.
+ * @param del The delimitator.
+ * @return A vector containing the cuted string.
+ */
 std::vector<std::string> split(std::string s, std::string del);
+
+/**
+ * @brief toLowerCase
+ * Transform all letters into lower case.
+ *
+ * @param s The string to be transformed.
+ */
 void toLowerCase(std::string & s);
+
+/**
+ * @brief parseInt
+ * Parses the given string into integer.
+ * Throws invalid_argument if the string is not a number.
+ *
+ * @param nb The string to be parsed.
+ * @return The integer value of the string.
+ */
 int parseInt(std::string nb);
 
 
@@ -72,10 +96,17 @@ DiaballikEvent * DiaballikEventFactory::generateEvent(std::string input)
     }
 }
 
-int parseInt(std::string nb) {
-    try {
+
+// Util methods.
+
+int parseInt(std::string nb)
+{
+    try
+    {
         return stoi(nb);
-    } catch (...) {
+    }
+    catch (...)
+    {
         throw std::invalid_argument("The argument is not a number");
     }
 }

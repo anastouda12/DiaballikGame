@@ -10,4 +10,4 @@ void ShowEvent::execute()
     view_.displayBoard(model_);
 }
 
-}
+}// End namespace dblk
