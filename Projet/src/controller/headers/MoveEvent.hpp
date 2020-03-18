@@ -3,7 +3,7 @@
 
 #include "DiaballikEvent.hpp"
 #include "src/model/headers/Diaballik.hpp"
-#include "src/View/headers/View.hpp"
+#include "src/view/headers/View.hpp"
 
 namespace dblk
 {

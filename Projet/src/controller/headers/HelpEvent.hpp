@@ -2,7 +2,7 @@
 #define HELPEVENT_HPP
 
 #include "DiaballikEvent.hpp"
-#include "src/View/headers/View.hpp"
+#include "src/view/headers/View.hpp"
 
 namespace dblk
 {

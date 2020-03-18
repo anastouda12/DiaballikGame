@@ -2,7 +2,7 @@
 #define SELECTEVENT_HPP
 
 #include "DiaballikEvent.hpp"
-#include "src/View/headers/View.hpp"
+#include "src/view/headers/View.hpp"
 #include "src/model/headers/Diaballik.hpp"
 
 namespace dblk

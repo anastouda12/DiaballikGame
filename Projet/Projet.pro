@@ -27,10 +27,10 @@ QMAKE_CXXFLAGS += -pedantic-errors -std=c++17 -Wall
 
 
 HEADERS += \
-    src/View/headers/ErrorMessages.hpp \
-    src/View/Console/headers/ViewConsole.hpp \
-    src/View/headers/Observer.hpp \
-    src/View/headers/View.hpp \
+    src/view/headers/ErrorMessages.hpp \
+    src/view/console/headers/ViewConsole.hpp \
+    src/view/headers/Observer.hpp \
+    src/view/headers/View.hpp \
     src/controller/headers/Controller.hpp \
     src/controller/headers/DiaballikEvent.hpp \
     src/controller/headers/EventFactory.hpp \
@@ -40,10 +40,10 @@ HEADERS += \
     src/controller/headers/PassEvent.hpp \
     src/controller/headers/PassTurnEvent.hpp \
     src/controller/headers/SelectEvent.hpp \
-    src/View/Console/View.hpp \
+    src/view/console/View.hpp \
     src/controller/headers/ShowEvent.hpp \
     src/model/headers/Board.hpp \
-    src/model/headers/Configs.hpp \
+    src/controller/headers/Configs.hpp \
     src/model/headers/Diaballik.hpp \
     src/model/headers/Observable.hpp \
     src/model/headers/Piece.hpp \

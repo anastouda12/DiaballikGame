@@ -14,6 +14,8 @@ class View: public Observer
 
   public:
 
+    virtual std::pair<size_t, bool> displayMainMenu() = 0;
+
     /**
      * @brief displayWelcomeMessage
      * Displays a welcome message to the players

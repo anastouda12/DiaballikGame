@@ -2,7 +2,7 @@
 #define EXITEVENT_H
 
 #include "DiaballikEvent.hpp"
-#include "src/View/headers/View.hpp"
+#include "src/view/headers/View.hpp"
 
 namespace dblk
 {

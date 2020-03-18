@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include "src/model/headers/Diaballik.hpp"
-#include "src/View/headers/View.hpp"
+#include "src/view/headers/View.hpp"
 
 
 namespace dblk
@@ -15,6 +15,8 @@ class ViewConsole : public View
   public:
 
     ViewConsole() = default;
+
+    virtual std::pair<size_t, bool> displayMainMenu() override;
 
     /**
      * @brief displayWelcomeMessage

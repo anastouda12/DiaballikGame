@@ -44,7 +44,11 @@ const std::optional<Piece> & Board::getPieceAt(const Position & position) const
     {
         throw std::invalid_argument("Position out of the board");
     }
-    else return this->pieces_[static_cast<unsigned>(position.getRow())][static_cast<unsigned>(position.getColumn())];
+    else
+    {
+        return this->pieces_[static_cast<unsigned>(position.getRow())][static_cast<unsigned>
+                (position.getColumn())];
+    }
 }
 
 
@@ -114,8 +118,10 @@ int Board::passBall(Team team, const Position & startPos, const Position & endPo
     int flag{checkThrow(team, startPos, endPos)};
     if (flag > 0)
     {
-        this->pieces_[static_cast<unsigned>(startPos.getRow())][static_cast<unsigned>(startPos.getColumn())]->removesTheBall();
-        this->pieces_[static_cast<unsigned>(endPos.getRow())][static_cast<unsigned>(endPos.getColumn())]->givesTheBall();
+        this->pieces_[static_cast<unsigned>(startPos.getRow())][static_cast<unsigned>
+                (startPos.getColumn())]->removesTheBall();
+        this->pieces_[static_cast<unsigned>(endPos.getRow())][static_cast<unsigned>
+                (endPos.getColumn())]->givesTheBall();
     }
     return flag;
 }
@@ -131,7 +137,7 @@ int Board::checkMove(const Position & startPos, const Position & endPos) const
     //The rules conditions for the startPos are verified when selecting the piece.
     if (!isInside(endPos)) return -3;        //Out bounds(console)
     if (!isFree(endPos)) return -4;        //Occuped(console)
-    if(getPieceAt(startPos).value().hasTheBall()) return -6; //Has the ball, no move possible
+    if (getPieceAt(startPos).value().hasTheBall()) return -6; //Has the ball, no move possible
 
     Position direction{getDirection(startPos - endPos)};
     if (direction.getRow() != direction.getColumn())

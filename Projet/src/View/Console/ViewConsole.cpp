@@ -1,4 +1,5 @@
 #include "headers/ViewConsole.hpp"
+#include "src/controller/headers/Configs.hpp"
 
 
 namespace dblk
@@ -8,11 +9,20 @@ namespace dblk
 //* Implementation Class View *//
 //******************************//
 
+size_t getSize();
+bool getVariant();
+
+std::pair<size_t, bool> ViewConsole::displayMainMenu()
+{
+    std::cout << "Welcome to the Diaballik Game!" << std::endl;
+    return std::pair<int, bool> {getSize(), getVariant()};
+}
 
 
 void ViewConsole::displayWelcomeMessage()
 {
-    std::cout << "Welcome to the Diaballik game !" << std::endl;
+    std::cout << "The game has been started !" << std::endl;
+    std::cout << "Write help for help with the commands!";
 }
 
 void ViewConsole::displayBoard(const Diaballik & diaballik)
@@ -171,6 +181,38 @@ void ViewConsole::update(const Observable * obj)
     displayCurrentPlayer(diaballik.getCurrentPlayer());
     displayCounters(diaballik.getMoveCount(), diaballik.canPass());
     displaySelected(pieceSelect);
+}
+
+size_t getSize()
+{
+    size_t num;
+    std::string input;
+    std::cout << "Enter the board size: [" << SMALL_SIZE << ", " << MEDIUM_SIZE << " OR " << BIG_SIZE <<
+              "]: " << std::endl ;
+    while ( getline(std::cin, input) )
+    {
+        try
+        {
+            num = std::stoi(input);
+            if ( num ==  SMALL_SIZE || num == BIG_SIZE || num == MEDIUM_SIZE)
+                return num;
+        }
+        catch (std::invalid_argument) {}
+        std::cout << "Invalid size, must be " << SMALL_SIZE << ", " << MEDIUM_SIZE  << " or " << BIG_SIZE
+                  << " : " << std::endl;
+    }
+}
+
+bool getVariant()
+{
+    std::string input;
+    std::cout << "Play with variant mode? (yes/no): " << std::endl;
+    while (getline(std::cin, input))
+    {
+        if (input[0] == 'y' || input[0] == 'Y') return true;
+        else if (input[0] == 'n' || input[0] == 'N') return false;
+        std::cout << "Invalid answer, (yes/no): " << std::endl;
+    }
 }
 
 }// End namespace dblk

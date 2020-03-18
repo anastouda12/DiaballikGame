@@ -1,7 +1,7 @@
 #ifndef CONTROLLER_HPP
 #define CONTROLLER_HPP
 
-#include "src/View/headers/View.hpp"
+#include "src/view/headers/View.hpp"
 #include "src/model/headers/Diaballik.hpp"
 #include "EventFactory.hpp"
 
