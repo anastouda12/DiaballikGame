@@ -141,7 +141,7 @@ class Board
      *
      * @param startPos The start position.
      * @param endPos The end position.
-     * @return True if it's allowed.
+     * @return 1 if it's allowed, negatif flag if not.
      */
     int checkMove(const Position & startPos, const Position & endPos) const;
 
