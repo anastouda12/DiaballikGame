@@ -183,14 +183,6 @@ int Board::checkThrow(Team team, const Position & startPos,
     return 1; //Is ok
 }
 
-/**
- * @brief verifyLineAntiGame
- * @param board
- * @param currentPos
- * @param blockCount
- * @param team
- * @return
- */
 bool Board::verifyLineAntiGame(const Position & currentPos, unsigned blockCount,
                                Team antiGameVictim) const
 {
@@ -226,15 +218,6 @@ bool Board::verifyLineAntiGame(const Position & currentPos, unsigned blockCount,
 }
 
 
-/**
- * @brief countBlockedOpponents
- * Count the number of opponent pieces blocked by one piece. Used by verifyLineAntiGame.
- *
- * @param board The game board.
- * @param blockCount A reference to the number of opponent pieces blocked.
- * @param curentPos The current position.
- * @param team The victim of anti-game line.
- */
 void Board::countBlockedOpponents(unsigned & blockCount, const Position & currentColumn,
                                   Team team) const
 {

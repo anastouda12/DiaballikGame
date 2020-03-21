@@ -14,8 +14,17 @@ class ViewConsole : public View
 
   public:
 
+    /**
+    * @brief ViewConsole Constructor by default of viewConsole.
+    *
+    **/
     ViewConsole() = default;
 
+    /**
+     * @brief displayMainMenu
+     * Display the main menu of the Diaballik game.
+     * @return the size of the game and variant.
+     */
     virtual std::pair<size_t, bool> displayMainMenu() override;
 
     /**
@@ -39,6 +48,7 @@ class ViewConsole : public View
     /**
      * @brief displayCurrentPlayer
      * Displays the current player of a game of Diaballik
+     * @param the team of the current player
      */
     virtual void displayCurrentPlayer(const Team & team) override;
 
@@ -47,6 +57,8 @@ class ViewConsole : public View
      * Displays the counters of the current players
      * Counter of movements available
      * And possibility to pass the ball
+     * @param moveCounter the number of moves availables of the current Player
+     * @param canPass possibility to throw the ball of the current player
      */
     virtual void displayCounters(unsigned moveCounter, bool canPass) override;
 
@@ -54,12 +66,14 @@ class ViewConsole : public View
     /**
      * @brief displayWinner
      * Displays the winner of the game Diaballik
+     * @param team the optinal winner of the game Diaballik.
      */
     virtual void displayWinner(const std::optional<Team> & team) override;
 
     /**
      * @brief displayError
      * Display an error message
+     * @param errorMsg the message of error
      */
     virtual void displayError(std::string errorMsg) override;
 
@@ -84,6 +98,10 @@ class ViewConsole : public View
      */
     virtual std::string askCommand() override;
 
+    /**
+     * @brief update update the view.
+     * @param obj the observable.
+     */
     virtual void update(const Observable * obj) override;
 
 };

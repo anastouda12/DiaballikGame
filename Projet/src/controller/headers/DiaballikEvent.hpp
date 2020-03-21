@@ -22,6 +22,10 @@ class DiaballikEvent
      */
     virtual void execute() = 0;
 
+   /**
+    * @brief ~DiaballikEvent Destructor by default of DiaballikEvent.
+    *
+    */
     virtual ~DiaballikEvent() = default;
 };
 

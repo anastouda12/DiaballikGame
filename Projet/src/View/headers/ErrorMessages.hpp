@@ -7,6 +7,10 @@
 namespace dblk
 {
 
+/**
+* @brief errorMessagesMove Error messages of a wrong move
+*
+**/
 static std::vector<std::string> errorMessagesMove =
 {
     "No position selected",
@@ -17,6 +21,10 @@ static std::vector<std::string> errorMessagesMove =
     "Impossible to move the piece who has the ball"
 };
 
+/**
+* @brief errorMessageThrow Error messages of a wrong throw
+*
+**/
 static std::vector<std::string> errorMessageThrow =
 {
     "No position selected",
@@ -29,6 +37,10 @@ static std::vector<std::string> errorMessageThrow =
     "Obstacle met"
 };
 
+/**
+* @brief errorMessageSelect Error messages of a wrong select
+*
+**/
 static std::vector<std::string> errorMessageSelect =
 {
     "No piece",

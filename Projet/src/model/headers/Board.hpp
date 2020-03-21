@@ -116,7 +116,7 @@ class Board
      * @brief checksGameIsFinsh
      * Verifies if the game is over.
      *
-     * @param team The current player to verify the anti game status.
+     * @param team The current player to verify the game status.
      * @return True if the game is over.
      */
     bool checksGameIsFinsh(std::optional<Team> & winner) const;
@@ -158,16 +158,57 @@ class Board
      */
     int checkThrow(Team team, const Position & startPos, const Position & endPos) const;
 
+    /**
+     * @brief verifyLineAntiGame
+     * Verifiy if there is a line of anti game
+     * @param currentColumn the current column
+     * @param blockCount the blockcount
+     * @param antiGameVictim the team victim of the anti game.
+     * @return true if there is a line of anti game.
+     */
     bool verifyLineAntiGame(const Position & currentColumn, unsigned blockCount,
                             Team antiGameVictim) const;
 
+    /**
+     * @brief countBlockedOpponents
+     * Count the number of opponent pieces blocked by one piece. Used by verifyLineAntiGame.
+     *
+     * @param board The game board.
+     * @param blockCount A reference to the number of opponent pieces blocked.
+     * @param curentPos The current position.
+     * @param team The victim of anti-game line.
+     */
     void countBlockedOpponents(unsigned & blockCount, const Position & curentColumn,
                                Team antiGameVictim) const;
 
+    /**
+     * @brief isBlockedByLine
+     * Checks if there is a position blocked by a line of opponent.
+     * @param position the position of the piece.
+     * @param antiGameVictim the anti game victim
+     * @param objectiveRow the objective row of the piece
+     * @return true if the position is blocked by opponent.
+     */
     bool isBlockedByLine(const Position & position, Team antiGameVictim, size_t objectiveRow) const;
 
+    /**
+     * @brief checkLineBreak
+     * Checks if a line has been breaked by the antiGameVictim
+     * @param curentColumn the current column position of the piece.
+     * @param antiGameVictim the anti game victim team
+     * @return true if the line on the board is breaked
+     */
     bool checkLineBreak(const Position & curentColumn, Team antiGameVictim) const;
 
+    /**
+     * @brief hasDepassedLine
+     * Checks if a piece in the currentLine has depassed the line of potential anti game.
+     * @param currentLine the current line position of the piece
+     * @param dir the direction position
+     * @param antiGameVictim the team potential anti game victim
+     * @param objectiveRow the objective row of the piece.
+     * @return true if it has depassed line.
+     */
     bool hasDepassedLine(Position & currentLine, const Position & dir, Team antiGameVictim,
                          int objectiveRow) const;
 
@@ -182,6 +223,15 @@ class Board
      */
     bool achievedObjective(const Position & position) const;
 
+
+
+    /**
+     * @brief belongsTo
+     * Checks if a piece in that position inside the board belongs to the team given.
+     * @param position the position of the piece.
+     * @param player the player of the team concerned.
+     * @return true if it belongs to the team given.
+     */
     bool belongsTo(const Position & position, Team player) const;
 
 

@@ -14,6 +14,11 @@ class View: public Observer
 
   public:
 
+    /**
+     * @brief displayMainMenu
+     * Display the main menu of the Diaballik game.
+     * @return the size of the game and variant.
+     */
     virtual std::pair<size_t, bool> displayMainMenu() = 0;
 
     /**
@@ -37,6 +42,7 @@ class View: public Observer
     /**
      * @brief displayCurrentPlayer
      * Displays the current player of a game of Diaballik
+     * @param the team of the current player
      */
     virtual void displayCurrentPlayer(const Team & team) = 0;
 
@@ -45,6 +51,8 @@ class View: public Observer
      * Displays the counters of the current players
      * Counter of movements available
      * And possibility to pass the ball
+     * @param moveCounter the number of moves availables of the current Player
+     * @param canPass possibility to throw the ball of the current player
      */
     virtual void displayCounters(unsigned moveCounter, bool canPass) = 0;
 
@@ -52,6 +60,7 @@ class View: public Observer
     /**
      * @brief displayWinner
      * Displays the winner of the game Diaballik
+     * @param team the optinal winner of the game Diaballik.
      */
     virtual void displayWinner(const std::optional<Team> & team) = 0;
 

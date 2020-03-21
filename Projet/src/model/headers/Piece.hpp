@@ -38,6 +38,7 @@ class Piece
      * Creates a new Piece.
      *
      * @param team The team owner of the Piece.
+     * @param size_t the objectiveRow of the piece of given team.
      */
     Piece(const Team & team, size_t objectiveRow);
 

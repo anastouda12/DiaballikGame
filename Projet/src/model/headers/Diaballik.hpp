@@ -67,6 +67,12 @@ class Diaballik : public Observable
      */
     const Team & getCurrentPlayer() const;
 
+
+    /**
+     * @brief getSelected
+     * Retrieves the selected position in the current round, or empty value if not selected.
+     * @return the selected position in the current round of the game Diaballik.
+     */
     const std::optional<Position> & getSelected() const;
 
     /**
@@ -99,8 +105,8 @@ class Diaballik : public Observable
      * if the piece has been moves it must refresh the available moves attribute.
      *
      * @param pos The position to move the piece.
-     * @return The number of steps to achieve the position, or -1 if the piece
-     * has not been moved.
+     * @return The number of steps to achieve the position, -1 if the piece
+     * has not been moved, -2 not enough moves availabes
      */
     int movePiece(const Position & pos);
 
@@ -110,7 +116,7 @@ class Diaballik : public Observable
      * If the selected piece has the ball, pass the ball to the given position.
      *
      * @param pos The position to pass the ball.
-     * @return 1 if the ball has been passed, if not -1.
+     * @return 1 if the ball has been passed, -1 position not selected, -2 any throw available, -3 the piece has not the ball
      */
     int throwBall(const Position & pos);
 
@@ -136,7 +142,7 @@ class Diaballik : public Observable
      * given position must contain a Piece of the same color of the current player.
      *
      * @param pos The position to select the Piece.
-     * @return 1 if a piece has been selected, -1 if not.
+     * @return 1 if a piece has been selected, -1 not a piece selected, -2 out of the board, -3 opponent piece.
      */
     int select(const Position & pos);
 
@@ -149,15 +155,15 @@ class Diaballik : public Observable
 
     /**
      * @brief getWinner
-     * Gives the winner of the game diaballik
-     * @return the winner Diaballik
+     * Gives the winner of the game diaballik.
+     * @return the winner Diaballik, if there is not yet a winner empty value returned
      */
     std::optional<Team> getWinner() const;
 
     /**
      * @brief checkMovePosition
      * Checks if a move to a position given is achievable by the number of moves available.
-     * @return the number of steps if the move is possible
+     * @return the number of steps if the move is possible, -1 else.
      */
     int checksEnoughMovesAvailable(const Position & pos) const;
 
