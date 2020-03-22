@@ -9,6 +9,7 @@ namespace dblk
 
 /**
  * @brief The Team enum
+ *
  * Allows to distinguish the two players of the game.
  */
 enum Team
@@ -18,6 +19,7 @@ enum Team
 
 /**
  * @brief operator !
+ *
  * Retrieves the opponent team from the given team.
  *
  * @param team The team to swap.
@@ -27,6 +29,7 @@ Team operator!(const Team & team);
 
 /**
  * @brief to_string
+ *
  * Creates a string describing the team.
  *
  * @return A string describing the team.
@@ -37,6 +40,7 @@ std::string to_string(const Team & team);
 
 /**
 * @brief operator <<
+*
 * Allows to inject the Team in the standard output.ds
 *
 * @param out An output stream.

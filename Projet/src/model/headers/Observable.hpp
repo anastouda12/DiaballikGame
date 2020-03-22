@@ -31,12 +31,11 @@ class Observable
      */
     Observable();
 
-   /**
-    *\brief A method allowing an observer to register as a
-    * earpiece of the subject of observation.
-    *
-    * to observe a pointer to the observer candidate.
-    **/
+    /**
+     *\brief A method allowing an observer to register as a
+     * earpiece of the subject of observation.
+     *
+     **/
     void registerObserver(Observer * observer);
 
     /**

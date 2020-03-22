@@ -9,6 +9,7 @@ namespace dblk
 
 /**
  * @brief The Position class
+ *
  * This class will represent the coordinates to manipulate the board.
  */
 class Position
@@ -17,12 +18,14 @@ class Position
   private:
     /**
      * @brief row
+     *
      * The row, so the index for the first vector in the Board.
      */
     int row_;
 
     /**
      * @brief column
+     *
      * The column, so the index for the second vector in the Board.
      */
     int column_;
@@ -30,6 +33,7 @@ class Position
   public:
     /**
      * @brief Position
+     *
      * Creates a new Position.
      *
      * @param row The row coordinate.
@@ -39,6 +43,7 @@ class Position
 
     /**
      * @brief getRow
+     *
      * Retrieves the row of the position.
      *
      * @return The row of the position.
@@ -47,6 +52,7 @@ class Position
 
     /**
      * @brief getColumn
+     *
      * Retrieves the row of the position.
      *
      * @return The row of the position.
@@ -55,6 +61,7 @@ class Position
 
     /**
      * @brief to_string
+     *
      * Creates a string describing the position in form of
      * ( row, column )
      *
@@ -64,6 +71,7 @@ class Position
 
     /**
      * @brief operator -
+     *
      * Subtrack 2 positions.
      *
      * @param otherPos The right operand.
@@ -73,6 +81,7 @@ class Position
 
     /**
      * @brief operator +
+     *
      * Adds 2 positions.
      *
      * @param otherPos The right operand.
@@ -82,19 +91,31 @@ class Position
 
     /**
      * @brief operator !=
-     * Verify if two positions have the same column and row.
+     *
+     * Verify if two positions are different. Must have different column
+     * or different row.
      *
      * @param otherPos The right position of the operator.
      * @return True if they have the same row and column.
      */
     bool operator!=(const Position & otherPos) const;
 
+    /**
+     * @brief operator ==
+     *
+     * Verify if two positions are identical. Must have identical column
+     * and row.
+     *
+     * @param otherPos The right position of the operator.
+     * @return True if they are identical.
+     */
     bool operator==(const Position & otherPos) const;
 
 };
 
 /**
 * @brief operator <<
+*
 * Allows to inject the Position in the standard output.
 *
 * @param out An output stream.
@@ -106,6 +127,7 @@ std::ostream & operator<<(std::ostream & out, const Position & pos);
 
 /**
  * @brief getDirection
+ *
  * Returns a position representing the direction needed to achieve a piece
  * if they're aligned. If they re not aligned it returns the (0, 0) Position.
  *

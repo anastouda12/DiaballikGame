@@ -10,6 +10,9 @@ namespace dblk
 
 /**
  * @brief The Diabilik class
+ *
+ * This class represents the main facade for the game.
+ * It contains all the necessary methods to play the game.
  */
 class Diaballik : public Observable
 {
@@ -17,33 +20,43 @@ class Diaballik : public Observable
   private:
     /**
      * @brief board
+     *
      * The main container of the Board of the Game.
      */
     Board board_;
 
     /**
      * @brief currentPlayer
+     *
      * The player who must move or pass.
      */
     Team currentPlayer_;
 
 
+    /**
+     * @brief winner_
+     *
+     * The winner of the game.
+     */
     std::optional<Team> winner_;
 
     /**
      * @brief selected
+     *
      * The selected Piece to move or pass.
      */
     std::optional<Position> selected_;
 
     /**
      * @brief moveCount
+     *
      * The remaining moves in the current round.
      */
     unsigned moveCount_;
 
     /**
      * @brief canPass
+     *
      * Indicates if it's allowed to pass the ball in
      * the current round.
      */
@@ -52,6 +65,7 @@ class Diaballik : public Observable
   public:
     /**
      * @brief Diabilik
+     *
      * Creates a new Diaballik game.
      *
      * @param size The size of the Board.
@@ -61,6 +75,7 @@ class Diaballik : public Observable
 
     /**
      * @brief getCurrentPlayer
+     *
      * Retrieves the current player.
      *
      * @return The current player.
@@ -70,13 +85,16 @@ class Diaballik : public Observable
 
     /**
      * @brief getSelected
+     *
      * Retrieves the selected position in the current round, or empty value if not selected.
+     *
      * @return the selected position in the current round of the game Diaballik.
      */
     const std::optional<Position> & getSelected() const;
 
     /**
      * @brief getMoveCount
+     *
      * Retrieves the number of available moves in the current round.
      *
      * @return The number of available moves.
@@ -85,12 +103,14 @@ class Diaballik : public Observable
 
     /**
      * @brief passTurn
+     *
      * Swaps the current player for his opponent, and reset the available moves.
      */
     void passTurn();
 
     /**
      * @brief canPass
+     *
      * Verifies if the current player can pass his ball.
      *
      * @return True if he can pass his ball.
@@ -99,6 +119,7 @@ class Diaballik : public Observable
 
     /**
      * @brief moveSupport
+     *
      * Moves the selected Piece to the given position.
      * The number of steps to achieve the final position
      * must not depass the number of available moves, and
@@ -113,6 +134,7 @@ class Diaballik : public Observable
 
     /**
      * @brief throwBall
+     *
      * If the selected piece has the ball, pass the ball to the given position.
      *
      * @param pos The position to pass the ball.
@@ -122,6 +144,7 @@ class Diaballik : public Observable
 
     /**
      * @brief isOver
+     *
      * Verifies if the game is over.
      *
      * @return True if the game is over, false if not.
@@ -130,6 +153,7 @@ class Diaballik : public Observable
 
     /**
      * @brief checksAntiGame
+     *
      * Verifies if the current player is in a situation of anti-game.
      *
      * @return True if the current player faces a situation of anti-game.
@@ -138,6 +162,7 @@ class Diaballik : public Observable
 
     /**
      * @brief select
+     *
      * Selects a piece in the given position. To select the piece, in the board the
      * given position must contain a Piece of the same color of the current player.
      *
@@ -148,21 +173,27 @@ class Diaballik : public Observable
 
     /**
      * @brief getBoard
+     *
      * Gives the size of the board of the game Diaballik
+     *
      * @return the size of the board
      */
     const Board & getBoard() const;
 
     /**
      * @brief getWinner
+     *
      * Gives the winner of the game diaballik.
+     *
      * @return the winner Diaballik, if there is not yet a winner empty value returned
      */
     std::optional<Team> getWinner() const;
 
     /**
      * @brief checkMovePosition
+     *
      * Checks if a move to a position given is achievable by the number of moves available.
+     *
      * @return the number of steps if the move is possible, -1 else.
      */
     int checksEnoughMovesAvailable(const Position & pos) const;

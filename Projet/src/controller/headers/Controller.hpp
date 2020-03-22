@@ -48,7 +48,6 @@ class Controller
      * Creates a new app controller.
      *
      * @param model The game data.
-     *
      * @param view The UI.
      */
     Controller(Diaballik & model, View & view);

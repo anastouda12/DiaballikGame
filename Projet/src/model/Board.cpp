@@ -242,7 +242,7 @@ bool Board::isBlockedByLine(const Position & position, Team antiGameVictim,
 
 bool Board::checkLineBreak(const Position & curentColumn, Team antiGameVitim) const
 {
-    Position up{1, 0}, down{-1, 0};
+    Position up{-1, 0}, down{1, 0};
     Position top{curentColumn + up}, bottom{curentColumn + down};
     if (this->hasDepassedLine(top, up, antiGameVitim, 0)
             || this->hasDepassedLine(bottom, down, antiGameVitim, static_cast<int>(size_) - 1))

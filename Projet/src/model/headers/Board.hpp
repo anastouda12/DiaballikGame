@@ -23,12 +23,14 @@ class Board
 
     /**
      * @brief size
+     *
      * The size of the board.
      */
     const size_t size_;
 
     /**
      * @brief pieces
+     *
      * The main container for the Pieces in the board.
      */
     std::vector<std::vector<std::optional<Piece>>> pieces_;
@@ -37,6 +39,7 @@ class Board
 
     /**
     * @brief Board
+    *
     * Creates a new board with the given size.
     * No piece will be inside of the board.
     *
@@ -46,6 +49,7 @@ class Board
 
     /**
      * @brief init
+     *
      * Puts the Pieces inside of the Board according the
      * Diaballik rules. The position of the initial pieces will
      * change according the variant rule.
@@ -56,6 +60,7 @@ class Board
 
     /**
      * @brief getSize
+     *
      * Retrieves the size of the board.
      *
      * @return The size of the board.
@@ -64,6 +69,7 @@ class Board
 
     /**
      * @brief getPieceAt
+     *
      * Retrieves the Piece at the given Position.
      *
      * @param position The position to retrieve the piece.
@@ -73,6 +79,7 @@ class Board
 
     /**
      * @brief isFree
+     *
      * Verifies if the position has a piece.
      *
      * @param pos The position to verify.
@@ -83,6 +90,7 @@ class Board
 
     /**
      * @brief isFree
+     *
      * Verifies if the position is inside of the board.
      *
      * @param pos The position to verify.
@@ -92,6 +100,7 @@ class Board
 
     /**
      * @brief movePiece
+     *
      * Moves the Piece of the start Position to the end Position.
      * It is considered invalid to move to a already occuped position,
      * or out the bonds of the board.
@@ -105,6 +114,7 @@ class Board
 
     /**
      * @brief checksAntiGame
+     *
      * Verifies if the given Player faces a situation of anti game.
      *
      * @param team The player to verify.
@@ -114,20 +124,23 @@ class Board
 
     /**
      * @brief checksGameIsFinsh
+     *
      * Verifies if the game is over.
      *
-     * @param team The current player to verify the game status.
+     * @param team An empty optional that will change according the winner.
      * @return True if the game is over.
      */
     bool checksGameIsFinsh(std::optional<Team> & winner) const;
 
     /**
      * @brief passBall
+     *
      * Passes the ball between two pieces.
      * To pass the ball the end position must have a Piece from
      * the same color of the piece in the start Position, and must be
      * aligned without any opponent piece blocking the path.
      *
+     * @param team The team that will pass the ball.
      * @param startPos The start position.
      * @param endPos The end position.
      * @return 1 if the ball has been passed or a negative flag if not.
@@ -136,6 +149,7 @@ class Board
 
     /**
      * @brief checkMove
+     *
      * Verifies if it's possible to move a Piece with
      * the given positions.
      *
@@ -149,9 +163,11 @@ class Board
 
     /**
      * @brief checkThrow
+     *
      * Verifies if it's possible to pass a Piece with
      * the given positions.
      *
+     * @param team The theam that will pass the ball.
      * @param startPos The start position.
      * @param endPos The end position.
      * @return True if it's allowed.
@@ -160,7 +176,9 @@ class Board
 
     /**
      * @brief verifyLineAntiGame
+     *
      * Verifiy if there is a line of anti game
+     *
      * @param currentColumn the current column
      * @param blockCount the blockcount
      * @param antiGameVictim the team victim of the anti game.
@@ -171,9 +189,9 @@ class Board
 
     /**
      * @brief countBlockedOpponents
+     *
      * Count the number of opponent pieces blocked by one piece. Used by verifyLineAntiGame.
      *
-     * @param board The game board.
      * @param blockCount A reference to the number of opponent pieces blocked.
      * @param curentPos The current position.
      * @param team The victim of anti-game line.
@@ -183,7 +201,9 @@ class Board
 
     /**
      * @brief isBlockedByLine
-     * Checks if there is a position blocked by a line of opponent.
+     *
+     * Checks if the given position is blocked by a line of opponent.
+     *
      * @param position the position of the piece.
      * @param antiGameVictim the anti game victim
      * @param objectiveRow the objective row of the piece
@@ -193,7 +213,9 @@ class Board
 
     /**
      * @brief checkLineBreak
+     *
      * Checks if a line has been breaked by the antiGameVictim
+     *
      * @param curentColumn the current column position of the piece.
      * @param antiGameVictim the anti game victim team
      * @return true if the line on the board is breaked
@@ -202,7 +224,9 @@ class Board
 
     /**
      * @brief hasDepassedLine
+     *
      * Checks if a piece in the currentLine has depassed the line of potential anti game.
+     *
      * @param currentLine the current line position of the piece
      * @param dir the direction position
      * @param antiGameVictim the team potential anti game victim
@@ -214,6 +238,7 @@ class Board
 
     /**
      * @brief achievedObjective
+     *
      * Verifies if the given position inside the board, contains a piece
      * who reached the objective with the ball.
      *
@@ -227,7 +252,9 @@ class Board
 
     /**
      * @brief belongsTo
+     *
      * Checks if a piece in that position inside the board belongs to the team given.
+     *
      * @param position the position of the piece.
      * @param player the player of the team concerned.
      * @return true if it belongs to the team given.
