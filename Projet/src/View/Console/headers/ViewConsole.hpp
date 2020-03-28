@@ -115,6 +115,15 @@ class ViewConsole : public View
     virtual std::string askCommand() override;
 
     /**
+     * @brief displayLeftPlayer
+     *
+     * Displays a message to telling that a player left the game.
+     *
+     * @param team The player who left the game.
+     */
+    virtual void displayLeftPlayer(Team team) override;
+
+    /**
      * @brief update update the view.
      *
      * @param obj the observable.

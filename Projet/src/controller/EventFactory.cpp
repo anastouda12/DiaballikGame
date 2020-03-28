@@ -44,7 +44,7 @@ int parseInt(std::string nb);
 
 DiaballikEventFactory::DiaballikEventFactory(Diaballik & model, View & view): model_{model}, view_{view} {}
 
-DiaballikEvent * DiaballikEventFactory::generateEvent(std::string input)
+DiaballikEvent DiaballikEventFactory::generateEvent(std::string input)
 {
     toLowerCase(input);
     std::vector<std::string> parser{split(input, std::string(" "))};
@@ -57,37 +57,37 @@ DiaballikEvent * DiaballikEventFactory::generateEvent(std::string input)
         if (parser[0] == "move" || parser[0] == "play")
         {
             if (parser.size() < 3) throw std::invalid_argument("Not enought arguments for play command");
-            else return new MoveEvent(model_, view_, Position(parseInt(parser[1]), parseInt(parser[2])));
+            else return DiaballikEvent{new MoveEvent(model_, view_, Position(parseInt(parser[1]), parseInt(parser[2])))};
         }
         else if (parser[0] == "select")
         {
             if (parser.size() < 3) throw std::invalid_argument("Not enought arguments for select command");
-            else return new SelectEvent(model_, view_, Position(parseInt(parser[1]), parseInt(parser[2])));
+            else return DiaballikEvent{new SelectEvent(model_, view_, Position(parseInt(parser[1]), parseInt(parser[2])))};
         }
         else if (parser[0] == "pass")
         {
-            if (parser.size() == 2 && parser[1] == "turn") return new PassTurnEvent(model_);
+            if (parser.size() == 2 && parser[1] == "turn") return DiaballikEvent{new PassTurnEvent(model_)};
             else
             {
                 if (parser.size() < 3) throw std::invalid_argument("Not enought arguments for pass command");
-                else return new PassEvent(model_, view_, Position(parseInt(parser[1]), parseInt(parser[2])));
+                else return DiaballikEvent{new PassEvent(model_, view_, Position(parseInt(parser[1]), parseInt(parser[2])))};
             }
         }
         else if (parser[0] == "passturn")
         {
-            return new PassTurnEvent(model_);
+            return DiaballikEvent{new PassTurnEvent(model_)};
         }
         else if (parser[0] == "help")
         {
-            return new HelpEvent(view_);
+            return DiaballikEvent{new HelpEvent(view_)};
         }
         else if (parser[0] == "exit" || parser[0] == "quit")
         {
-            return new ExitEvent(view_);
+            return DiaballikEvent{new ExitEvent(view_, model_)};
         }
         else if (parser[0] == "show" || parser[0] == "display")
         {
-            return new ShowEvent(view_, model_);
+            return DiaballikEvent{new ShowEvent(view_, model_)};
         }
         else
         {

@@ -1,5 +1,6 @@
 main.o
 Controller.o
+DiaballikEvent.o
 EventFactory.o
 ExitEvent.o
 HelpEvent.o

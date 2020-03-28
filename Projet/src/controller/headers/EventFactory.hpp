@@ -59,7 +59,7 @@ class DiaballikEventFactory
      * @param input The user input.
      * @return A new DiaballikEvent.
      */
-    DiaballikEvent * generateEvent(std::string input);
+    DiaballikEvent generateEvent(std::string input);
 
 };
 

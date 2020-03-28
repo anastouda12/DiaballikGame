@@ -1,7 +1,7 @@
 #ifndef MOVEEVENT_HPP
 #define MOVEEVENT_HPP
 
-#include "DiaballikEvent.hpp"
+#include "DiaballikAbstractEvent.hpp"
 #include "src/model/headers/Diaballik.hpp"
 #include "src/view/headers/View.hpp"
 
@@ -14,7 +14,7 @@ namespace dblk
  * This class is an active event that will modify the game data.
  * It moves a piece of the board of the game.
  */
-class MoveEvent : public DiaballikEvent
+class MoveEvent : public DiaballikAbstractEvent
 {
 
   private:

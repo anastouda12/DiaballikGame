@@ -1,7 +1,7 @@
 #ifndef SELECTEVENT_HPP
 #define SELECTEVENT_HPP
 
-#include "DiaballikEvent.hpp"
+#include "DiaballikAbstractEvent.hpp"
 #include "src/view/headers/View.hpp"
 #include "src/model/headers/Diaballik.hpp"
 
@@ -14,7 +14,7 @@ namespace dblk
  * This class is an active event that will modify the game data.
  * It selects a piece in the game, to move or pass the ball.
  */
-class SelectEvent : public DiaballikEvent
+class SelectEvent : public DiaballikAbstractEvent
 {
 
   private:

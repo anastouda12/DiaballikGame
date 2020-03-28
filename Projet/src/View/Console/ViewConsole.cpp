@@ -5,24 +5,29 @@
 namespace dblk
 {
 
+// Utility methods to read input
+size_t getSize();
+bool getVariant();
+
+
 //******************************//
 //* Implementation Class View *//
 //******************************//
 
-size_t getSize();
-bool getVariant();
-
 std::pair<size_t, bool> ViewConsole::displayMainMenu()
 {
-    std::cout << "Welcome to the Diaballik Game!" << std::endl;
+    std::cout << "*********************************************" << std::endl;
+    std::cout << "        Welcome to the Diaballik Game!       " << std::endl;
+    std::cout << "*********************************************" << std::endl;
     return std::pair<int, bool> {getSize(), getVariant()};
 }
 
 
 void ViewConsole::displayWelcomeMessage()
 {
+    std::cout << "*********************************************" << std::endl;
     std::cout << "The game has been started !" << std::endl;
-    std::cout << "Write help for help with the commands!";
+    std::cout << "Write <help> for help with the commands!";
 }
 
 void ViewConsole::displayBoard(const Diaballik & diaballik)
@@ -48,8 +53,10 @@ void ViewConsole::displayBoard(const Diaballik & diaballik)
             Position currentPos{i, j};
             try
             {
+                //Displays a piece
                 if (diaballik.getBoard().getPieceAt(currentPos).has_value())
                 {
+                    // Special display selected piece
                     if (diaballik.getSelected().has_value() &&
                             diaballik.getSelected().value() == currentPos)
                     {
@@ -59,6 +66,7 @@ void ViewConsole::displayBoard(const Diaballik & diaballik)
                         selectString.at(selectString.size() - 1) = '|';
                         std::cout << selectString;
                     }
+                    // No selected piece.
                     else
                     {
                         std::cout << diaballik.getBoard().getPieceAt(currentPos).value();
@@ -66,6 +74,7 @@ void ViewConsole::displayBoard(const Diaballik & diaballik)
                 }
                 else
                 {
+                    //Checks if is available position to move the selected piece.
                     if (diaballik.getSelected().has_value())
                     {
 
@@ -80,6 +89,7 @@ void ViewConsole::displayBoard(const Diaballik & diaballik)
                             std::cout << "(  )";
                         }
                     }
+                    //Empty position.
                     else
                     {
                         std::cout << "(  )";
@@ -88,6 +98,7 @@ void ViewConsole::displayBoard(const Diaballik & diaballik)
                 }
 
             }
+            // Usually never gets here, if yes big bug.
             catch (std::invalid_argument & ex)
             {
                 std::cout << "error: " << ex.what() << std::endl;
@@ -101,14 +112,18 @@ void ViewConsole::displayBoard(const Diaballik & diaballik)
 void ViewConsole::displayHelp()
 {
     std::cout << std::endl;
-    std::cout << "===========HELP===========" << std::endl;
-    std:: cout << "> SELECT line column" << std::endl;
-    std:: cout << "> PASS line column" << std::endl;
-    std:: cout << "> MOVE line column" << std::endl;
-    std:: cout << "> PASSTURN" << std::endl;
-    std:: cout << "> HELP" << std::endl;
-    std:: cout << "> EXIT" << std::endl;
-    std::cout << " =========================" << std::endl;
+    std::cout << "=================================HELP=====================================" <<
+              std::endl;
+    std::cout << "> SELECT line column - Selects a Piece to move or pass" << std::endl;
+    std::cout << "> PASS line column - Pass the ball of the selected piece to another piece." <<
+              std::endl;
+    std::cout << "> MOVE line column - Moves the selected piece to another position." << std::endl;
+    std::cout << "> PASSTURN - Ends the turn." << std::endl;
+    std::cout << "> SHOW - Displays the game board." << std::endl;
+    std::cout << "> HELP - Displays help." << std::endl;
+    std::cout << "> EXIT - Exits the game." << std::endl;
+    std::cout << " =========================================================================" <<
+              std::endl;
     std::cout << std::endl;
 }
 
@@ -170,6 +185,13 @@ void ViewConsole::displaySelected(const std::optional<Piece> piece)
     }
 }
 
+
+void ViewConsole::displayLeftPlayer(Team team)
+{
+    std::cout << "The player " << team << " left the game!" << std::endl;
+    std::cout << "The winner is: " << !team << std::endl;
+}
+
 void ViewConsole::update(const Observable * obj)
 {
     const Diaballik & diaballik = static_cast<const Diaballik &>(*obj);
@@ -183,6 +205,9 @@ void ViewConsole::update(const Observable * obj)
     displaySelected(pieceSelect);
 }
 
+// ****************
+// Utility Methods
+// ****************
 size_t getSize()
 {
     size_t num;
@@ -212,7 +237,7 @@ bool getVariant()
     {
         if (input[0] == 'y' || input[0] == 'Y') return true;
         else if (input[0] == 'n' || input[0] == 'N') return false;
-        std::cout << "Invalid answer, (yes/no): " << std::endl;
+        else std::cout << "Invalid answer, (yes/no): " << std::endl;
     }
     return false;
 }

@@ -110,6 +110,15 @@ class View: public Observer
      */
     virtual std::string askCommand() = 0;
 
+    /**
+     * @brief displayLeftPlayer
+     *
+     * Displays a message to telling that a player left the game.
+     *
+     * @param team The player who left the game.
+     */
+    virtual void displayLeftPlayer(Team team) = 0;
+
 }; //End class View
 
 } // End namespace dblk

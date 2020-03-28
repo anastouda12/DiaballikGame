@@ -1,32 +1,45 @@
 #ifndef DIABALLIKEVENT_H
 #define DIABALLIKEVENT_H
 
+#include "src/controller/headers/DiaballikAbstractEvent.hpp"
+
 namespace dblk
 {
+
 
 /**
  * @brief The DiaballikEvent class
  *
- * This class represents a main action launched by the user.
- * It can be a passive action that dont modifies the game data (like ask for
- * help, refresh the board...) or
- * an active action who modifies the game data (move a piece, pass turn...).
+ * Wrapper for an DiaballikAbstractEvent.
  */
 class DiaballikEvent
 {
+  private:
+    /**
+     * @brief event_
+     *
+     * Pointer to a dynamic event that must be executed.
+     */
+    DiaballikAbstractEvent * event_;
+
   public:
+    /**
+     * @brief DiaballikEvent
+     *
+     * Creates a new DiaballikEvent.
+     *
+     * @param event The event that must be executed.
+     */
+    DiaballikEvent(DiaballikAbstractEvent * event);
+
     /**
      * @brief execute
      *
-     * Execute the event.
+     * Executess the event.
      */
-    virtual void execute() = 0;
+    void execute();
 
-   /**
-    * @brief ~DiaballikEvent Destructor by default of DiaballikEvent.
-    *
-    */
-    virtual ~DiaballikEvent() = default;
+    ~DiaballikEvent();
 };
 
 }

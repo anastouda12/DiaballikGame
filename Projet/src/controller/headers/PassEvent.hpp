@@ -1,7 +1,7 @@
 #ifndef PASSEVENT_H
 #define PASSEVENT_H
 
-#include "DiaballikEvent.hpp"
+#include "DiaballikAbstractEvent.hpp"
 #include "src/view/headers/View.hpp"
 #include "src/model/headers/Diaballik.hpp"
 
@@ -14,7 +14,7 @@ namespace dblk
  * This class is an active event that will modify the game data.
  * It passes the ball from a piece to another piece.
  */
-class PassEvent : public DiaballikEvent
+class PassEvent : public DiaballikAbstractEvent
 {
 
   private:

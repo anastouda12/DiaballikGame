@@ -1,7 +1,7 @@
 #ifndef SHOWEVENT_H
 #define SHOWEVENT_H
 
-#include "DiaballikEvent.hpp"
+#include "DiaballikAbstractEvent.hpp"
 #include "src/view/headers/View.hpp"
 
 namespace dblk
@@ -12,7 +12,7 @@ namespace dblk
  *
  * This class is a passive event. It displays/refreshs the board.
  */
-class ShowEvent : public DiaballikEvent
+class ShowEvent : public DiaballikAbstractEvent
 {
 
   private:

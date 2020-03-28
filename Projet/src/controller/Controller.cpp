@@ -20,10 +20,8 @@ void Controller::playGame()
     {
         try
         {
-            DiaballikEvent * evn = this->evntFactory_.generateEvent(this->view_.askCommand());
-            evn->execute();
-            delete evn;
-            evn = nullptr;
+            DiaballikEvent evn = this->evntFactory_.generateEvent(this->view_.askCommand());
+            evn.execute();
         }
         catch (std::runtime_error & ex )
         {

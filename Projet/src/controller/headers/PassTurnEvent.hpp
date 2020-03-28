@@ -1,7 +1,7 @@
 #ifndef PASSTURNEVENT_H
 #define PASSTURNEVENT_H
 
-#include "DiaballikEvent.hpp"
+#include "DiaballikAbstractEvent.hpp"
 #include "src/model/headers/Diaballik.hpp"
 
 namespace dblk
@@ -13,7 +13,7 @@ namespace dblk
  * This class is an active event that will modify the game data.
  * It swaps the turn of the players.
  */
-class PassTurnEvent : public DiaballikEvent
+class PassTurnEvent : public DiaballikAbstractEvent
 {
 
   private:

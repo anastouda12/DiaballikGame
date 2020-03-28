@@ -1,7 +1,7 @@
 #ifndef EXITEVENT_H
 #define EXITEVENT_H
 
-#include "DiaballikEvent.hpp"
+#include "DiaballikAbstractEvent.hpp"
 #include "src/view/headers/View.hpp"
 
 namespace dblk
@@ -11,7 +11,7 @@ namespace dblk
  *
  * This event when executed quits the app.
  */
-class ExitEvent : public DiaballikEvent
+class ExitEvent : public DiaballikAbstractEvent
 {
 
   private:
@@ -23,6 +23,13 @@ class ExitEvent : public DiaballikEvent
      */
     View & view_;
 
+    /**
+     * @brief model_
+     *
+     * The game data.
+     */
+    Diaballik & model_;
+
   public:
 
     /**
@@ -31,8 +38,9 @@ class ExitEvent : public DiaballikEvent
      * Creates a new ExitEvent.
      *
      * @param view The user interface to inform the user.
+     * @param model The game data.
      */
-    explicit ExitEvent(View & view);
+    explicit ExitEvent(View & view, Diaballik & model);
 
     /**
      * @brief execute

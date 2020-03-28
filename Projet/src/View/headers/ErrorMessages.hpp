@@ -13,9 +13,9 @@ namespace dblk
 **/
 static std::vector<std::string> errorMessagesMove =
 {
-    "No position selected",
-    "Not enough move available",
-    "Out bound of the board",
+    "No position has been selected",
+    "Not enought moves available",
+    "Out bounds of the board",
     "Position already occupied",
     "Obstacle met",
     "Impossible to move the piece who has the ball"
@@ -27,13 +27,13 @@ static std::vector<std::string> errorMessagesMove =
 **/
 static std::vector<std::string> errorMessageThrow =
 {
-    "No position selected",
-    "Not possible to throw the ball",
-    "No ball",
-    "Out bound of the board",
-    "No piece",
-    "Piece of the opponent team",
-    "Non aligned",
+    "No position has been selected",
+    "You already passed the ball this turn",
+    "The selected piece has no ball",
+    "Out bounds of the board",
+    "No piece at the end position to pass the ball",
+    "Piece at the end position is from the opponent team",
+    "You must be aligned to pass the ball",
     "Obstacle met"
 };
 
@@ -43,8 +43,8 @@ static std::vector<std::string> errorMessageThrow =
 **/
 static std::vector<std::string> errorMessageSelect =
 {
-    "No piece",
-    "Out bound of the board",
+    "No piece at the given position",
+    "Position out bounds of the board",
     "Piece of the opponent team"
 };
 

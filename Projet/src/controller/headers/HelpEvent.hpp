@@ -1,7 +1,7 @@
 #ifndef HELPEVENT_HPP
 #define HELPEVENT_HPP
 
-#include "DiaballikEvent.hpp"
+#include "DiaballikAbstractEvent.hpp"
 #include "src/view/headers/View.hpp"
 
 namespace dblk
@@ -12,7 +12,7 @@ namespace dblk
  *
  * Uses the user interface to display help to the user.
  */
-class HelpEvent : public DiaballikEvent
+class HelpEvent : public DiaballikAbstractEvent
 {
 
   private:

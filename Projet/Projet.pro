@@ -7,6 +7,7 @@ CONFIG += c++17
 SOURCES += \
         main.cpp \
         src/controller/Controller.cpp \
+        src/controller/DiaballikEvent.cpp \
         src/controller/EventFactory.cpp \
         src/controller/ExitEvent.cpp \
         src/controller/HelpEvent.cpp \
@@ -27,12 +28,13 @@ QMAKE_CXXFLAGS += -pedantic-errors -std=c++17 -Wall
 
 
 HEADERS += \
+    src/controller/headers/DiaballikAbstractEvent.hpp \
+    src/controller/headers/DiaballikEvent.hpp \
     src/view/headers/ErrorMessages.hpp \
     src/view/console/headers/ViewConsole.hpp \
     src/view/headers/Observer.hpp \
     src/view/headers/View.hpp \
     src/controller/headers/Controller.hpp \
-    src/controller/headers/DiaballikEvent.hpp \
     src/controller/headers/EventFactory.hpp \
     src/controller/headers/ExitEvent.hpp \
     src/controller/headers/HelpEvent.hpp \
