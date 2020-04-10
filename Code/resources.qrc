@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>../resources/images/background.jpg</file>
+        <file>../resources/images/icon_settings.png</file>
+        <file>../resources/images/diaballik_logo.png</file>
+        <file>../resources/images/rules_icon.png</file>
+        <file>../resources/images/winner_logo.png</file>
+    </qresource>
+</RCC>

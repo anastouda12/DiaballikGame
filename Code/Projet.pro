@@ -1,8 +1,9 @@
 TEMPLATE = app
 CONFIG += console # c++11
-CONFIG -= app_bundle
-CONFIG -= qt
 CONFIG += c++17
+
+QT       += core gui
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 QMAKE_CXXFLAGS += -pedantic-errors -std=c++17 -Wall
 
@@ -24,11 +25,13 @@ SOURCES += \
         src/model/Position.cpp \
         src/model/Piece.cpp \
         src/model/Team.cpp \
-        src/view/console/ViewConsole.cpp
+        src/view/console/ViewConsole.cpp \
+        src/view/gui/mainwindow.cpp \
 
 HEADERS += \
     src/controller/headers/DiaballikAbstractEvent.hpp \
     src/controller/headers/DiaballikEvent.hpp \
+    src/view/gui/headers/mainwindow.h \
     src/view/headers/ErrorMessages.hpp \
     src/view/console/headers/ViewConsole.hpp \
     src/view/headers/Observer.hpp \
@@ -50,3 +53,13 @@ HEADERS += \
     src/model/headers/Piece.hpp \
     src/model/headers/Position.hpp \
     src/model/headers/Team.hpp
+
+
+RESOURCES += \
+    resources.qrc
+
+FORMS += \
+    src/view/gui/mainwindow.ui
+
+DISTFILES +=
+
