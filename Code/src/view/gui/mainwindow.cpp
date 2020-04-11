@@ -8,8 +8,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     this->setFixedSize(QSize(800, 600));
     setStyleSheet("MainWindow {background:url(:/resources/images/background.jpg);}");
-    ui->movesAvailableNumber->setPalette(Qt::yellow);
-    ui->throwAvailableNumber->setPalette(Qt::yellow);
+    ui->movesAvailableNumber->setPalette(QColor("#ff9100"));
+    ui->throwAvailableNumber->setPalette(QColor("#ff9100"));
 }
 
 MainWindow::~MainWindow()

@@ -26,6 +26,12 @@
       <height>551</height>
      </rect>
     </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
     <property name="styleSheet">
      <string notr="true"/>
     </property>
@@ -235,9 +241,9 @@
       <property name="geometry">
        <rect>
         <x>60</x>
-        <y>20</y>
-        <width>671</width>
-        <height>431</height>
+        <y>50</y>
+        <width>681</width>
+        <height>401</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="boardGame"/>
@@ -346,19 +352,6 @@
        </property>
       </widget>
      </widget>
-     <widget class="QPushButton" name="btnGamePage_passTurn">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>510</y>
-        <width>121</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Pass my turn</string>
-      </property>
-     </widget>
      <widget class="QPushButton" name="btnGamePage_leave">
       <property name="geometry">
        <rect>
@@ -370,6 +363,53 @@
       </property>
       <property name="text">
        <string>Leave</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="verticalLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>0</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QLabel" name="labelTurnTeam">
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color:white;</string>
+         </property>
+         <property name="text">
+          <string>Turn of team</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTextEdit" name="textTurnTeam">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="btnGamePage_passTurn">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>510</y>
+        <width>131</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Pass my turn</string>
       </property>
      </widget>
     </widget>
