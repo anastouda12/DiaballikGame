@@ -1,7 +1,7 @@
 #ifndef PASSTURNEVENT_H
 #define PASSTURNEVENT_H
 
-#include "DiaballikAbstractEvent.hpp"
+#include "DiaballikEvent.hpp"
 #include "src/model/headers/Diaballik.hpp"
 
 namespace dblk

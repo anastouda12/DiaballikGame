@@ -8,44 +8,38 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 QMAKE_CXXFLAGS += -pedantic-errors -std=c++17 -Wall
 
 SOURCES += \
+        src/controller/EventManager.cpp \
+        src/controller/NewGameEvent.cpp \
         src/main.cpp \
         src/controller/Controller.cpp \
         src/controller/DiaballikEvent.cpp \
-        src/controller/EventFactory.cpp \
-        src/controller/ExitEvent.cpp \
-        src/controller/HelpEvent.cpp \
         src/controller/MoveEvent.cpp \
         src/controller/PassEvent.cpp \
         src/controller/PassTurnEvent.cpp \
         src/controller/SelectEvent.cpp \
-        src/controller/ShowEvent.cpp \
         src/model/Board.cpp \
         src/model/Diaballik.cpp \
         src/model/Observable.cpp \
         src/model/Position.cpp \
         src/model/Piece.cpp \
         src/model/Team.cpp \
-        src/view/console/ViewConsole.cpp \
-        src/view/gui/mainwindow.cpp \
+        src/view/gui/ViewUI.cpp
 
 HEADERS += \
-    src/controller/headers/DiaballikAbstractEvent.hpp \
     src/controller/headers/DiaballikEvent.hpp \
-    src/view/gui/headers/mainwindow.h \
+    src/controller/headers/EventManager.hpp \
+    src/controller/headers/NewGameEvent.hpp \
+    src/view/gui/headers/BoardUI.hpp \
+    src/view/gui/headers/ViewUI.hpp \
     src/view/headers/ErrorMessages.hpp \
-    src/view/console/headers/ViewConsole.hpp \
     src/view/headers/Observer.hpp \
     src/view/headers/View.hpp \
     src/controller/headers/Controller.hpp \
-    src/controller/headers/EventFactory.hpp \
-    src/controller/headers/ExitEvent.hpp \
-    src/controller/headers/HelpEvent.hpp \
     src/controller/headers/MoveEvent.hpp \
     src/controller/headers/PassEvent.hpp \
     src/controller/headers/PassTurnEvent.hpp \
     src/controller/headers/SelectEvent.hpp \
     src/view/console/View.hpp \
-    src/controller/headers/ShowEvent.hpp \
     src/model/headers/Board.hpp \
     src/controller/headers/Configs.hpp \
     src/model/headers/Diaballik.hpp \
@@ -59,7 +53,7 @@ RESOURCES += \
     resources.qrc
 
 FORMS += \
-    src/view/gui/mainwindow.ui
+    src/view/gui/MainWindow.ui
 
 DISTFILES +=
 

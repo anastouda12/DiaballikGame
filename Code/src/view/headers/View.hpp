@@ -13,7 +13,6 @@ class View: public Observer
 {
 
   public:
-
     /**
      * @brief displayMainMenu
      *
@@ -21,14 +20,14 @@ class View: public Observer
      *
      * @return the size of the game and variant.
      */
-    virtual std::pair<size_t, bool> displayMainMenu() = 0;
+    virtual void displayOptionsMenu() = 0;
 
     /**
      * @brief displayWelcomeMessage
      *
      * Displays a welcome message to the players
      */
-    virtual void displayWelcomeMessage() = 0;
+    virtual void displayWelcomePage() = 0;
 
     /**
      * @brief displayBoard
@@ -64,7 +63,6 @@ class View: public Observer
      * @param canPass possibility to throw the ball of the current player
      */
     virtual void displayCounters(unsigned moveCounter, bool canPass) = 0;
-
 
     /**
      * @brief displayWinner
@@ -102,15 +100,6 @@ class View: public Observer
     virtual void displaySelected(const std::optional<Piece> piece) = 0;
 
     /**
-     * @brief askCommand
-     *
-     * Keyboard reading
-     *
-     * @return the command executed by the user
-     */
-    virtual std::string askCommand() = 0;
-
-    /**
      * @brief displayLeftPlayer
      *
      * Displays a message to telling that a player left the game.
@@ -118,7 +107,6 @@ class View: public Observer
      * @param team The player who left the game.
      */
     virtual void displayLeftPlayer(Team team) = 0;
-
 }; //End class View
 
 } // End namespace dblk

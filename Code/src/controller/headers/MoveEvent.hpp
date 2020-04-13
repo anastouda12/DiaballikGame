@@ -1,7 +1,7 @@
 #ifndef MOVEEVENT_HPP
 #define MOVEEVENT_HPP
 
-#include "DiaballikAbstractEvent.hpp"
+#include "DiaballikEvent.hpp"
 #include "src/model/headers/Diaballik.hpp"
 #include "src/view/headers/View.hpp"
 

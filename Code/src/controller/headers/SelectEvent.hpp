@@ -1,7 +1,7 @@
 #ifndef SELECTEVENT_HPP
 #define SELECTEVENT_HPP
 
-#include "DiaballikAbstractEvent.hpp"
+#include "DiaballikEvent.hpp"
 #include "src/view/headers/View.hpp"
 #include "src/model/headers/Diaballik.hpp"
 

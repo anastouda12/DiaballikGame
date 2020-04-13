@@ -63,15 +63,18 @@ class Diaballik : public Observable
     bool canThrowBall_;
 
   public:
+
+    Diaballik();
+
     /**
-     * @brief Diabilik
+     * @brief init
      *
-     * Creates a new Diaballik game.
+     * Initializates the game data
      *
      * @param size The size of the Board.
      * @param variant Indicates if the variant rule is applied.
      */
-    Diaballik(size_t size, bool variant);
+    void init(size_t size, bool variant);
 
     /**
      * @brief getCurrentPlayer

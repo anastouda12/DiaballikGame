@@ -9,13 +9,12 @@ namespace dblk
 //* Implementation Classe Board*//
 //******************************//
 
+Board::Board(): pieces_{}, size_{0} {}
 
-Board::Board(size_t size) : size_{size},
-    pieces_{size, std::vector<std::optional<Piece>>(size, std::optional<Piece>())} {}
-
-
-void Board::init(bool variant)
+void Board::init(bool variant, size_t size)
 {
+    pieces_ = std::vector(size, std::vector<std::optional<Piece>>(size, std::optional<Piece>()));
+    size_ = size;
     for (unsigned j{0}; j < size_; j++)
     {
         this->pieces_[0][j] = Piece(NORTH, size_ - 1);

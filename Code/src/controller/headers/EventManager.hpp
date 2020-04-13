@@ -10,6 +10,11 @@ namespace dblk
 class Diaballik;
 class View;
 
+enum class EventType
+{
+    NEW_GAME, MOVE, PASS, PASS_TURN, SELECT
+};
+
 /**
  * @brief The DiaballikEventFactory class
  *
@@ -17,7 +22,7 @@ class View;
  * It parses a string input from the user to generate a DiaballikEvent
  * that will manipulate the game or the UI.
  */
-class DiaballikEventFactory
+class DiaballikEventManager
 {
 
   private:
@@ -46,7 +51,7 @@ class DiaballikEventFactory
      * @param model The game data.
      * @param view The UI.
      */
-    DiaballikEventFactory(Diaballik & model, View & view);
+    DiaballikEventManager(Diaballik & model, View & view);
 
     /**
      * @brief generateEvent
@@ -59,7 +64,7 @@ class DiaballikEventFactory
      * @param input The user input.
      * @return A new DiaballikEvent.
      */
-    DiaballikEvent generateEvent(std::string input);
+    void executeEvent(EventType type, int arg1, int arg2);
 
 };
 

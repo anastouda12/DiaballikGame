@@ -22,30 +22,23 @@ class Board
   private:
 
     /**
-     * @brief size
-     *
-     * The size of the board.
-     */
-    const size_t size_;
-
-    /**
      * @brief pieces
      *
      * The main container for the Pieces in the board.
      */
     std::vector<std::vector<std::optional<Piece>>> pieces_;
 
+    /**
+     * @brief size
+     *
+     * The size of the board.
+     */
+    size_t size_;
+
+
   public:
 
-    /**
-    * @brief Board
-    *
-    * Creates a new board with the given size.
-    * No piece will be inside of the board.
-    *
-    * @param size The size of the board.
-    */
-    explicit Board(const size_t size);
+    Board();
 
     /**
      * @brief init
@@ -55,8 +48,9 @@ class Board
      * change according the variant rule.
      *
      * @param variant Is the variant rule applied or not.
+     *     * @param size The size of the board.
      */
-    void init(bool variant);
+    void init(bool variant, const size_t size);
 
     /**
      * @brief getSize

@@ -10,11 +10,15 @@ namespace dblk
 //**********************************//
 
 
-Diaballik::Diaballik(size_t size, bool variant):
-    board_{size}, currentPlayer_{Team::NORTH}, winner_{}, selected_{}, moveCount_{DEFAULT_MOVES},
+Diaballik::Diaballik():
+    board_{}, currentPlayer_{Team::NORTH}, winner_{}, selected_{}, moveCount_{DEFAULT_MOVES},
     canThrowBall_{true}
+{}
+
+void Diaballik::init(size_t size, bool variant)
 {
-    board_.init(variant);
+    this->board_.init(variant, size);
+    this->notifyObservers();
 }
 
 const Team & Diaballik::getCurrentPlayer() const

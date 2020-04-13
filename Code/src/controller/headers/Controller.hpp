@@ -1,9 +1,9 @@
 #ifndef CONTROLLER_HPP
 #define CONTROLLER_HPP
 
-#include "src/view/headers/View.hpp"
+#include "src/view/gui/headers/ViewUI.hpp"
 #include "src/model/headers/Diaballik.hpp"
-#include "EventFactory.hpp"
+#include "EventManager.hpp"
 
 namespace dblk
 {
@@ -31,14 +31,14 @@ class Controller
      *
      * The user interface.
      */
-    View & view_;
+    ViewUI & view_;
 
     /**
      * @brief evntFactory_
      *
      * A factory of events launched by the user.
      */
-    DiaballikEventFactory evntFactory_;
+    DiaballikEventManager evntManager_;
 
   public:
 
@@ -50,7 +50,7 @@ class Controller
      * @param model The game data.
      * @param view The UI.
      */
-    Controller(Diaballik & model, View & view);
+    Controller(Diaballik & model, ViewUI & view);
 
     /**
      * @brief init
