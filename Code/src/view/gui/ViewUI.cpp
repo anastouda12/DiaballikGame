@@ -1,14 +1,13 @@
 #include "headers/ViewUI.hpp"
 #include "ui_MainWindow.h"
-#include "src/view/gui/headers/BoardUI.hpp"
-
 namespace dblk
 {
 
 ViewUI::ViewUI(QWidget * parent):
     QMainWindow(parent),
-    mainWindow_(new Ui::MainWindow),
-    evntManager_{nullptr}
+    mainWindow_{new Ui::MainWindow},
+            gamePage_{},
+            evntManager_{nullptr}
 {
     mainWindow_->setupUi(this);
     this->setFixedSize(QSize(1280, 720));
@@ -35,7 +34,7 @@ void ViewUI::initSlots()
 
 void ViewUI::initGame()
 {
-    size_t boardSize = mainWindow_->boardSizeInput->value();
+    size_t boardSize = mainWindow_->boardSizeInput->currentText().toInt();
     bool variant = mainWindow_->gameVariantInput->isChecked();
     this->evntManager_->executeEvent(EventType::NEW_GAME, boardSize, variant);
     this->mainWindow_->stackedWidget->setCurrentIndex(2);
@@ -100,7 +99,7 @@ void ViewUI::displayLeftPlayer(dblk::Team team)
 
 void ViewUI::update(const dblk::Observable * observable)
 {
-    //TODO
+    this->displayBoard(*reinterpret_cast<const Diaballik *>(observable));
 }
 
 ViewUI::~ViewUI()

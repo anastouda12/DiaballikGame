@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "GamePageUI.hpp"
 #include "src/view/headers/View.hpp"
 #include "src/controller/headers/EventManager.hpp"
 #include "src/model/headers/Diaballik.hpp"
@@ -20,6 +21,7 @@ class ViewUI : public QMainWindow, public View
 
   private:
     Ui::MainWindow * mainWindow_;
+    dblk::GamePageUI gamePage_;
     dblk::DiaballikEventManager * evntManager_;
 
   public:

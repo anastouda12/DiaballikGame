@@ -29,7 +29,7 @@ HEADERS += \
     src/controller/headers/DiaballikEvent.hpp \
     src/controller/headers/EventManager.hpp \
     src/controller/headers/NewGameEvent.hpp \
-    src/view/gui/headers/BoardUI.hpp \
+    src/view/gui/headers/GamePageUI.hpp \
     src/view/gui/headers/ViewUI.hpp \
     src/view/headers/ErrorMessages.hpp \
     src/view/headers/Observer.hpp \
