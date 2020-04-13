@@ -16,3 +16,4 @@ Position.o
 Piece.o
 Team.o
 ViewConsole.o
+form.o

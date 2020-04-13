@@ -24,11 +24,13 @@ SOURCES += \
         src/model/Position.cpp \
         src/model/Piece.cpp \
         src/model/Team.cpp \
-        src/view/console/ViewConsole.cpp
+        src/view/console/ViewConsole.cpp \
+        src/view/console/form.cpp
 
 HEADERS += \
     src/controller/headers/DiaballikAbstractEvent.hpp \
     src/controller/headers/DiaballikEvent.hpp \
+    src/view/console/form.h \
     src/view/headers/ErrorMessages.hpp \
     src/view/console/headers/ViewConsole.hpp \
     src/view/headers/Observer.hpp \
@@ -50,3 +52,6 @@ HEADERS += \
     src/model/headers/Piece.hpp \
     src/model/headers/Position.hpp \
     src/model/headers/Team.hpp
+
+FORMS += \
+    src/view/console/form.ui
