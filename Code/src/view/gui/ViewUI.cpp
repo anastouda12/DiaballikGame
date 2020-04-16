@@ -1,5 +1,6 @@
 #include "headers/ViewUI.hpp"
 #include "ui_MainWindow.h"
+
 namespace dblk
 {
 
@@ -53,8 +54,28 @@ void  ViewUI::displayOptionsMenu()
 
 void ViewUI::displayBoard(const dblk::Diaballik & diaballik)
 {
-    //TODO
-}
+    size_t size = 5;
+    for(unsigned i = 0; i< size;i++)
+       {
+        for(unsigned j = 0;j<size;j++)
+        {
+            QWidget * rect = new QWidget;
+            rect->setStyleSheet("background-color:green;"); // just for test
+            if(diaballik.getBoard().isFree(Position(i,j))){
+                // STYLE FREE CASE
+            }else{
+                if(diaballik.getBoard().getPieceAt(Position(i,j)).value().getTeam() == dblk::NORTH){
+                    // STYLE team NORTH
+                }else{
+                    // STYLE team SOUTH
+                }
+            }
+            this->mainWindow_->gameBoard->addWidget(rect,i,j);
+            rect->show();
+        }
+    }
+
+    }
 
 void ViewUI::displayHelp()
 {
@@ -63,38 +84,40 @@ void ViewUI::displayHelp()
 
 void ViewUI::displayCurrentPlayer(const dblk::Team & team)
 {
-    //TODO
+    this->mainWindow_->textTurnTeam->setText(QString::fromStdString(to_string(team)));
 }
 
 void ViewUI::displayCounters(unsigned moveCounter, bool canPass)
 {
-    //TODO
+    this->mainWindow_->movesAvailableNumber->setDigitCount(moveCounter);
+    this->mainWindow_->throwAvailableNumber->setDigitCount(canPass);
 }
 
 void ViewUI::displayWinner(const std::optional<dblk::Team> & team)
 {
-    //TODO
+    this->mainWindow_->teamWinnerText->setText(QString::fromStdString(to_string(team.value())));
 }
 
 void ViewUI:: displayError(std::string errorMsg)
 {
+    this->mainWindow_->textActionGame->setText("[ERROR] : "+QString::fromStdString(errorMsg));
     std::cout << "ERROR: " << errorMsg << std::endl;
 }
 
 
 void ViewUI::displayGoodByeMessage()
 {
-
+   this->mainWindow_->textActionGame->setText("Bye..."); // ....
 }
 
 void ViewUI::displaySelected(const std::optional<dblk::Piece> piece)
 {
-    //TODO
+    this->mainWindow_->textActionGame->setText("[SELECTED PIECE] : "+QString::fromStdString(piece.value().to_string()));
 }
 
 void ViewUI::displayLeftPlayer(dblk::Team team)
 {
-
+    this->mainWindow_->typeWinText->setText("Team "+QString::fromStdString(to_string(team))+" left the Game");
 }
 
 void ViewUI::update(const dblk::Observable * observable)

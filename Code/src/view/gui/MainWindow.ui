@@ -249,16 +249,6 @@
      </widget>
     </widget>
     <widget class="QWidget" name="gamePage">
-     <widget class="QWidget" name="gridWidget" native="true">
-      <property name="geometry">
-       <rect>
-        <x>280</x>
-        <y>30</y>
-        <width>500</width>
-        <height>500</height>
-       </rect>
-      </property>
-     </widget>
      <widget class="QPushButton" name="btnGamePage_leave">
       <property name="geometry">
        <rect>
@@ -275,13 +265,39 @@
      <widget class="QWidget" name="verticalLayoutWidget_2">
       <property name="geometry">
        <rect>
-        <x>80</x>
-        <y>110</y>
-        <width>124</width>
-        <height>105</height>
+        <x>940</x>
+        <y>120</y>
+        <width>131</width>
+        <height>51</height>
        </rect>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_4"/>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QLabel" name="labelTurnTeam">
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color:white;</string>
+         </property>
+         <property name="text">
+          <string>Turn of team</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTextEdit" name="textTurnTeam">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
      <widget class="QPushButton" name="btnGamePage_passTurn">
       <property name="geometry">
@@ -400,39 +416,48 @@
        </property>
       </widget>
      </widget>
-     <widget class="QTextEdit" name="textTurnTeam">
+     <widget class="QWidget" name="verticalLayoutWidget_3">
       <property name="geometry">
        <rect>
-        <x>80</x>
-        <y>150</y>
-        <width>122</width>
-        <height>71</height>
+        <x>850</x>
+        <y>270</y>
+        <width>321</width>
+        <height>81</height>
        </rect>
       </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="labelGameAction">
+         <property name="styleSheet">
+          <string notr="true">color:white;</string>
+         </property>
+         <property name="text">
+          <string>GAME ACTION</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTextEdit" name="textActionGame">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
-     <widget class="QLabel" name="labelTurnTeam">
+     <widget class="QWidget" name="gridLayoutWidget">
       <property name="geometry">
        <rect>
-        <x>80</x>
-        <y>50</y>
-        <width>122</width>
-        <height>103</height>
+        <x>259</x>
+        <y>59</y>
+        <width>501</width>
+        <height>491</height>
        </rect>
       </property>
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color:white;</string>
-      </property>
-      <property name="text">
-       <string>Turn of team</string>
-      </property>
+      <layout class="QGridLayout" name="gameBoard"/>
      </widget>
     </widget>
     <widget class="QWidget" name="winnerPage">
