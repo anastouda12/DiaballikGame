@@ -1,5 +1,6 @@
 #include "headers/ViewUI.hpp"
 #include "ui_MainWindow.h"
+#include <QFile>
 
 namespace dblk
 {
@@ -12,7 +13,13 @@ ViewUI::ViewUI(QWidget * parent):
 {
     mainWindow_->setupUi(this);
     this->setFixedSize(QSize(1280, 720));
-    setStyleSheet("MainWindow {background:url(:/resources/images/background.jpg);}");
+    QFile file(":/resources/qss/stylesheet.qss");
+    if(file.exists())
+    {
+        file.open(QFile::ReadOnly);
+        QString style = QLatin1String(file.readAll());
+        qApp->setStyleSheet(style);
+    }
     mainWindow_->movesAvailableNumber->setPalette(QColor("#ff9100"));
     mainWindow_->throwAvailableNumber->setPalette(QColor("#ff9100"));
     initSlots();

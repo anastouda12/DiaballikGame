@@ -184,15 +184,15 @@
      <widget class="QLabel" name="ImgSettings">
       <property name="geometry">
        <rect>
-        <x>180</x>
-        <y>70</y>
+        <x>200</x>
+        <y>140</y>
         <width>261</width>
         <height>61</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <pointsize>35</pointsize>
+        <pointsize>40</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -233,8 +233,8 @@
        <rect>
         <x>10</x>
         <y>20</y>
-        <width>171</width>
-        <height>151</height>
+        <width>241</width>
+        <height>211</height>
        </rect>
       </property>
       <property name="text">
@@ -249,26 +249,13 @@
      </widget>
     </widget>
     <widget class="QWidget" name="gamePage">
-     <widget class="QPushButton" name="btnGamePage_leave">
-      <property name="geometry">
-       <rect>
-        <x>940</x>
-        <y>550</y>
-        <width>112</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Leave</string>
-      </property>
-     </widget>
      <widget class="QWidget" name="verticalLayoutWidget_2">
       <property name="geometry">
        <rect>
-        <x>940</x>
-        <y>120</y>
-        <width>131</width>
-        <height>51</height>
+        <x>980</x>
+        <y>190</y>
+        <width>141</width>
+        <height>61</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -299,26 +286,13 @@
        </item>
       </layout>
      </widget>
-     <widget class="QPushButton" name="btnGamePage_passTurn">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>560</y>
-        <width>131</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Pass my turn</string>
-      </property>
-     </widget>
      <widget class="QGroupBox" name="groupBox_2">
       <property name="geometry">
        <rect>
-        <x>390</x>
-        <y>580</y>
-        <width>301</width>
-        <height>101</height>
+        <x>330</x>
+        <y>550</y>
+        <width>321</width>
+        <height>121</height>
        </rect>
       </property>
       <property name="font">
@@ -332,97 +306,93 @@
       <property name="title">
        <string>Data current player</string>
       </property>
-      <widget class="QLabel" name="labelMoveAvailable">
+      <widget class="QWidget" name="verticalLayoutWidget_4">
        <property name="geometry">
         <rect>
-         <x>10</x>
+         <x>9</x>
          <y>30</y>
-         <width>101</width>
-         <height>16</height>
+         <width>311</width>
+         <height>91</height>
         </rect>
        </property>
-       <property name="font">
-        <font>
-         <pointsize>14</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color:white;
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_9">
+          <item>
+           <widget class="QLabel" name="labelMoveAvailable">
+            <property name="font">
+             <font>
+              <pointsize>17</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color:white;
 </string>
-       </property>
-       <property name="text">
-        <string>Moves available</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="labelThrowAvailable">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>60</y>
-         <width>101</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>14</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color:white;</string>
-       </property>
-       <property name="text">
-        <string>Throw available</string>
-       </property>
-      </widget>
-      <widget class="QLCDNumber" name="movesAvailableNumber">
-       <property name="geometry">
-        <rect>
-         <x>180</x>
-         <y>30</y>
-         <width>64</width>
-         <height>23</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="layoutDirection">
-        <enum>Qt::LeftToRight</enum>
-       </property>
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
-       <property name="smallDecimalPoint">
-        <bool>false</bool>
-       </property>
-       <property name="digitCount">
-        <number>1</number>
-       </property>
-      </widget>
-      <widget class="QLCDNumber" name="throwAvailableNumber">
-       <property name="geometry">
-        <rect>
-         <x>180</x>
-         <y>60</y>
-         <width>64</width>
-         <height>23</height>
-        </rect>
-       </property>
-       <property name="digitCount">
-        <number>1</number>
-       </property>
+            </property>
+            <property name="text">
+             <string>Moves available</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="movesAvailableNumber">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="smallDecimalPoint">
+             <bool>false</bool>
+            </property>
+            <property name="digitCount">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_12">
+          <item>
+           <widget class="QLabel" name="labelThrowAvailable">
+            <property name="font">
+             <font>
+              <pointsize>17</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color:white;</string>
+            </property>
+            <property name="text">
+             <string>Throw available</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="throwAvailableNumber">
+            <property name="digitCount">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
       </widget>
      </widget>
      <widget class="QWidget" name="verticalLayoutWidget_3">
       <property name="geometry">
        <rect>
-        <x>850</x>
+        <x>870</x>
         <y>270</y>
-        <width>321</width>
-        <height>81</height>
+        <width>351</width>
+        <height>91</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -451,13 +421,39 @@
      <widget class="QWidget" name="gridLayoutWidget">
       <property name="geometry">
        <rect>
-        <x>259</x>
+        <x>199</x>
         <y>59</y>
-        <width>501</width>
-        <height>491</height>
+        <width>591</width>
+        <height>471</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gameBoard"/>
+     </widget>
+     <widget class="QWidget" name="horizontalLayoutWidget_7">
+      <property name="geometry">
+       <rect>
+        <x>910</x>
+        <y>600</y>
+        <width>271</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_13">
+       <item>
+        <widget class="QPushButton" name="btnGamePage_passTurn">
+         <property name="text">
+          <string>Pass my turn</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnGamePage_leave">
+         <property name="text">
+          <string>Leave</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
     <widget class="QWidget" name="winnerPage">

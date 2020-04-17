@@ -1,0 +1,3 @@
+QWidget#MainWindow{
+background:url(:/resources/images/background.jpg);
+}

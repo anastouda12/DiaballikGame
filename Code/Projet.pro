@@ -55,5 +55,3 @@ RESOURCES += \
 FORMS += \
     src/view/gui/MainWindow.ui
 
-DISTFILES +=
-
