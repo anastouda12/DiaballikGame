@@ -3,7 +3,7 @@
 
 namespace dblk
 {
-BoardUI::BoardUI(const Board & board)
+BoardUI::BoardUI(const Board & board, DiaballikEventManager * evnManager)
 {
     for (int row = 0; row < static_cast<int>(board.getSize()); row++)
     {
@@ -25,6 +25,7 @@ BoardUI::BoardUI(const Board & board)
 
             }
             this->addWidget(square, row, col);
+            connect(square, SIGNAL(clicked()), square, SLOT(squareClicked(row, col, evnManager)));
         }
     }
 }

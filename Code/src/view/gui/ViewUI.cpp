@@ -151,7 +151,7 @@ void ViewUI::update(const dblk::Observable * observable, EventType type)
             {
                 delete boardUI_;
             }
-            boardUI_ = new BoardUI(game->getBoard());
+            boardUI_ = new BoardUI(game->getBoard(), evntManager_);
             this->mainWindow_->boardZone->setLayout(boardUI_);
             this->displayCounters(game->getMoveCount(), game->canPass());
             break;

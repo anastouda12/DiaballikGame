@@ -12,7 +12,7 @@ namespace dblk
 class BoardUI : public QGridLayout
 {
   public:
-    BoardUI(const dblk::Board & board);
+    BoardUI(const dblk::Board & board, DiaballikEventManager * evnManager);
 
 };
 

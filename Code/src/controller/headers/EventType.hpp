@@ -5,7 +5,7 @@ namespace dblk
 {
 enum class EventType
 {
-    NEW_GAME, MOVE, PASS, PASS_TURN, SELECT
+    NEW_GAME, MOVE, PASS, PASS_TURN, SELECT, SQUARE_CLICKED
 };
 }
 

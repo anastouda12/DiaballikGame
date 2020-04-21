@@ -1,8 +1,8 @@
 EventManager.o
 NewGameEvent.o
+SquareClickedEvent.o
 main.o
 Controller.o
-DiaballikEvent.o
 MoveEvent.o
 PassEvent.o
 PassTurnEvent.o
@@ -17,4 +17,5 @@ BoardUI.o
 SquareUI.o
 ViewUI.o
 qrc_resources.o
+moc_SquareUI.o
 moc_ViewUI.o

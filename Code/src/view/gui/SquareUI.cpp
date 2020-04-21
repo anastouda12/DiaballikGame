@@ -46,4 +46,14 @@ void SquareUI::refreshPiece(const std::optional<Piece> & piece)
     }
 }
 
+void SquareUI::mousePressEvent(QMouseEvent * event)
+{
+    emit clicked();
+}
+
+void SquareUI::squareClicked(int row, int col, DiaballikEventManager * evnManager)
+{
+    evnManager->executeEvent(EventType::SQUARE_CLICKED, row, col);
+}
+
 }
