@@ -1,3 +1,12 @@
 QWidget#MainWindow{
 background:url(:/resources/images/background.jpg);
 }
+
+.SquareUI{
+    background-color: green;
+    border: 1px solid black;
+}
+
+.SquareUI:hover{
+    background-color: red;
+}

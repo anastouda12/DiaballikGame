@@ -18,7 +18,7 @@ Diaballik::Diaballik():
 void Diaballik::init(size_t size, bool variant)
 {
     this->board_.init(variant, size);
-    this->notifyObservers();
+    this->notifyObservers(EventType::NEW_GAME);
 }
 
 const Team & Diaballik::getCurrentPlayer() const
@@ -49,7 +49,7 @@ void Diaballik::passTurn()
     this->selected_.reset();
     this->moveCount_ = DEFAULT_MOVES;
     this->canThrowBall_ = true;
-    this->notifyObservers();
+    this->notifyObservers(EventType::PASS_TURN);
 }
 
 
@@ -71,7 +71,7 @@ int Diaballik::movePiece(const Position & pos)
     {
         this->moveCount_ -= static_cast<unsigned>(steps);
         this->selected_.reset();
-        this->notifyObservers();
+        this->notifyObservers(EventType::MOVE);
         return steps;
     }
     return flag;
@@ -89,7 +89,7 @@ int Diaballik::throwBall(const Position & pos)
     {
         this->canThrowBall_ = false;
         this->selected_.reset();
-        this->notifyObservers();
+        this->notifyObservers(EventType::PASS);
         return 1;
     }
     return flag;
@@ -113,7 +113,7 @@ int Diaballik::select(const Position & pos)
     if (this->board_.getPieceAt(pos)->getTeam() != this->currentPlayer_) return -3; //Opponent Piece
 
     this->selected_ = pos;
-    this->notifyObservers();
+    this->notifyObservers(EventType::SELECT);
     return 1;
 }
 

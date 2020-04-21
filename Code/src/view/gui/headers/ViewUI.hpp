@@ -2,15 +2,17 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "GamePageUI.hpp"
 #include "src/view/headers/View.hpp"
 #include "src/controller/headers/EventManager.hpp"
 #include "src/model/headers/Diaballik.hpp"
+#include "BoardUI.hpp"
 
 namespace Ui
 {
 class MainWindow;
 }
+
+struct EventType;
 
 namespace dblk
 {
@@ -21,9 +23,9 @@ class ViewUI : public QMainWindow, public View
 
   private:
     Ui::MainWindow * mainWindow_;
-    dblk::GamePageUI gamePage_;
-    dblk::DiaballikEventManager * evntManager_;
 
+    DiaballikEventManager * evntManager_;
+    BoardUI * boardUI_;
   public:
     explicit ViewUI(QWidget * parent = nullptr);
 
@@ -77,7 +79,7 @@ class ViewUI : public QMainWindow, public View
     virtual void displayBoard(const dblk::Diaballik & diaballik) override;
 
 
-    virtual void update(const dblk::Observable * observable) override;
+    virtual void update(const dblk::Observable * observable, EventType type) override;
 
     ~ViewUI();
 

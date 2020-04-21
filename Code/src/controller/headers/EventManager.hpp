@@ -3,6 +3,7 @@
 
 #include <string>
 #include "src/controller/headers/DiaballikEvent.hpp"
+#include "EventType.hpp"
 
 namespace dblk
 {
@@ -10,10 +11,6 @@ namespace dblk
 class Diaballik;
 class View;
 
-enum class EventType
-{
-    NEW_GAME, MOVE, PASS, PASS_TURN, SELECT
-};
 
 /**
  * @brief The DiaballikEventFactory class

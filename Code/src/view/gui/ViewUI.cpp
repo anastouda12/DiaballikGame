@@ -8,13 +8,13 @@ namespace dblk
 ViewUI::ViewUI(QWidget * parent):
     QMainWindow(parent),
     mainWindow_{new Ui::MainWindow},
-            gamePage_{},
-            evntManager_{nullptr}
+            evntManager_{nullptr},
+            boardUI_{nullptr}
 {
     mainWindow_->setupUi(this);
     this->setFixedSize(QSize(1280, 720));
     QFile file(":/resources/qss/stylesheet.qss");
-    if(file.exists())
+    if (file.exists())
     {
         file.open(QFile::ReadOnly);
         QString style = QLatin1String(file.readAll());
@@ -62,27 +62,33 @@ void  ViewUI::displayOptionsMenu()
 void ViewUI::displayBoard(const dblk::Diaballik & diaballik)
 {
     size_t size = 5;
-    for(unsigned i = 0; i< size;i++)
-       {
-        for(unsigned j = 0;j<size;j++)
+    for (unsigned i = 0; i < size; i++)
+    {
+        for (unsigned j = 0; j < size; j++)
         {
-            QWidget * rect = new QWidget;
-            rect->setStyleSheet("background-color:green;"); // just for test
-            if(diaballik.getBoard().isFree(Position(i,j))){
+            //QWidget * rect = new QWidget;
+            //rect->setStyleSheet("background-color:green;"); // just for test
+            if (diaballik.getBoard().isFree(Position(i, j)))
+            {
                 // STYLE FREE CASE
-            }else{
-                if(diaballik.getBoard().getPieceAt(Position(i,j)).value().getTeam() == dblk::NORTH){
+            }
+            else
+            {
+                if (diaballik.getBoard().getPieceAt(Position(i, j)).value().getTeam() == dblk::NORTH)
+                {
                     // STYLE team NORTH
-                }else{
+                }
+                else
+                {
                     // STYLE team SOUTH
                 }
             }
-            this->mainWindow_->gameBoard->addWidget(rect,i,j);
-            rect->show();
+            //this->mainWindow_->gameBoard->addWidget(rect, i, j);
+            // rect->show();
         }
     }
 
-    }
+}
 
 void ViewUI::displayHelp()
 {
@@ -107,34 +113,57 @@ void ViewUI::displayWinner(const std::optional<dblk::Team> & team)
 
 void ViewUI:: displayError(std::string errorMsg)
 {
-    this->mainWindow_->textActionGame->setText("[ERROR] : "+QString::fromStdString(errorMsg));
+    this->mainWindow_->textActionGame->setText("[ERROR] : " + QString::fromStdString(errorMsg));
     std::cout << "ERROR: " << errorMsg << std::endl;
 }
 
 
 void ViewUI::displayGoodByeMessage()
 {
-   this->mainWindow_->textActionGame->setText("Bye..."); // ....
+    this->mainWindow_->textActionGame->setText("Bye..."); // ....
 }
 
 void ViewUI::displaySelected(const std::optional<dblk::Piece> piece)
 {
-    this->mainWindow_->textActionGame->setText("[SELECTED PIECE] : "+QString::fromStdString(piece.value().to_string()));
+    this->mainWindow_->textActionGame->setText("[SELECTED PIECE] : " + QString::fromStdString(
+                piece.value().to_string()));
 }
 
 void ViewUI::displayLeftPlayer(dblk::Team team)
 {
-    this->mainWindow_->typeWinText->setText("Team "+QString::fromStdString(to_string(team))+" left the Game");
+    this->mainWindow_->typeWinText->setText("Team " + QString::fromStdString(to_string(
+            team)) + " left the Game");
 }
 
-void ViewUI::update(const dblk::Observable * observable)
+void ViewUI::update(const dblk::Observable * observable, EventType type)
 {
-    this->displayBoard(*reinterpret_cast<const Diaballik *>(observable));
+    const Diaballik * game = reinterpret_cast<const Diaballik *>(observable);
+    switch (type)
+    {
+        case EventType::MOVE:
+            break;
+        case EventType::SELECT:
+            break;
+        case EventType::PASS:
+            break;
+        case EventType::NEW_GAME:
+            if (boardUI_ != nullptr)
+            {
+                delete boardUI_;
+            }
+            boardUI_ = new BoardUI(game->getBoard());
+            this->mainWindow_->boardZone->setLayout(boardUI_);
+            this->displayCounters(game->getMoveCount(), game->canPass());
+            break;
+        case EventType::PASS_TURN:
+            break;
+    }
 }
 
 ViewUI::~ViewUI()
 {
     delete mainWindow_;
+    delete boardUI_;
 }
 
 }

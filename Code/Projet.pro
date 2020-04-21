@@ -23,13 +23,17 @@ SOURCES += \
         src/model/Position.cpp \
         src/model/Piece.cpp \
         src/model/Team.cpp \
+        src/view/gui/BoardUI.cpp \
+        src/view/gui/SquareUI.cpp \
         src/view/gui/ViewUI.cpp
 
 HEADERS += \
     src/controller/headers/DiaballikEvent.hpp \
     src/controller/headers/EventManager.hpp \
+    src/controller/headers/EventType.hpp \
     src/controller/headers/NewGameEvent.hpp \
-    src/view/gui/headers/GamePageUI.hpp \
+    src/view/gui/headers/BoardUI.hpp \
+    src/view/gui/headers/SquareUI.hpp \
     src/view/gui/headers/ViewUI.hpp \
     src/view/headers/ErrorMessages.hpp \
     src/view/headers/Observer.hpp \

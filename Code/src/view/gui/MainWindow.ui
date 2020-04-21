@@ -255,7 +255,7 @@
         <x>980</x>
         <y>190</y>
         <width>141</width>
-        <height>61</height>
+        <height>105</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -392,7 +392,7 @@
         <x>870</x>
         <y>270</y>
         <width>351</width>
-        <height>91</height>
+        <height>93</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -417,17 +417,6 @@
         </widget>
        </item>
       </layout>
-     </widget>
-     <widget class="QWidget" name="gridLayoutWidget">
-      <property name="geometry">
-       <rect>
-        <x>199</x>
-        <y>59</y>
-        <width>591</width>
-        <height>471</height>
-       </rect>
-      </property>
-      <layout class="QGridLayout" name="gameBoard"/>
      </widget>
      <widget class="QWidget" name="horizontalLayoutWidget_7">
       <property name="geometry">
@@ -454,6 +443,16 @@
         </widget>
        </item>
       </layout>
+     </widget>
+     <widget class="QWidget" name="boardZone" native="true">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>30</y>
+        <width>621</width>
+        <height>491</height>
+       </rect>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="winnerPage">

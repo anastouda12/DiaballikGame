@@ -13,6 +13,8 @@ Observable.o
 Position.o
 Piece.o
 Team.o
+BoardUI.o
+SquareUI.o
 ViewUI.o
 qrc_resources.o
 moc_ViewUI.o
