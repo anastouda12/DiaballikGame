@@ -13,8 +13,10 @@ class BoardUI : public QGridLayout
 {
   public:
     BoardUI(const dblk::Board & board, DiaballikEventManager * evnManager);
+    void refreshBoard(const Board & board);
 
 };
+
 
 }
 

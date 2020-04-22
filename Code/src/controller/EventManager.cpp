@@ -17,7 +17,8 @@ void DiaballikEventManager::executeEvent(EventType type, int arg1, int arg2)
     switch (type)
     {
         case EventType::SQUARE_CLICKED:
-            SquareClickedEvent(model_, view_, arg1, arg2);
+            SquareClickedEvent(model_, view_, arg1, arg2).execute();
+            break;
         case EventType::NEW_GAME:
             NewGameEvent(model_, arg1, arg2).execute();
             break;

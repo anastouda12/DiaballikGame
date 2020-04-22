@@ -10,22 +10,24 @@ BoardUI::BoardUI(const Board & board, DiaballikEventManager * evnManager)
         for (int col = 0; col < static_cast<int>(board.getSize()); col++)
         {
             Position curPos{row, col};
-            SquareUI * square;
-            switch (board.getSize())
-            {
-                case SMALL_SIZE:
-                    square = new SquareUI(board.getPieceAt(curPos), 80);
-                    break;
-                case MEDIUM_SIZE:
-                    square = new SquareUI(board.getPieceAt(curPos), 60);
-                    break;
-                case BIG_SIZE:
-                    square = new SquareUI(board.getPieceAt(curPos), 40);
-                    break;
-
-            }
+            SquareUI * square = new SquareUI(curPos, evnManager, board.getSize() * 10 - 10);
+            square->refreshPiece(board.getPieceAt(curPos));
+            connect(square, &SquareUI::clicked, square, &SquareUI::squareClicked);
             this->addWidget(square, row, col);
-            connect(square, SIGNAL(clicked()), square, SLOT(squareClicked(row, col, evnManager)));
+        }
+    }
+}
+
+
+void BoardUI::refreshBoard(const Board & board)
+{
+    for (int row = 0; row < board.getSize(); row++)
+    {
+        for (int col = 0; col < board.getSize(); col++)
+        {
+            Position curPos{row, col};
+            SquareUI * square = reinterpret_cast<SquareUI *>(this->itemAtPosition(row, col));
+            square->refreshPiece(board.getPieceAt(curPos));
         }
     }
 }

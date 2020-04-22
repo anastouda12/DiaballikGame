@@ -1,4 +1,5 @@
 #include "headers/SquareUI.hpp"
+#include "src/model/headers/Position.hpp"
 #include <QPixmap>
 #include <QVariant>
 namespace dblk
@@ -9,17 +10,17 @@ const char * SquareUI::northPlayerImg(":/resources/assets/northPlayer.png");
 const char * SquareUI::southPlayerBallImg(":/resources/assets/southPlayerBall.png");
 const char * SquareUI::northPlayerBallImg(":/resources/assets/northPlayerBall.png");
 
-SquareUI::SquareUI(const std::optional<Piece> & piece, int size)
+SquareUI::SquareUI(Position & squarePos, DiaballikEventManager * evnManager, int size) :
+    squarePos_{squarePos}, evnManager_{evnManager}
 {
     this->setProperty("class", "SquareUI");
     this->setFixedSize(size, size);
     this->setScaledContents(true);
-    this->refreshPiece(piece);
-
 }
 
 void SquareUI::refreshPiece(const std::optional<Piece> & piece)
 {
+    repaint();
     if (piece)
     {
         QPixmap img;
@@ -40,10 +41,6 @@ void SquareUI::refreshPiece(const std::optional<Piece> & piece)
         }
         setPixmap(img);
     }
-    else
-    {
-        clear();
-    }
 }
 
 void SquareUI::mousePressEvent(QMouseEvent * event)
@@ -51,9 +48,9 @@ void SquareUI::mousePressEvent(QMouseEvent * event)
     emit clicked();
 }
 
-void SquareUI::squareClicked(int row, int col, DiaballikEventManager * evnManager)
+void SquareUI::squareClicked()
 {
-    evnManager->executeEvent(EventType::SQUARE_CLICKED, row, col);
+    evnManager_->executeEvent(EventType::SQUARE_CLICKED, squarePos_.getRow(), squarePos_.getColumn());
 }
 
 }

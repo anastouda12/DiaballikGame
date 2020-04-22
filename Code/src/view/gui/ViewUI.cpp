@@ -61,33 +61,7 @@ void  ViewUI::displayOptionsMenu()
 
 void ViewUI::displayBoard(const dblk::Diaballik & diaballik)
 {
-    size_t size = 5;
-    for (unsigned i = 0; i < size; i++)
-    {
-        for (unsigned j = 0; j < size; j++)
-        {
-            //QWidget * rect = new QWidget;
-            //rect->setStyleSheet("background-color:green;"); // just for test
-            if (diaballik.getBoard().isFree(Position(i, j)))
-            {
-                // STYLE FREE CASE
-            }
-            else
-            {
-                if (diaballik.getBoard().getPieceAt(Position(i, j)).value().getTeam() == dblk::NORTH)
-                {
-                    // STYLE team NORTH
-                }
-                else
-                {
-                    // STYLE team SOUTH
-                }
-            }
-            //this->mainWindow_->gameBoard->addWidget(rect, i, j);
-            // rect->show();
-        }
-    }
-
+    this->boardUI_->refreshBoard(diaballik.getBoard());
 }
 
 void ViewUI::displayHelp()
@@ -141,10 +115,9 @@ void ViewUI::update(const dblk::Observable * observable, EventType type)
     switch (type)
     {
         case EventType::MOVE:
-            break;
         case EventType::SELECT:
-            break;
         case EventType::PASS:
+            this->displayBoard(*game);
             break;
         case EventType::NEW_GAME:
             if (boardUI_ != nullptr)
