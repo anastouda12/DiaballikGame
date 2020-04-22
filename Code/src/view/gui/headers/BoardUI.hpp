@@ -11,8 +11,11 @@ namespace dblk
 
 class BoardUI : public QGridLayout
 {
+
+    std::vector<std::vector<SquareUI *>> squares_;
   public:
-    BoardUI(const dblk::Board & board, DiaballikEventManager * evnManager);
+    BoardUI(const dblk::Board & board,
+            DiaballikEventManager * evnManager);
     void refreshBoard(const Board & board);
 
 };

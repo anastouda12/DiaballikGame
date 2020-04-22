@@ -5,12 +5,17 @@
 namespace dblk
 {
 
-const char * SquareUI::southPlayerImg(":/resources/assets/southPlayer.png");
-const char * SquareUI::northPlayerImg(":/resources/assets/northPlayer.png");
-const char * SquareUI::southPlayerBallImg(":/resources/assets/southPlayerBall.png");
-const char * SquareUI::northPlayerBallImg(":/resources/assets/northPlayerBall.png");
+const char *
+SquareUI::southPlayerImg(":/resources/assets/southPlayer.png");
+const char *
+SquareUI::northPlayerImg(":/resources/assets/northPlayer.png");
+const char *
+SquareUI::southPlayerBallImg(":/resources/assets/southPlayerBall.png");
+const char *
+SquareUI::northPlayerBallImg(":/resources/assets/northPlayerBall.png");
 
-SquareUI::SquareUI(Position & squarePos, DiaballikEventManager * evnManager, int size) :
+SquareUI::SquareUI(Position & squarePos,
+                   DiaballikEventManager * evnManager, int size) :
     squarePos_{squarePos}, evnManager_{evnManager}
 {
     this->setProperty("class", "SquareUI");
@@ -20,7 +25,7 @@ SquareUI::SquareUI(Position & squarePos, DiaballikEventManager * evnManager, int
 
 void SquareUI::refreshPiece(const std::optional<Piece> & piece)
 {
-    repaint();
+    clear();
     if (piece)
     {
         QPixmap img;
@@ -50,7 +55,8 @@ void SquareUI::mousePressEvent(QMouseEvent * event)
 
 void SquareUI::squareClicked()
 {
-    evnManager_->executeEvent(EventType::SQUARE_CLICKED, squarePos_.getRow(), squarePos_.getColumn());
+    evnManager_->executeEvent(EventType::SQUARE_CLICKED,
+                              squarePos_.getRow(), squarePos_.getColumn());
 }
 
 }
