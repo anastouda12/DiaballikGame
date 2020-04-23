@@ -108,6 +108,14 @@ class View: public Observer
      * @param team The player who left the game.
      */
     virtual void displayLeftPlayer(Team team) = 0;
+
+
+    /**
+     * @brief displayRulesPage
+     * Displays the rules page to the players.
+     */
+    virtual void displayRulesPage() = 0;
+
 }; //End class View
 
 } // End namespace dblk

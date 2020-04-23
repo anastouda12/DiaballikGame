@@ -141,6 +141,13 @@ class ViewUI : public QMainWindow, public View
     virtual void displayWelcomePage() override;
 
 
+    /**
+     * @brief displayRulesPage
+     * Displays the rules page to the players.
+     */
+    virtual void displayRulesPage() override;
+
+
   private:
     void initSlots();
 

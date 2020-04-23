@@ -38,7 +38,7 @@ void ViewUI::initSlots()
     connect(mainWindow_->btnWelcome_exit, SIGNAL(clicked()), this,
             SLOT(displayGoodByeMessage()));
     connect(mainWindow_->btnWelcome_showRules, SIGNAL(clicked()), this,
-            SLOT(displayHelp()));
+            SLOT(displayRulesPage()));
     connect(mainWindow_->btnGameOptions_mainMenu, SIGNAL(clicked()), this,
             SLOT(displayWelcomePage()));
     connect(mainWindow_->btnGameOptions_play, SIGNAL(clicked()), this,
@@ -47,7 +47,10 @@ void ViewUI::initSlots()
             SLOT(passTurnGame()));
     connect(mainWindow_->btnGamePage_leave, SIGNAL(clicked()), this,
             SLOT(leaveGame()));
-    // TODO HELP EXIT
+    connect(mainWindow_->btnGamePage_help, SIGNAL(clicked()), this,
+            SLOT(displayHelp()));
+    connect(mainWindow_->btnRules_back, SIGNAL(clicked()), this,
+            SLOT(displayWelcomePage()));
 }
 
 void ViewUI::initGame()
@@ -57,6 +60,7 @@ void ViewUI::initGame()
     this->evntManager_->executeEvent(EventType::NEW_GAME, boardSize,
                                      variant);
     this->mainWindow_->stackedWidget->setCurrentIndex(2);
+    this->displayHelp();
 }
 
 
@@ -68,9 +72,9 @@ void ViewUI::passTurnGame()
 void ViewUI::leaveGame()
 {
     QMessageBox::StandardButton reply;
-    reply = QMessageBox::question(this,
-                                  "Exit", "Are you sure you want to quit your game and return to main menu ?",
-                                  QMessageBox::Yes | QMessageBox::No);
+    reply = QMessageBox::warning(this,
+                                 "Exit", "Are you sure you want to quit your game and return to main menu ?",
+                                 QMessageBox::Yes | QMessageBox::No);
     if (reply == QMessageBox::Yes)
     {
         // TODO delete current game & init new
@@ -82,6 +86,11 @@ void ViewUI::leaveGame()
 void ViewUI::displayWelcomePage()
 {
     this->mainWindow_->stackedWidget->setCurrentIndex(0);
+}
+
+void ViewUI::displayRulesPage()
+{
+    this->mainWindow_->stackedWidget->setCurrentIndex(4);
 }
 
 void  ViewUI::displayOptionsMenu()
@@ -96,7 +105,16 @@ void ViewUI::displayBoard(const dblk::Diaballik & diaballik)
 
 void ViewUI::displayHelp()
 {
-    this->mainWindow_->stackedWidget->setCurrentIndex(4);
+    QMessageBox help;
+    help.setBaseSize(QSize(650, 200));
+    help.setText("How to play");
+    help.setIcon(QMessageBox::Information);
+    help.setInformativeText("- Select a piece : Left click on a piece \n"
+                            "- Move a piece : After selected a piece left click on a empty box \n"
+                            "- Pass the ball : After selected the piece who has the ballon right click to piece wanted to pass \n"
+                            "- Pass turn : Click on the button passTurn to pass your turn \n"
+                            "- Leave : Click on te button Leave to leave the game");
+    help.exec();
 }
 
 void ViewUI::displayCurrentPlayer(const dblk::Team & team)
@@ -129,7 +147,17 @@ void ViewUI:: displayError(std::string errorMsg)
 
 void ViewUI::displayGoodByeMessage()
 {
-    this->mainWindow_->textActionGame->setText("Bye..."); // ....
+    QMessageBox exitBox;
+    exitBox.setBaseSize(QSize(350, 150));
+    exitBox.setText("Exit");
+    exitBox.setInformativeText("Are you sure you want to exit Diaballik");
+    exitBox.setIcon(QMessageBox::Question);
+    exitBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+    int r = exitBox.exec();
+    if (r == QMessageBox::Yes)
+    {
+        qApp->exit();
+    }
 }
 
 void ViewUI::displaySelected(const std::optional<dblk::Position>
@@ -169,6 +197,8 @@ void ViewUI::update(const dblk::Observable * observable,
             this->displaySelected(game->getSelected());
             this->displayCounters(game->getMoveCount(), game->canPass());
             break;
+        case EventType::SQUARE_RIGHT_CLICKED:
+            this->displayCounters(game->getMoveCount(), game->canPass());
         case EventType::PASS:
             this->displayCounters(game->getMoveCount(), game->canPass());
             break;

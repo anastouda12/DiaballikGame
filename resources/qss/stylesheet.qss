@@ -13,4 +13,12 @@ QWidget#MainWindow{
 
 #textTurnTeam{
     font:20pt;
-    }
+}
+
+QComboBox {
+    background-color: #074170;
+}
+
+QGroupBox::title {
+  color: white;
+}
