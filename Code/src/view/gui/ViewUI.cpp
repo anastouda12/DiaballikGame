@@ -51,6 +51,10 @@ void ViewUI::initSlots()
             SLOT(displayHelp()));
     connect(mainWindow_->btnRules_back, SIGNAL(clicked()), this,
             SLOT(displayWelcomePage()));
+    connect(mainWindow_->btnWinnerPage_exit, SIGNAL(clicked()), this,
+            SLOT(displayGoodByeMessage()));
+    connect(mainWindow_->btnWinnerPage_mainMenu, SIGNAL(clicked()), this,
+            SLOT(displayWelcomePage()));
 }
 
 void ViewUI::initGame()
@@ -133,8 +137,12 @@ void ViewUI::displayCounters(unsigned moveCounter, bool canPass)
 
 void ViewUI::displayWinner(const std::optional<dblk::Team> & team)
 {
-    this->mainWindow_->teamWinnerText->setText(QString::fromStdString(
-                to_string(team.value())));
+    if (team.has_value())
+    {
+        this->mainWindow_->stackedWidget->setCurrentIndex(3);
+        this->mainWindow_->teamWinnerText->setText(QString::fromStdString(
+                    to_string(team.value())));
+    }
 }
 
 void ViewUI:: displayError(std::string errorMsg)
@@ -174,9 +182,7 @@ void ViewUI::displaySelected(const std::optional<dblk::Position>
 
 void ViewUI::displayLeftPlayer(dblk::Team team)
 {
-    this->mainWindow_->typeWinText->setText("Team " +
-                                            QString::fromStdString(to_string(
-                                                    team)) + " left the Game");
+    // ... TODO?
 }
 
 void ViewUI::update(const dblk::Observable * observable,

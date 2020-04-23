@@ -11,7 +11,8 @@ namespace dblk
 
 
 Diaballik::Diaballik():
-    board_{}, currentPlayer_{Team::NORTH}, winner_{}, selected_{}, moveCount_{DEFAULT_MOVES},
+    board_{}, currentPlayer_{Team::NORTH}, winner_{}, selected_{},
+    moveCount_{DEFAULT_MOVES},
     canThrowBall_{true}
 {}
 
@@ -82,7 +83,8 @@ int Diaballik::throwBall(const Position & pos)
 {
     if (!this->selected_.has_value()) return -1; // select pos needed
     else if (!this->canThrowBall_) return -2; //Cant pass
-    else if (!this->board_.getPieceAt(this->selected_.value())->hasTheBall()) return -3; //No ball
+    else if (!this->board_.getPieceAt(
+                 this->selected_.value())->hasTheBall()) return -3; //No ball
 
     int flag{this->board_.passBall(this->currentPlayer_, this->selected_.value(), pos)};
     if (flag > 0)
@@ -97,7 +99,8 @@ int Diaballik::throwBall(const Position & pos)
 
 bool Diaballik::isOver()
 {
-    return this->board_.checksGameIsFinsh(this->winner_) ? true : this->checksAntiGame();
+    return this->board_.checksGameIsFinsh(this->winner_) ? true :
+           this->checksAntiGame();
 }
 
 
@@ -110,7 +113,8 @@ int Diaballik::select(const Position & pos)
 {
     if (this->board_.isFree(pos)) return -1; //No Piece
     if (!this->board_.isInside(pos)) return -2; //Out bounds
-    if (this->board_.getPieceAt(pos)->getTeam() != this->currentPlayer_) return -3; //Opponent Piece
+    if (this->board_.getPieceAt(pos)->getTeam() != this->currentPlayer_)
+        return -3; //Opponent Piece
 
     this->selected_ = pos;
     this->notifyObservers(EventType::SELECT);
@@ -120,7 +124,7 @@ int Diaballik::select(const Position & pos)
 
 std::optional<Team> Diaballik::getWinner() const
 {
-    return this->winner_.has_value() ? this->winner_ : this->getCurrentPlayer();
+    return this->winner_;
 }
 
 int Diaballik::checksEnoughMovesAvailable(const Position & pos) const

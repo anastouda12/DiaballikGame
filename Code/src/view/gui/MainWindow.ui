@@ -21,7 +21,7 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>0</y>
+      <y>10</y>
       <width>1280</width>
       <height>720</height>
      </rect>
@@ -466,10 +466,10 @@
      <widget class="QLabel" name="ImgWinner">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>0</y>
-        <width>581</width>
-        <height>281</height>
+        <x>310</x>
+        <y>10</y>
+        <width>661</width>
+        <height>291</height>
        </rect>
       </property>
       <property name="text">
@@ -485,9 +485,9 @@
      <widget class="QWidget" name="horizontalLayoutWidget_2">
       <property name="geometry">
        <rect>
-        <x>240</x>
-        <y>340</y>
-        <width>418</width>
+        <x>530</x>
+        <y>380</y>
+        <width>218</width>
         <height>80</height>
        </rect>
       </property>
@@ -496,7 +496,7 @@
         <widget class="QLabel" name="labelTeam">
          <property name="font">
           <font>
-           <pointsize>30</pointsize>
+           <pointsize>35</pointsize>
           </font>
          </property>
          <property name="styleSheet">
@@ -511,46 +511,14 @@
         <widget class="QLabel" name="teamWinnerText">
          <property name="font">
           <font>
-           <pointsize>30</pointsize>
+           <pointsize>35</pointsize>
           </font>
          </property>
          <property name="styleSheet">
           <string notr="true">color:qconicalgradient(cx:0.5, cy:0.5, angle:0, stop:0 rgba(35, 40, 3, 255), stop:0.16 rgba(136, 106, 22, 255), stop:0.225 rgba(166, 140, 41, 255), stop:0.285 rgba(204, 181, 74, 255), stop:0.345 rgba(235, 219, 102, 255), stop:0.415 rgba(245, 236, 112, 255), stop:0.52 rgba(209, 190, 76, 255), stop:0.57 rgba(187, 156, 51, 255), stop:0.635 rgba(168, 142, 42, 255), stop:0.695 rgba(202, 174, 68, 255), stop:0.75 rgba(218, 202, 86, 255), stop:0.815 rgba(208, 187, 73, 255), stop:0.88 rgba(187, 156, 51, 255), stop:0.935 rgba(137, 108, 26, 255), stop:1 rgba(35, 40, 3, 255))</string>
          </property>
          <property name="text">
-          <string>INSERTEAMHERE</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="horizontalLayoutWidget_3">
-      <property name="geometry">
-       <rect>
-        <x>330</x>
-        <y>460</y>
-        <width>160</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_3">
-       <item>
-        <widget class="QLabel" name="labelTypeWin">
-         <property name="styleSheet">
-          <string notr="true">color:white;</string>
-         </property>
-         <property name="text">
-          <string>Won by</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="typeWinText">
-         <property name="styleSheet">
-          <string notr="true">color:white;</string>
-         </property>
-         <property name="text">
-          <string>TYPEWIN</string>
+          <string>TEAMX</string>
          </property>
         </widget>
        </item>
@@ -559,8 +527,8 @@
      <widget class="QWidget" name="horizontalLayoutWidget_4">
       <property name="geometry">
        <rect>
-        <x>570</x>
-        <y>490</y>
+        <x>1020</x>
+        <y>580</y>
         <width>231</width>
         <height>61</height>
        </rect>
