@@ -21,14 +21,17 @@ class SquareUI : public QLabel
     DiaballikEventManager * evnManager_;
 
   public:
-    SquareUI(Position & squarePos, DiaballikEventManager * evnManager, int size);
+    SquareUI(Position & squarePos, DiaballikEventManager * evnManager,
+             int size);
     void refreshPiece(const std::optional<Piece> & piece);
 
   public slots:
-    void squareClicked();
+    void squareLeftClicked();
+    void squareRightClicked();
 
   signals:
-    void clicked();
+    void leftClicked();
+    void rightClicked();
 
   protected:
     void mousePressEvent(QMouseEvent * event);

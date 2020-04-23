@@ -2,6 +2,7 @@
 #include "src/model/headers/Position.hpp"
 #include <QPixmap>
 #include <QVariant>
+#include <QMouseEvent>
 namespace dblk
 {
 
@@ -50,12 +51,25 @@ void SquareUI::refreshPiece(const std::optional<Piece> & piece)
 
 void SquareUI::mousePressEvent(QMouseEvent * event)
 {
-    emit clicked();
+    if (event->buttons() == Qt::LeftButton)
+    {
+        emit leftClicked();
+    }
+    if (event->buttons() == Qt::RightButton)
+    {
+        emit rightClicked();
+    }
 }
 
-void SquareUI::squareClicked()
+void SquareUI::squareLeftClicked()
 {
-    evnManager_->executeEvent(EventType::SQUARE_CLICKED,
+    evnManager_->executeEvent(EventType::SQUARE_LEFT_CLICKED,
+                              squarePos_.getRow(), squarePos_.getColumn());
+}
+
+void SquareUI::squareRightClicked()
+{
+    evnManager_->executeEvent(EventType::SQUARE_RIGHT_CLICKED,
                               squarePos_.getRow(), squarePos_.getColumn());
 }
 

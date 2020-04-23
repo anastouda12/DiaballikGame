@@ -1,5 +1,5 @@
 QWidget#MainWindow{
-background:url(:/resources/images/background.jpg);
+    background:url(:/resources/images/background.jpg);
 }
 
 .SquareUI{
@@ -10,3 +10,7 @@ background:url(:/resources/images/background.jpg);
 .SquareUI:hover{
     background-color: red;
 }
+
+#textTurnTeam{
+    font:20pt;
+    }

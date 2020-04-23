@@ -51,7 +51,8 @@ class ViewUI : public QMainWindow, public View
      * @param moveCounter the number of moves availables of the current Player
      * @param canPass possibility to throw the ball of the current player
      */
-    virtual void displayCounters(unsigned moveCounter, bool canPass) override;
+    virtual void displayCounters(unsigned moveCounter,
+                                 bool canPass) override;
 
     /**
      * @brief displayWinner
@@ -60,16 +61,19 @@ class ViewUI : public QMainWindow, public View
      *
      * @param team the optinal winner of the game Diaballik.
      */
-    virtual void displayWinner(const std::optional<dblk::Team> & team)  override;
+    virtual void displayWinner(const std::optional<dblk::Team> & team)
+    override;
 
     /**
      * @brief displaySelected
      *
-     * Display if there is a Piece inside the position selected
+     * Display the position of the selected piece
      *
-     * @param piece The optional piece selected
+     * @param piece The optional piece position.
      */
-    virtual void displaySelected(const std::optional<dblk::Piece> piece)  override;
+    virtual void displaySelected(const std::optional<dblk::Position>
+                                 position)
+    override;
 
     /**
      * @brief displayBoard
@@ -79,7 +83,8 @@ class ViewUI : public QMainWindow, public View
     virtual void displayBoard(const dblk::Diaballik & diaballik) override;
 
 
-    virtual void update(const dblk::Observable * observable, EventType type) override;
+    virtual void update(const dblk::Observable * observable,
+                        EventType type) override;
 
     ~ViewUI();
 
@@ -141,6 +146,8 @@ class ViewUI : public QMainWindow, public View
 
   private slots:
     void initGame();
+    void passTurnGame();
+    void leaveGame();
 
 };
 

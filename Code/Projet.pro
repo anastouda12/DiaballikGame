@@ -10,7 +10,8 @@ QMAKE_CXXFLAGS += -pedantic-errors -std=c++17 -Wall
 SOURCES += \
         src/controller/EventManager.cpp \
         src/controller/NewGameEvent.cpp \
-        src/controller/SquareClickedEvent.cpp \
+        src/controller/SquareLeftClickedEvent.cpp \
+        src/controller/SquareRightClickedEvent.cpp \
         src/main.cpp \
         src/controller/Controller.cpp \
         src/controller/MoveEvent.cpp \
@@ -32,7 +33,8 @@ HEADERS += \
     src/controller/headers/EventManager.hpp \
     src/controller/headers/EventType.hpp \
     src/controller/headers/NewGameEvent.hpp \
-    src/controller/headers/SquareClickedEvent.hpp \
+    src/controller/headers/SquareLeftClickedEvent.hpp \
+    src/controller/headers/SquareRightClickedEvent.hpp \
     src/view/gui/headers/BoardUI.hpp \
     src/view/gui/headers/SquareUI.hpp \
     src/view/gui/headers/ViewUI.hpp \

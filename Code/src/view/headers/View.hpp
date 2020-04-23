@@ -93,11 +93,12 @@ class View: public Observer
     /**
      * @brief displaySelected
      *
-     * Display if there is a Piece inside the position selected
+     * Display the position of the piece selected
      *
-     * @param piece The optional piece selected
+     * @param position position of the piece.
      */
-    virtual void displaySelected(const std::optional<Piece> piece) = 0;
+    virtual void displaySelected(const std::optional<Position> position) =
+        0;
 
     /**
      * @brief displayLeftPlayer

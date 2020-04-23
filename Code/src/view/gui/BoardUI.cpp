@@ -16,7 +16,10 @@ BoardUI::BoardUI(const Board & board,
             SquareUI * square = new SquareUI(curPos, evnManager,
                                              board.getSize() * 10 - 10);
             square->refreshPiece(board.getPieceAt(curPos));
-            connect(square, &SquareUI::clicked, square, &SquareUI::squareClicked);
+            connect(square, &SquareUI::leftClicked, square,
+                    &SquareUI::squareLeftClicked);
+            connect(square, &SquareUI::rightClicked, square,
+                    &SquareUI::squareRightClicked);
             squares_[row][col] = square;
             this->addWidget(square, row, col);
         }

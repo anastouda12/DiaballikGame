@@ -9,14 +9,14 @@ namespace dblk
 {
 
 
-class SquareClickedEvent : public DiaballikAbstractEvent
+class SquareLeftClickedEvent : public DiaballikAbstractEvent
 {
   private:
     Diaballik & model_;
     View & view_;
     Position squarePos_;
   public:
-    SquareClickedEvent(Diaballik & model, View & view, int row, int col);
+    SquareLeftClickedEvent(Diaballik & model, View & view, int row, int col);
     void execute() override;
 };
 
