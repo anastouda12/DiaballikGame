@@ -154,7 +154,7 @@ class ViewUI : public QMainWindow, public View
   private slots:
     void initGame();
     void passTurnGame();
-    void leaveGame();
+    void restartGame();
 
 };
 

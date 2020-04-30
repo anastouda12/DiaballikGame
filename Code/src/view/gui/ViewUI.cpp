@@ -2,6 +2,7 @@
 #include "ui_MainWindow.h"
 #include <QFile>
 #include <QMessageBox>
+#include <qprocess.h>
 
 namespace dblk
 {
@@ -45,8 +46,8 @@ void ViewUI::initSlots()
             SLOT(initGame()));
     connect(mainWindow_->btnGamePage_passTurn, SIGNAL(clicked()), this,
             SLOT(passTurnGame()));
-    connect(mainWindow_->btnGamePage_leave, SIGNAL(clicked()), this,
-            SLOT(leaveGame()));
+    connect(mainWindow_->btnGamePage_restart, SIGNAL(clicked()), this,
+            SLOT(restartGame()));
     connect(mainWindow_->btnGamePage_help, SIGNAL(clicked()), this,
             SLOT(displayHelp()));
     connect(mainWindow_->btnRules_back, SIGNAL(clicked()), this,
@@ -73,16 +74,18 @@ void ViewUI::passTurnGame()
     this->evntManager_->executeEvent(EventType::PASS_TURN, 0, 0);
 }
 
-void ViewUI::leaveGame()
+void ViewUI::restartGame()
 {
     QMessageBox::StandardButton reply;
     reply = QMessageBox::warning(this,
-                                 "Exit", "Are you sure you want to quit your game and return to main menu ?",
+                                 "Exit", "Are you sure you want to quit your game and restart ?",
                                  QMessageBox::Yes | QMessageBox::No);
     if (reply == QMessageBox::Yes)
     {
-        // TODO delete current game & init new
-        this->mainWindow_->stackedWidget->setCurrentIndex(0);
+        // Restart application
+        QProcess process;
+        process.startDetached("Projet", QStringList());
+        qApp->quit();
     }
 }
 
@@ -188,7 +191,8 @@ void ViewUI::displayLeftPlayer(dblk::Team team)
 void ViewUI::update(const dblk::Observable * observable,
                     EventType type)
 {
-    const Diaballik * game = reinterpret_cast<const Diaballik *> (observable);
+    const Diaballik * game = reinterpret_cast<const Diaballik *>
+                             (observable);
     this->mainWindow_->textActionGame->clear();
     switch (type)
     {

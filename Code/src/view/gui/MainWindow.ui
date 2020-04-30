@@ -443,9 +443,9 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="btnGamePage_leave">
+        <widget class="QPushButton" name="btnGamePage_restart">
          <property name="text">
-          <string>Leave</string>
+          <string>Restart</string>
          </property>
         </widget>
        </item>
