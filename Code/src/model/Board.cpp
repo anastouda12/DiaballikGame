@@ -127,10 +127,6 @@ int Board::passBall(Team team, const Position & startPos, const Position & endPo
 
 
 
-//PRIVATE METHODS
-
-
-
 int Board::checkMove(const Position & startPos, const Position & endPos) const
 {
     //The rules conditions for the startPos are verified when selecting the piece.
@@ -168,19 +164,21 @@ int Board::checkThrow(Team team, const Position & startPos,
     if (!isInside(endPos)) return -4;         //Out board bounds
     if (isFree(endPos)) return -5;        //No piece at end position.
     if (getPieceAt(endPos).value().getTeam() != team) return -6;      //Is opponent piece.
-
+    if (startPos == endPos) return -7;
     Position direction{getDirection(startPos - endPos)}, currentPos{startPos + direction};
 
     if (direction.getRow() == 0 && direction.getColumn() == 0) return -7;       //Not aligned
     while (currentPos != endPos)
     {
-        if (!isFree(currentPos))
+        if (isInside(currentPos) && !isFree(currentPos))
             if (getPieceAt(currentPos)->getTeam() != team)
                 return -8;      //Obstacle
         currentPos = currentPos + direction;
     }
     return 1; //Is ok
 }
+
+//PRIVATE METHODS
 
 bool Board::verifyLineAntiGame(const Position & currentPos, unsigned blockCount,
                                Team antiGameVictim) const

@@ -121,6 +121,26 @@ class Diaballik : public Observable
     bool canPass() const;
 
     /**
+     * @brief canPass
+     * Verifies if the selected piece can pass the ball to the position.
+     *
+     * @param pos The given position.
+     * @return True if there is an selected piece who can pass to the given postion.
+     */
+    bool canPass(const Position & pos) const;
+
+
+    /**
+     * @brief canMove
+     * Verifies if the selected piece can move to the given position.
+     *
+     * @param pos The given position.
+     * @return True if there is an selected piece who move to the given postion.
+     */
+    bool canMove(const Position & pos) const;
+
+
+    /**
      * @brief moveSupport
      *
      * Moves the selected Piece to the given position.

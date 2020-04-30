@@ -2,7 +2,7 @@ QWidget#MainWindow{
     background:url(:/resources/images/background.jpg);
 }
 
-.SquareUI{
+.SquareUI {
     background-color: green;
     border: 1px solid black;
 }

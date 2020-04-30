@@ -19,6 +19,10 @@ Diaballik::Diaballik():
 void Diaballik::init(size_t size, bool variant)
 {
     this->board_.init(variant, size);
+    currentPlayer_ = Team::NORTH;
+    winner_ = std::optional<Team>();
+    selected_ = std::optional<Position>();
+    moveCount_ = DEFAULT_MOVES;
     this->notifyObservers(EventType::NEW_GAME);
 }
 
@@ -57,6 +61,21 @@ void Diaballik::passTurn()
 bool Diaballik::canPass() const
 {
     return this->canThrowBall_;
+}
+
+bool Diaballik::canPass(const Position & pos) const
+{
+    if (!this->selected_.has_value() || !this->canPass()) return false;
+    if (!this->board_.getPieceAt(this->selected_.value())->hasTheBall()) return false;
+    return this->board_.checkThrow(currentPlayer_, this->selected_.value(), pos) == 1;
+}
+
+bool Diaballik::canMove(const Position & pos) const
+{
+    if (!this->selected_.has_value()) return false;
+    if (this->board_.getPieceAt(this->selected_.value())->hasTheBall()) return false;
+    if (checksEnoughMovesAvailable(pos) == -1) return false;
+    return this->board_.checkMove(this->selected_.value(), pos) == 1;
 }
 
 

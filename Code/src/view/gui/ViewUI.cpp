@@ -104,7 +104,7 @@ void  ViewUI::displayOptionsMenu()
 
 void ViewUI::displayBoard(const dblk::Diaballik & diaballik)
 {
-    this->boardUI_->refreshBoard(diaballik.getBoard());
+    this->boardUI_->refreshBoard(diaballik);
 }
 
 void ViewUI::displayHelp()
@@ -188,29 +188,26 @@ void ViewUI::displayLeftPlayer(dblk::Team team)
 void ViewUI::update(const dblk::Observable * observable,
                     EventType type)
 {
-    const Diaballik * game = reinterpret_cast<const Diaballik *>
-                             (observable);
+    const Diaballik * game = reinterpret_cast<const Diaballik *> (observable);
     this->mainWindow_->textActionGame->clear();
     switch (type)
     {
         case EventType::MOVE:
             this->displayCounters(game->getMoveCount(), game->canPass());
+            this->displayBoard(*game);
             break;
         case EventType::SELECT:
             this->displaySelected(game->getSelected());
+            this->displayBoard(*game);
             break;
-        case EventType::SQUARE_LEFT_CLICKED:
-            this->displaySelected(game->getSelected());
-            this->displayCounters(game->getMoveCount(), game->canPass());
-            break;
-        case EventType::SQUARE_RIGHT_CLICKED:
-            this->displayCounters(game->getMoveCount(), game->canPass());
         case EventType::PASS:
             this->displayCounters(game->getMoveCount(), game->canPass());
+            this->displayBoard(*game);
             break;
         case EventType::NEW_GAME:
             if (boardUI_ != nullptr)
             {
+                this->boardUI_->clear();
                 delete boardUI_;
             }
             boardUI_ = new BoardUI(game->getBoard(), evntManager_);
@@ -222,8 +219,8 @@ void ViewUI::update(const dblk::Observable * observable,
             this->displayCurrentPlayer(game->getCurrentPlayer());
             this->displayCounters(game->getMoveCount(), game->canPass());
             break;
+        default: break;
     }
-    this->displayBoard(*game);
 }
 
 ViewUI::~ViewUI()

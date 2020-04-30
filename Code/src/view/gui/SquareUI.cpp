@@ -6,14 +6,10 @@
 namespace dblk
 {
 
-const char *
-SquareUI::southPlayerImg(":/resources/assets/southPlayer.png");
-const char *
-SquareUI::northPlayerImg(":/resources/assets/northPlayer.png");
-const char *
-SquareUI::southPlayerBallImg(":/resources/assets/southPlayerBall.png");
-const char *
-SquareUI::northPlayerBallImg(":/resources/assets/northPlayerBall.png");
+const char * SquareUI::southPlayerImg(":/resources/assets/southPlayer.png");
+const char * SquareUI::northPlayerImg(":/resources/assets/northPlayer.png");
+const char * SquareUI::southPlayerBallImg(":/resources/assets/southPlayerBall.png");
+const char * SquareUI::northPlayerBallImg(":/resources/assets/northPlayerBall.png");
 
 SquareUI::SquareUI(Position & squarePos,
                    DiaballikEventManager * evnManager, int size) :
@@ -53,24 +49,42 @@ void SquareUI::mousePressEvent(QMouseEvent * event)
 {
     if (event->buttons() == Qt::LeftButton)
     {
-        emit leftClicked();
+        emit clicked();
     }
-    if (event->buttons() == Qt::RightButton)
+    else if (event->buttons() == Qt::RightButton)
     {
         emit rightClicked();
     }
 }
 
-void SquareUI::squareLeftClicked()
+void SquareUI::squareClicked()
 {
-    evnManager_->executeEvent(EventType::SQUARE_LEFT_CLICKED,
+    evnManager_->executeEvent(EventType::SQUARE_CLICKED,
                               squarePos_.getRow(), squarePos_.getColumn());
 }
 
 void SquareUI::squareRightClicked()
 {
-    evnManager_->executeEvent(EventType::SQUARE_RIGHT_CLICKED,
+    evnManager_->executeEvent(EventType::SELECT,
                               squarePos_.getRow(), squarePos_.getColumn());
+}
+
+void SquareUI::setInterectable()
+{
+    this->setStyleSheet("background-color: yellow;"
+                        "border: 1px solid black; ");
+}
+
+void SquareUI::setSelected()
+{
+    this->setStyleSheet("background-color: blue;"
+                        "border: 1px solid black; ");
+}
+
+void SquareUI::resetBackground()
+{
+    this->setStyleSheet("background-color: green;"
+                        "border: 1px solid black; ");
 }
 
 }

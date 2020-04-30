@@ -24,13 +24,15 @@ class SquareUI : public QLabel
     SquareUI(Position & squarePos, DiaballikEventManager * evnManager,
              int size);
     void refreshPiece(const std::optional<Piece> & piece);
+    void setInterectable();
+    void setSelected();
+    void resetBackground();
 
   public slots:
-    void squareLeftClicked();
+    void squareClicked();
     void squareRightClicked();
-
   signals:
-    void leftClicked();
+    void clicked();
     void rightClicked();
 
   protected:

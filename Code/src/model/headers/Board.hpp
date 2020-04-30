@@ -156,8 +156,6 @@ class Board
     int checkMove(const Position & startPos,
                   const Position & endPos) const;
 
-  private:
-
     /**
      * @brief checkThrow
      *
@@ -171,6 +169,8 @@ class Board
      */
     int checkThrow(Team team, const Position & startPos,
                    const Position & endPos) const;
+
+  private:
 
     /**
      * @brief verifyLineAntiGame

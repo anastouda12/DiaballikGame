@@ -1,7 +1,7 @@
 #ifndef BOARDUI_HPP
 #define BOARDUI_HPP
 #include <QGridLayout>
-#include "src/model/headers/Board.hpp"
+#include "src/model/headers/Diaballik.hpp"
 #include "SquareUI.hpp"
 
 
@@ -16,7 +16,11 @@ class BoardUI : public QGridLayout
   public:
     BoardUI(const dblk::Board & board,
             DiaballikEventManager * evnManager);
-    void refreshBoard(const Board & board);
+    void refreshBoard(const Diaballik & game);
+    void clear();
+
+  private:
+    void refreshSquare(const Diaballik & game, SquareUI * square, Position & pos);
 
 };
 

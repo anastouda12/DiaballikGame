@@ -2,8 +2,8 @@
 #include "headers/EventManager.hpp"
 #include "headers/PassTurnEvent.hpp"
 #include "headers/NewGameEvent.hpp"
-#include "headers/SquareLeftClickedEvent.hpp"
-#include "headers/SquareRightClickedEvent.hpp"
+#include "headers/SquareClickedEvent.hpp"
+#include "headers/SelectEvent.hpp"
 
 namespace dblk
 {
@@ -22,17 +22,17 @@ void DiaballikEventManager::executeEvent(EventType type, int arg1,
 
         switch (type)
         {
-            case EventType::SQUARE_LEFT_CLICKED:
-                SquareLeftClickedEvent(model_, view_, arg1, arg2).execute();
-                break;
-            case EventType::SQUARE_RIGHT_CLICKED:
-                SquareRightClickedEvent(model_, view_, arg1, arg2).execute();
+            case EventType::SQUARE_CLICKED:
+                SquareClickedEvent(model_, view_, arg1, arg2).execute();
                 break;
             case EventType::NEW_GAME:
                 NewGameEvent(model_, arg1, arg2).execute();
                 break;
             case EventType::PASS_TURN:
                 PassTurnEvent(model_).execute();
+                break;
+            case EventType::SELECT:
+                SelectEvent(model_, view_, Position(arg1, arg2)).execute();
                 break;
             default:
                 throw std::runtime_error("Unknown Event Type!");
