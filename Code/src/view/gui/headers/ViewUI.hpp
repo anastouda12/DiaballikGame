@@ -60,8 +60,9 @@ class ViewUI : public QMainWindow, public View
      * Displays the winner of the game Diaballik
      *
      * @param team the optinal winner of the game Diaballik.
+     * @param antiGame Describes if the winner won by antigame
      */
-    virtual void displayWinner(const std::optional<dblk::Team> & team)
+    virtual void displayWinner(const std::optional<dblk::Team> & team, bool antiGame)
     override;
 
     /**

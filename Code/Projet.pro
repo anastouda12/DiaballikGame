@@ -4,6 +4,8 @@ CONFIG += c++17
 
 QT       += core gui
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+#RC_FILE = icons.rc
+
 
 QMAKE_CXXFLAGS += -pedantic-errors -std=c++17 -Wall
 

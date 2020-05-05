@@ -138,13 +138,18 @@ void ViewUI::displayCounters(unsigned moveCounter, bool canPass)
         QString::fromStdString(std::to_string(canPass)));
 }
 
-void ViewUI::displayWinner(const std::optional<dblk::Team> & team)
+void ViewUI::displayWinner(const std::optional<dblk::Team> & team, bool antiGame)
 {
     if (team.has_value())
     {
         this->mainWindow_->stackedWidget->setCurrentIndex(3);
         this->mainWindow_->teamWinnerText->setText(QString::fromStdString(
                     to_string(team.value())));
+        if (antiGame)
+            this->mainWindow_->winReason->setText("Won by Anti-Game!");
+        else
+            this->mainWindow_->winReason->setText("Achieved the objective row!");
+
     }
 }
 

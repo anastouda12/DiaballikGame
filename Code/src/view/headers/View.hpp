@@ -71,7 +71,7 @@ class View: public Observer
      *
      * @param team the optinal winner of the game Diaballik.
      */
-    virtual void displayWinner(const std::optional<Team> & team) = 0;
+    virtual void displayWinner(const std::optional<Team> & team, bool antiGame) = 0;
 
     /**
      * @brief displayError

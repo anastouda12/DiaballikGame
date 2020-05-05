@@ -118,8 +118,7 @@ int Diaballik::throwBall(const Position & pos)
 
 bool Diaballik::isOver()
 {
-    return this->board_.checksGameIsFinsh(this->winner_) ? true :
-           this->checksAntiGame();
+    return this->board_.checksGameIsFinsh(this->winner_) ? true : this->checksAntiGame();
 }
 
 

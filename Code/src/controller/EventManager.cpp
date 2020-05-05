@@ -19,7 +19,6 @@ void DiaballikEventManager::executeEvent(EventType type, int arg1,
 {
     if (!model_.isOver())
     {
-
         switch (type)
         {
             case EventType::SQUARE_CLICKED:
@@ -40,7 +39,10 @@ void DiaballikEventManager::executeEvent(EventType type, int arg1,
     }
     if (model_.isOver())
     {
-        this->view_.displayWinner(model_.getWinner());
+        if (model_.getWinner().has_value())
+            this->view_.displayWinner(model_.getWinner(), false);
+        else
+            this->view_.displayWinner(std::optional(model_.getCurrentPlayer()), true);
     }
 }
 
