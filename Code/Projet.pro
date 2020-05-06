@@ -4,8 +4,10 @@ CONFIG += c++17
 
 QT       += core gui
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-#RC_FILE = icons.rc
 
+win32: RC_ICONS = Projet.ico
+win64: RC_ICONS = Projet.ico
+__APPLE__:ICON = Projet.icns
 
 QMAKE_CXXFLAGS += -pedantic-errors -std=c++17 -Wall
 
@@ -46,7 +48,6 @@ HEADERS += \
     src/controller/headers/PassEvent.hpp \
     src/controller/headers/PassTurnEvent.hpp \
     src/controller/headers/SelectEvent.hpp \
-    src/view/console/View.hpp \
     src/model/headers/Board.hpp \
     src/controller/headers/Configs.hpp \
     src/model/headers/Diaballik.hpp \
