@@ -15,7 +15,8 @@ SquareUI::SquareUI(Position & squarePos,
                    DiaballikEventManager * evnManager, int size) :
     squarePos_{squarePos}, evnManager_{evnManager}
 {
-    this->setProperty("class", "SquareUI");
+    this->setDefaultBackground();
+    this->setObjectName("SquareUI");
     this->setFixedSize(size, size);
     this->setScaledContents(true);
 }
@@ -65,14 +66,19 @@ void SquareUI::squareClicked()
 
 void SquareUI::squareRightClicked()
 {
-    evnManager_->executeEvent(EventType::SELECT,
-                              squarePos_.getRow(), squarePos_.getColumn());
+    evnManager_->executeEvent(EventType::SELECT, squarePos_.getRow(), squarePos_.getColumn());
 }
 
 void SquareUI::setInterectable()
 {
-    this->setStyleSheet("background-color: yellow;"
-                        "border: 1px solid black; ");
+    this->setStyleSheet("QLabel#SquareUI {"
+                        "   background-color: yellow;"
+                        "   border: 1px solid black;"
+                        "}"
+                        "QLabel#SquareUI:hover {"
+                        "   background-color: gold; "
+                        "   border: 2px solid black;"
+                        "}");
 }
 
 void SquareUI::setSelected()
@@ -81,10 +87,16 @@ void SquareUI::setSelected()
                         "border: 1px solid black; ");
 }
 
-void SquareUI::resetBackground()
+void SquareUI::setDefaultBackground()
 {
-    this->setStyleSheet("background-color: green;"
-                        "border: 1px solid black; ");
+    this->setStyleSheet("QLabel#SquareUI {"
+                        "   background-color: green;"
+                        "   border: 1px solid black;"
+                        "}"
+                        "QLabel#SquareUI:hover { "
+                        "   background-color: darkgreen;"
+                        "   border: 2px solid black;"
+                        "}");
 }
 
 }

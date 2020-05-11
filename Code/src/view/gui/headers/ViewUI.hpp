@@ -115,16 +115,6 @@ class ViewUI : public QMainWindow, public View
      */
     virtual void displayGoodByeMessage()  override;
 
-
-    /**
-     * @brief displayLeftPlayer
-     *
-     * Displays a message to telling that a player left the game.
-     *
-     * @param team The player who left the game.
-     */
-    virtual void displayLeftPlayer(dblk::Team team)  override;
-
     /**
      * @brief displayMainMenu
      *

@@ -10,8 +10,11 @@
     <height>720</height>
    </rect>
   </property>
+  <property name="mouseTracking">
+   <bool>true</bool>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Diaballik</string>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -158,11 +161,16 @@
       <widget class="QComboBox" name="boardSizeInput">
        <property name="geometry">
         <rect>
-         <x>170</x>
+         <x>150</x>
          <y>70</y>
-         <width>62</width>
-         <height>22</height>
+         <width>81</width>
+         <height>21</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">selection-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
@@ -609,10 +617,10 @@ font: 24pt &quot;MS Shell Dlg 2&quot;;</string>
      <widget class="QLabel" name="labelGamesRules">
       <property name="geometry">
        <rect>
-        <x>120</x>
-        <y>40</y>
-        <width>221</width>
-        <height>41</height>
+        <x>130</x>
+        <y>30</y>
+        <width>391</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="font">
@@ -662,8 +670,8 @@ font: 24pt &quot;MS Shell Dlg 2&quot;;</string>
      <widget class="QWidget" name="verticalLayoutWidget_5">
       <property name="geometry">
        <rect>
-        <x>200</x>
-        <y>140</y>
+        <x>150</x>
+        <y>160</y>
         <width>1041</width>
         <height>391</height>
        </rect>
@@ -759,23 +767,6 @@ font: 24pt &quot;MS Shell Dlg 2&quot;;</string>
     </widget>
    </widget>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1280</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuDiaballik_Game">
-    <property name="title">
-     <string>Diaballik Game</string>
-    </property>
-   </widget>
-   <addaction name="menuDiaballik_Game"/>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
   <include location="../../../resources.qrc"/>

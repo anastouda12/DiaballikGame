@@ -14,10 +14,8 @@ class BoardUI : public QGridLayout
 
     std::vector<std::vector<SquareUI *>> squares_;
   public:
-    BoardUI(const dblk::Board & board,
-            DiaballikEventManager * evnManager);
+    BoardUI(const dblk::Board & board, DiaballikEventManager * evnManager);
     void refreshBoard(const Diaballik & game);
-    void clear();
 
   private:
     void refreshSquare(const Diaballik & game, SquareUI * square, Position & pos);

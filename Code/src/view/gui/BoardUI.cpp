@@ -54,33 +54,21 @@ void BoardUI::refreshSquare(const Diaballik & game, SquareUI * square, Position 
         if (game.canPass(curPos))
             square->setInterectable();
         else
-            square->resetBackground();
+            square->setDefaultBackground();
     }
     else if (game.getSelected().has_value())
     {
         if (game.canMove(curPos))
             square->setInterectable();
         else
-            square->resetBackground();
+            square->setDefaultBackground();
     }
     else
     {
-        square->resetBackground();
+        square->setDefaultBackground();
     }
     square->refreshPiece(game.getBoard().getPieceAt(curPos));
 }
-
-void BoardUI::clear()
-{
-    for (int i = 0; i < this->squares_.size(); i++)
-    {
-        for (int j = 0; j < this->squares_.size(); j++)
-        {
-            this->removeItem(reinterpret_cast<QLayoutItem *>(squares_[i][j]));
-        }
-    }
-}
-
 
 
 }
