@@ -6,48 +6,56 @@
 namespace dblk
 {
 
-class Diaballik;
-class View;
-
-/**
- * @brief The NewGameEvent class
- *
- * This event initializates the data of the game!
- */
-class NewGameEvent : public DiaballikAbstractEvent
-{
-
-  private:
-    /**
-     * @brief model_
-     *
-     * The game data.
-     */
-    Diaballik & model_;
-
-    int boardSize_;
-
-    bool variant_;
-
-  public:
+    class Diaballik;
+    class View;
 
     /**
-     * @brief PassEvent
+     * @brief The NewGameEvent class
      *
-     * Creates a new game event.
-     *
-     * @param model The game data.
-     * @param view The UI.
+     * This event initializates the data of the game!
      */
-    NewGameEvent(Diaballik & model, int boardSize, bool variantMode);
+    class NewGameEvent : public DiaballikAbstractEvent
+    {
 
-    /**
-     * @brief execute
-     *
-     * Initializates the game date accorting the given options.
-     */
-    virtual void execute() override;
+        private:
+            /**
+             * @brief model_
+             *
+             * The game data.
+             */
+            Diaballik &model_;
 
-};
+            /**
+             * @brief boardSize_
+             * The board size
+             */
+            int boardSize_;
+
+            /**
+             * @brief variant_
+             * Variant.
+             */
+            bool variant_;
+
+        public:
+
+            /**
+             * @brief PassEvent
+             *
+             * Creates a new game event.
+             *
+             * @param model The game data.
+             * @param view The UI.
+             */
+            NewGameEvent(Diaballik &model, int boardSize, bool variantMode);
+
+            /**
+             * @brief execute
+             *
+             * Initializates the game date accorting the given options.
+             */
+            virtual void execute() override;
+
+    };
 }
 #endif // NEWGAMEEVENT_H

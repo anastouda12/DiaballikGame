@@ -1,0 +1,74 @@
+\hypertarget{classdblk_1_1_diaballik_event_manager}{}\doxysection{dblk\+::Diaballik\+Event\+Manager Class Reference}
+\label{classdblk_1_1_diaballik_event_manager}\index{dblk::DiaballikEventManager@{dblk::DiaballikEventManager}}
+
+
+The Diaballik\+Event\+Factory class.  
+
+
+
+
+{\ttfamily \#include $<$Event\+Manager.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdblk_1_1_diaballik_event_manager_a83e0a6c859b7b448522b6eff2bccbbf4}{Diaballik\+Event\+Manager}} (\mbox{\hyperlink{classdblk_1_1_diaballik}{Diaballik}} \&model, \mbox{\hyperlink{classdblk_1_1_view}{View}} \&view)
+\begin{DoxyCompactList}\small\item\em Diaballik\+Event\+Factory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdblk_1_1_diaballik_event_manager_af30b5e61b065f65f8d630c7164c9034e}{execute\+Event}} (Event\+Type type, int arg1, int arg2)
+\begin{DoxyCompactList}\small\item\em generate\+Event \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The Diaballik\+Event\+Factory class. 
+
+This factory is associated with the game data and the user interface. It parses a string input from the user to generate a Diaballik\+Event that will manipulate the game or the UI. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdblk_1_1_diaballik_event_manager_a83e0a6c859b7b448522b6eff2bccbbf4}\label{classdblk_1_1_diaballik_event_manager_a83e0a6c859b7b448522b6eff2bccbbf4}} 
+\index{dblk::DiaballikEventManager@{dblk::DiaballikEventManager}!DiaballikEventManager@{DiaballikEventManager}}
+\index{DiaballikEventManager@{DiaballikEventManager}!dblk::DiaballikEventManager@{dblk::DiaballikEventManager}}
+\doxysubsubsection{\texorpdfstring{DiaballikEventManager()}{DiaballikEventManager()}}
+{\footnotesize\ttfamily dblk\+::\+Diaballik\+Event\+Manager\+::\+Diaballik\+Event\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdblk_1_1_diaballik}{Diaballik}} \&}]{model,  }\item[{\mbox{\hyperlink{classdblk_1_1_view}{View}} \&}]{view }\end{DoxyParamCaption})}
+
+
+
+Diaballik\+Event\+Factory. 
+
+Creates a new factory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & The game data. \\
+\hline
+{\em view} & The UI. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdblk_1_1_diaballik_event_manager_af30b5e61b065f65f8d630c7164c9034e}\label{classdblk_1_1_diaballik_event_manager_af30b5e61b065f65f8d630c7164c9034e}} 
+\index{dblk::DiaballikEventManager@{dblk::DiaballikEventManager}!executeEvent@{executeEvent}}
+\index{executeEvent@{executeEvent}!dblk::DiaballikEventManager@{dblk::DiaballikEventManager}}
+\doxysubsubsection{\texorpdfstring{executeEvent()}{executeEvent()}}
+{\footnotesize\ttfamily void dblk\+::\+Diaballik\+Event\+Manager\+::execute\+Event (\begin{DoxyParamCaption}\item[{Event\+Type}]{type,  }\item[{int}]{arg1,  }\item[{int}]{arg2 }\end{DoxyParamCaption})}
+
+
+
+generate\+Event 
+
+Generates a new Diaballik\+Event from the user input. The event is stored in dynamic memory, it must be deleted when it\textquotesingle{}s used. It throws runtime\+\_\+exception if the command is not known. It throws invalid\+\_\+argument if there is not enought arguments for the command.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The user input. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new Diaballik\+Event. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/anastoudalachiri/\+Desktop/dev4/\+D\+E\+V4-\/\+Diabilik-\/43256\+\_\+51999/\+Code/src/controller/headers/Event\+Manager.\+hpp\item 
+/\+Users/anastoudalachiri/\+Desktop/dev4/\+D\+E\+V4-\/\+Diabilik-\/43256\+\_\+51999/\+Code/src/controller/Event\+Manager.\+cpp\end{DoxyCompactItemize}

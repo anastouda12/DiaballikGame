@@ -7,37 +7,108 @@
 
 namespace dblk
 {
-class SquareUI : public QLabel
-{
-    Q_OBJECT
-  private:
+    /**
+     * @brief The SquareUI class
+     */
+    class SquareUI : public QLabel
+    {
+            Q_OBJECT
+        private:
+            /**
+            * @brief southPlayerImg
+            * Image of the south player.
+            */
+            static const char *southPlayerImg;
+            /**
+            * @brief northPlayerImg
+            * Image of the north player.
+            */
+            static const char *northPlayerImg;
+            /**
+            * @brief southPlayerBallImg
+            * Image of the south player with the ball.
+            */
+            static const char *southPlayerBallImg;
+            /**
+            * @brief northPlayerBallImg
+            * Image of the north player with the ball.
+            */
+            static const char *northPlayerBallImg;
 
-    static const char * southPlayerImg;
-    static const char * northPlayerImg;
-    static const char * southPlayerBallImg;
-    static const char * northPlayerBallImg;
+            /**
+             * @brief squarePos_
+             * Position of the square
+             */
+            Position squarePos_;
 
-    Position squarePos_;
-    DiaballikEventManager * evnManager_;
+            /**
+             * @brief evnManager_
+             * Event manager.
+             */
+            DiaballikEventManager *evnManager_;
 
-  public:
-    SquareUI(Position & squarePos, DiaballikEventManager * evnManager, int size);
-    void refreshPiece(const std::optional<Piece> & piece);
-    void setInterectable();
-    void setSelected();
-    void setDefaultBackground();
+        public:
+            /**
+             * @brief SquareUI
+             * SquareUI.
+             * @param squarePos Square position.
+             * @param evnManager Event Manager.
+             * @param size The size.
+             */
+            SquareUI(Position &squarePos, DiaballikEventManager *evnManager, int size);
 
-  public slots:
-    void squareClicked();
-    void squareRightClicked();
-  signals:
-    void clicked();
-    void rightClicked();
+            /**
+             * @brief refreshPiece
+             * Refresh a piece.
+             * @param piece The optional Piece.
+             */
+            void refreshPiece(const std::optional<Piece> &piece);
 
-  protected:
-    void mousePressEvent(QMouseEvent * event);
+            /**
+             * @brief setInterectable
+             * Set a squareUI interectable in the board.
+             */
+            void setInterectable();
 
-};
+            /**
+             * @brief setSelected
+             * Set the square selected.
+             */
+            void setSelected();
+
+            /**
+             * @brief setDefaultBackground
+             * Set default background.
+             */
+            void setDefaultBackground();
+
+        public slots:
+            /**
+             * @brief squareClicked
+             */
+            void squareClicked();
+            /**
+             * @brief squareRightClicked
+             */
+            void squareRightClicked();
+        signals:
+            /**
+             * @brief clicked
+             */
+            void clicked();
+            /**
+             * @brief rightClicked
+             */
+            void rightClicked();
+
+        protected:
+            /**
+             * @brief mousePressEvent
+             * @param event the mouse Event.
+             */
+            void mousePressEvent(QMouseEvent *event);
+
+    };
 
 }
 

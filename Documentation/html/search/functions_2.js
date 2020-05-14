@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['canpass_197',['canPass',['../classdblk_1_1_diaballik.html#ab4176116e25ddb8c271e22c1ea647630',1,'dblk::Diaballik']]],
-  ['checkmove_198',['checkMove',['../classdblk_1_1_board.html#a5514d80d1e85b9ba14d72c501808f965',1,'dblk::Board']]],
-  ['checksantigame_199',['checksAntiGame',['../classdblk_1_1_board.html#aa265eaa4b782df71bb954e42a3cee275',1,'dblk::Board::checksAntiGame()'],['../classdblk_1_1_diaballik.html#a4bdb9e7a206673be0474b7ba047915ad',1,'dblk::Diaballik::checksAntiGame()']]],
-  ['checksenoughmovesavailable_200',['checksEnoughMovesAvailable',['../classdblk_1_1_diaballik.html#ad4b0147761c902abb2ef6eab15381a55',1,'dblk::Diaballik']]],
-  ['checksgameisfinsh_201',['checksGameIsFinsh',['../classdblk_1_1_board.html#a50f6447349b2f412eda883545a2d0e2f',1,'dblk::Board']]],
-  ['controller_202',['Controller',['../classdblk_1_1_controller.html#a794c9cd350460da664a46df4b5fd1c8b',1,'dblk::Controller']]]
+  ['execute_126',['execute',['../classdblk_1_1_diaballik_abstract_event.html#a07cdeb84289699345458aeec55b19760',1,'dblk::DiaballikAbstractEvent::execute()'],['../classdblk_1_1_move_event.html#ab85167bb21a6b64f9885d54ed92e817a',1,'dblk::MoveEvent::execute()'],['../classdblk_1_1_new_game_event.html#aa5c7342f15a4f55927ef57001b2f3b0d',1,'dblk::NewGameEvent::execute()'],['../classdblk_1_1_pass_event.html#a85247f21ed77f84bd94ed31ef5dbf82f',1,'dblk::PassEvent::execute()'],['../classdblk_1_1_pass_turn_event.html#aa863950ef77dd822f8ac747cfa5684e0',1,'dblk::PassTurnEvent::execute()'],['../classdblk_1_1_select_event.html#af9d0f7c5ca8c44157fd56b620b0579d0',1,'dblk::SelectEvent::execute()'],['../classdblk_1_1_square_clicked_event.html#a90def1edc3141f2b80963988368231e0',1,'dblk::SquareClickedEvent::execute()']]],
+  ['executeevent_127',['executeEvent',['../classdblk_1_1_diaballik_event_manager.html#af30b5e61b065f65f8d630c7164c9034e',1,'dblk::DiaballikEventManager']]]
 ];
