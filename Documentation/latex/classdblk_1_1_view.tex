@@ -1,0 +1,215 @@
+\hypertarget{classdblk_1_1_view}{}\doxysection{dblk\+::View Class Reference}
+\label{classdblk_1_1_view}\index{dblk::View@{dblk::View}}
+
+
+The \mbox{\hyperlink{classdblk_1_1_view}{View}} class This class represents the \mbox{\hyperlink{classdblk_1_1_view}{View}} facade with all graphics implementation.  
+
+
+
+
+{\ttfamily \#include $<$View.\+hpp$>$}
+
+Inheritance diagram for dblk\+::View\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classdblk_1_1_view}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classdblk_1_1_view_a606e99140a67862887e96fe23cdb409e}{display\+Options\+Menu}} ()=0
+\begin{DoxyCompactList}\small\item\em display\+Options\+Menu \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classdblk_1_1_view_a5533f9c1e389704741efd485c7bd862f}{display\+Welcome\+Page}} ()=0
+\begin{DoxyCompactList}\small\item\em display\+Welcome\+Message \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classdblk_1_1_view_a3afa2f708072970650a43cd8c6fbd2f7}{display\+Board}} (const \mbox{\hyperlink{classdblk_1_1_diaballik}{Diaballik}} \&diaballik)=0
+\begin{DoxyCompactList}\small\item\em display\+Board \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classdblk_1_1_view_aeda225a2c2e99eccd4ce517357886317}{display\+Help}} ()=0
+\begin{DoxyCompactList}\small\item\em display\+Help \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classdblk_1_1_view_a54c9d514aad59d1703ff46220e2015a4}{display\+Current\+Player}} (const \mbox{\hyperlink{namespacedblk_ab7bf0fdfece85599b8768a04647f9bd6}{Team}} \&team)=0
+\begin{DoxyCompactList}\small\item\em display\+Current\+Player \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classdblk_1_1_view_a542bfeb12aa644ff65e921eef1281a59}{display\+Counters}} (unsigned move\+Counter, bool can\+Pass)=0
+\begin{DoxyCompactList}\small\item\em display\+Counters \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classdblk_1_1_view_aba22f796f5936f034aad0509090f83fd}{display\+Winner}} (const std\+::optional$<$ \mbox{\hyperlink{namespacedblk_ab7bf0fdfece85599b8768a04647f9bd6}{Team}} $>$ \&team, bool anti\+Game)=0
+\begin{DoxyCompactList}\small\item\em display\+Winner \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classdblk_1_1_view_ab2db52b9fd74502518cbb6bfb28926e6}{display\+Error}} (std\+::string error\+Msg)=0
+\begin{DoxyCompactList}\small\item\em display\+Error \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classdblk_1_1_view_ac3205c1d512e54abaa13bf5687ba4a58}{display\+Good\+Bye\+Message}} ()=0
+\begin{DoxyCompactList}\small\item\em display\+Good\+Bye\+Message \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classdblk_1_1_view_a52a1b40d39ee6f16d497b39097b7860f}{display\+Selected}} (const std\+::optional$<$ \mbox{\hyperlink{classdblk_1_1_position}{Position}} $>$ position)=0
+\begin{DoxyCompactList}\small\item\em display\+Selected \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classdblk_1_1_view_aed0701f4f6335574ce8ae54dc2cfd4bd}{display\+Rules\+Page}} ()=0
+\begin{DoxyCompactList}\small\item\em display\+Rules\+Page Displays the rules page to the players. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classdblk_1_1_view}{View}} class This class represents the \mbox{\hyperlink{classdblk_1_1_view}{View}} facade with all graphics implementation. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdblk_1_1_view_a3afa2f708072970650a43cd8c6fbd2f7}\label{classdblk_1_1_view_a3afa2f708072970650a43cd8c6fbd2f7}} 
+\index{dblk::View@{dblk::View}!displayBoard@{displayBoard}}
+\index{displayBoard@{displayBoard}!dblk::View@{dblk::View}}
+\doxysubsubsection{\texorpdfstring{displayBoard()}{displayBoard()}}
+{\footnotesize\ttfamily virtual void dblk\+::\+View\+::display\+Board (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classdblk_1_1_diaballik}{Diaballik}} \&}]{diaballik }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+display\+Board 
+
+Displays the boards of the \mbox{\hyperlink{classdblk_1_1_diaballik}{Diaballik}} game 
+
+Implemented in \mbox{\hyperlink{classdblk_1_1_view_u_i_aab20862498cc89e0767a74451c49bbeb}{dblk\+::\+View\+UI}}.
+
+\mbox{\Hypertarget{classdblk_1_1_view_a542bfeb12aa644ff65e921eef1281a59}\label{classdblk_1_1_view_a542bfeb12aa644ff65e921eef1281a59}} 
+\index{dblk::View@{dblk::View}!displayCounters@{displayCounters}}
+\index{displayCounters@{displayCounters}!dblk::View@{dblk::View}}
+\doxysubsubsection{\texorpdfstring{displayCounters()}{displayCounters()}}
+{\footnotesize\ttfamily virtual void dblk\+::\+View\+::display\+Counters (\begin{DoxyParamCaption}\item[{unsigned}]{move\+Counter,  }\item[{bool}]{can\+Pass }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+display\+Counters 
+
+Displays the counters of the current players Counter of movements available And possibility to pass the ball
+
+
+\begin{DoxyParams}{Parameters}
+{\em move\+Counter} & the number of moves availables of the current Player \\
+\hline
+{\em can\+Pass} & possibility to throw the ball of the current player \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classdblk_1_1_view_u_i_a1c705ad3873a35104ab04d055f70ab93}{dblk\+::\+View\+UI}}.
+
+\mbox{\Hypertarget{classdblk_1_1_view_a54c9d514aad59d1703ff46220e2015a4}\label{classdblk_1_1_view_a54c9d514aad59d1703ff46220e2015a4}} 
+\index{dblk::View@{dblk::View}!displayCurrentPlayer@{displayCurrentPlayer}}
+\index{displayCurrentPlayer@{displayCurrentPlayer}!dblk::View@{dblk::View}}
+\doxysubsubsection{\texorpdfstring{displayCurrentPlayer()}{displayCurrentPlayer()}}
+{\footnotesize\ttfamily virtual void dblk\+::\+View\+::display\+Current\+Player (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacedblk_ab7bf0fdfece85599b8768a04647f9bd6}{Team}} \&}]{team }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+display\+Current\+Player 
+
+Displays the current player of a game of \mbox{\hyperlink{classdblk_1_1_diaballik}{Diaballik}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em the} & team of the current player \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classdblk_1_1_view_u_i_a923e4212ef56fead836b4d9e372f1781}{dblk\+::\+View\+UI}}.
+
+\mbox{\Hypertarget{classdblk_1_1_view_ab2db52b9fd74502518cbb6bfb28926e6}\label{classdblk_1_1_view_ab2db52b9fd74502518cbb6bfb28926e6}} 
+\index{dblk::View@{dblk::View}!displayError@{displayError}}
+\index{displayError@{displayError}!dblk::View@{dblk::View}}
+\doxysubsubsection{\texorpdfstring{displayError()}{displayError()}}
+{\footnotesize\ttfamily virtual void dblk\+::\+View\+::display\+Error (\begin{DoxyParamCaption}\item[{std\+::string}]{error\+Msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+display\+Error 
+
+Display an error message
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag\+Error} & flag of the error \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdblk_1_1_view_ac3205c1d512e54abaa13bf5687ba4a58}\label{classdblk_1_1_view_ac3205c1d512e54abaa13bf5687ba4a58}} 
+\index{dblk::View@{dblk::View}!displayGoodByeMessage@{displayGoodByeMessage}}
+\index{displayGoodByeMessage@{displayGoodByeMessage}!dblk::View@{dblk::View}}
+\doxysubsubsection{\texorpdfstring{displayGoodByeMessage()}{displayGoodByeMessage()}}
+{\footnotesize\ttfamily virtual void dblk\+::\+View\+::display\+Good\+Bye\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+display\+Good\+Bye\+Message 
+
+Display farewell message \mbox{\Hypertarget{classdblk_1_1_view_aeda225a2c2e99eccd4ce517357886317}\label{classdblk_1_1_view_aeda225a2c2e99eccd4ce517357886317}} 
+\index{dblk::View@{dblk::View}!displayHelp@{displayHelp}}
+\index{displayHelp@{displayHelp}!dblk::View@{dblk::View}}
+\doxysubsubsection{\texorpdfstring{displayHelp()}{displayHelp()}}
+{\footnotesize\ttfamily virtual void dblk\+::\+View\+::display\+Help (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+display\+Help 
+
+Displays the Help \mbox{\Hypertarget{classdblk_1_1_view_a606e99140a67862887e96fe23cdb409e}\label{classdblk_1_1_view_a606e99140a67862887e96fe23cdb409e}} 
+\index{dblk::View@{dblk::View}!displayOptionsMenu@{displayOptionsMenu}}
+\index{displayOptionsMenu@{displayOptionsMenu}!dblk::View@{dblk::View}}
+\doxysubsubsection{\texorpdfstring{displayOptionsMenu()}{displayOptionsMenu()}}
+{\footnotesize\ttfamily virtual void dblk\+::\+View\+::display\+Options\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+display\+Options\+Menu 
+
+Display the options menu of the \mbox{\hyperlink{classdblk_1_1_diaballik}{Diaballik}} game. \mbox{\Hypertarget{classdblk_1_1_view_aed0701f4f6335574ce8ae54dc2cfd4bd}\label{classdblk_1_1_view_aed0701f4f6335574ce8ae54dc2cfd4bd}} 
+\index{dblk::View@{dblk::View}!displayRulesPage@{displayRulesPage}}
+\index{displayRulesPage@{displayRulesPage}!dblk::View@{dblk::View}}
+\doxysubsubsection{\texorpdfstring{displayRulesPage()}{displayRulesPage()}}
+{\footnotesize\ttfamily virtual void dblk\+::\+View\+::display\+Rules\+Page (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+display\+Rules\+Page Displays the rules page to the players. 
+
+\mbox{\Hypertarget{classdblk_1_1_view_a52a1b40d39ee6f16d497b39097b7860f}\label{classdblk_1_1_view_a52a1b40d39ee6f16d497b39097b7860f}} 
+\index{dblk::View@{dblk::View}!displaySelected@{displaySelected}}
+\index{displaySelected@{displaySelected}!dblk::View@{dblk::View}}
+\doxysubsubsection{\texorpdfstring{displaySelected()}{displaySelected()}}
+{\footnotesize\ttfamily virtual void dblk\+::\+View\+::display\+Selected (\begin{DoxyParamCaption}\item[{const std\+::optional$<$ \mbox{\hyperlink{classdblk_1_1_position}{Position}} $>$}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+display\+Selected 
+
+Display the position of the piece selected
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & position of the piece. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdblk_1_1_view_a5533f9c1e389704741efd485c7bd862f}\label{classdblk_1_1_view_a5533f9c1e389704741efd485c7bd862f}} 
+\index{dblk::View@{dblk::View}!displayWelcomePage@{displayWelcomePage}}
+\index{displayWelcomePage@{displayWelcomePage}!dblk::View@{dblk::View}}
+\doxysubsubsection{\texorpdfstring{displayWelcomePage()}{displayWelcomePage()}}
+{\footnotesize\ttfamily virtual void dblk\+::\+View\+::display\+Welcome\+Page (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+display\+Welcome\+Message 
+
+Displays a welcome message to the players \mbox{\Hypertarget{classdblk_1_1_view_aba22f796f5936f034aad0509090f83fd}\label{classdblk_1_1_view_aba22f796f5936f034aad0509090f83fd}} 
+\index{dblk::View@{dblk::View}!displayWinner@{displayWinner}}
+\index{displayWinner@{displayWinner}!dblk::View@{dblk::View}}
+\doxysubsubsection{\texorpdfstring{displayWinner()}{displayWinner()}}
+{\footnotesize\ttfamily virtual void dblk\+::\+View\+::display\+Winner (\begin{DoxyParamCaption}\item[{const std\+::optional$<$ \mbox{\hyperlink{namespacedblk_ab7bf0fdfece85599b8768a04647f9bd6}{Team}} $>$ \&}]{team,  }\item[{bool}]{anti\+Game }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+display\+Winner 
+
+Displays the winner of the game \mbox{\hyperlink{classdblk_1_1_diaballik}{Diaballik}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em team} & the optinal winner of the game \mbox{\hyperlink{classdblk_1_1_diaballik}{Diaballik}}. \\
+\hline
+{\em anti\+Game} & Describes if the winner won by antigame \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/anastoudalachiri/\+Desktop/dev4/\+D\+E\+V4-\/\+Diabilik-\/43256\+\_\+51999/\+Code/src/view/headers/\mbox{\hyperlink{_view_8hpp}{View.\+hpp}}\end{DoxyCompactItemize}

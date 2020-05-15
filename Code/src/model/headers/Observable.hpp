@@ -2,6 +2,7 @@
 #define OBSERVABLE_H
 #include <set>
 #include "src/view/headers/Observer.hpp"
+#include "src/controller/headers/EventType.hpp"
 
 namespace dblk
 {
@@ -53,7 +54,7 @@ class Observable
      *
      * \sa Observer::update(const Subject *).
      **/
-    void notifyObservers();
+    void notifyObservers(EventType type);
 };
 
 }

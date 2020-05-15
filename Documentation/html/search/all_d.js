@@ -1,13 +1,22 @@
 var searchData=
 [
-  ['select_107',['select',['../classdblk_1_1_diaballik.html#a7f3cf319e80f77046500a199fc6e990d',1,'dblk::Diaballik']]],
-  ['selectevent_108',['SelectEvent',['../classdblk_1_1_select_event.html',1,'dblk::SelectEvent'],['../classdblk_1_1_select_event.html#ab2efd61caf9d5978a7daa1d2eb323e46',1,'dblk::SelectEvent::SelectEvent()']]],
-  ['selectevent_2ecpp_109',['SelectEvent.cpp',['../_select_event_8cpp.html',1,'']]],
-  ['selectevent_2ehpp_110',['SelectEvent.hpp',['../_select_event_8hpp.html',1,'']]],
-  ['showevent_111',['ShowEvent',['../classdblk_1_1_show_event.html',1,'dblk::ShowEvent'],['../classdblk_1_1_show_event.html#a346507e9f839f46569bfdfa25a23f955',1,'dblk::ShowEvent::ShowEvent()']]],
-  ['showevent_2ecpp_112',['ShowEvent.cpp',['../_show_event_8cpp.html',1,'']]],
-  ['showevent_2ehpp_113',['ShowEvent.hpp',['../_show_event_8hpp.html',1,'']]],
-  ['small_5fsize_114',['SMALL_SIZE',['../namespacedblk.html#ad5497db1c18cebcb06c7eb1bba05ed8f',1,'dblk']]],
-  ['south_115',['SOUTH',['../namespacedblk.html#ab7bf0fdfece85599b8768a04647f9bd6a10d6c17d05cdf2178c1d496e9539ddfe',1,'dblk']]],
-  ['split_116',['split',['../namespacedblk.html#a048c1abd08acc0b1149e6cc7eb0e8c9a',1,'dblk']]]
+  ['select_115',['select',['../classdblk_1_1_diaballik.html#a7f3cf319e80f77046500a199fc6e990d',1,'dblk::Diaballik::select()'],['../namespacedblk.html#a152dd69870bc836df791852acc842a3ea63225f19fccb18e7c709f1fa11bc738e',1,'dblk::SELECT()']]],
+  ['selectevent_116',['SelectEvent',['../classdblk_1_1_select_event.html',1,'dblk::SelectEvent'],['../classdblk_1_1_select_event.html#ab2efd61caf9d5978a7daa1d2eb323e46',1,'dblk::SelectEvent::SelectEvent()']]],
+  ['selectevent_2ecpp_117',['SelectEvent.cpp',['../_select_event_8cpp.html',1,'']]],
+  ['selectevent_2ehpp_118',['SelectEvent.hpp',['../_select_event_8hpp.html',1,'']]],
+  ['setdefaultbackground_119',['setDefaultBackground',['../classdblk_1_1_square_u_i.html#aad516d053a2c25c4cdaa583fce5fcc8b',1,'dblk::SquareUI']]],
+  ['seteventmanager_120',['setEventManager',['../classdblk_1_1_view_u_i.html#a44d9c4c9810b78acf212d94da1cebbac',1,'dblk::ViewUI']]],
+  ['setinterectable_121',['setInterectable',['../classdblk_1_1_square_u_i.html#a878a3ca6f991cc210b5e36c73b002b6c',1,'dblk::SquareUI']]],
+  ['setselected_122',['setSelected',['../classdblk_1_1_square_u_i.html#ae1f65a1617c8ba866aa9ae77b59c1f0a',1,'dblk::SquareUI']]],
+  ['small_5fsize_123',['SMALL_SIZE',['../namespacedblk.html#ad5497db1c18cebcb06c7eb1bba05ed8f',1,'dblk']]],
+  ['south_124',['SOUTH',['../namespacedblk.html#ab7bf0fdfece85599b8768a04647f9bd6a10d6c17d05cdf2178c1d496e9539ddfe',1,'dblk']]],
+  ['square_5fclicked_125',['SQUARE_CLICKED',['../namespacedblk.html#a152dd69870bc836df791852acc842a3eaab611e4772ce41fd4ef5e263d22e4910',1,'dblk']]],
+  ['squareclicked_126',['squareClicked',['../classdblk_1_1_square_u_i.html#a353482272b6a30b7809067c9703bcd61',1,'dblk::SquareUI']]],
+  ['squareclickedevent_127',['SquareClickedEvent',['../classdblk_1_1_square_clicked_event.html',1,'dblk::SquareClickedEvent'],['../classdblk_1_1_square_clicked_event.html#a791898bdd5889b35d591b2cdc916b901',1,'dblk::SquareClickedEvent::SquareClickedEvent()']]],
+  ['squareclickedevent_2ecpp_128',['SquareClickedEvent.cpp',['../_square_clicked_event_8cpp.html',1,'']]],
+  ['squareclickedevent_2ehpp_129',['SquareClickedEvent.hpp',['../_square_clicked_event_8hpp.html',1,'']]],
+  ['squarerightclicked_130',['squareRightClicked',['../classdblk_1_1_square_u_i.html#a3a63967e7193320730a284f044826c2f',1,'dblk::SquareUI']]],
+  ['squareui_131',['SquareUI',['../classdblk_1_1_square_u_i.html',1,'dblk::SquareUI'],['../classdblk_1_1_square_u_i.html#aedde8395804eed980bae122136df4eac',1,'dblk::SquareUI::SquareUI()']]],
+  ['squareui_2ecpp_132',['SquareUI.cpp',['../_square_u_i_8cpp.html',1,'']]],
+  ['squareui_2ehpp_133',['SquareUI.hpp',['../_square_u_i_8hpp.html',1,'']]]
 ];

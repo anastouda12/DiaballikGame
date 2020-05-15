@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['viewconsole_272',['ViewConsole',['../classdblk_1_1_view_console.html#aa90401cc246966e7681953a0962bfb2a',1,'dblk::ViewConsole']]]
+  ['viewui_298',['ViewUI',['../classdblk_1_1_view_u_i.html#a2fe506131ff04085349a17866aa310ae',1,'dblk::ViewUI']]]
 ];

@@ -1,6 +1,7 @@
 #ifndef OBSERVER_HPP
 #define OBSERVER_HPP
 
+#include "src/controller/headers/EventType.hpp"
 namespace dblk
 {
 
@@ -19,11 +20,11 @@ class Observer
   public:
 
 
-   /**
-    * @brief Constuctor by default copy.
-    * The default virtual destructor has cascading effects.
-    *
-    **/
+    /**
+     * @brief Constuctor by default copy.
+     * The default virtual destructor has cascading effects.
+     *
+     **/
     Observer(const Observer &) = default;
 
     /**
@@ -53,7 +54,7 @@ class Observer
      *  param subject the subject of observation which notifies a change.
      *  see Subject :: notifyObservers ().
      **/
-    virtual void update(const Observable * obj) = 0;
+    virtual void update(const Observable * obj, EventType type) = 0;
 
 
     /**

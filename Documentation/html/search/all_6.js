@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['hastheball_60',['hasTheBall',['../classdblk_1_1_piece.html#ace935f43cbf0c8a7bced2aa0dfff6c9b',1,'dblk::Piece']]],
-  ['helpevent_61',['HelpEvent',['../classdblk_1_1_help_event.html',1,'dblk::HelpEvent'],['../classdblk_1_1_help_event.html#a8952f3a4bdf2cc67cbab50382d194ff6',1,'dblk::HelpEvent::HelpEvent()']]],
-  ['helpevent_2ecpp_62',['HelpEvent.cpp',['../_help_event_8cpp.html',1,'']]],
-  ['helpevent_2ehpp_63',['HelpEvent.hpp',['../_help_event_8hpp.html',1,'']]]
+  ['init_61',['init',['../classdblk_1_1_controller.html#a2593e9aa75d152acd9a44857300c156e',1,'dblk::Controller::init()'],['../classdblk_1_1_board.html#acb95ba7e6740c581d266bc07172e3008',1,'dblk::Board::init()'],['../classdblk_1_1_diaballik.html#a67091f13743e9279b29d6a60ed6d3c6a',1,'dblk::Diaballik::init()']]],
+  ['isfree_62',['isFree',['../classdblk_1_1_board.html#a89a4c3acd365ecb642faf2695f7073aa',1,'dblk::Board']]],
+  ['isinside_63',['isInside',['../classdblk_1_1_board.html#aa8f12a3b4a5bdd2788a62c4067b83342',1,'dblk::Board']]],
+  ['isover_64',['isOver',['../classdblk_1_1_diaballik.html#a2fe47a511a8b731a17796784e7cec016',1,'dblk::Diaballik']]]
 ];

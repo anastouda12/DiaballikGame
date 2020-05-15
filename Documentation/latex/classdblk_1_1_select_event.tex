@@ -1,0 +1,76 @@
+\hypertarget{classdblk_1_1_select_event}{}\doxysection{dblk\+::Select\+Event Class Reference}
+\label{classdblk_1_1_select_event}\index{dblk::SelectEvent@{dblk::SelectEvent}}
+
+
+The \mbox{\hyperlink{classdblk_1_1_select_event}{Select\+Event}} class.  
+
+
+
+
+{\ttfamily \#include $<$Select\+Event.\+hpp$>$}
+
+Inheritance diagram for dblk\+::Select\+Event\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdblk_1_1_select_event}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdblk_1_1_select_event_ab2efd61caf9d5978a7daa1d2eb323e46}{Select\+Event}} (\mbox{\hyperlink{classdblk_1_1_diaballik}{Diaballik}} \&model, \mbox{\hyperlink{classdblk_1_1_view}{View}} \&view, const \mbox{\hyperlink{classdblk_1_1_position}{Position}} select\+Pos)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classdblk_1_1_select_event}{Select\+Event}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classdblk_1_1_select_event_af9d0f7c5ca8c44157fd56b620b0579d0}{execute}} () override
+\begin{DoxyCompactList}\small\item\em execute \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classdblk_1_1_select_event}{Select\+Event}} class. 
+
+This class is an active event that will modify the game data. It selects a piece in the game, to move or pass the ball. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdblk_1_1_select_event_ab2efd61caf9d5978a7daa1d2eb323e46}\label{classdblk_1_1_select_event_ab2efd61caf9d5978a7daa1d2eb323e46}} 
+\index{dblk::SelectEvent@{dblk::SelectEvent}!SelectEvent@{SelectEvent}}
+\index{SelectEvent@{SelectEvent}!dblk::SelectEvent@{dblk::SelectEvent}}
+\doxysubsubsection{\texorpdfstring{SelectEvent()}{SelectEvent()}}
+{\footnotesize\ttfamily dblk\+::\+Select\+Event\+::\+Select\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdblk_1_1_diaballik}{Diaballik}} \&}]{model,  }\item[{\mbox{\hyperlink{classdblk_1_1_view}{View}} \&}]{view,  }\item[{const \mbox{\hyperlink{classdblk_1_1_position}{Position}}}]{select\+Pos }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classdblk_1_1_select_event}{Select\+Event}}. 
+
+Creates a new select event.
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & The game data. \\
+\hline
+{\em view} & The UI. \\
+\hline
+{\em select\+Pos} & The position to be selected. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdblk_1_1_select_event_af9d0f7c5ca8c44157fd56b620b0579d0}\label{classdblk_1_1_select_event_af9d0f7c5ca8c44157fd56b620b0579d0}} 
+\index{dblk::SelectEvent@{dblk::SelectEvent}!execute@{execute}}
+\index{execute@{execute}!dblk::SelectEvent@{dblk::SelectEvent}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void dblk\+::\+Select\+Event\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+execute 
+
+Trys to select the position. Displays an error message if the given position can\textquotesingle{}t be selected! 
+
+Implements \mbox{\hyperlink{classdblk_1_1_diaballik_abstract_event_a07cdeb84289699345458aeec55b19760}{dblk\+::\+Diaballik\+Abstract\+Event}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/anastoudalachiri/\+Desktop/dev4/\+D\+E\+V4-\/\+Diabilik-\/43256\+\_\+51999/\+Code/src/controller/headers/\mbox{\hyperlink{_select_event_8hpp}{Select\+Event.\+hpp}}\item 
+/\+Users/anastoudalachiri/\+Desktop/dev4/\+D\+E\+V4-\/\+Diabilik-\/43256\+\_\+51999/\+Code/src/controller/\mbox{\hyperlink{_select_event_8cpp}{Select\+Event.\+cpp}}\end{DoxyCompactItemize}

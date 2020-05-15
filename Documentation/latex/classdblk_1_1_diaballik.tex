@@ -1,0 +1,337 @@
+\hypertarget{classdblk_1_1_diaballik}{}\doxysection{dblk\+::Diaballik Class Reference}
+\label{classdblk_1_1_diaballik}\index{dblk::Diaballik@{dblk::Diaballik}}
+
+
+The Diabilik class.  
+
+
+
+
+{\ttfamily \#include $<$Diaballik.\+hpp$>$}
+
+Inheritance diagram for dblk\+::Diaballik\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdblk_1_1_diaballik}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdblk_1_1_diaballik_aeb3119177f79739e64f60931d43d1bdd}{Diaballik}} ()
+\item 
+void \mbox{\hyperlink{classdblk_1_1_diaballik_a67091f13743e9279b29d6a60ed6d3c6a}{init}} (size\+\_\+t size, bool variant)
+\begin{DoxyCompactList}\small\item\em init \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{namespacedblk_ab7bf0fdfece85599b8768a04647f9bd6}{Team}} \& \mbox{\hyperlink{classdblk_1_1_diaballik_a62876f1d477db21abf7241380faa792a}{get\+Current\+Player}} () const
+\begin{DoxyCompactList}\small\item\em get\+Current\+Player \end{DoxyCompactList}\item 
+const std\+::optional$<$ \mbox{\hyperlink{classdblk_1_1_position}{Position}} $>$ \& \mbox{\hyperlink{classdblk_1_1_diaballik_ab1eb093bdccda119aab8862389a7cd3b}{get\+Selected}} () const
+\begin{DoxyCompactList}\small\item\em get\+Selected \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{classdblk_1_1_diaballik_ad5ca7e104b4523772959373ed16f59f4}{get\+Move\+Count}} () const
+\begin{DoxyCompactList}\small\item\em get\+Move\+Count \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdblk_1_1_diaballik_a9bff4ab5ca3c46534f5ebd334f2003b6}{pass\+Turn}} ()
+\begin{DoxyCompactList}\small\item\em pass\+Turn \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdblk_1_1_diaballik_ab4176116e25ddb8c271e22c1ea647630}{can\+Pass}} () const
+\begin{DoxyCompactList}\small\item\em can\+Pass \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdblk_1_1_diaballik_af50094174bd60b3dd430429b3a74ccba}{can\+Pass}} (const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&pos) const
+\begin{DoxyCompactList}\small\item\em can\+Pass Verifies if the selected piece can pass the ball to the position. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdblk_1_1_diaballik_abbd5e42747def772962a1ddf7ed93c23}{can\+Move}} (const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&pos) const
+\begin{DoxyCompactList}\small\item\em can\+Move Verifies if the selected piece can move to the given position. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classdblk_1_1_diaballik_a9d292fbf3e2a82ec964d92328a61c35c}{move\+Piece}} (const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&pos)
+\begin{DoxyCompactList}\small\item\em move\+Support \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classdblk_1_1_diaballik_a4e4841ce6bc891274d852e7ab160ba32}{throw\+Ball}} (const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&pos)
+\begin{DoxyCompactList}\small\item\em throw\+Ball \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdblk_1_1_diaballik_a2fe47a511a8b731a17796784e7cec016}{is\+Over}} ()
+\begin{DoxyCompactList}\small\item\em is\+Over \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdblk_1_1_diaballik_a4bdb9e7a206673be0474b7ba047915ad}{checks\+Anti\+Game}} ()
+\begin{DoxyCompactList}\small\item\em checks\+Anti\+Game \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classdblk_1_1_diaballik_a7f3cf319e80f77046500a199fc6e990d}{select}} (const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&pos)
+\begin{DoxyCompactList}\small\item\em select \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classdblk_1_1_board}{Board}} \& \mbox{\hyperlink{classdblk_1_1_diaballik_afb91e9428320eef11a2f43a5b2995463}{get\+Board}} () const
+\begin{DoxyCompactList}\small\item\em get\+Board \end{DoxyCompactList}\item 
+std\+::optional$<$ \mbox{\hyperlink{namespacedblk_ab7bf0fdfece85599b8768a04647f9bd6}{Team}} $>$ \mbox{\hyperlink{classdblk_1_1_diaballik_a2e8c627924f80849a440b596568155ec}{get\+Winner}} () const
+\begin{DoxyCompactList}\small\item\em get\+Winner \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classdblk_1_1_diaballik_ad4b0147761c902abb2ef6eab15381a55}{checks\+Enough\+Moves\+Available}} (const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&pos) const
+\begin{DoxyCompactList}\small\item\em check\+Move\+Position \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The Diabilik class. 
+
+This class represents the main facade for the game. It contains all the necessary methods to play the game. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdblk_1_1_diaballik_aeb3119177f79739e64f60931d43d1bdd}\label{classdblk_1_1_diaballik_aeb3119177f79739e64f60931d43d1bdd}} 
+\index{dblk::Diaballik@{dblk::Diaballik}!Diaballik@{Diaballik}}
+\index{Diaballik@{Diaballik}!dblk::Diaballik@{dblk::Diaballik}}
+\doxysubsubsection{\texorpdfstring{Diaballik()}{Diaballik()}}
+{\footnotesize\ttfamily dblk\+::\+Diaballik\+::\+Diaballik (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdblk_1_1_diaballik_abbd5e42747def772962a1ddf7ed93c23}\label{classdblk_1_1_diaballik_abbd5e42747def772962a1ddf7ed93c23}} 
+\index{dblk::Diaballik@{dblk::Diaballik}!canMove@{canMove}}
+\index{canMove@{canMove}!dblk::Diaballik@{dblk::Diaballik}}
+\doxysubsubsection{\texorpdfstring{canMove()}{canMove()}}
+{\footnotesize\ttfamily bool dblk\+::\+Diaballik\+::can\+Move (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&}]{pos }\end{DoxyParamCaption}) const}
+
+
+
+can\+Move Verifies if the selected piece can move to the given position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The given position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if there is an selected piece who move to the given postion. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdblk_1_1_diaballik_ab4176116e25ddb8c271e22c1ea647630}\label{classdblk_1_1_diaballik_ab4176116e25ddb8c271e22c1ea647630}} 
+\index{dblk::Diaballik@{dblk::Diaballik}!canPass@{canPass}}
+\index{canPass@{canPass}!dblk::Diaballik@{dblk::Diaballik}}
+\doxysubsubsection{\texorpdfstring{canPass()}{canPass()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool dblk\+::\+Diaballik\+::can\+Pass (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+can\+Pass 
+
+Verifies if the current player can pass his ball.
+
+\begin{DoxyReturn}{Returns}
+True if he can pass his ball. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdblk_1_1_diaballik_af50094174bd60b3dd430429b3a74ccba}\label{classdblk_1_1_diaballik_af50094174bd60b3dd430429b3a74ccba}} 
+\index{dblk::Diaballik@{dblk::Diaballik}!canPass@{canPass}}
+\index{canPass@{canPass}!dblk::Diaballik@{dblk::Diaballik}}
+\doxysubsubsection{\texorpdfstring{canPass()}{canPass()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool dblk\+::\+Diaballik\+::can\+Pass (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&}]{pos }\end{DoxyParamCaption}) const}
+
+
+
+can\+Pass Verifies if the selected piece can pass the ball to the position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The given position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if there is an selected piece who can pass to the given postion. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdblk_1_1_diaballik_a4bdb9e7a206673be0474b7ba047915ad}\label{classdblk_1_1_diaballik_a4bdb9e7a206673be0474b7ba047915ad}} 
+\index{dblk::Diaballik@{dblk::Diaballik}!checksAntiGame@{checksAntiGame}}
+\index{checksAntiGame@{checksAntiGame}!dblk::Diaballik@{dblk::Diaballik}}
+\doxysubsubsection{\texorpdfstring{checksAntiGame()}{checksAntiGame()}}
+{\footnotesize\ttfamily bool dblk\+::\+Diaballik\+::checks\+Anti\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+checks\+Anti\+Game 
+
+Verifies if the current player is in a situation of anti-\/game.
+
+\begin{DoxyReturn}{Returns}
+True if the current player faces a situation of anti-\/game. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdblk_1_1_diaballik_ad4b0147761c902abb2ef6eab15381a55}\label{classdblk_1_1_diaballik_ad4b0147761c902abb2ef6eab15381a55}} 
+\index{dblk::Diaballik@{dblk::Diaballik}!checksEnoughMovesAvailable@{checksEnoughMovesAvailable}}
+\index{checksEnoughMovesAvailable@{checksEnoughMovesAvailable}!dblk::Diaballik@{dblk::Diaballik}}
+\doxysubsubsection{\texorpdfstring{checksEnoughMovesAvailable()}{checksEnoughMovesAvailable()}}
+{\footnotesize\ttfamily int dblk\+::\+Diaballik\+::checks\+Enough\+Moves\+Available (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&}]{pos }\end{DoxyParamCaption}) const}
+
+
+
+check\+Move\+Position 
+
+Checks if a move to a position given is achievable by the number of moves available.
+
+\begin{DoxyReturn}{Returns}
+the number of steps if the move is possible, -\/1 else. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdblk_1_1_diaballik_afb91e9428320eef11a2f43a5b2995463}\label{classdblk_1_1_diaballik_afb91e9428320eef11a2f43a5b2995463}} 
+\index{dblk::Diaballik@{dblk::Diaballik}!getBoard@{getBoard}}
+\index{getBoard@{getBoard}!dblk::Diaballik@{dblk::Diaballik}}
+\doxysubsubsection{\texorpdfstring{getBoard()}{getBoard()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classdblk_1_1_board}{Board}} \& dblk\+::\+Diaballik\+::get\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Board 
+
+Gives the size of the board of the game \mbox{\hyperlink{classdblk_1_1_diaballik}{Diaballik}}
+
+\begin{DoxyReturn}{Returns}
+the size of the board 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdblk_1_1_diaballik_a62876f1d477db21abf7241380faa792a}\label{classdblk_1_1_diaballik_a62876f1d477db21abf7241380faa792a}} 
+\index{dblk::Diaballik@{dblk::Diaballik}!getCurrentPlayer@{getCurrentPlayer}}
+\index{getCurrentPlayer@{getCurrentPlayer}!dblk::Diaballik@{dblk::Diaballik}}
+\doxysubsubsection{\texorpdfstring{getCurrentPlayer()}{getCurrentPlayer()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{namespacedblk_ab7bf0fdfece85599b8768a04647f9bd6}{Team}} \& dblk\+::\+Diaballik\+::get\+Current\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Current\+Player 
+
+Retrieves the current player.
+
+\begin{DoxyReturn}{Returns}
+The current player. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdblk_1_1_diaballik_ad5ca7e104b4523772959373ed16f59f4}\label{classdblk_1_1_diaballik_ad5ca7e104b4523772959373ed16f59f4}} 
+\index{dblk::Diaballik@{dblk::Diaballik}!getMoveCount@{getMoveCount}}
+\index{getMoveCount@{getMoveCount}!dblk::Diaballik@{dblk::Diaballik}}
+\doxysubsubsection{\texorpdfstring{getMoveCount()}{getMoveCount()}}
+{\footnotesize\ttfamily unsigned dblk\+::\+Diaballik\+::get\+Move\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Move\+Count 
+
+Retrieves the number of available moves in the current round.
+
+\begin{DoxyReturn}{Returns}
+The number of available moves. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdblk_1_1_diaballik_ab1eb093bdccda119aab8862389a7cd3b}\label{classdblk_1_1_diaballik_ab1eb093bdccda119aab8862389a7cd3b}} 
+\index{dblk::Diaballik@{dblk::Diaballik}!getSelected@{getSelected}}
+\index{getSelected@{getSelected}!dblk::Diaballik@{dblk::Diaballik}}
+\doxysubsubsection{\texorpdfstring{getSelected()}{getSelected()}}
+{\footnotesize\ttfamily const std\+::optional$<$ \mbox{\hyperlink{classdblk_1_1_position}{Position}} $>$ \& dblk\+::\+Diaballik\+::get\+Selected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Selected 
+
+Retrieves the selected position in the current round, or empty value if not selected.
+
+\begin{DoxyReturn}{Returns}
+the selected position in the current round of the game \mbox{\hyperlink{classdblk_1_1_diaballik}{Diaballik}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdblk_1_1_diaballik_a2e8c627924f80849a440b596568155ec}\label{classdblk_1_1_diaballik_a2e8c627924f80849a440b596568155ec}} 
+\index{dblk::Diaballik@{dblk::Diaballik}!getWinner@{getWinner}}
+\index{getWinner@{getWinner}!dblk::Diaballik@{dblk::Diaballik}}
+\doxysubsubsection{\texorpdfstring{getWinner()}{getWinner()}}
+{\footnotesize\ttfamily std\+::optional$<$ \mbox{\hyperlink{namespacedblk_ab7bf0fdfece85599b8768a04647f9bd6}{Team}} $>$ dblk\+::\+Diaballik\+::get\+Winner (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Winner 
+
+Gives the winner of the game diaballik.
+
+\begin{DoxyReturn}{Returns}
+the winner \mbox{\hyperlink{classdblk_1_1_diaballik}{Diaballik}}, if there is not yet a winner empty value returned 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdblk_1_1_diaballik_a67091f13743e9279b29d6a60ed6d3c6a}\label{classdblk_1_1_diaballik_a67091f13743e9279b29d6a60ed6d3c6a}} 
+\index{dblk::Diaballik@{dblk::Diaballik}!init@{init}}
+\index{init@{init}!dblk::Diaballik@{dblk::Diaballik}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void dblk\+::\+Diaballik\+::init (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size,  }\item[{bool}]{variant }\end{DoxyParamCaption})}
+
+
+
+init 
+
+Initializates the game data
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & The size of the \mbox{\hyperlink{classdblk_1_1_board}{Board}}. \\
+\hline
+{\em variant} & Indicates if the variant rule is applied. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdblk_1_1_diaballik_a2fe47a511a8b731a17796784e7cec016}\label{classdblk_1_1_diaballik_a2fe47a511a8b731a17796784e7cec016}} 
+\index{dblk::Diaballik@{dblk::Diaballik}!isOver@{isOver}}
+\index{isOver@{isOver}!dblk::Diaballik@{dblk::Diaballik}}
+\doxysubsubsection{\texorpdfstring{isOver()}{isOver()}}
+{\footnotesize\ttfamily bool dblk\+::\+Diaballik\+::is\+Over (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+is\+Over 
+
+Verifies if the game is over.
+
+\begin{DoxyReturn}{Returns}
+True if the game is over, false if not. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdblk_1_1_diaballik_a9d292fbf3e2a82ec964d92328a61c35c}\label{classdblk_1_1_diaballik_a9d292fbf3e2a82ec964d92328a61c35c}} 
+\index{dblk::Diaballik@{dblk::Diaballik}!movePiece@{movePiece}}
+\index{movePiece@{movePiece}!dblk::Diaballik@{dblk::Diaballik}}
+\doxysubsubsection{\texorpdfstring{movePiece()}{movePiece()}}
+{\footnotesize\ttfamily int dblk\+::\+Diaballik\+::move\+Piece (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&}]{pos }\end{DoxyParamCaption})}
+
+
+
+move\+Support 
+
+Moves the selected \mbox{\hyperlink{classdblk_1_1_piece}{Piece}} to the given position. The number of steps to achieve the final position must not depass the number of available moves, and if the piece has been moves it must refresh the available moves attribute.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The position to move the piece. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of steps to achieve the position, -\/1 if the piece has not been moved, -\/2 not enough moves availabes 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdblk_1_1_diaballik_a9bff4ab5ca3c46534f5ebd334f2003b6}\label{classdblk_1_1_diaballik_a9bff4ab5ca3c46534f5ebd334f2003b6}} 
+\index{dblk::Diaballik@{dblk::Diaballik}!passTurn@{passTurn}}
+\index{passTurn@{passTurn}!dblk::Diaballik@{dblk::Diaballik}}
+\doxysubsubsection{\texorpdfstring{passTurn()}{passTurn()}}
+{\footnotesize\ttfamily void dblk\+::\+Diaballik\+::pass\+Turn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+pass\+Turn 
+
+Swaps the current player for his opponent, and reset the available moves. \mbox{\Hypertarget{classdblk_1_1_diaballik_a7f3cf319e80f77046500a199fc6e990d}\label{classdblk_1_1_diaballik_a7f3cf319e80f77046500a199fc6e990d}} 
+\index{dblk::Diaballik@{dblk::Diaballik}!select@{select}}
+\index{select@{select}!dblk::Diaballik@{dblk::Diaballik}}
+\doxysubsubsection{\texorpdfstring{select()}{select()}}
+{\footnotesize\ttfamily int dblk\+::\+Diaballik\+::select (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&}]{pos }\end{DoxyParamCaption})}
+
+
+
+select 
+
+Selects a piece in the given position. To select the piece, in the board the given position must contain a \mbox{\hyperlink{classdblk_1_1_piece}{Piece}} of the same color of the current player.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The position to select the \mbox{\hyperlink{classdblk_1_1_piece}{Piece}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if a piece has been selected, -\/1 not a piece selected, -\/2 out of the board, -\/3 opponent piece. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdblk_1_1_diaballik_a4e4841ce6bc891274d852e7ab160ba32}\label{classdblk_1_1_diaballik_a4e4841ce6bc891274d852e7ab160ba32}} 
+\index{dblk::Diaballik@{dblk::Diaballik}!throwBall@{throwBall}}
+\index{throwBall@{throwBall}!dblk::Diaballik@{dblk::Diaballik}}
+\doxysubsubsection{\texorpdfstring{throwBall()}{throwBall()}}
+{\footnotesize\ttfamily int dblk\+::\+Diaballik\+::throw\+Ball (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&}]{pos }\end{DoxyParamCaption})}
+
+
+
+throw\+Ball 
+
+If the selected piece has the ball, pass the ball to the given position.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The position to pass the ball. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the ball has been passed, -\/1 position not selected, -\/2 any throw available, -\/3 the piece has not the ball 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/anastoudalachiri/\+Desktop/dev4/\+D\+E\+V4-\/\+Diabilik-\/43256\+\_\+51999/\+Code/src/model/headers/\mbox{\hyperlink{_diaballik_8hpp}{Diaballik.\+hpp}}\item 
+/\+Users/anastoudalachiri/\+Desktop/dev4/\+D\+E\+V4-\/\+Diabilik-\/43256\+\_\+51999/\+Code/src/model/\mbox{\hyperlink{_diaballik_8cpp}{Diaballik.\+cpp}}\end{DoxyCompactItemize}

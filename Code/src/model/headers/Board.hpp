@@ -22,30 +22,23 @@ class Board
   private:
 
     /**
-     * @brief size
-     *
-     * The size of the board.
-     */
-    const size_t size_;
-
-    /**
      * @brief pieces
      *
      * The main container for the Pieces in the board.
      */
     std::vector<std::vector<std::optional<Piece>>> pieces_;
 
+    /**
+     * @brief size
+     *
+     * The size of the board.
+     */
+    size_t size_;
+
+
   public:
 
-    /**
-    * @brief Board
-    *
-    * Creates a new board with the given size.
-    * No piece will be inside of the board.
-    *
-    * @param size The size of the board.
-    */
-    explicit Board(const size_t size);
+    Board();
 
     /**
      * @brief init
@@ -55,8 +48,9 @@ class Board
      * change according the variant rule.
      *
      * @param variant Is the variant rule applied or not.
+     *     * @param size The size of the board.
      */
-    void init(bool variant);
+    void init(bool variant, const size_t size);
 
     /**
      * @brief getSize
@@ -75,7 +69,8 @@ class Board
      * @param position The position to retrieve the piece.
      * @return The piece at the given position, or an empty optional.
      */
-    const std::optional<Piece> & getPieceAt(const Position & position) const;
+    const std::optional<Piece> & getPieceAt(const Position & position)
+    const;
 
     /**
      * @brief isFree
@@ -145,7 +140,8 @@ class Board
      * @param endPos The end position.
      * @return 1 if the ball has been passed or a negative flag if not.
      */
-    int passBall(Team team, const Position & startPos, const Position & endPos);
+    int passBall(Team team, const Position & startPos,
+                 const Position & endPos);
 
     /**
      * @brief checkMove
@@ -157,9 +153,8 @@ class Board
      * @param endPos The end position.
      * @return 1 if it's allowed, negatif flag if not.
      */
-    int checkMove(const Position & startPos, const Position & endPos) const;
-
-  private:
+    int checkMove(const Position & startPos,
+                  const Position & endPos) const;
 
     /**
      * @brief checkThrow
@@ -172,7 +167,10 @@ class Board
      * @param endPos The end position.
      * @return True if it's allowed.
      */
-    int checkThrow(Team team, const Position & startPos, const Position & endPos) const;
+    int checkThrow(Team team, const Position & startPos,
+                   const Position & endPos) const;
+
+  private:
 
     /**
      * @brief verifyLineAntiGame
@@ -184,7 +182,8 @@ class Board
      * @param antiGameVictim the team victim of the anti game.
      * @return true if there is a line of anti game.
      */
-    bool verifyLineAntiGame(const Position & currentPos, unsigned blockCount,
+    bool verifyLineAntiGame(const Position & currentPos,
+                            unsigned blockCount,
                             Team antiGameVictim) const;
 
     /**
@@ -196,7 +195,8 @@ class Board
      * @param curentPos The current position.
      * @param team The victim of anti-game line.
      */
-    void countBlockedOpponents(unsigned & blockCount, const Position & currentColumn,
+    void countBlockedOpponents(unsigned & blockCount,
+                               const Position & currentColumn,
                                Team team) const;
 
     /**
@@ -209,7 +209,8 @@ class Board
      * @param objectiveRow the objective row of the piece
      * @return true if the position is blocked by opponent.
      */
-    bool isBlockedByLine(const Position & position, Team antiGameVictim, size_t objectiveRow) const;
+    bool isBlockedByLine(const Position & position, Team antiGameVictim,
+                         size_t objectiveRow) const;
 
     /**
      * @brief checkLineBreak
@@ -220,7 +221,8 @@ class Board
      * @param antiGameVictim the anti game victim team
      * @return true if the line on the board is breaked
      */
-    bool checkLineBreak(const Position & curentColumn, Team antiGameVictim) const;
+    bool checkLineBreak(const Position & curentColumn,
+                        Team antiGameVictim) const;
 
     /**
      * @brief hasDepassedLine
@@ -233,7 +235,8 @@ class Board
      * @param objectiveRow the objective row of the piece.
      * @return true if it has depassed line.
      */
-    bool hasDepassedLine(Position & currentLine, const Position & dir, Team antiGameVictim,
+    bool hasDepassedLine(Position & currentLine, const Position & dir,
+                         Team antiGameVictim,
                          int objectiveRow) const;
 
     /**

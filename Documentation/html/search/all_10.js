@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['view_124',['View',['../classdblk_1_1_view.html',1,'dblk']]],
-  ['view_2ecpp_125',['View.cpp',['../_view_8cpp.html',1,'']]],
-  ['view_2ehpp_126',['View.hpp',['../_view_8hpp.html',1,'']]],
-  ['viewconsole_127',['ViewConsole',['../classdblk_1_1_view_console.html',1,'dblk::ViewConsole'],['../classdblk_1_1_view_console.html#aa90401cc246966e7681953a0962bfb2a',1,'dblk::ViewConsole::ViewConsole()']]],
-  ['viewconsole_2ecpp_128',['ViewConsole.cpp',['../_view_console_8cpp.html',1,'']]],
-  ['viewconsole_2ehpp_129',['ViewConsole.hpp',['../_view_console_8hpp.html',1,'']]]
+  ['view_141',['View',['../classdblk_1_1_view.html',1,'dblk']]],
+  ['view_2ehpp_142',['View.hpp',['../_view_8hpp.html',1,'']]],
+  ['viewui_143',['ViewUI',['../classdblk_1_1_view_u_i.html',1,'dblk::ViewUI'],['../classdblk_1_1_view_u_i.html#a2fe506131ff04085349a17866aa310ae',1,'dblk::ViewUI::ViewUI()']]],
+  ['viewui_2ecpp_144',['ViewUI.cpp',['../_view_u_i_8cpp.html',1,'']]],
+  ['viewui_2ehpp_145',['ViewUI.hpp',['../_view_u_i_8hpp.html',1,'']]]
 ];

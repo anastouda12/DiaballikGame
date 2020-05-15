@@ -1,0 +1,93 @@
+\hypertarget{classdblk_1_1_observable}{}\doxysection{dblk\+::Observable Class Reference}
+\label{classdblk_1_1_observable}\index{dblk::Observable@{dblk::Observable}}
+
+
+Basic class of any \char`\"{}subject of observation\char`\"{}.  
+
+
+
+
+{\ttfamily \#include $<$Observable.\+hpp$>$}
+
+Inheritance diagram for dblk\+::Observable\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdblk_1_1_observable}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdblk_1_1_observable_aec981336a7f5a367134991dd1fac36b9}{Observable}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classdblk_1_1_observable}{Observable}} Constructor of a subject. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdblk_1_1_observable_a2610cc40ea7cb25715607eac089bf581}{register\+Observer}} (\mbox{\hyperlink{classdblk_1_1_observer}{Observer}} $\ast$observer)
+\begin{DoxyCompactList}\small\item\em A method allowing an observer to register as a earpiece of the subject of observation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdblk_1_1_observable_a4213b02db2bced9d3be2c764dbe4d8aa}{delete\+Observer}} (\mbox{\hyperlink{classdblk_1_1_observer}{Observer}} $\ast$observer)
+\begin{DoxyCompactList}\small\item\em Allows to delete an observer from the list the observation subject\textquotesingle{}s. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdblk_1_1_observable_ae3d7e1a198aacbceb422a77b6b6de6bd}{notify\+Observers}} (\mbox{\hyperlink{namespacedblk_a152dd69870bc836df791852acc842a3e}{Event\+Type}} type)
+\begin{DoxyCompactList}\small\item\em A method of notify observers of a change in status of the subject of observation, invoking their method \mbox{\hyperlink{classdblk_1_1_observer_ac02c3b48e9b0dfeacc91605a9459766f}{Observer\+::update()}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Basic class of any \char`\"{}subject of observation\char`\"{}. 
+
+Class from which any event source (or \char`\"{}observation subject\char`\"{}) is derived from the \char`\"{}\+Observer / Subject\+D\+Observation\char`\"{} design model. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdblk_1_1_observable_aec981336a7f5a367134991dd1fac36b9}\label{classdblk_1_1_observable_aec981336a7f5a367134991dd1fac36b9}} 
+\index{dblk::Observable@{dblk::Observable}!Observable@{Observable}}
+\index{Observable@{Observable}!dblk::Observable@{dblk::Observable}}
+\doxysubsubsection{\texorpdfstring{Observable()}{Observable()}}
+{\footnotesize\ttfamily dblk\+::\+Observable\+::\+Observable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classdblk_1_1_observable}{Observable}} Constructor of a subject. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdblk_1_1_observable_a4213b02db2bced9d3be2c764dbe4d8aa}\label{classdblk_1_1_observable_a4213b02db2bced9d3be2c764dbe4d8aa}} 
+\index{dblk::Observable@{dblk::Observable}!deleteObserver@{deleteObserver}}
+\index{deleteObserver@{deleteObserver}!dblk::Observable@{dblk::Observable}}
+\doxysubsubsection{\texorpdfstring{deleteObserver()}{deleteObserver()}}
+{\footnotesize\ttfamily void dblk\+::\+Observable\+::delete\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdblk_1_1_observer}{Observer}} $\ast$}]{observer }\end{DoxyParamCaption})}
+
+
+
+Allows to delete an observer from the list the observation subject\textquotesingle{}s. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the} & address of the observer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdblk_1_1_observable_ae3d7e1a198aacbceb422a77b6b6de6bd}\label{classdblk_1_1_observable_ae3d7e1a198aacbceb422a77b6b6de6bd}} 
+\index{dblk::Observable@{dblk::Observable}!notifyObservers@{notifyObservers}}
+\index{notifyObservers@{notifyObservers}!dblk::Observable@{dblk::Observable}}
+\doxysubsubsection{\texorpdfstring{notifyObservers()}{notifyObservers()}}
+{\footnotesize\ttfamily void dblk\+::\+Observable\+::notify\+Observers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacedblk_a152dd69870bc836df791852acc842a3e}{Event\+Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+A method of notify observers of a change in status of the subject of observation, invoking their method \mbox{\hyperlink{classdblk_1_1_observer_ac02c3b48e9b0dfeacc91605a9459766f}{Observer\+::update()}}. 
+
+\begin{DoxySeeAlso}{See also}
+Observer\+::update(const Subject $\ast$). 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classdblk_1_1_observable_a2610cc40ea7cb25715607eac089bf581}\label{classdblk_1_1_observable_a2610cc40ea7cb25715607eac089bf581}} 
+\index{dblk::Observable@{dblk::Observable}!registerObserver@{registerObserver}}
+\index{registerObserver@{registerObserver}!dblk::Observable@{dblk::Observable}}
+\doxysubsubsection{\texorpdfstring{registerObserver()}{registerObserver()}}
+{\footnotesize\ttfamily void dblk\+::\+Observable\+::register\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdblk_1_1_observer}{Observer}} $\ast$}]{observer }\end{DoxyParamCaption})}
+
+
+
+A method allowing an observer to register as a earpiece of the subject of observation. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/anastoudalachiri/\+Desktop/dev4/\+D\+E\+V4-\/\+Diabilik-\/43256\+\_\+51999/\+Code/src/model/headers/\mbox{\hyperlink{_observable_8hpp}{Observable.\+hpp}}\item 
+/\+Users/anastoudalachiri/\+Desktop/dev4/\+D\+E\+V4-\/\+Diabilik-\/43256\+\_\+51999/\+Code/src/model/\mbox{\hyperlink{_observable_8cpp}{Observable.\+cpp}}\end{DoxyCompactItemize}
