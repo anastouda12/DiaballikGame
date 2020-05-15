@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>dblk</b></li><li class="navelem"><a class="el" href="classdblk_1_1_observer.html">Observer</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacedblk.html">dblk</a></li><li class="navelem"><a class="el" href="classdblk_1_1_observer.html">Observer</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -85,8 +85,8 @@ Inheritance diagram for dblk::Observer:</div>
  <div class="center">
   <img src="classdblk_1_1_observer.png" usemap="#dblk::Observer_map" alt=""/>
   <map id="dblk::Observer_map" name="dblk::Observer_map">
-<area href="classdblk_1_1_view.html" title="The View class." alt="dblk::View" shape="rect" coords="0,56,95,80"/>
-<area href="classdblk_1_1_view_u_i.html" title="The ViewUI class." alt="dblk::ViewUI" shape="rect" coords="0,112,95,136"/>
+<area href="classdblk_1_1_view.html" title="The View class This class represents the View facade with all graphics implementation." alt="dblk::View" shape="rect" coords="0,56,95,80"/>
+<area href="classdblk_1_1_view_u_i.html" title="The ViewUI class This facade represents the graphics implementation of the View facade...." alt="dblk::ViewUI" shape="rect" coords="0,112,95,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -104,12 +104,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af1a93ce275da87323fc09963892e1fb7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdblk_1_1_observer.html">Observer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdblk_1_1_observer.html#af1a93ce275da87323fc09963892e1fb7">operator=</a> (<a class="el" href="classdblk_1_1_observer.html">Observer</a> &amp;&amp;)=default</td></tr>
 <tr class="memdesc:af1a93ce275da87323fc09963892e1fb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operateur of assignation by deplacement by default.  <a href="classdblk_1_1_observer.html#af1a93ce275da87323fc09963892e1fb7">More...</a><br /></td></tr>
 <tr class="separator:af1a93ce275da87323fc09963892e1fb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac02c3b48e9b0dfeacc91605a9459766f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdblk_1_1_observer.html#ac02c3b48e9b0dfeacc91605a9459766f">update</a> (const <a class="el" href="classdblk_1_1_observable.html">Observable</a> *obj, EventType type)=0</td></tr>
+<tr class="memitem:ac02c3b48e9b0dfeacc91605a9459766f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdblk_1_1_observer.html#ac02c3b48e9b0dfeacc91605a9459766f">update</a> (const <a class="el" href="classdblk_1_1_observable.html">Observable</a> *obj, <a class="el" href="namespacedblk.html#a152dd69870bc836df791852acc842a3e">EventType</a> type)=0</td></tr>
 <tr class="memdesc:ac02c3b48e9b0dfeacc91605a9459766f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual method that each concrete observer must implement: this method is called by the subject observed during a notification.  <a href="classdblk_1_1_observer.html#ac02c3b48e9b0dfeacc91605a9459766f">More...</a><br /></td></tr>
 <tr class="separator:ac02c3b48e9b0dfeacc91605a9459766f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a508ec0e4fb5268a46cb75220af1b9128"><td class="memItemLeft" align="right" valign="top"><a id="a508ec0e4fb5268a46cb75220af1b9128"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdblk_1_1_observer.html#a508ec0e4fb5268a46cb75220af1b9128">~Observer</a> ()=default</td></tr>
-<tr class="memdesc:a508ec0e4fb5268a46cb75220af1b9128"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor by default because of polymorphic use. <br /></td></tr>
+<tr class="memitem:a508ec0e4fb5268a46cb75220af1b9128"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdblk_1_1_observer.html#a508ec0e4fb5268a46cb75220af1b9128">~Observer</a> ()=default</td></tr>
+<tr class="memdesc:a508ec0e4fb5268a46cb75220af1b9128"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor by default because of polymorphic use.  <a href="classdblk_1_1_observer.html#a508ec0e4fb5268a46cb75220af1b9128">More...</a><br /></td></tr>
 <tr class="separator:a508ec0e4fb5268a46cb75220af1b9128"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
@@ -175,6 +174,33 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constuctor by deplacement by default. </p>
+
+</div>
+</div>
+<a id="a508ec0e4fb5268a46cb75220af1b9128"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a508ec0e4fb5268a46cb75220af1b9128">&#9670;&nbsp;</a></span>~Observer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual dblk::Observer::~Observer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Virtual destructor by default because of polymorphic use. </p>
 
 </div>
 </div>
@@ -280,7 +306,7 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">EventType&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacedblk.html#a152dd69870bc836df791852acc842a3e">EventType</a>&#160;</td>
           <td class="paramname"><em>type</em>&#160;</td>
         </tr>
         <tr>

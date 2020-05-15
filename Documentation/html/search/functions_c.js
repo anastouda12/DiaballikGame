@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['throwball_178',['throwBall',['../classdblk_1_1_diaballik.html#a4e4841ce6bc891274d852e7ab160ba32',1,'dblk::Diaballik']]],
-  ['to_5fstring_179',['to_string',['../classdblk_1_1_piece.html#a0f9f59d9dabad7a5ca72ea5ce8f9b78c',1,'dblk::Piece::to_string()'],['../classdblk_1_1_position.html#a03644ee5707ad2cba6c75569410ecdc4',1,'dblk::Position::to_string()']]]
+  ['refreshboard_280',['refreshBoard',['../classdblk_1_1_board_u_i.html#abaee944e0de1590d0f4501fc51ac80c1',1,'dblk::BoardUI']]],
+  ['refreshpiece_281',['refreshPiece',['../classdblk_1_1_square_u_i.html#a600ba9bb0055aeabf843778055ae8e39',1,'dblk::SquareUI']]],
+  ['registerobserver_282',['registerObserver',['../classdblk_1_1_observable.html#a2610cc40ea7cb25715607eac089bf581',1,'dblk::Observable']]],
+  ['removestheball_283',['removesTheBall',['../classdblk_1_1_piece.html#abe62da4b01061677918d85a79d2b602a',1,'dblk::Piece']]],
+  ['rightclicked_284',['rightClicked',['../classdblk_1_1_square_u_i.html#a0a5380b3faace984990c6c6f6a7a2bbb',1,'dblk::SquareUI']]]
 ];

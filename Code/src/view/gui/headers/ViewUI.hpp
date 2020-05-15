@@ -7,10 +7,11 @@
 #include "src/model/headers/Diaballik.hpp"
 #include "BoardUI.hpp"
 
+//! user interface.
 namespace Ui
 {
 
-class MainWindow;
+    class MainWindow;
 }
 
 struct EventType;
@@ -18,186 +19,186 @@ struct EventType;
 namespace dblk
 {
 
-/**
- * @brief The ViewUI class
- * This facade represents the graphics implementation
- * of the View facade. It will implement all the main
- * methods of the Main Window with the GUI Form.
- */
-class ViewUI : public QMainWindow, public View
-{
-    Q_OBJECT
-
-  private:
     /**
-    * @brief mainWindow_
-    * The Mainwindow.
-    */
-    Ui::MainWindow * mainWindow_;
-
-    /**
-    * @brief evntManager_
-    * Allows to modify the model with the
-    * actions allowed to the user.
-    *
-    * Event manager.
-    */
-    DiaballikEventManager * evntManager_;
-
-    /**
-    * @brief boardUI_
-    * The boardUI.
-    */
-    BoardUI * boardUI_;
-  public:
-
-    /**
-     * @brief ViewUI
-     *
-     * Creates a new VewUI.
+     * @brief The ViewUI class
+     * This facade represents the graphics implementation
+     * of the View facade. It will implement all the main
+     * methods of the Main Window with the GUI Form.
      */
-    explicit ViewUI(QWidget * parent = nullptr);
+    class ViewUI : public QMainWindow, public View
+    {
+            Q_OBJECT
 
-    void setEventManager(DiaballikEventManager * evntManager);
+        private:
+            /**
+            * @brief mainWindow_
+            * The Mainwindow.
+            */
+            Ui::MainWindow *mainWindow_;
 
-    /**
-     * @brief displayCurrentPlayer
-     *
-     * Displays the current player of a game of Diaballik
-     *
-     * @param the team of the current player
-     */
-    virtual void displayCurrentPlayer(const dblk::Team & team)  override;
+            /**
+            * @brief evntManager_
+            * Allows to modify the model with the
+            * actions allowed to the user.
+            *
+            * Event manager.
+            */
+            DiaballikEventManager *evntManager_;
 
+            /**
+            * @brief boardUI_
+            * The boardUI.
+            */
+            BoardUI *boardUI_;
+        public:
 
-    /**
-     * @brief displayCounters
-     *
-     * Displays the counters of the current players
-     * Counter of movements available
-     * And possibility to pass the ball
-     *
-     * @param moveCounter the number of moves availables of the current Player
-     * @param canPass possibility to throw the ball of the current player
-     */
-    virtual void displayCounters(unsigned moveCounter,
-                                 bool canPass) override;
+            /**
+             * @brief ViewUI
+             *
+             * Creates a new VewUI.
+             */
+            explicit ViewUI(QWidget *parent = nullptr);
 
-    /**
-     * @brief displayWinner
-     *
-     * Displays the winner of the game Diaballik
-     *
-     * @param team the optinal winner of the game Diaballik.
-     * @param antiGame Describes if the winner won by antigame
-     */
-    virtual void displayWinner(const std::optional<dblk::Team> & team, bool antiGame)
-    override;
+            void setEventManager(DiaballikEventManager *evntManager);
 
-    /**
-     * @brief displaySelected
-     *
-     * Display the position of the selected piece
-     *
-     * @param piece The optional piece position.
-     */
-    virtual void displaySelected(const std::optional<dblk::Position>
-                                 position)
-    override;
-
-    /**
-     * @brief displayBoard
-     *
-     * Displays the boards of the Diaballik game
-     */
-    virtual void displayBoard(const dblk::Diaballik & diaballik) override;
+            /**
+             * @brief displayCurrentPlayer
+             *
+             * Displays the current player of a game of Diaballik
+             *
+             * @param the team of the current player
+             */
+            virtual void displayCurrentPlayer(const dblk::Team &team)  override;
 
 
-    virtual void update(const dblk::Observable * observable,
-                        EventType type) override;
+            /**
+             * @brief displayCounters
+             *
+             * Displays the counters of the current players
+             * Counter of movements available
+             * And possibility to pass the ball
+             *
+             * @param moveCounter the number of moves availables of the current Player
+             * @param canPass possibility to throw the ball of the current player
+             */
+            virtual void displayCounters(unsigned moveCounter,
+                                         bool canPass) override;
 
-    ~ViewUI();
+            /**
+             * @brief displayWinner
+             *
+             * Displays the winner of the game Diaballik
+             *
+             * @param team the optinal winner of the game Diaballik.
+             * @param antiGame Describes if the winner won by antigame
+             */
+            virtual void displayWinner(const std::optional<dblk::Team> &team, bool antiGame)
+            override;
 
-  public slots:
+            /**
+             * @brief displaySelected
+             *
+             * Display the position of the selected piece
+             *
+             * @param piece The optional piece position.
+             */
+            virtual void displaySelected(const std::optional<dblk::Position>
+                                         position)
+            override;
 
-    /**
-     * @brief displayHelp
-     *
-     * Displays the Help
-     */
-    virtual void displayHelp()  override;
-
-    /**
-     * @brief displayError
-     *
-     * Display an error message
-     *
-     * @param flagError flag of the error
-     * @param typeError integer that represent the type error occured (select(1), move(2), pass(3))
-     */
-    virtual void displayError(std::string errorMsg)  override;
-
-    /**
-     * @brief displayGoodByeMessage
-     *
-     * Display farewell message
-     */
-    virtual void displayGoodByeMessage()  override;
-
-    /**
-     * @brief displayMainMenu
-     *
-     * Display the main menu of the Diaballik game.
-     *
-     * @return the size of the game and variant.
-     */
-    virtual void displayOptionsMenu() override;
-
-    /**
-     * @brief displayWelcomeMessage
-     *
-     * Displays a welcome message to the players
-     */
-    virtual void displayWelcomePage() override;
+            /**
+             * @brief displayBoard
+             *
+             * Displays the boards of the Diaballik game
+             */
+            virtual void displayBoard(const dblk::Diaballik &diaballik) override;
 
 
-    /**
-     * @brief displayRulesPage
-     * Displays the rules page to the players.
-     */
-    virtual void displayRulesPage() override;
+            virtual void update(const dblk::Observable *observable,
+                                EventType type) override;
 
-  protected:
-    /**
-     * @brief keyPressEvent
-     *
-     * Pass the game turn when 'P' is pressed.
-     *
-     * @param event The key pressed event.
-     */
-    void keyPressEvent(QKeyEvent * event) override;
+            ~ViewUI();
 
-  private:
-    /**
-     * @brief initSlots
-     */
-    void initSlots();
+        public slots:
 
-  private slots:
-    /**
-     * @brief initGame
-     */
-    void initGame();
-    /**
-     * @brief passTurnGame
-     */
-    void passTurnGame();
-    /**
-     * @brief restartGame
-     */
-    void restartGame();
+            /**
+             * @brief displayHelp
+             *
+             * Displays the Help
+             */
+            virtual void displayHelp()  override;
 
-};
+            /**
+             * @brief displayError
+             *
+             * Display an error message
+             *
+             * @param flagError flag of the error
+             * @param typeError integer that represent the type error occured (select(1), move(2), pass(3))
+             */
+            virtual void displayError(std::string errorMsg)  override;
+
+            /**
+             * @brief displayGoodByeMessage
+             *
+             * Display farewell message
+             */
+            virtual void displayGoodByeMessage()  override;
+
+            /**
+             * @brief displayMainMenu
+             *
+             * Display the main menu of the Diaballik game.
+             *
+             * @return the size of the game and variant.
+             */
+            virtual void displayOptionsMenu() override;
+
+            /**
+             * @brief displayWelcomeMessage
+             *
+             * Displays a welcome message to the players
+             */
+            virtual void displayWelcomePage() override;
+
+
+            /**
+             * @brief displayRulesPage
+             * Displays the rules page to the players.
+             */
+            virtual void displayRulesPage() override;
+
+        protected:
+            /**
+             * @brief keyPressEvent
+             *
+             * Pass the game turn when 'P' is pressed.
+             *
+             * @param event The key pressed event.
+             */
+            void keyPressEvent(QKeyEvent *event) override;
+
+        private:
+            /**
+             * @brief initSlots
+             */
+            void initSlots();
+
+        private slots:
+            /**
+             * @brief initGame
+             */
+            void initGame();
+            /**
+             * @brief passTurnGame
+             */
+            void passTurnGame();
+            /**
+             * @brief restartGame
+             */
+            void restartGame();
+
+    };
 
 }
 

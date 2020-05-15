@@ -2,7 +2,7 @@
 \label{classdblk_1_1_view}\index{dblk::View@{dblk::View}}
 
 
-The \mbox{\hyperlink{classdblk_1_1_view}{View}} class.  
+The \mbox{\hyperlink{classdblk_1_1_view}{View}} class This class represents the \mbox{\hyperlink{classdblk_1_1_view}{View}} facade with all graphics implementation.  
 
 
 
@@ -19,18 +19,18 @@ Inheritance diagram for dblk\+::View\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 virtual void \mbox{\hyperlink{classdblk_1_1_view_a606e99140a67862887e96fe23cdb409e}{display\+Options\+Menu}} ()=0
-\begin{DoxyCompactList}\small\item\em display\+Main\+Menu \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em display\+Options\+Menu \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classdblk_1_1_view_a5533f9c1e389704741efd485c7bd862f}{display\+Welcome\+Page}} ()=0
 \begin{DoxyCompactList}\small\item\em display\+Welcome\+Message \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classdblk_1_1_view_a3afa2f708072970650a43cd8c6fbd2f7}{display\+Board}} (const \mbox{\hyperlink{classdblk_1_1_diaballik}{Diaballik}} \&diaballik)=0
 \begin{DoxyCompactList}\small\item\em display\+Board \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classdblk_1_1_view_aeda225a2c2e99eccd4ce517357886317}{display\+Help}} ()=0
 \begin{DoxyCompactList}\small\item\em display\+Help \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{classdblk_1_1_view_a54c9d514aad59d1703ff46220e2015a4}{display\+Current\+Player}} (const Team \&team)=0
+virtual void \mbox{\hyperlink{classdblk_1_1_view_a54c9d514aad59d1703ff46220e2015a4}{display\+Current\+Player}} (const \mbox{\hyperlink{namespacedblk_ab7bf0fdfece85599b8768a04647f9bd6}{Team}} \&team)=0
 \begin{DoxyCompactList}\small\item\em display\+Current\+Player \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classdblk_1_1_view_a542bfeb12aa644ff65e921eef1281a59}{display\+Counters}} (unsigned move\+Counter, bool can\+Pass)=0
 \begin{DoxyCompactList}\small\item\em display\+Counters \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{classdblk_1_1_view_aba22f796f5936f034aad0509090f83fd}{display\+Winner}} (const std\+::optional$<$ Team $>$ \&team, bool anti\+Game)=0
+virtual void \mbox{\hyperlink{classdblk_1_1_view_aba22f796f5936f034aad0509090f83fd}{display\+Winner}} (const std\+::optional$<$ \mbox{\hyperlink{namespacedblk_ab7bf0fdfece85599b8768a04647f9bd6}{Team}} $>$ \&team, bool anti\+Game)=0
 \begin{DoxyCompactList}\small\item\em display\+Winner \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classdblk_1_1_view_ab2db52b9fd74502518cbb6bfb28926e6}{display\+Error}} (std\+::string error\+Msg)=0
 \begin{DoxyCompactList}\small\item\em display\+Error \end{DoxyCompactList}\item 
@@ -38,14 +38,13 @@ virtual void \mbox{\hyperlink{classdblk_1_1_view_ac3205c1d512e54abaa13bf5687ba4a
 \begin{DoxyCompactList}\small\item\em display\+Good\+Bye\+Message \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classdblk_1_1_view_a52a1b40d39ee6f16d497b39097b7860f}{display\+Selected}} (const std\+::optional$<$ \mbox{\hyperlink{classdblk_1_1_position}{Position}} $>$ position)=0
 \begin{DoxyCompactList}\small\item\em display\+Selected \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classdblk_1_1_view_aed0701f4f6335574ce8ae54dc2cfd4bd}\label{classdblk_1_1_view_aed0701f4f6335574ce8ae54dc2cfd4bd}} 
 virtual void \mbox{\hyperlink{classdblk_1_1_view_aed0701f4f6335574ce8ae54dc2cfd4bd}{display\+Rules\+Page}} ()=0
 \begin{DoxyCompactList}\small\item\em display\+Rules\+Page Displays the rules page to the players. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
 \doxysubsection{Detailed Description}
-The \mbox{\hyperlink{classdblk_1_1_view}{View}} class. 
+The \mbox{\hyperlink{classdblk_1_1_view}{View}} class This class represents the \mbox{\hyperlink{classdblk_1_1_view}{View}} facade with all graphics implementation. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classdblk_1_1_view_a3afa2f708072970650a43cd8c6fbd2f7}\label{classdblk_1_1_view_a3afa2f708072970650a43cd8c6fbd2f7}} 
@@ -89,7 +88,7 @@ Implemented in \mbox{\hyperlink{classdblk_1_1_view_u_i_a1c705ad3873a35104ab04d05
 \index{dblk::View@{dblk::View}!displayCurrentPlayer@{displayCurrentPlayer}}
 \index{displayCurrentPlayer@{displayCurrentPlayer}!dblk::View@{dblk::View}}
 \doxysubsubsection{\texorpdfstring{displayCurrentPlayer()}{displayCurrentPlayer()}}
-{\footnotesize\ttfamily virtual void dblk\+::\+View\+::display\+Current\+Player (\begin{DoxyParamCaption}\item[{const Team \&}]{team }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual void dblk\+::\+View\+::display\+Current\+Player (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacedblk_ab7bf0fdfece85599b8768a04647f9bd6}{Team}} \&}]{team }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
@@ -122,8 +121,6 @@ Display an error message
 \begin{DoxyParams}{Parameters}
 {\em flag\+Error} & flag of the error \\
 \hline
-{\em type\+Error} & integer that represent the type error occured (select(1), move(2), pass(3)) \\
-\hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classdblk_1_1_view_ac3205c1d512e54abaa13bf5687ba4a58}\label{classdblk_1_1_view_ac3205c1d512e54abaa13bf5687ba4a58}} 
 \index{dblk::View@{dblk::View}!displayGoodByeMessage@{displayGoodByeMessage}}
@@ -153,13 +150,18 @@ Displays the Help \mbox{\Hypertarget{classdblk_1_1_view_a606e99140a67862887e96fe
 
 
 
-display\+Main\+Menu 
+display\+Options\+Menu 
 
-Display the main menu of the \mbox{\hyperlink{classdblk_1_1_diaballik}{Diaballik}} game.
+Display the options menu of the \mbox{\hyperlink{classdblk_1_1_diaballik}{Diaballik}} game. \mbox{\Hypertarget{classdblk_1_1_view_aed0701f4f6335574ce8ae54dc2cfd4bd}\label{classdblk_1_1_view_aed0701f4f6335574ce8ae54dc2cfd4bd}} 
+\index{dblk::View@{dblk::View}!displayRulesPage@{displayRulesPage}}
+\index{displayRulesPage@{displayRulesPage}!dblk::View@{dblk::View}}
+\doxysubsubsection{\texorpdfstring{displayRulesPage()}{displayRulesPage()}}
+{\footnotesize\ttfamily virtual void dblk\+::\+View\+::display\+Rules\+Page (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
-\begin{DoxyReturn}{Returns}
-the size of the game and variant. 
-\end{DoxyReturn}
+
+
+display\+Rules\+Page Displays the rules page to the players. 
+
 \mbox{\Hypertarget{classdblk_1_1_view_a52a1b40d39ee6f16d497b39097b7860f}\label{classdblk_1_1_view_a52a1b40d39ee6f16d497b39097b7860f}} 
 \index{dblk::View@{dblk::View}!displaySelected@{displaySelected}}
 \index{displaySelected@{displaySelected}!dblk::View@{dblk::View}}
@@ -191,7 +193,7 @@ Displays a welcome message to the players \mbox{\Hypertarget{classdblk_1_1_view_
 \index{dblk::View@{dblk::View}!displayWinner@{displayWinner}}
 \index{displayWinner@{displayWinner}!dblk::View@{dblk::View}}
 \doxysubsubsection{\texorpdfstring{displayWinner()}{displayWinner()}}
-{\footnotesize\ttfamily virtual void dblk\+::\+View\+::display\+Winner (\begin{DoxyParamCaption}\item[{const std\+::optional$<$ Team $>$ \&}]{team,  }\item[{bool}]{anti\+Game }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual void dblk\+::\+View\+::display\+Winner (\begin{DoxyParamCaption}\item[{const std\+::optional$<$ \mbox{\hyperlink{namespacedblk_ab7bf0fdfece85599b8768a04647f9bd6}{Team}} $>$ \&}]{team,  }\item[{bool}]{anti\+Game }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
@@ -203,9 +205,11 @@ Displays the winner of the game \mbox{\hyperlink{classdblk_1_1_diaballik}{Diabal
 \begin{DoxyParams}{Parameters}
 {\em team} & the optinal winner of the game \mbox{\hyperlink{classdblk_1_1_diaballik}{Diaballik}}. \\
 \hline
+{\em anti\+Game} & Describes if the winner won by antigame \\
+\hline
 \end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/anastoudalachiri/\+Desktop/dev4/\+D\+E\+V4-\/\+Diabilik-\/43256\+\_\+51999/\+Code/src/view/headers/View.\+hpp\end{DoxyCompactItemize}
+/\+Users/anastoudalachiri/\+Desktop/dev4/\+D\+E\+V4-\/\+Diabilik-\/43256\+\_\+51999/\+Code/src/view/headers/\mbox{\hyperlink{_view_8hpp}{View.\+hpp}}\end{DoxyCompactItemize}

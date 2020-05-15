@@ -5,68 +5,69 @@
 #include "src/model/headers/Diaballik.hpp"
 #include "EventManager.hpp"
 
+//! Diaballik implementations.
 namespace dblk
 {
 
-/**
- * @brief The Controller class
- *
- * This class assembles the different parts of the app.
- * It uses all the necessary data and algorithms to run the app.
- */
-class Controller
-{
-
-  private:
-
     /**
-     * @brief model_
+     * @brief The Controller class
      *
-     * The main data of the game.
+     * This class assembles the different parts of the app.
+     * It uses all the necessary data and algorithms to run the app.
      */
-    Diaballik & model_;
+    class Controller
+    {
 
-    /**
-     * @brief view_
-     *
-     * The user interface.
-     */
-    ViewUI & view_;
+        private:
 
-    /**
-     * @brief evntFactory_
-     *
-     * A factory of events launched by the user.
-     */
-    DiaballikEventManager evntManager_;
+            /**
+             * @brief model_
+             *
+             * The main data of the game.
+             */
+            Diaballik &model_;
 
-  public:
+            /**
+             * @brief view_
+             *
+             * The user interface.
+             */
+            ViewUI &view_;
 
-    /**
-     * @brief Controller
-     *
-     * Creates a new app controller.
-     *
-     * @param model The game data.
-     * @param view The UI.
-     */
-    Controller(Diaballik & model, ViewUI & view);
+            /**
+             * @brief evntFactory_
+             *
+             * A factory of events launched by the user.
+             */
+            DiaballikEventManager evntManager_;
 
-    /**
-     * @brief init
-     *
-     * Associates the game data with the UI.
-     */
-    void init();
+        public:
 
-    /**
-     * @brief playGame
-     *
-     * Contains the main algorithm of the game.
-     */
-    void playGame();
+            /**
+             * @brief Controller
+             *
+             * Creates a new app controller.
+             *
+             * @param model The game data.
+             * @param view The UI.
+             */
+            Controller(Diaballik &model, ViewUI &view);
 
-};
+            /**
+             * @brief init
+             *
+             * Associates the game data with the UI.
+             */
+            void init();
+
+            /**
+             * @brief playGame
+             *
+             * Contains the main algorithm of the game.
+             */
+            void playGame();
+
+    };
 
 
 } // End namespace dblk

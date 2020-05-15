@@ -7,122 +7,132 @@
 
 namespace dblk
 {
-/**
- * @brief The SquareUI class
- */
-class SquareUI : public QLabel
-{
-    Q_OBJECT
-  private:
     /**
-    * @brief southPlayerImg
-    * Image of the south player.
-    */
-    static const char * southPlayerImg;
-    /**
-    * @brief northPlayerImg
-    * Image of the north player.
-    */
-    static const char * northPlayerImg;
-    /**
-    * @brief southPlayerBallImg
-    * Image of the south player with the ball.
-    */
-    static const char * southPlayerBallImg;
-    /**
-    * @brief northPlayerBallImg
-    * Image of the north player with the ball.
-    */
-    static const char * northPlayerBallImg;
+     * @brief The SquareUI class
+     * This class represents the graphics implementation of a square of the Diaballik board.
+     */
+    class SquareUI : public QLabel
+    {
+            Q_OBJECT
+        private:
 
-    /**
-     * @brief squarePos_
-     * Position of the square
-     */
-    Position squarePos_;
+            /**
+            * @brief southPlayerImg
+            * Path image representing the south player.
+            */
+            static const char *southPlayerImg;
 
-    /**
-     * @brief evnManager_
-     * Event manager.
-     */
-    DiaballikEventManager * evnManager_;
+            /**
+            * @brief northPlayerImg
+            * Path image representing the north player.
+            */
+            static const char *northPlayerImg;
 
-  public:
-    /**
-     * @brief SquareUI
-     * SquareUI.
-     * @param squarePos Square position.
-     * @param evnManager Event Manager.
-     * @param size The size.
-     */
-    SquareUI(Position & squarePos, DiaballikEventManager * evnManager, int size);
+            /**
+            * @brief southPlayerBallImg
+            * Path image representing south player with the ball.
+            */
+            static const char *southPlayerBallImg;
 
-    /**
-     * @brief refreshPiece
-     * Refresh the piece Image.
-     *
-     * @param piece The optional Piece.
-     */
-    void refreshPiece(const std::optional<Piece> & piece);
+            /**
+            * @brief northPlayerBallImg
+            * Path image representing the north player with the ball.
+            */
+            static const char *northPlayerBallImg;
 
-    /**
-     * @brief setInterectable
-     * Set a squareUI style to interectable in the board.
-     */
-    void setInterectable();
+            /**
+             * @brief squarePos_
+             * Position of the square inside the board.
+             */
+            Position squarePos_;
 
-    /**
-     * @brief setSelected
-     * Set the square style to selected.
-     */
-    void setSelected();
+            /**
+            * @brief evntManager_
+            * Allows to modify the model with the
+            * actions allowed to the user.
+            *
+            * Event manager.
+            */
+            DiaballikEventManager *evnManager_;
 
-    /**
-     * @brief setDefaultBackground
-     * Set default background style.
-     */
-    void setDefaultBackground();
+        public:
+            /**
+             * @brief SquareUI
+             * SquareUI.
+             * @param squarePos Square position inside the board.
+             * @param evnManager Event Manager factory.
+             * @param size The size of the square.
+             */
+            SquareUI(Position &squarePos, DiaballikEventManager *evnManager, int size);
 
-  public slots:
-    /**
-     * @brief squareClicked
-     * Do one of the follow actions depending on the circunstances:
-     * - Select a Piece
-     * - Move a piece
-     * - Pass the Ball
-     */
-    void squareClicked();
-    /**
-     * @brief squareRightClicked
-     *
-     * Select a piece.
-     */
-    void squareRightClicked();
-  signals:
-    /**
-     * @brief clicked
-     *
-     * Emited when left clicked.
-     */
-    void clicked();
-    /**
-     * @brief rightClicked
-     *
-     * Emited when right clicked.
-     */
-    void rightClicked();
+            /**
+             * @brief refreshPiece
+             * Refresh the piece Image.
+             * If the piece in parameter has a value, refresh the piece.
+             *
+             * @param piece The optional Piece.
+             */
+            void refreshPiece(const std::optional<Piece> &piece);
 
-  protected:
-    /**
-     * @brief mousePressEvent
-     * Emit the clicked() and rightClicked() signals
-     * when clicking in a square.
-     *
-     * @param event the mouse Event.
-     */
-    void mousePressEvent(QMouseEvent * event);
+            /**
+             * @brief setInterectable
+             * Set a squareUI style to interectable by the user in the board.
+             */
+            void setInterectable();
 
-};
+            /**
+             * @brief setSelected
+             * Set the square style to selected.
+             */
+            void setSelected();
+
+            /**
+             * @brief setDefaultBackground
+             * Set default background style.
+             */
+            void setDefaultBackground();
+
+        public slots:
+            /**
+             * @brief squareClicked
+             * Do one of the follow actions depending on the circunstances:
+             * - Select a Piece
+             * - Move a piece
+             * - Pass the Ball
+             */
+            void squareClicked();
+
+            /**
+             * @brief squareRightClicked
+             *
+             * Select a piece.
+             */
+            void squareRightClicked();
+        signals:
+            /**
+             * @brief clicked
+             *
+             * Emited when left clicked.
+             */
+            void clicked();
+            /**
+             * @brief rightClicked
+             *
+             * Emited when right clicked.
+             */
+            void rightClicked();
+
+        protected:
+            /**
+             * @brief mousePressEvent
+             * Emit the clicked() and rightClicked() signals
+             * when clicking in a square.
+             *
+             * @param event the mouse Event.
+             */
+            void mousePressEvent(QMouseEvent *event);
+
+    };
 
 }
 

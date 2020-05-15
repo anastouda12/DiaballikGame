@@ -8,59 +8,59 @@
 namespace dblk
 {
 
-/**
- * @brief The PassEvent class
- *
- * This class is an active event that will modify the game data.
- * It passes the ball from a piece to another piece.
- */
-class PassEvent : public DiaballikAbstractEvent
-{
-
-  private:
     /**
-     * @brief model_
+     * @brief The PassEvent class
      *
-     * The game data.
+     * This class is an active event that will modify the game data.
+     * It passes the ball from a piece to another piece.
      */
-    Diaballik & model_;
+    class PassEvent : public DiaballikAbstractEvent
+    {
 
-    /**
-     * @brief view_
-     *
-     * The user interface.
-     */
-    View & view_;
+        private:
+            /**
+             * @brief model_
+             *
+             * The game data.
+             */
+            Diaballik &model_;
 
-    /**
-     * @brief endPos_
-     *
-     * The position to pass the ball.
-     */
-    const Position endPos_;
+            /**
+             * @brief view_
+             *
+             * The user interface.
+             */
+            View &view_;
 
-  public:
+            /**
+             * @brief endPos_
+             *
+             * The position to pass the ball.
+             */
+            const Position endPos_;
 
-    /**
-     * @brief PassEvent
-     *
-     * Creates a new pass event.
-     *
-     * @param model The game data.
-     * @param view The UI.
-     * @param endPos The end position.
-     */
-    PassEvent(Diaballik & model, View & view, const Position endPos);
+        public:
 
-    /**
-     * @brief execute
-     *
-     * Try to pass the ball from the selected piece to the end position.
-     * If there is a problem and the ball isn't passed it displays an error message.
-     */
-    virtual void execute() override;
+            /**
+             * @brief PassEvent
+             *
+             * Creates a new pass event.
+             *
+             * @param model The game data.
+             * @param view The User interface
+             * @param endPos The end position.
+             */
+            PassEvent(Diaballik &model, View &view, const Position endPos);
 
-};
+            /**
+             * @brief execute
+             *
+             * Try to pass the ball from the selected piece to the end position.
+             * If there is a problem and the ball isn't passed it displays an error message.
+             */
+            virtual void execute() override;
+
+    };
 
 }
 

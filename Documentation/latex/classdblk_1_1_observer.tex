@@ -26,9 +26,8 @@ Inheritance diagram for dblk\+::Observer\+:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em Operateur of assignation by recopy by default. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classdblk_1_1_observer}{Observer}} \& \mbox{\hyperlink{classdblk_1_1_observer_af1a93ce275da87323fc09963892e1fb7}{operator=}} (\mbox{\hyperlink{classdblk_1_1_observer}{Observer}} \&\&)=default
 \begin{DoxyCompactList}\small\item\em Operateur of assignation by deplacement by default. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{classdblk_1_1_observer_ac02c3b48e9b0dfeacc91605a9459766f}{update}} (const \mbox{\hyperlink{classdblk_1_1_observable}{Observable}} $\ast$obj, Event\+Type type)=0
+virtual void \mbox{\hyperlink{classdblk_1_1_observer_ac02c3b48e9b0dfeacc91605a9459766f}{update}} (const \mbox{\hyperlink{classdblk_1_1_observable}{Observable}} $\ast$obj, \mbox{\hyperlink{namespacedblk_a152dd69870bc836df791852acc842a3e}{Event\+Type}} type)=0
 \begin{DoxyCompactList}\small\item\em Pure virtual method that each concrete observer must implement\+: this method is called by the subject observed during a notification. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classdblk_1_1_observer_a508ec0e4fb5268a46cb75220af1b9128}\label{classdblk_1_1_observer_a508ec0e4fb5268a46cb75220af1b9128}} 
 virtual \mbox{\hyperlink{classdblk_1_1_observer_a508ec0e4fb5268a46cb75220af1b9128}{$\sim$\+Observer}} ()=default
 \begin{DoxyCompactList}\small\item\em Virtual destructor by default because of polymorphic use. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
@@ -63,6 +62,16 @@ Constuctor by default copy. The default virtual destructor has cascading effects
 
 
 Constuctor by deplacement by default. 
+
+\mbox{\Hypertarget{classdblk_1_1_observer_a508ec0e4fb5268a46cb75220af1b9128}\label{classdblk_1_1_observer_a508ec0e4fb5268a46cb75220af1b9128}} 
+\index{dblk::Observer@{dblk::Observer}!````~Observer@{$\sim$Observer}}
+\index{````~Observer@{$\sim$Observer}!dblk::Observer@{dblk::Observer}}
+\doxysubsubsection{\texorpdfstring{$\sim$Observer()}{~Observer()}}
+{\footnotesize\ttfamily virtual dblk\+::\+Observer\+::$\sim$\+Observer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor by default because of polymorphic use. 
 
 \mbox{\Hypertarget{classdblk_1_1_observer_a91d0a4cb7c444c7ed14e4923f526aa65}\label{classdblk_1_1_observer_a91d0a4cb7c444c7ed14e4923f526aa65}} 
 \index{dblk::Observer@{dblk::Observer}!Observer@{Observer}}
@@ -101,7 +110,7 @@ Operateur of assignation by deplacement by default.
 \index{dblk::Observer@{dblk::Observer}!update@{update}}
 \index{update@{update}!dblk::Observer@{dblk::Observer}}
 \doxysubsubsection{\texorpdfstring{update()}{update()}}
-{\footnotesize\ttfamily virtual void dblk\+::\+Observer\+::update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classdblk_1_1_observable}{Observable}} $\ast$}]{obj,  }\item[{Event\+Type}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual void dblk\+::\+Observer\+::update (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classdblk_1_1_observable}{Observable}} $\ast$}]{obj,  }\item[{\mbox{\hyperlink{namespacedblk_a152dd69870bc836df791852acc842a3e}{Event\+Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
@@ -115,4 +124,4 @@ Implemented in \mbox{\hyperlink{classdblk_1_1_view_u_i_a300c6a3901bb5b2a74ef2849
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/anastoudalachiri/\+Desktop/dev4/\+D\+E\+V4-\/\+Diabilik-\/43256\+\_\+51999/\+Code/src/view/headers/Observer.\+hpp\end{DoxyCompactItemize}
+/\+Users/anastoudalachiri/\+Desktop/dev4/\+D\+E\+V4-\/\+Diabilik-\/43256\+\_\+51999/\+Code/src/view/headers/\mbox{\hyperlink{_observer_8hpp}{Observer.\+hpp}}\end{DoxyCompactItemize}

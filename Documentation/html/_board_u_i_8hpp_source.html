@@ -70,42 +70,49 @@ $(function() {
 <div class="title">BoardUI.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef BOARDUI_HPP</span></div>
+<a href="_board_u_i_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef BOARDUI_HPP</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define BOARDUI_HPP</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;QGridLayout&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;src/model/headers/Diaballik.hpp&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;SquareUI.hpp&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_diaballik_8hpp.html">src/model/headers/Diaballik.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_square_u_i_8hpp.html">SquareUI.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>dblk</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacedblk.html">dblk</a></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classdblk_1_1_board_u_i.html">   15</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classdblk_1_1_board_u_i.html">BoardUI</a> : <span class="keyword">public</span> QGridLayout</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            std::vector&lt;std::vector&lt;SquareUI *&gt;&gt; squares_;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <a class="code" href="classdblk_1_1_board_u_i.html">BoardUI</a>(<span class="keyword">const</span> <a class="code" href="classdblk_1_1_board.html">dblk::Board</a> &amp;board, <a class="code" href="classdblk_1_1_diaballik_event_manager.html">DiaballikEventManager</a> *evnManager);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classdblk_1_1_board_u_i.html#abaee944e0de1590d0f4501fc51ac80c1">refreshBoard</a>(<span class="keyword">const</span> <a class="code" href="classdblk_1_1_diaballik.html">Diaballik</a> &amp;game);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordtype">void</span> refreshSquare(<span class="keyword">const</span> <a class="code" href="classdblk_1_1_diaballik.html">Diaballik</a> &amp;game, <a class="code" href="classdblk_1_1_square_u_i.html">SquareUI</a> *square, <a class="code" href="classdblk_1_1_position.html">Position</a> &amp;pos);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    };</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classdblk_1_1_board_u_i.html">   17</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classdblk_1_1_board_u_i.html">BoardUI</a> : <span class="keyword">public</span> QGridLayout</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            std::vector&lt;std::vector&lt;SquareUI *&gt;&gt; squares_;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <a class="code" href="classdblk_1_1_board_u_i.html#a6c6b9f776f7178301dd3943865a004c5">BoardUI</a>(<span class="keyword">const</span> <a class="code" href="classdblk_1_1_board.html">dblk::Board</a> &amp;board, <a class="code" href="classdblk_1_1_diaballik_event_manager.html">DiaballikEventManager</a> *evnManager);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classdblk_1_1_board_u_i.html#abaee944e0de1590d0f4501fc51ac80c1">refreshBoard</a>(<span class="keyword">const</span> <a class="code" href="classdblk_1_1_diaballik.html">Diaballik</a> &amp;game);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif // BOARDUI_HPP</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordtype">void</span> refreshSquare(<span class="keyword">const</span> <a class="code" href="classdblk_1_1_diaballik.html">Diaballik</a> &amp;game, <a class="code" href="classdblk_1_1_square_u_i.html">SquareUI</a> *square, <a class="code" href="classdblk_1_1_position.html">Position</a> &amp;pos);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    };</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif // BOARDUI_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassdblk_1_1_position_html"><div class="ttname"><a href="classdblk_1_1_position.html">dblk::Position</a></div><div class="ttdoc">The Position class.</div><div class="ttdef"><b>Definition:</b> Position.hpp:16</div></div>
-<div class="ttc" id="aclassdblk_1_1_board_u_i_html"><div class="ttname"><a href="classdblk_1_1_board_u_i.html">dblk::BoardUI</a></div><div class="ttdoc">The BoardUI class.</div><div class="ttdef"><b>Definition:</b> BoardUI.hpp:16</div></div>
+<div class="ttc" id="aclassdblk_1_1_board_u_i_html"><div class="ttname"><a href="classdblk_1_1_board_u_i.html">dblk::BoardUI</a></div><div class="ttdoc">The BoardUI class This class represents the graphics implementation of the Diaballik board.</div><div class="ttdef"><b>Definition:</b> BoardUI.hpp:18</div></div>
 <div class="ttc" id="aclassdblk_1_1_diaballik_event_manager_html"><div class="ttname"><a href="classdblk_1_1_diaballik_event_manager.html">dblk::DiaballikEventManager</a></div><div class="ttdoc">The DiaballikEventFactory class.</div><div class="ttdef"><b>Definition:</b> EventManager.hpp:23</div></div>
 <div class="ttc" id="aclassdblk_1_1_board_html"><div class="ttname"><a href="classdblk_1_1_board.html">dblk::Board</a></div><div class="ttdoc">The Board class.</div><div class="ttdef"><b>Definition:</b> Board.hpp:20</div></div>
-<div class="ttc" id="aclassdblk_1_1_diaballik_html"><div class="ttname"><a href="classdblk_1_1_diaballik.html">dblk::Diaballik</a></div><div class="ttdoc">The Diabilik class.</div><div class="ttdef"><b>Definition:</b> Diaballik.hpp:18</div></div>
+<div class="ttc" id="aclassdblk_1_1_board_u_i_html_a6c6b9f776f7178301dd3943865a004c5"><div class="ttname"><a href="classdblk_1_1_board_u_i.html#a6c6b9f776f7178301dd3943865a004c5">dblk::BoardUI::BoardUI</a></div><div class="ttdeci">BoardUI(const dblk::Board &amp;board, DiaballikEventManager *evnManager)</div><div class="ttdoc">BoardUI Creates a new board depending on the game data.</div><div class="ttdef"><b>Definition:</b> BoardUI.cpp:6</div></div>
+<div class="ttc" id="anamespacedblk_html"><div class="ttname"><a href="namespacedblk.html">dblk</a></div><div class="ttdoc">Diaballik implementations.</div><div class="ttdef"><b>Definition:</b> Controller.cpp:4</div></div>
+<div class="ttc" id="a_diaballik_8hpp_html"><div class="ttname"><a href="_diaballik_8hpp.html">Diaballik.hpp</a></div></div>
+<div class="ttc" id="aclassdblk_1_1_diaballik_html"><div class="ttname"><a href="classdblk_1_1_diaballik.html">dblk::Diaballik</a></div><div class="ttdoc">The Diabilik class.</div><div class="ttdef"><b>Definition:</b> Diaballik.hpp:20</div></div>
+<div class="ttc" id="a_square_u_i_8hpp_html"><div class="ttname"><a href="_square_u_i_8hpp.html">SquareUI.hpp</a></div></div>
 <div class="ttc" id="aclassdblk_1_1_board_u_i_html_abaee944e0de1590d0f4501fc51ac80c1"><div class="ttname"><a href="classdblk_1_1_board_u_i.html#abaee944e0de1590d0f4501fc51ac80c1">dblk::BoardUI::refreshBoard</a></div><div class="ttdeci">void refreshBoard(const Diaballik &amp;game)</div><div class="ttdoc">refreshBoard Refresh the board game.</div><div class="ttdef"><b>Definition:</b> BoardUI.cpp:26</div></div>
-<div class="ttc" id="aclassdblk_1_1_square_u_i_html"><div class="ttname"><a href="classdblk_1_1_square_u_i.html">dblk::SquareUI</a></div><div class="ttdoc">The SquareUI class.</div><div class="ttdef"><b>Definition:</b> SquareUI.hpp:14</div></div>
+<div class="ttc" id="aclassdblk_1_1_square_u_i_html"><div class="ttname"><a href="classdblk_1_1_square_u_i.html">dblk::SquareUI</a></div><div class="ttdoc">The SquareUI class This class represents the graphics implementation of a square of the Diaballik boa...</div><div class="ttdef"><b>Definition:</b> SquareUI.hpp:15</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

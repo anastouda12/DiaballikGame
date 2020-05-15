@@ -18,9 +18,11 @@ Inheritance diagram for dblk\+::Diaballik\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{classdblk_1_1_diaballik_aeb3119177f79739e64f60931d43d1bdd}{Diaballik}} ()
+\item 
 void \mbox{\hyperlink{classdblk_1_1_diaballik_a67091f13743e9279b29d6a60ed6d3c6a}{init}} (size\+\_\+t size, bool variant)
 \begin{DoxyCompactList}\small\item\em init \end{DoxyCompactList}\item 
-const Team \& \mbox{\hyperlink{classdblk_1_1_diaballik_a62876f1d477db21abf7241380faa792a}{get\+Current\+Player}} () const
+const \mbox{\hyperlink{namespacedblk_ab7bf0fdfece85599b8768a04647f9bd6}{Team}} \& \mbox{\hyperlink{classdblk_1_1_diaballik_a62876f1d477db21abf7241380faa792a}{get\+Current\+Player}} () const
 \begin{DoxyCompactList}\small\item\em get\+Current\+Player \end{DoxyCompactList}\item 
 const std\+::optional$<$ \mbox{\hyperlink{classdblk_1_1_position}{Position}} $>$ \& \mbox{\hyperlink{classdblk_1_1_diaballik_ab1eb093bdccda119aab8862389a7cd3b}{get\+Selected}} () const
 \begin{DoxyCompactList}\small\item\em get\+Selected \end{DoxyCompactList}\item 
@@ -46,7 +48,7 @@ int \mbox{\hyperlink{classdblk_1_1_diaballik_a7f3cf319e80f77046500a199fc6e990d}{
 \begin{DoxyCompactList}\small\item\em select \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{classdblk_1_1_board}{Board}} \& \mbox{\hyperlink{classdblk_1_1_diaballik_afb91e9428320eef11a2f43a5b2995463}{get\+Board}} () const
 \begin{DoxyCompactList}\small\item\em get\+Board \end{DoxyCompactList}\item 
-std\+::optional$<$ Team $>$ \mbox{\hyperlink{classdblk_1_1_diaballik_a2e8c627924f80849a440b596568155ec}{get\+Winner}} () const
+std\+::optional$<$ \mbox{\hyperlink{namespacedblk_ab7bf0fdfece85599b8768a04647f9bd6}{Team}} $>$ \mbox{\hyperlink{classdblk_1_1_diaballik_a2e8c627924f80849a440b596568155ec}{get\+Winner}} () const
 \begin{DoxyCompactList}\small\item\em get\+Winner \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classdblk_1_1_diaballik_ad4b0147761c902abb2ef6eab15381a55}{checks\+Enough\+Moves\+Available}} (const \mbox{\hyperlink{classdblk_1_1_position}{Position}} \&pos) const
 \begin{DoxyCompactList}\small\item\em check\+Move\+Position \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -56,6 +58,15 @@ int \mbox{\hyperlink{classdblk_1_1_diaballik_ad4b0147761c902abb2ef6eab15381a55}{
 The Diabilik class. 
 
 This class represents the main facade for the game. It contains all the necessary methods to play the game. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdblk_1_1_diaballik_aeb3119177f79739e64f60931d43d1bdd}\label{classdblk_1_1_diaballik_aeb3119177f79739e64f60931d43d1bdd}} 
+\index{dblk::Diaballik@{dblk::Diaballik}!Diaballik@{Diaballik}}
+\index{Diaballik@{Diaballik}!dblk::Diaballik@{dblk::Diaballik}}
+\doxysubsubsection{\texorpdfstring{Diaballik()}{Diaballik()}}
+{\footnotesize\ttfamily dblk\+::\+Diaballik\+::\+Diaballik (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classdblk_1_1_diaballik_abbd5e42747def772962a1ddf7ed93c23}\label{classdblk_1_1_diaballik_abbd5e42747def772962a1ddf7ed93c23}} 
@@ -158,7 +169,7 @@ the size of the board
 \index{dblk::Diaballik@{dblk::Diaballik}!getCurrentPlayer@{getCurrentPlayer}}
 \index{getCurrentPlayer@{getCurrentPlayer}!dblk::Diaballik@{dblk::Diaballik}}
 \doxysubsubsection{\texorpdfstring{getCurrentPlayer()}{getCurrentPlayer()}}
-{\footnotesize\ttfamily const Team \& dblk\+::\+Diaballik\+::get\+Current\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily const \mbox{\hyperlink{namespacedblk_ab7bf0fdfece85599b8768a04647f9bd6}{Team}} \& dblk\+::\+Diaballik\+::get\+Current\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -203,7 +214,7 @@ the selected position in the current round of the game \mbox{\hyperlink{classdbl
 \index{dblk::Diaballik@{dblk::Diaballik}!getWinner@{getWinner}}
 \index{getWinner@{getWinner}!dblk::Diaballik@{dblk::Diaballik}}
 \doxysubsubsection{\texorpdfstring{getWinner()}{getWinner()}}
-{\footnotesize\ttfamily std\+::optional$<$ Team $>$ dblk\+::\+Diaballik\+::get\+Winner (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily std\+::optional$<$ \mbox{\hyperlink{namespacedblk_ab7bf0fdfece85599b8768a04647f9bd6}{Team}} $>$ dblk\+::\+Diaballik\+::get\+Winner (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -322,5 +333,5 @@ If the selected piece has the ball, pass the ball to the given position.
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/anastoudalachiri/\+Desktop/dev4/\+D\+E\+V4-\/\+Diabilik-\/43256\+\_\+51999/\+Code/src/model/headers/Diaballik.\+hpp\item 
-/\+Users/anastoudalachiri/\+Desktop/dev4/\+D\+E\+V4-\/\+Diabilik-\/43256\+\_\+51999/\+Code/src/model/Diaballik.\+cpp\end{DoxyCompactItemize}
+/\+Users/anastoudalachiri/\+Desktop/dev4/\+D\+E\+V4-\/\+Diabilik-\/43256\+\_\+51999/\+Code/src/model/headers/\mbox{\hyperlink{_diaballik_8hpp}{Diaballik.\+hpp}}\item 
+/\+Users/anastoudalachiri/\+Desktop/dev4/\+D\+E\+V4-\/\+Diabilik-\/43256\+\_\+51999/\+Code/src/model/\mbox{\hyperlink{_diaballik_8cpp}{Diaballik.\+cpp}}\end{DoxyCompactItemize}

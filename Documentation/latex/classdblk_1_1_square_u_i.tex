@@ -2,7 +2,7 @@
 \label{classdblk_1_1_square_u_i}\index{dblk::SquareUI@{dblk::SquareUI}}
 
 
-The \mbox{\hyperlink{classdblk_1_1_square_u_i}{Square\+UI}} class.  
+The \mbox{\hyperlink{classdblk_1_1_square_u_i}{Square\+UI}} class This class represents the graphics implementation of a square of the \mbox{\hyperlink{classdblk_1_1_diaballik}{Diaballik}} board.  
 
 
 
@@ -18,19 +18,15 @@ Inheritance diagram for dblk\+::Square\+UI\+:\begin{figure}[H]
 \doxysubsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classdblk_1_1_square_u_i_a353482272b6a30b7809067c9703bcd61}\label{classdblk_1_1_square_u_i_a353482272b6a30b7809067c9703bcd61}} 
 void \mbox{\hyperlink{classdblk_1_1_square_u_i_a353482272b6a30b7809067c9703bcd61}{square\+Clicked}} ()
-\begin{DoxyCompactList}\small\item\em square\+Clicked \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classdblk_1_1_square_u_i_a3a63967e7193320730a284f044826c2f}\label{classdblk_1_1_square_u_i_a3a63967e7193320730a284f044826c2f}} 
+\begin{DoxyCompactList}\small\item\em square\+Clicked Do one of the follow actions depending on the circunstances\+: \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classdblk_1_1_square_u_i_a3a63967e7193320730a284f044826c2f}{square\+Right\+Clicked}} ()
 \begin{DoxyCompactList}\small\item\em square\+Right\+Clicked \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classdblk_1_1_square_u_i_ac8480054d1a42d518fbcb9d8e939fbd6}\label{classdblk_1_1_square_u_i_ac8480054d1a42d518fbcb9d8e939fbd6}} 
 void \mbox{\hyperlink{classdblk_1_1_square_u_i_ac8480054d1a42d518fbcb9d8e939fbd6}{clicked}} ()
 \begin{DoxyCompactList}\small\item\em clicked \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classdblk_1_1_square_u_i_a0a5380b3faace984990c6c6f6a7a2bbb}\label{classdblk_1_1_square_u_i_a0a5380b3faace984990c6c6f6a7a2bbb}} 
 void \mbox{\hyperlink{classdblk_1_1_square_u_i_a0a5380b3faace984990c6c6f6a7a2bbb}{right\+Clicked}} ()
 \begin{DoxyCompactList}\small\item\em right\+Clicked \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
@@ -39,25 +35,22 @@ void \mbox{\hyperlink{classdblk_1_1_square_u_i_a0a5380b3faace984990c6c6f6a7a2bbb
 \mbox{\hyperlink{classdblk_1_1_square_u_i_aedde8395804eed980bae122136df4eac}{Square\+UI}} (\mbox{\hyperlink{classdblk_1_1_position}{Position}} \&square\+Pos, \mbox{\hyperlink{classdblk_1_1_diaballik_event_manager}{Diaballik\+Event\+Manager}} $\ast$evn\+Manager, int size)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classdblk_1_1_square_u_i}{Square\+UI}} \mbox{\hyperlink{classdblk_1_1_square_u_i}{Square\+UI}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classdblk_1_1_square_u_i_a600ba9bb0055aeabf843778055ae8e39}{refresh\+Piece}} (const std\+::optional$<$ \mbox{\hyperlink{classdblk_1_1_piece}{Piece}} $>$ \&piece)
-\begin{DoxyCompactList}\small\item\em refresh\+Piece Refresh a piece. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classdblk_1_1_square_u_i_a878a3ca6f991cc210b5e36c73b002b6c}\label{classdblk_1_1_square_u_i_a878a3ca6f991cc210b5e36c73b002b6c}} 
+\begin{DoxyCompactList}\small\item\em refresh\+Piece Refresh the piece Image. If the piece in parameter has a value, refresh the piece. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classdblk_1_1_square_u_i_a878a3ca6f991cc210b5e36c73b002b6c}{set\+Interectable}} ()
-\begin{DoxyCompactList}\small\item\em set\+Interectable Set a square\+UI interectable in the board. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classdblk_1_1_square_u_i_ae1f65a1617c8ba866aa9ae77b59c1f0a}\label{classdblk_1_1_square_u_i_ae1f65a1617c8ba866aa9ae77b59c1f0a}} 
+\begin{DoxyCompactList}\small\item\em set\+Interectable Set a square\+UI style to interectable by the user in the board. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classdblk_1_1_square_u_i_ae1f65a1617c8ba866aa9ae77b59c1f0a}{set\+Selected}} ()
-\begin{DoxyCompactList}\small\item\em set\+Selected Set the square selected. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classdblk_1_1_square_u_i_aad516d053a2c25c4cdaa583fce5fcc8b}\label{classdblk_1_1_square_u_i_aad516d053a2c25c4cdaa583fce5fcc8b}} 
+\begin{DoxyCompactList}\small\item\em set\+Selected Set the square style to selected. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classdblk_1_1_square_u_i_aad516d053a2c25c4cdaa583fce5fcc8b}{set\+Default\+Background}} ()
-\begin{DoxyCompactList}\small\item\em set\+Default\+Background Set default background. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em set\+Default\+Background Set default background style. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{classdblk_1_1_square_u_i_a1716f41e4e6098fb121a4f038842e563}{mouse\+Press\+Event}} (Q\+Mouse\+Event $\ast$event)
-\begin{DoxyCompactList}\small\item\em mouse\+Press\+Event \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em mouse\+Press\+Event Emit the \mbox{\hyperlink{classdblk_1_1_square_u_i_ac8480054d1a42d518fbcb9d8e939fbd6}{clicked()}} and \mbox{\hyperlink{classdblk_1_1_square_u_i_a0a5380b3faace984990c6c6f6a7a2bbb}{right\+Clicked()}} signals when clicking in a square. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-The \mbox{\hyperlink{classdblk_1_1_square_u_i}{Square\+UI}} class. 
+The \mbox{\hyperlink{classdblk_1_1_square_u_i}{Square\+UI}} class This class represents the graphics implementation of a square of the \mbox{\hyperlink{classdblk_1_1_diaballik}{Diaballik}} board. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classdblk_1_1_square_u_i_aedde8395804eed980bae122136df4eac}\label{classdblk_1_1_square_u_i_aedde8395804eed980bae122136df4eac}} 
@@ -72,17 +65,27 @@ The \mbox{\hyperlink{classdblk_1_1_square_u_i}{Square\+UI}} class.
 
 
 \begin{DoxyParams}{Parameters}
-{\em square\+Pos} & Square position. \\
+{\em square\+Pos} & Square position inside the board. \\
 \hline
-{\em evn\+Manager} & Event Manager. \\
+{\em evn\+Manager} & Event Manager factory. \\
 \hline
-{\em size} & The size. \\
+{\em size} & The size of the square. \\
 \hline
 \end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classdblk_1_1_square_u_i_a1716f41e4e6098fb121a4f038842e563}\label{classdblk_1_1_square_u_i_a1716f41e4e6098fb121a4f038842e563}} 
+\mbox{\Hypertarget{classdblk_1_1_square_u_i_ac8480054d1a42d518fbcb9d8e939fbd6}\label{classdblk_1_1_square_u_i_ac8480054d1a42d518fbcb9d8e939fbd6}} 
+\index{dblk::SquareUI@{dblk::SquareUI}!clicked@{clicked}}
+\index{clicked@{clicked}!dblk::SquareUI@{dblk::SquareUI}}
+\doxysubsubsection{\texorpdfstring{clicked}{clicked}}
+{\footnotesize\ttfamily void dblk\+::\+Square\+U\+I\+::clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+clicked 
+
+Emited when left clicked. \mbox{\Hypertarget{classdblk_1_1_square_u_i_a1716f41e4e6098fb121a4f038842e563}\label{classdblk_1_1_square_u_i_a1716f41e4e6098fb121a4f038842e563}} 
 \index{dblk::SquareUI@{dblk::SquareUI}!mousePressEvent@{mousePressEvent}}
 \index{mousePressEvent@{mousePressEvent}!dblk::SquareUI@{dblk::SquareUI}}
 \doxysubsubsection{\texorpdfstring{mousePressEvent()}{mousePressEvent()}}
@@ -90,7 +93,7 @@ The \mbox{\hyperlink{classdblk_1_1_square_u_i}{Square\+UI}} class.
 
 
 
-mouse\+Press\+Event 
+mouse\+Press\+Event Emit the \mbox{\hyperlink{classdblk_1_1_square_u_i_ac8480054d1a42d518fbcb9d8e939fbd6}{clicked()}} and \mbox{\hyperlink{classdblk_1_1_square_u_i_a0a5380b3faace984990c6c6f6a7a2bbb}{right\+Clicked()}} signals when clicking in a square. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -105,16 +108,81 @@ mouse\+Press\+Event
 
 
 
-refresh\+Piece Refresh a piece. 
+refresh\+Piece Refresh the piece Image. If the piece in parameter has a value, refresh the piece. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em piece} & The optional \mbox{\hyperlink{classdblk_1_1_piece}{Piece}}. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classdblk_1_1_square_u_i_a0a5380b3faace984990c6c6f6a7a2bbb}\label{classdblk_1_1_square_u_i_a0a5380b3faace984990c6c6f6a7a2bbb}} 
+\index{dblk::SquareUI@{dblk::SquareUI}!rightClicked@{rightClicked}}
+\index{rightClicked@{rightClicked}!dblk::SquareUI@{dblk::SquareUI}}
+\doxysubsubsection{\texorpdfstring{rightClicked}{rightClicked}}
+{\footnotesize\ttfamily void dblk\+::\+Square\+U\+I\+::right\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
+
+
+right\+Clicked 
+
+Emited when right clicked. \mbox{\Hypertarget{classdblk_1_1_square_u_i_aad516d053a2c25c4cdaa583fce5fcc8b}\label{classdblk_1_1_square_u_i_aad516d053a2c25c4cdaa583fce5fcc8b}} 
+\index{dblk::SquareUI@{dblk::SquareUI}!setDefaultBackground@{setDefaultBackground}}
+\index{setDefaultBackground@{setDefaultBackground}!dblk::SquareUI@{dblk::SquareUI}}
+\doxysubsubsection{\texorpdfstring{setDefaultBackground()}{setDefaultBackground()}}
+{\footnotesize\ttfamily void dblk\+::\+Square\+U\+I\+::set\+Default\+Background (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+set\+Default\+Background Set default background style. 
+
+\mbox{\Hypertarget{classdblk_1_1_square_u_i_a878a3ca6f991cc210b5e36c73b002b6c}\label{classdblk_1_1_square_u_i_a878a3ca6f991cc210b5e36c73b002b6c}} 
+\index{dblk::SquareUI@{dblk::SquareUI}!setInterectable@{setInterectable}}
+\index{setInterectable@{setInterectable}!dblk::SquareUI@{dblk::SquareUI}}
+\doxysubsubsection{\texorpdfstring{setInterectable()}{setInterectable()}}
+{\footnotesize\ttfamily void dblk\+::\+Square\+U\+I\+::set\+Interectable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+set\+Interectable Set a square\+UI style to interectable by the user in the board. 
+
+\mbox{\Hypertarget{classdblk_1_1_square_u_i_ae1f65a1617c8ba866aa9ae77b59c1f0a}\label{classdblk_1_1_square_u_i_ae1f65a1617c8ba866aa9ae77b59c1f0a}} 
+\index{dblk::SquareUI@{dblk::SquareUI}!setSelected@{setSelected}}
+\index{setSelected@{setSelected}!dblk::SquareUI@{dblk::SquareUI}}
+\doxysubsubsection{\texorpdfstring{setSelected()}{setSelected()}}
+{\footnotesize\ttfamily void dblk\+::\+Square\+U\+I\+::set\+Selected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+set\+Selected Set the square style to selected. 
+
+\mbox{\Hypertarget{classdblk_1_1_square_u_i_a353482272b6a30b7809067c9703bcd61}\label{classdblk_1_1_square_u_i_a353482272b6a30b7809067c9703bcd61}} 
+\index{dblk::SquareUI@{dblk::SquareUI}!squareClicked@{squareClicked}}
+\index{squareClicked@{squareClicked}!dblk::SquareUI@{dblk::SquareUI}}
+\doxysubsubsection{\texorpdfstring{squareClicked}{squareClicked}}
+{\footnotesize\ttfamily void dblk\+::\+Square\+U\+I\+::square\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+square\+Clicked Do one of the follow actions depending on the circunstances\+: 
+
+
+\begin{DoxyItemize}
+\item Select a \mbox{\hyperlink{classdblk_1_1_piece}{Piece}}
+\item Move a piece
+\item Pass the Ball 
+\end{DoxyItemize}\mbox{\Hypertarget{classdblk_1_1_square_u_i_a3a63967e7193320730a284f044826c2f}\label{classdblk_1_1_square_u_i_a3a63967e7193320730a284f044826c2f}} 
+\index{dblk::SquareUI@{dblk::SquareUI}!squareRightClicked@{squareRightClicked}}
+\index{squareRightClicked@{squareRightClicked}!dblk::SquareUI@{dblk::SquareUI}}
+\doxysubsubsection{\texorpdfstring{squareRightClicked}{squareRightClicked}}
+{\footnotesize\ttfamily void dblk\+::\+Square\+U\+I\+::square\+Right\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+square\+Right\+Clicked 
+
+Select a piece. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/anastoudalachiri/\+Desktop/dev4/\+D\+E\+V4-\/\+Diabilik-\/43256\+\_\+51999/\+Code/src/view/gui/headers/Square\+U\+I.\+hpp\item 
-/\+Users/anastoudalachiri/\+Desktop/dev4/\+D\+E\+V4-\/\+Diabilik-\/43256\+\_\+51999/\+Code/src/view/gui/Square\+U\+I.\+cpp\end{DoxyCompactItemize}
+/\+Users/anastoudalachiri/\+Desktop/dev4/\+D\+E\+V4-\/\+Diabilik-\/43256\+\_\+51999/\+Code/src/view/gui/headers/\mbox{\hyperlink{_square_u_i_8hpp}{Square\+U\+I.\+hpp}}\item 
+/\+Users/anastoudalachiri/\+Desktop/dev4/\+D\+E\+V4-\/\+Diabilik-\/43256\+\_\+51999/\+Code/src/view/gui/\mbox{\hyperlink{_square_u_i_8cpp}{Square\+U\+I.\+cpp}}\end{DoxyCompactItemize}

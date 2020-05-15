@@ -11,17 +11,17 @@ namespace dblk
 
     /**
      * @brief The View class
+     * This class represents the View facade with all graphics implementation.
      */
     class View: public Observer
     {
 
         public:
             /**
-             * @brief displayMainMenu
+             * @brief displayOptionsMenu
              *
-             * Display the main menu of the Diaballik game.
+             * Display the options menu of the Diaballik game.
              *
-             * @return the size of the game and variant.
              */
             virtual void displayOptionsMenu() = 0;
 
@@ -73,6 +73,7 @@ namespace dblk
              * Displays the winner of the game Diaballik
              *
              * @param team the optinal winner of the game Diaballik.
+             * @param antiGame Describes if the winner won by antigame
              */
             virtual void displayWinner(const std::optional<Team> &team, bool antiGame) = 0;
 
@@ -82,7 +83,6 @@ namespace dblk
              * Display an error message
              *
              * @param flagError flag of the error
-             * @param typeError integer that represent the type error occured (select(1), move(2), pass(3))
              */
             virtual void displayError(std::string errorMsg) = 0;
 

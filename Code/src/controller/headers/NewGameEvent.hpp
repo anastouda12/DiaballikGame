@@ -52,7 +52,7 @@ namespace dblk
             /**
              * @brief execute
              *
-             * Initializates the game date accorting the given options.
+             * Initializates the game data according the given options.
              */
             virtual void execute() override;
 

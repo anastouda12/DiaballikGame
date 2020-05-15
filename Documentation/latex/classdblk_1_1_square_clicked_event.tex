@@ -20,13 +20,14 @@ Inheritance diagram for dblk\+::Square\+Clicked\+Event\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{classdblk_1_1_square_clicked_event_a791898bdd5889b35d591b2cdc916b901}{Square\+Clicked\+Event}} (\mbox{\hyperlink{classdblk_1_1_diaballik}{Diaballik}} \&model, \mbox{\hyperlink{classdblk_1_1_view}{View}} \&view, int row, int col)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classdblk_1_1_square_clicked_event}{Square\+Clicked\+Event}}. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classdblk_1_1_square_clicked_event_a90def1edc3141f2b80963988368231e0}\label{classdblk_1_1_square_clicked_event_a90def1edc3141f2b80963988368231e0}} 
 void \mbox{\hyperlink{classdblk_1_1_square_clicked_event_a90def1edc3141f2b80963988368231e0}{execute}} () override
-\begin{DoxyCompactList}\small\item\em execute \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em execute Manages the click and determines the type of action and execute it. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 The \mbox{\hyperlink{classdblk_1_1_square_clicked_event}{Square\+Clicked\+Event}} class. 
+
+This class is an active event that will modify the game data. It manages the click of the user on a square and determines the type of action (Move, selection or a throw). 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classdblk_1_1_square_clicked_event_a791898bdd5889b35d591b2cdc916b901}\label{classdblk_1_1_square_clicked_event_a791898bdd5889b35d591b2cdc916b901}} 
@@ -43,7 +44,7 @@ The \mbox{\hyperlink{classdblk_1_1_square_clicked_event}{Square\+Clicked\+Event}
 \begin{DoxyParams}{Parameters}
 {\em model} & the game data. \\
 \hline
-{\em view} & the game view. \\
+{\em view} & the user interface. \\
 \hline
 {\em row} & row of the square clicked. \\
 \hline
@@ -52,7 +53,24 @@ The \mbox{\hyperlink{classdblk_1_1_square_clicked_event}{Square\+Clicked\+Event}
 \end{DoxyParams}
 
 
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdblk_1_1_square_clicked_event_a90def1edc3141f2b80963988368231e0}\label{classdblk_1_1_square_clicked_event_a90def1edc3141f2b80963988368231e0}} 
+\index{dblk::SquareClickedEvent@{dblk::SquareClickedEvent}!execute@{execute}}
+\index{execute@{execute}!dblk::SquareClickedEvent@{dblk::SquareClickedEvent}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void dblk\+::\+Square\+Clicked\+Event\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+execute Manages the click and determines the type of action and execute it. 
+
+
+
+Implements \mbox{\hyperlink{classdblk_1_1_diaballik_abstract_event_a07cdeb84289699345458aeec55b19760}{dblk\+::\+Diaballik\+Abstract\+Event}}.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/anastoudalachiri/\+Desktop/dev4/\+D\+E\+V4-\/\+Diabilik-\/43256\+\_\+51999/\+Code/src/controller/headers/Square\+Clicked\+Event.\+hpp\item 
-/\+Users/anastoudalachiri/\+Desktop/dev4/\+D\+E\+V4-\/\+Diabilik-\/43256\+\_\+51999/\+Code/src/controller/Square\+Clicked\+Event.\+cpp\end{DoxyCompactItemize}
+/\+Users/anastoudalachiri/\+Desktop/dev4/\+D\+E\+V4-\/\+Diabilik-\/43256\+\_\+51999/\+Code/src/controller/headers/\mbox{\hyperlink{_square_clicked_event_8hpp}{Square\+Clicked\+Event.\+hpp}}\item 
+/\+Users/anastoudalachiri/\+Desktop/dev4/\+D\+E\+V4-\/\+Diabilik-\/43256\+\_\+51999/\+Code/src/controller/\mbox{\hyperlink{_square_clicked_event_8cpp}{Square\+Clicked\+Event.\+cpp}}\end{DoxyCompactItemize}

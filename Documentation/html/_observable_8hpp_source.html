@@ -70,13 +70,13 @@ $(function() {
 <div class="title">Observable.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef OBSERVABLE_H</span></div>
+<a href="_observable_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef OBSERVABLE_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define OBSERVABLE_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;set&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;src/view/headers/Observer.hpp&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;src/controller/headers/EventType.hpp&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_observer_8hpp.html">src/view/headers/Observer.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_event_type_8hpp.html">src/controller/headers/EventType.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span>dblk</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacedblk.html">dblk</a></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
@@ -94,7 +94,7 @@ $(function() {
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classdblk_1_1_observable.html#a4213b02db2bced9d3be2c764dbe4d8aa">deleteObserver</a>(<a class="code" href="classdblk_1_1_observer.html">Observer</a> * observer);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classdblk_1_1_observable.html#ae3d7e1a198aacbceb422a77b6b6de6bd">notifyObservers</a>(EventType type);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classdblk_1_1_observable.html#ae3d7e1a198aacbceb422a77b6b6de6bd">notifyObservers</a>(<a class="code" href="namespacedblk.html#a152dd69870bc836df791852acc842a3e">EventType</a> type);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
@@ -104,7 +104,11 @@ $(function() {
 <div class="ttc" id="aclassdblk_1_1_observable_html"><div class="ttname"><a href="classdblk_1_1_observable.html">dblk::Observable</a></div><div class="ttdoc">Basic class of any &quot;subject of observation&quot;.</div><div class="ttdef"><b>Definition:</b> Observable.hpp:19</div></div>
 <div class="ttc" id="aclassdblk_1_1_observable_html_a4213b02db2bced9d3be2c764dbe4d8aa"><div class="ttname"><a href="classdblk_1_1_observable.html#a4213b02db2bced9d3be2c764dbe4d8aa">dblk::Observable::deleteObserver</a></div><div class="ttdeci">void deleteObserver(Observer *observer)</div><div class="ttdoc">Allows to delete an observer from the list the observation subject's.</div><div class="ttdef"><b>Definition:</b> Observable.cpp:14</div></div>
 <div class="ttc" id="aclassdblk_1_1_observable_html_ae3d7e1a198aacbceb422a77b6b6de6bd"><div class="ttname"><a href="classdblk_1_1_observable.html#ae3d7e1a198aacbceb422a77b6b6de6bd">dblk::Observable::notifyObservers</a></div><div class="ttdeci">void notifyObservers(EventType type)</div><div class="ttdoc">A method of notify observers of a change in status of the subject of observation, invoking their meth...</div><div class="ttdef"><b>Definition:</b> Observable.cpp:19</div></div>
+<div class="ttc" id="anamespacedblk_html"><div class="ttname"><a href="namespacedblk.html">dblk</a></div><div class="ttdoc">Diaballik implementations.</div><div class="ttdef"><b>Definition:</b> Controller.cpp:4</div></div>
 <div class="ttc" id="aclassdblk_1_1_observable_html_aec981336a7f5a367134991dd1fac36b9"><div class="ttname"><a href="classdblk_1_1_observable.html#aec981336a7f5a367134991dd1fac36b9">dblk::Observable::Observable</a></div><div class="ttdeci">Observable()</div><div class="ttdoc">Observable Constructor of a subject.</div><div class="ttdef"><b>Definition:</b> Observable.cpp:7</div></div>
+<div class="ttc" id="anamespacedblk_html_a152dd69870bc836df791852acc842a3e"><div class="ttname"><a href="namespacedblk.html#a152dd69870bc836df791852acc842a3e">dblk::EventType</a></div><div class="ttdeci">EventType</div><div class="ttdef"><b>Definition:</b> EventType.hpp:7</div></div>
+<div class="ttc" id="a_observer_8hpp_html"><div class="ttname"><a href="_observer_8hpp.html">Observer.hpp</a></div></div>
+<div class="ttc" id="a_event_type_8hpp_html"><div class="ttname"><a href="_event_type_8hpp.html">EventType.hpp</a></div></div>
 <div class="ttc" id="aclassdblk_1_1_observable_html_a2610cc40ea7cb25715607eac089bf581"><div class="ttname"><a href="classdblk_1_1_observable.html#a2610cc40ea7cb25715607eac089bf581">dblk::Observable::registerObserver</a></div><div class="ttdeci">void registerObserver(Observer *observer)</div><div class="ttdoc">A method allowing an observer to register as a earpiece of the subject of observation.</div><div class="ttdef"><b>Definition:</b> Observable.cpp:9</div></div>
 <div class="ttc" id="aclassdblk_1_1_observer_html"><div class="ttname"><a href="classdblk_1_1_observer.html">dblk::Observer</a></div><div class="ttdoc">Basic abstract class of any observer.</div><div class="ttdef"><b>Definition:</b> Observer.hpp:19</div></div>
 <!-- start footer part -->

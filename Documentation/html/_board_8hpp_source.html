@@ -70,16 +70,16 @@ $(function() {
 <div class="title">Board.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _BOARD_H</span></div>
+<a href="_board_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _BOARD_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _BOARD_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;optional&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;Piece.hpp&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;Position.hpp&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;Team.hpp&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_piece_8hpp.html">Piece.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_position_8hpp.html">Position.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_team_8hpp.html">Team.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span>dblk</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacedblk.html">dblk</a></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classdblk_1_1_board.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="classdblk_1_1_board.html">Board</a></div>
@@ -94,7 +94,7 @@ $(function() {
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classdblk_1_1_board.html">Board</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classdblk_1_1_board.html#af0f373daee5702679256144ca9d9f655">Board</a>();</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classdblk_1_1_board.html#acb95ba7e6740c581d266bc07172e3008">init</a>(<span class="keywordtype">bool</span> variant, <span class="keyword">const</span> <span class="keywordtype">size_t</span> size);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
@@ -110,44 +110,44 @@ $(function() {
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classdblk_1_1_board.html#a53c3d372e21cc83625de24625b810ac1">movePiece</a>(<span class="keyword">const</span> <a class="code" href="classdblk_1_1_position.html">Position</a> &amp; startPos, <span class="keyword">const</span> <a class="code" href="classdblk_1_1_position.html">Position</a> &amp; endPos);</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classdblk_1_1_board.html#aa265eaa4b782df71bb954e42a3cee275">checksAntiGame</a>(Team antiGameVictim) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classdblk_1_1_board.html#aa265eaa4b782df71bb954e42a3cee275">checksAntiGame</a>(<a class="code" href="namespacedblk.html#ab7bf0fdfece85599b8768a04647f9bd6">Team</a> antiGameVictim) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classdblk_1_1_board.html#a50f6447349b2f412eda883545a2d0e2f">checksGameIsFinsh</a>(std::optional&lt;Team&gt; &amp; winner) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classdblk_1_1_board.html#ad7e0049b98a96f724fff4321d6698971">passBall</a>(Team team, <span class="keyword">const</span> <a class="code" href="classdblk_1_1_position.html">Position</a> &amp; startPos,</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classdblk_1_1_board.html#ad7e0049b98a96f724fff4321d6698971">passBall</a>(<a class="code" href="namespacedblk.html#ab7bf0fdfece85599b8768a04647f9bd6">Team</a> team, <span class="keyword">const</span> <a class="code" href="classdblk_1_1_position.html">Position</a> &amp; startPos,</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                 <span class="keyword">const</span> <a class="code" href="classdblk_1_1_position.html">Position</a> &amp; endPos);</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classdblk_1_1_board.html#a5514d80d1e85b9ba14d72c501808f965">checkMove</a>(<span class="keyword">const</span> <a class="code" href="classdblk_1_1_position.html">Position</a> &amp; startPos,</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                  <span class="keyword">const</span> <a class="code" href="classdblk_1_1_position.html">Position</a> &amp; endPos) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classdblk_1_1_board.html#a83d0e6568c67681379f2e2eee8e7609d">checkThrow</a>(Team team, <span class="keyword">const</span> <a class="code" href="classdblk_1_1_position.html">Position</a> &amp; startPos,</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classdblk_1_1_board.html#a83d0e6568c67681379f2e2eee8e7609d">checkThrow</a>(<a class="code" href="namespacedblk.html#ab7bf0fdfece85599b8768a04647f9bd6">Team</a> team, <span class="keyword">const</span> <a class="code" href="classdblk_1_1_position.html">Position</a> &amp; startPos,</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                   <span class="keyword">const</span> <a class="code" href="classdblk_1_1_position.html">Position</a> &amp; endPos) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordtype">bool</span> verifyLineAntiGame(<span class="keyword">const</span> <a class="code" href="classdblk_1_1_position.html">Position</a> &amp; currentPos,</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                            <span class="keywordtype">unsigned</span> blockCount,</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                            Team antiGameVictim) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                            <a class="code" href="namespacedblk.html#ab7bf0fdfece85599b8768a04647f9bd6">Team</a> antiGameVictim) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordtype">void</span> countBlockedOpponents(<span class="keywordtype">unsigned</span> &amp; blockCount,</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                               <span class="keyword">const</span> <a class="code" href="classdblk_1_1_position.html">Position</a> &amp; currentColumn,</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                               Team team) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                               <a class="code" href="namespacedblk.html#ab7bf0fdfece85599b8768a04647f9bd6">Team</a> team) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordtype">bool</span> isBlockedByLine(<span class="keyword">const</span> <a class="code" href="classdblk_1_1_position.html">Position</a> &amp; position, Team antiGameVictim,</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordtype">bool</span> isBlockedByLine(<span class="keyword">const</span> <a class="code" href="classdblk_1_1_position.html">Position</a> &amp; position, <a class="code" href="namespacedblk.html#ab7bf0fdfece85599b8768a04647f9bd6">Team</a> antiGameVictim,</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                         <span class="keywordtype">size_t</span> objectiveRow) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keywordtype">bool</span> checkLineBreak(<span class="keyword">const</span> <a class="code" href="classdblk_1_1_position.html">Position</a> &amp; curentColumn,</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                        Team antiGameVictim) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                        <a class="code" href="namespacedblk.html#ab7bf0fdfece85599b8768a04647f9bd6">Team</a> antiGameVictim) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordtype">bool</span> hasDepassedLine(<a class="code" href="classdblk_1_1_position.html">Position</a> &amp; currentLine, <span class="keyword">const</span> <a class="code" href="classdblk_1_1_position.html">Position</a> &amp; dir,</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                         Team antiGameVictim,</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                         <a class="code" href="namespacedblk.html#ab7bf0fdfece85599b8768a04647f9bd6">Team</a> antiGameVictim,</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                         <span class="keywordtype">int</span> objectiveRow) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordtype">bool</span> achievedObjective(<span class="keyword">const</span> <a class="code" href="classdblk_1_1_position.html">Position</a> &amp; currentPosition) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordtype">bool</span> belongsTo(<span class="keyword">const</span> <a class="code" href="classdblk_1_1_position.html">Position</a> &amp; position, Team player) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordtype">bool</span> belongsTo(<span class="keyword">const</span> <a class="code" href="classdblk_1_1_position.html">Position</a> &amp; position, <a class="code" href="namespacedblk.html#ab7bf0fdfece85599b8768a04647f9bd6">Team</a> player) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
@@ -161,14 +161,20 @@ $(function() {
 <div class="ttc" id="aclassdblk_1_1_board_html_aa8f12a3b4a5bdd2788a62c4067b83342"><div class="ttname"><a href="classdblk_1_1_board.html#aa8f12a3b4a5bdd2788a62c4067b83342">dblk::Board::isInside</a></div><div class="ttdeci">bool isInside(const Position &amp;position) const</div><div class="ttdoc">isFree</div><div class="ttdef"><b>Definition:</b> Board.cpp:60</div></div>
 <div class="ttc" id="aclassdblk_1_1_board_html_a83d0e6568c67681379f2e2eee8e7609d"><div class="ttname"><a href="classdblk_1_1_board.html#a83d0e6568c67681379f2e2eee8e7609d">dblk::Board::checkThrow</a></div><div class="ttdeci">int checkThrow(Team team, const Position &amp;startPos, const Position &amp;endPos) const</div><div class="ttdoc">checkThrow</div><div class="ttdef"><b>Definition:</b> Board.cpp:160</div></div>
 <div class="ttc" id="aclassdblk_1_1_board_html_a53c3d372e21cc83625de24625b810ac1"><div class="ttname"><a href="classdblk_1_1_board.html#a53c3d372e21cc83625de24625b810ac1">dblk::Board::movePiece</a></div><div class="ttdeci">int movePiece(const Position &amp;startPos, const Position &amp;endPos)</div><div class="ttdoc">movePiece</div><div class="ttdef"><b>Definition:</b> Board.cpp:67</div></div>
+<div class="ttc" id="a_position_8hpp_html"><div class="ttname"><a href="_position_8hpp.html">Position.hpp</a></div></div>
 <div class="ttc" id="aclassdblk_1_1_board_html_a89a4c3acd365ecb642faf2695f7073aa"><div class="ttname"><a href="classdblk_1_1_board.html#a89a4c3acd365ecb642faf2695f7073aa">dblk::Board::isFree</a></div><div class="ttdeci">bool isFree(const Position &amp;position) const</div><div class="ttdoc">isFree</div><div class="ttdef"><b>Definition:</b> Board.cpp:54</div></div>
 <div class="ttc" id="aclassdblk_1_1_board_html_ab31982a8ff58be5a33fef32bdd4a035f"><div class="ttname"><a href="classdblk_1_1_board.html#ab31982a8ff58be5a33fef32bdd4a035f">dblk::Board::getPieceAt</a></div><div class="ttdeci">const std::optional&lt; Piece &gt; &amp; getPieceAt(const Position &amp;position) const</div><div class="ttdoc">getPieceAt</div><div class="ttdef"><b>Definition:</b> Board.cpp:40</div></div>
 <div class="ttc" id="aclassdblk_1_1_board_html"><div class="ttname"><a href="classdblk_1_1_board.html">dblk::Board</a></div><div class="ttdoc">The Board class.</div><div class="ttdef"><b>Definition:</b> Board.hpp:20</div></div>
 <div class="ttc" id="aclassdblk_1_1_board_html_a50f6447349b2f412eda883545a2d0e2f"><div class="ttname"><a href="classdblk_1_1_board.html#a50f6447349b2f412eda883545a2d0e2f">dblk::Board::checksGameIsFinsh</a></div><div class="ttdeci">bool checksGameIsFinsh(std::optional&lt; Team &gt; &amp;winner) const</div><div class="ttdoc">checksGameIsFinsh</div><div class="ttdef"><b>Definition:</b> Board.cpp:95</div></div>
 <div class="ttc" id="aclassdblk_1_1_board_html_ad7e0049b98a96f724fff4321d6698971"><div class="ttname"><a href="classdblk_1_1_board.html#ad7e0049b98a96f724fff4321d6698971">dblk::Board::passBall</a></div><div class="ttdeci">int passBall(Team team, const Position &amp;startPos, const Position &amp;endPos)</div><div class="ttdoc">passBall</div><div class="ttdef"><b>Definition:</b> Board.cpp:115</div></div>
 <div class="ttc" id="aclassdblk_1_1_board_html_a5514d80d1e85b9ba14d72c501808f965"><div class="ttname"><a href="classdblk_1_1_board.html#a5514d80d1e85b9ba14d72c501808f965">dblk::Board::checkMove</a></div><div class="ttdeci">int checkMove(const Position &amp;startPos, const Position &amp;endPos) const</div><div class="ttdoc">checkMove</div><div class="ttdef"><b>Definition:</b> Board.cpp:130</div></div>
+<div class="ttc" id="anamespacedblk_html"><div class="ttname"><a href="namespacedblk.html">dblk</a></div><div class="ttdoc">Diaballik implementations.</div><div class="ttdef"><b>Definition:</b> Controller.cpp:4</div></div>
 <div class="ttc" id="aclassdblk_1_1_board_html_a8fa6072833dbf66c37ea0b940b056df4"><div class="ttname"><a href="classdblk_1_1_board.html#a8fa6072833dbf66c37ea0b940b056df4">dblk::Board::getSize</a></div><div class="ttdeci">size_t getSize() const</div><div class="ttdoc">getSize</div><div class="ttdef"><b>Definition:</b> Board.cpp:34</div></div>
+<div class="ttc" id="a_team_8hpp_html"><div class="ttname"><a href="_team_8hpp.html">Team.hpp</a></div></div>
 <div class="ttc" id="aclassdblk_1_1_board_html_aa265eaa4b782df71bb954e42a3cee275"><div class="ttname"><a href="classdblk_1_1_board.html#aa265eaa4b782df71bb954e42a3cee275">dblk::Board::checksAntiGame</a></div><div class="ttdeci">bool checksAntiGame(Team antiGameVictim) const</div><div class="ttdoc">checksAntiGame</div><div class="ttdef"><b>Definition:</b> Board.cpp:78</div></div>
+<div class="ttc" id="anamespacedblk_html_ab7bf0fdfece85599b8768a04647f9bd6"><div class="ttname"><a href="namespacedblk.html#ab7bf0fdfece85599b8768a04647f9bd6">dblk::Team</a></div><div class="ttdeci">Team</div><div class="ttdoc">The Team enum.</div><div class="ttdef"><b>Definition:</b> Team.hpp:16</div></div>
+<div class="ttc" id="a_piece_8hpp_html"><div class="ttname"><a href="_piece_8hpp.html">Piece.hpp</a></div></div>
+<div class="ttc" id="aclassdblk_1_1_board_html_af0f373daee5702679256144ca9d9f655"><div class="ttname"><a href="classdblk_1_1_board.html#af0f373daee5702679256144ca9d9f655">dblk::Board::Board</a></div><div class="ttdeci">Board()</div><div class="ttdef"><b>Definition:</b> Board.cpp:12</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

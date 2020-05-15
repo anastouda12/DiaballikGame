@@ -1,10 +1,15 @@
 var searchData=
 [
-  ['passball_57',['passBall',['../classdblk_1_1_board.html#ad7e0049b98a96f724fff4321d6698971',1,'dblk::Board']]],
-  ['passevent_58',['PassEvent',['../classdblk_1_1_pass_event.html',1,'dblk::PassEvent'],['../classdblk_1_1_pass_event.html#a588a5ca3c9b61a487815821e68fa0ed5',1,'dblk::PassEvent::PassEvent()']]],
-  ['passturn_59',['passTurn',['../classdblk_1_1_diaballik.html#a9bff4ab5ca3c46534f5ebd334f2003b6',1,'dblk::Diaballik']]],
-  ['passturnevent_60',['PassTurnEvent',['../classdblk_1_1_pass_turn_event.html',1,'dblk::PassTurnEvent'],['../classdblk_1_1_pass_turn_event.html#afaf4dd7b763254412d844c65b2ce2851',1,'dblk::PassTurnEvent::PassTurnEvent()']]],
-  ['piece_61',['Piece',['../classdblk_1_1_piece.html',1,'dblk::Piece'],['../classdblk_1_1_piece.html#af2010cf5947247686a9a7155cc04b83b',1,'dblk::Piece::Piece()']]],
-  ['playgame_62',['playGame',['../classdblk_1_1_controller.html#afc8d33af1c3d1ac93a6b5610181331b5',1,'dblk::Controller']]],
-  ['position_63',['Position',['../classdblk_1_1_position.html',1,'dblk::Position'],['../classdblk_1_1_position.html#a862a53935ab23799142efa09ad684eea',1,'dblk::Position::Position()']]]
+  ['observable_81',['Observable',['../classdblk_1_1_observable.html',1,'dblk::Observable'],['../classdblk_1_1_observable.html#aec981336a7f5a367134991dd1fac36b9',1,'dblk::Observable::Observable()']]],
+  ['observable_2ecpp_82',['Observable.cpp',['../_observable_8cpp.html',1,'']]],
+  ['observable_2ehpp_83',['Observable.hpp',['../_observable_8hpp.html',1,'']]],
+  ['observer_84',['Observer',['../classdblk_1_1_observer.html',1,'dblk::Observer'],['../classdblk_1_1_observer.html#ae618a79d9e2cbb14666a4c3f46f81e7e',1,'dblk::Observer::Observer(const Observer &amp;)=default'],['../classdblk_1_1_observer.html#a23a6ae27fe75a38c5edfae9ebec08773',1,'dblk::Observer::Observer(Observer &amp;&amp;)=default'],['../classdblk_1_1_observer.html#a91d0a4cb7c444c7ed14e4923f526aa65',1,'dblk::Observer::Observer()=default']]],
+  ['observer_2ehpp_85',['Observer.hpp',['../_observer_8hpp.html',1,'']]],
+  ['operator_21_86',['operator!',['../namespacedblk.html#a33009ec5885d0e003d69de1c8909e2dc',1,'dblk']]],
+  ['operator_21_3d_87',['operator!=',['../classdblk_1_1_position.html#a06046c257ab218537a8593175e6e1b9f',1,'dblk::Position']]],
+  ['operator_2b_88',['operator+',['../classdblk_1_1_position.html#abb600898364e2a0de417fe6a41481bb8',1,'dblk::Position']]],
+  ['operator_2d_89',['operator-',['../classdblk_1_1_position.html#a28b4f370469881f7c984480ac187fabe',1,'dblk::Position']]],
+  ['operator_3c_3c_90',['operator&lt;&lt;',['../namespacedblk.html#a5e5a95e028a1748f86fdf4b7282ae025',1,'dblk::operator&lt;&lt;(std::ostream &amp;out, const Piece &amp;piece)'],['../namespacedblk.html#a84a6223254cc9a4c44ac1fadbfa8173e',1,'dblk::operator&lt;&lt;(std::ostream &amp;out, const Position &amp;pos)'],['../namespacedblk.html#af8154f1ef2ce2dce3bb40e8ea468d3a5',1,'dblk::operator&lt;&lt;(std::ostream &amp;out, const Team &amp;team)']]],
+  ['operator_3d_91',['operator=',['../classdblk_1_1_observer.html#aac2ac177a1d4e655f24ab211e5b207bc',1,'dblk::Observer::operator=(const Observer &amp;)=default'],['../classdblk_1_1_observer.html#af1a93ce275da87323fc09963892e1fb7',1,'dblk::Observer::operator=(Observer &amp;&amp;)=default']]],
+  ['operator_3d_3d_92',['operator==',['../classdblk_1_1_position.html#a71b73539fc34e22bdb8abebd82a08354',1,'dblk::Position']]]
 ];

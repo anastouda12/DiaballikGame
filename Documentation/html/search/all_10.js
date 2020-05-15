@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['_7ediaballikabstractevent_83',['~DiaballikAbstractEvent',['../classdblk_1_1_diaballik_abstract_event.html#aaa91c0ae2bfcf2404ba3b4f41a9c56c6',1,'dblk::DiaballikAbstractEvent']]],
-  ['_7eobserver_84',['~Observer',['../classdblk_1_1_observer.html#a508ec0e4fb5268a46cb75220af1b9128',1,'dblk::Observer']]]
+  ['view_141',['View',['../classdblk_1_1_view.html',1,'dblk']]],
+  ['view_2ehpp_142',['View.hpp',['../_view_8hpp.html',1,'']]],
+  ['viewui_143',['ViewUI',['../classdblk_1_1_view_u_i.html',1,'dblk::ViewUI'],['../classdblk_1_1_view_u_i.html#a2fe506131ff04085349a17866aa310ae',1,'dblk::ViewUI::ViewUI()']]],
+  ['viewui_2ecpp_144',['ViewUI.cpp',['../_view_u_i_8cpp.html',1,'']]],
+  ['viewui_2ehpp_145',['ViewUI.hpp',['../_view_u_i_8hpp.html',1,'']]]
 ];
