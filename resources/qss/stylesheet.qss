@@ -18,11 +18,22 @@ QGroupBox::title {
   color: white;
 }
 
+.SquareUI {
+    background-color: green;
+    border: 1px solid black;
+}
+.SquareUI:hover { 
+    background-color: darkgreen;
+    border: 2px solid black;
+}
+
+.SquareUISelected {
+    background-color: blue;
+    border: 1px solid black;
+}
+
+
 QTextEdit#textActionGame {
     background:url(:/resources/images/textEditBackground.jpg) 0 0 0 0 center center;
     color: white;
-}
-
-.textTurnTeam {
-    color: red;
 }
