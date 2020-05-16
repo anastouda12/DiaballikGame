@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['observable_157',['Observable',['../classdblk_1_1_observable.html',1,'dblk']]],
-  ['observer_158',['Observer',['../classdblk_1_1_observer.html',1,'dblk']]]
+  ['newgameevent_106',['NewGameEvent',['../classdblk_1_1_new_game_event.html',1,'dblk']]]
 ];

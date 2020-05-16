@@ -15,7 +15,9 @@ Diaballik is an abstract strategy board game designed by Philippe Lefrançois. I
 
  1. End of analyse. (14/02/2020)
  2. End of console Version. (30/03/2020)
+ 3. End of GUI Version. (16/05/2020)
 
 ## Built With
 
- * C++
+ * C++ 17
+ * QT GUI 5

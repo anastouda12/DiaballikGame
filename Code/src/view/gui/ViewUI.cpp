@@ -60,7 +60,7 @@ void ViewUI::initSlots()
     connect(mainWindow_->btnWinnerPage_exit, &QAbstractButton::clicked,
             this, &ViewUI::displayGoodByeMessage);
     connect(mainWindow_->btnWinnerPage_mainMenu, &QAbstractButton::clicked,
-            this, &ViewUI::displayWelcomePage);
+            this, &ViewUI::restartGame);
 }
 
 void ViewUI::initGame()
