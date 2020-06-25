@@ -1,0 +1,39 @@
+QWidget#MainWindow{
+    background: url(:/resources/images/background.jpg);
+    
+}
+#textTurnTeam{
+    font:20pt;
+}
+
+QComboBox {
+    background: #1E90FF;
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding: 1px 18px 1px 3px;
+    min-width: 4em;
+}
+
+QGroupBox::title {
+  color: white;
+}
+
+.SquareUI {
+    background-color: green;
+    border: 1px solid black;
+}
+.SquareUI:hover { 
+    background-color: darkgreen;
+    border: 2px solid black;
+}
+
+.SquareUISelected {
+    background-color: blue;
+    border: 1px solid black;
+}
+
+
+QTextEdit#textActionGame {
+    background:url(:/resources/images/textEditBackground.jpg) 0 0 0 0 center center;
+    color: white;
+}

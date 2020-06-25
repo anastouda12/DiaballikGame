@@ -1,0 +1,227 @@
+<!--
+pdf produit avec la commande :
++ pandoc -V papersize=a4 -V geometry=landscape --pdf-engine=pdflatex -o n11_43256_51999.pdf n11_43256_51999.md
++ pandoc -V papersize=a4 --pdf-engine=xelatex -o xxx.pdf xxx.md
++ pandoc -V papersize=a4 --pdf-engine=xelatex -o n11_43256_51999.html n11_43256_51999.md
+-->
+
+<!-- # commentaires nvs : diaballik : n11_43256_51999 -->
+<h1 id="diaballik-n11_43256_51999">Diaballik : n11_43256_51999</h1>
+<h2 id="console">console</h2>
+<h3 id="remise">remise</h3>
+<h4 id="retard">retard</h4>
+<p>(void)</p>
+<h4 id="autre">autre</h4>
+<p>(void)</p>
+<h3 id="documentation">documentation</h3>
+<ul>
+<li>documentation inutilisable sur « petit » écran : l’image dans le header de chaque page occupe les 2 / 3 de l’écran ! je renomme le fichier pour casser le lien vers l’image</li>
+<li>fichiers pas documentés avec <code>\file</code></li>
+<li>pour le reste documentation <em>très complète</em></li>
+</ul>
+<h3 id="rapport">rapport</h3>
+<h4 id="format-pdf">format pdf</h4>
+<p>(void)</p>
+<h4 id="bogue-non-signalé">bogue non signalé</h4>
+<p>(void)</p>
+<h4 id="écart-ajout-non-signalé">écart / ajout non signalé</h4>
+<ul>
+<li>les étudiant ont considéré que dans le cas de la variante, l’objectif des pions R qui demarrent sur la ligne J adverse est la ligne de départ des autres pions R. ceci n’apparaît pas dans les règles du jeu !</li>
+</ul>
+<h4 id="autre-1">autre</h4>
+<p>(void)</p>
+<h3 id="rapport-code">rapport / code</h3>
+<h4 id="avertissement-restant">avertissement restant</h4>
+<h5 id="gcc">gcc</h5>
+<h6 id="signalé">signalé</h6>
+<p>(void)</p>
+<h6 id="non-signalé">non signalé</h6>
+<p>(void)</p>
+<h5 id="gcc-clang-analyzer">gcc + clang-analyzer</h5>
+<p>(void)</p>
+<h5 id="clang">clang++</h5>
+<p>(void)</p>
+<h5 id="clang-clang-analyzer">clang++ + clang-analyzer</h5>
+<p>(void)</p>
+<h5 id="cppcheck">cppcheck</h5>
+<h6 id="signalé-1">signalé</h6>
+<p>(void)</p>
+<h6 id="non-signalé-1">non signalé</h6>
+<p>(void)</p>
+<h3 id="code-source">code source</h3>
+<h4 id="portabilité">portabilité</h4>
+<h5 id="casse-noms-fichiers">casse noms fichiers</h5>
+<p>(void)</p>
+<h5 id="séparateur">séparateur /</h5>
+<p>(void)</p>
+<h5 id="c-standard">c++ standard</h5>
+<p>(void)</p>
+<h5 id="si-pas-std-portabilité">si pas std : portabilité</h5>
+<p>(void)</p>
+<h4 id="bonnes-pratiques">bonnes pratiques</h4>
+<h5 id="déclarations-anticipées-si-possible">déclarations anticipées si possible</h5>
+<ul>
+<li><code>#include "src/model/headers/Diaballik.hpp"</code> inutile dans <code>Controller.hpp</code> : déclaration anticipée suffit</li>
+<li><code>#include "src/view/headers/View.hpp"</code> inutile dans <code>Controller.hpp</code> : déclaration anticipée suffit</li>
+<li><code>#include "src/controller/headers/DiaballikAbstractEvent.hpp"</code> inutile dans <code>DiaballikEvent.hpp</code> : déclaration anticipée suffit</li>
+<li><code>#include "src/controller/headers/DiaballikEvent.hpp"</code> inutile dans <code>EventFactory.hpp</code> : déclaration anticipée suffit</li>
+<li><code>#include "src/view/headers/View.hpp"</code> inutile dans <code>EventFactory.hpp</code> : déclaration anticipée suffit : <code>class View</code>, <code>class Diaballik</code></li>
+<li><code>#include "src/view/headers/View.hpp"</code> inutile dans <code>HelpEvent.hpp</code> : déclaration anticipée suffit</li>
+<li><code>#include "src/model/headers/Diaballik.hpp"</code> inutile dans <code>MoveEvent.hpp</code> : déclaration anticipée suffit</li>
+<li><code>#include "src/view/headers/View.hpp"</code> inutile dans <code>MoveEvent.hpp</code> : déclaration anticipée suffit</li>
+<li><code>#include "src/model/headers/Diaballik.hpp"</code> inutile dans <code>PassEvent.hpp</code> : déclaration anticipée suffit</li>
+<li><code>#include "src/view/headers/View.hpp"</code> inutile dans <code>PassEvent.hpp</code> : déclaration anticipée suffit</li>
+<li><code>#include "src/model/headers/Diaballik.hpp"</code> inutile dans <code>PassTurnEvent.hpp</code> : déclaration anticipée suffit</li>
+<li><code>#include "src/model/headers/Diaballik.hpp"</code> inutile dans <code>SelectEvent.hpp</code> : déclaration anticipée suffit</li>
+<li><code>#include "src/view/headers/View.hpp"</code> inutile dans <code>SelectEvent.hpp</code> : déclaration anticipée suffit</li>
+<li><code>#include "src/view/headers/View.hpp"</code> inutile dans <code>ShowEvent.hpp</code> : déclaration anticipée suffit : <code>class View</code>, <code>class Diaballik</code></li>
+<li><code>#include "Position.hpp"</code> inutile dans <code>Board.hpp</code> : déclaration anticipée suffit</li>
+<li><code>#include "src/view/headers/Observer.hpp"</code> inutile dans <code>Observable.hpp</code> : déclaration anticipée suffit</li>
+<li><code>#include "src/model/headers/Diaballik.hpp"</code> inutile dans <code>View.hpp</code> : déclaration anticipée suffit : <code>class Diaballik</code>, <code>class Piece</code></li>
+</ul>
+<h5 id="using-namespace-dans-.h">using namespace dans .h</h5>
+<p>ok</p>
+<h5 id="autre-2">autre</h5>
+<ul>
+<li>inclusion d’un fichier d’en-têtes C plutôt que C++ dans <code>Configs.hpp</code></li>
+<li>inclusion inutile de <code>iostream</code> dans <code>ViewConsole.hpp</code></li>
+<li>inclusion inutile de <code>iostream</code> dans <code>View.hpp</code></li>
+<li>inclusion manquante de <code>iostream</code> dans <code>ViewConsole.cpp</code></li>
+</ul>
+<h4 id="gestion-de-la-mémoire">gestion de la mémoire</h4>
+<ul>
+<li>dans <code>DiaballikEventFactory::generateEvent(std::string input)</code>, multitude (8) de <code>DiaballikEvent { new XxxEvent { ... } }</code>. on a bien un destructeur dans la classe <code>DiaballikEvent</code>, mais pas de constructeur par recopie / déplacement ni opérateur d’assignation par recopie / déplacement. pas de fuite mémoire observée dans valgrind, mais danger.</li>
+</ul>
+<h4 id="classes-métier">classes métier</h4>
+<h5 id="initialisation">initialisation</h5>
+<h6 id="plateau">plateau</h6>
+<ul>
+<li>pas de limitation de la taille du plateau à 5, 7 ou 9</li>
+</ul>
+<p class="heading" id="supports">supports</p>
+<p>ok</p>
+<p class="heading" id="balles">balles</p>
+<p>ok</p>
+<p class="heading" id="possibilité-de-variante">possibilité de variante</p>
+<ul>
+<li>oui mais les étudiant ont considéré que dans le cas de la variante, l’objectif des pions R qui demarrent sur la ligne J adverse est la ligne de départ des autres pions R. ceci n’apparaît pas dans les règles du jeu !</li>
+</ul>
+<h6 id="joueurs-éventuellement">joueurs (éventuellement)</h6>
+<p>(void)</p>
+<h5 id="déplacement-support">déplacement support</h5>
+<h6 id="latéral-uniquement">latéral uniquement</h6>
+<ul>
+<li>ko : il est possible de passer en diagonale un chemin latéralement bloqué par des supports</li>
+</ul>
+<h6 id="dune-seule-position">d’une seule position</h6>
+<p>ok</p>
+<h6 id="impossible-de-déplacer-support-avec-balle">impossible de déplacer support avec balle</h6>
+<p>ok</p>
+<h6 id="un-seul-support-par-emplacement">un seul support par emplacement</h6>
+<p>ok</p>
+<h6 id="maximum-2-déplacements-par-tour-de-jeu">maximum 2 déplacements par tour de jeu</h6>
+<p>ok</p>
+<h5 id="lancer-balle">lancer balle</h5>
+<h6 id="latéral-ou-diagonal">latéral ou diagonal</h6>
+<p>ok</p>
+<h6 id="pas-au-dessus-dun-support-adverse">pas au dessus d’un support adverse</h6>
+<p>ok</p>
+<h6 id="maximum-1-lancer-par-tour-de-jeu">maximum 1 lancer par tour de jeu</h6>
+<p>ok</p>
+<h5 id="terminer-tour-de-jeu">terminer tour de jeu</h5>
+<h6 id="au-moins-une-action-obligatoire">au moins une action obligatoire</h6>
+<ul>
+<li>ko : la méthode <code>Diaballik::passTurn()</code> ne vérifie pas si des actions ont été faites lors du tour du joueur</li>
+</ul>
+<h6 id="possibilité-de-ne-pas-réaliser-3-actions">possibilité de ne pas réaliser 3 actions</h6>
+<p>ok</p>
+<h5 id="fin-de-partie">fin de partie</h5>
+<h6 id="balle-sur-ligne-adverse">balle sur ligne adverse</h6>
+<p>ok</p>
+<h6 id="anti-jeu">anti-jeu</h6>
+<ul>
+<li>il existe une méthode <code>Diaballik::checksAntiGame()</code> : je ne l’ai pas testée</li>
+</ul>
+<h5 id="méthodes">méthodes</h5>
+<h6 id="complètes-1-méthode-1-action-de-jeu">complètes : 1 méthode / 1 action de jeu</h6>
+<ul>
+<li>la méthode <code>Diaballik::isOver()</code> n’est appelée par aucune méthode de <code>Diaballik</code> : la fin de partie n’est donc jamais testée dans les classes métier…</li>
+</ul>
+<h6 id="impossibilité-de-tricher-bibliothèque">impossibilité de tricher (bibliothèque)</h6>
+<ul>
+<li>la méthode <code>Diaballik::select(const Position &amp; pos)</code> ne vérifie pas si partie terminée : ce n’est pas nécessairement un soucis si ensuite c’est bien pris en charge par les métodes de déplacement de support ou de lancer de balle, ce qui n’est pas le cas ici !</li>
+<li>la méthode <code>Diaballik::movePiece(const Position &amp; pos)</code> ne vérifie pas si le jeu est terminé : il est donc possible de continuer de jouer alors que la partie est finie !</li>
+<li>la méthode <code>Diaballik::throwBall(const Position &amp; pos)</code> ne vérifie pas si le jeu est terminé : il est donc possible de continuer de jouer alors que la partie est finie !</li>
+<li>la méthode <code>Diaballik::passTurn()</code> est publique et ne vérifie pas si des actions ont été faites lors du tour du joueur</li>
+</ul>
+<h4 id="contrôleur">contrôleur</h4>
+<h5 id="fiabilisation-lectures-clavier">fiabilisation lectures clavier</h5>
+<p>ok</p>
+<h5 id="convivialité">convivialité</h5>
+<ul>
+<li>dans le cas de la variante, pas de marque des pions d’objectif différent tel que considéré (à tort) par les étudiants</li>
+<li>marquage de la pièce sélectionnée</li>
+<li>indication de destinations possibles suite à la sélection d’un support</li>
+<li>obligation de donner l’ordre pour terminer son tour, même si plus d’action disponible</li>
+</ul>
+<h4 id="vue">vue</h4>
+<h5 id="design-pattern-observer">design pattern observer</h5>
+<p>ok</p>
+<h5 id="absence-de-flux-cout-dans-classes-métier">absence de flux (cout) dans classes métier</h5>
+<p>(void)</p>
+<h4 id="autre-3">autre</h4>
+<p>(void)</p>
+<h2 id="gui">gui</h2>
+<h3 id="remise-1">remise</h3>
+<h4 id="retard-1">retard</h4>
+<p>(void)</p>
+<h4 id="autre-4">autre</h4>
+<p>(void)</p>
+<h3 id="documentation-1">documentation</h3>
+<p>ok</p>
+<h3 id="rapport-1">rapport</h3>
+<h4 id="format-pdf-1">format pdf</h4>
+<p>ok</p>
+<h4 id="bogue-non-signalé-1">bogue non signalé</h4>
+<p>(void)</p>
+<h4 id="écart-ajout-non-signalé-1">écart / ajout non signalé</h4>
+<p>(void)</p>
+<h4 id="autre-5">autre</h4>
+<p>(void)</p>
+<h3 id="code-source-1">code source</h3>
+<h4 id="portabilité-1">portabilité</h4>
+<h5 id="casse-noms-fichiers-1">casse noms fichiers</h5>
+<p>(void)</p>
+<h5 id="séparateur-1">séparateur /</h5>
+<p>(void)</p>
+<h5 id="c-standard-qt">c++ standard + qt</h5>
+<p>(void)</p>
+<h5 id="si-pas-std-qt-portabilité">si pas std + qt : portabilité</h5>
+<p>(void)</p>
+<h4 id="gestion-de-la-mémoire-1">gestion de la mémoire</h4>
+<p>(void)</p>
+<h4 id="contrôleur-1">contrôleur</h4>
+<h5 id="respect-des-règles">respect des règles</h5>
+<ul>
+<li>possible de terminer son tour alors qu’aucune action réalisée</li>
+</ul>
+<h5 id="convivialité-1">convivialité</h5>
+<ul>
+<li>obligation d’explicitement terminer son tour même si plus d’action disponible</li>
+<li>facile et presque intuitif (clic droit pour déselectionner support avec balle, pas d’explications en fait si dans une boîte de dialogue mais je ne l’ai pas toujours vue) : convivial</li>
+</ul>
+<h4 id="vue-1">vue</h4>
+<h5 id="design-pattern-observer-1">design pattern observer</h5>
+<p>ok</p>
+<h5 id="convivialité-2">convivialité</h5>
+<ul>
+<li>affichage des destinations possibles : déplacement et lancer</li>
+<li>ça déborde un petit peu dans le cadre à droite : convivial ok</li>
+<li>en fin de partie : le plateau n’est plus affiché mais message de victoire : ok mais laisser le plateau serait mieux à mon avis</li>
+</ul>
+<h4 id="autre-6">autre</h4>
+<ul>
+<li>rappel : ces étudiants considèrent que dans la variante l’objectif des pions qui commencent sur la ligne adverse est leur propre ligne</li>
+</ul>
+<h2 id="examen">examen</h2>
+<p>(void)</p>
